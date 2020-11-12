@@ -12,7 +12,7 @@ BUILD_DIRECTORY="${OUTPUT_DIRECTORY}/${BUILD_DIRECTORY_NAME}/"
 if [ "${PACKAGE_VERSION}" == "" ]; then
 	PACKAGE_VERSION="dev"
 fi
-BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tgz"
+BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tar.gz"
 
 
 #gcp and grm can be installed on MacOS via brew. Run "brew install coreutils" to do so.

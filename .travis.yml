@@ -15,7 +15,7 @@ env:
   - THEME_VERSION=${TRAVIS_TAG:-$TRAVIS_BRANCH-$TRAVIS_COMMIT}
 deploy:
   token: $DEPLOY_OAUTH_TOKEN
-  file: "target/CLARIN_Horizon-${THEME_VERSION}.tgz"
+  file: "target/clarin_bootstrap-${THEME_VERSION}.tar.gz"
   on:
     all_branches: true
     tags: true
