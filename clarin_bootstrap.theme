@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+/**
+ * Implements template_preprocess_views_view()
+ * @param array $vars
+ */
+function clarin_bootstrap_preprocess_views_view(&$vars){
+  $view = $vars['view'];
+  $vars['more']['#options']['attributes']['class'] = array(
+    'btn-link-blue'
+  );
+}

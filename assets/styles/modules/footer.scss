@@ -1,0 +1,126 @@
+.site-footer {
+  margin: 120px 0 0;
+  padding: 0;
+
+  .site-footer__top {
+    padding: 50px 0 0;
+    border-top: 1px solid $cold-grey-03;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 60px 0 0;
+    }
+  }
+
+  .col {
+    font-size: 16px;
+    padding-left: 0;
+
+    @media (max-width: #{$screen-tablet}) {
+      flex-basis: 50%;
+      margin-bottom: 35px;
+    }
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 18px;
+      padding-left: 15px;
+    }
+
+    h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $blue;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .footer-first {
+    font-size: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 50px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 18px;
+      padding-right: 10%;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Social media icons
+.clarin-social-media {
+  padding: 0;
+  margin: 35px 0 0;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 5px;
+
+    a {
+      background-color: $subtle-grey-02;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 44px;
+      height: 44px;
+      float: left;
+      text-indent: -9999px;
+      border-radius: 100%;
+
+      &:hover,
+      &:focus {
+        background-color: $subtle-grey-01;
+      }
+    }
+  }
+
+  .icon-twitter {
+    background-image: url(../images/twitter_icon.svg);
+  }
+
+  .icon-youtube {
+    background-image: url(../images/youtube_icon.svg);
+  }
+
+  .icon-videolectures {
+    background-image: url(../images/videolectures_icon.png);
+  }
+
+  .icon-github {
+    background-image: url(../images/github_icon.png);
+  }
+
+  .icon-linkedin {
+    background-image: url(../images/linkedin_icon.png);
+  }
+}
+
+// Bottom
+#block-bottomlinks {
+  margin-top: 10px;
+  padding-bottom: 10px;
+
+  @media (min-width: #{$screen-tablet}) {
+    margin-top: 85px;
+  }
+
+  a {
+    color: $soft-blue-02;
+    font-size: 14px;
+  }
+}

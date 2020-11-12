@@ -1,0 +1,223 @@
+// Navbar
+#navbar-main {
+  height: 100px;
+  border: none;
+
+  .region-navigation {
+    width: 100%;
+    align-items: center;
+  }
+
+  .block-we-megamenu {
+    .navbar {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+
+      .we-mega-menu-li {
+        padding: 0 13px;
+        border: none;
+
+        &.dropdown-menu {
+          .we-megamenu-nolink {
+            padding-right: 18px;
+
+            &:before {
+              background: url(../images/arrow-down-blue.png) no-repeat center center;
+              margin-left: 3px;
+              width: 14px;
+              height: 14px;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .we-megamenu-nolink {
+          background-color: transparent;
+          color: $link-color;
+          font-family: $font-family-base;
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: none;
+          padding: 0;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .block-menu {
+    margin-left: auto;
+
+    li {
+      padding: 0 11px;
+
+      a {
+        padding: 0;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  // Dropdown
+  .we-mega-menu-submenu {
+    background: transparent;
+    box-shadow: none !important;
+    border: none;
+    padding: 30px 0 0;
+
+    &:before {
+      position: absolute;
+      top: -8px;
+      left: 40px;
+      content:"";
+      background: url(../images/triangle_dropdown.png) no-repeat center center;
+      width: 73px;
+      height: 38px;
+    }
+
+    .we-mega-menu-submenu-inner {
+      background-color: $white;
+      border-radius: 10px;
+      box-shadow: 0px 2px 20px rgba(185,185,185,0.5) !important;
+      border: none;
+      padding: 40px 45px 30px;
+    }
+
+    .block-inner {
+      h2 {
+        color: $blue;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 1px solid $cold-grey-03;
+        padding-bottom: 13px;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: $dark-blue-01;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        margin-bottom: 20px;
+        max-width: 250px;
+
+        a {
+          font-weight: 700;
+          line-height: 26px;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          color: $soft-blue-02;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 21px;
+        }
+      }
+
+      a {
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style-type: none;
+          margin-bottom: 8px;
+
+          a {
+            color: $dark-blue-01;
+            font-size: 18px;
+            padding: 0;
+            border: none;
+          }
+        }
+      }
+
+      .block-menu {
+        ul {
+          display: flex;
+          flex-flow: column;
+
+          li {
+            padding: 0;
+          }
+        }
+      }
+
+      .btn-link-blue-xs {
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.navbar-we-mega-menu {
+  .type-of-block {
+    font-family: $font-family-base;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $font-family-base;
+    }
+
+    a {
+      color: $dark-blue-01;
+      font-family: $font-family-base;
+    }
+  }
+}
+
+.navbar-brand {
+  height: auto;
+  padding: 0;
+  margin-left: 0 !important;
+  margin-right: 10px;
+
+  img {
+    max-width: 153px;
+    height: auto;
+  }
+}
+
+.dropdown-toggle {
+  &:after {
+    background: url(../images/arrow-down-blue.png) no-repeat center center;
+    margin-left: 3px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    border: none;
+  }
+}

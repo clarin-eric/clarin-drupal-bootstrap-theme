@@ -1,0 +1,570 @@
+// Paragraphs
+.node--type-landing-page {
+  .main-content {
+    padding: 0;
+  }
+}
+
+.page-node-5290 {
+  .field--name-field-content-blocks {
+    .field__item {
+      &:first-child {
+        .paragraph--type--text {
+          background-color: $dark-blue-01;
+
+          h2 {
+            color: $white;
+          }
+
+          .field--name-field-title {
+            margin-bottom: 25px;
+          }
+        }
+      }
+
+      .paragraph--type--text {
+        .field--name-field-title {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
+
+// Header large
+.paragraph--type--header-large {
+  position: relative;
+  min-height: 500px;
+  color: $white;
+  font-size: 16px;
+  line-height: 1.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  padding-top: 45px;
+
+  @media (min-width: #{$screen-tablet}) {
+    display: flex;
+    align-items: center;
+    min-height: none;
+    height: 660px;
+    font-size: 23px;
+    background-position: center;
+    padding-bottom: 60px;
+    padding-top: 0;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 30px;
+    line-height: 1.12;
+    margin-bottom: 20px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 68px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .content {
+    max-width: 710px;
+  }
+
+  .field--name-field-bg-image {
+    img {
+      display: none;
+    }
+  }
+
+  .field--name-field-bg-image-mobile {
+    display: none;
+  }
+
+  .arrow-down {
+    position: absolute;
+    bottom: 45px;
+    background: url(../images/arrow-down-white.png) no-repeat center center;
+    width: 24px;
+    height: 29px;
+  }
+}
+
+// Header default
+.paragraph--type--header-default {
+  color: $dark-blue-01;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 40px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 23px;
+    padding: 100px 0 40px;
+  }
+
+  h1 {
+    color: $dark-blue-01;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 665px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 55px;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .field--name-field-body {
+    max-width: 700px;
+  }
+}
+
+// Image text
+.field--name-field-blocks {
+  .field__item {
+    .paragraph--type--image-text {
+      border-bottom: 1px solid $cold-grey-03;
+    }
+
+    &:last-child {
+      .paragraph--type--image-text {
+        border-bottom: none;
+      }
+    }
+  }
+}
+.paragraph--type--image-text {
+  font-size: 16px;
+  padding: 30px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 23px;
+    padding: 40px 0;
+  }
+
+  @media (min-width: #{$screen-tablet}) {
+    &.image-left {
+      .content {
+        order: 2;
+      }
+
+      .image-content {
+        order: 1;
+      }
+
+      img {
+        margin-right: auto;
+      }
+    }
+
+    &.image-right {
+      .content {
+        order: 1;
+      }
+
+      .image-content {
+        order: 2;
+      }
+
+      img {
+        margin-left: auto;
+      }
+
+      .field--name-field-image {
+        float: right;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    padding: 0;
+  }
+
+  .col-md-6 {
+    padding: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 0 15px;
+    }
+  }
+
+  h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+  }
+
+  img {
+    max-width: 440px;
+    height: auto;
+    margin-top: 35px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 0;
+    }
+  }
+
+  .field--name-field-link {
+    margin-top: 15px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 30px;
+    }
+
+    a {
+      display: inline-block;
+      background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+      color: $body-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      padding: 10px 50px 10px 10px;
+      transition: padding .3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/arrow-circle-blue.png) no-repeat right center;
+        font-size: 18px;
+        padding: 10px 65px 10px 10px;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $body-color;
+        padding: 10px 57px 10px 10px;
+
+        @media (min-width: #{$screen-tablet}) {
+          padding: 10px 72px 10px 10px;
+        }
+      }
+    }
+  }
+}
+
+// Image
+.paragraph--type--image {
+  img {
+    @media (max-width: #{$screen-tablet}) {
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+
+  .field--name-field-caption {
+    clear: left;
+    margin-top: 20px;
+  }
+}
+
+// CTA
+.paragraph--type--cta {
+  min-height: 525px;
+  color: $white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  padding: 30px 10px;
+
+  @media (min-width: #{$screen-tablet}) {
+    height: 525px;
+    min-height: unset;
+    background-position: center;
+    padding: 0 0 60px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .field--name-field-title {
+    max-width: 710px;
+
+    h2 {
+      color: $white;
+      font-size: 30px;
+      margin-bottom: 10px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 45px;
+        margin-top: 25px;
+      }
+    }
+  }
+
+  .field--name-field-body {
+    max-width: 630px;
+    font-size: 16px;
+    line-height: 28px;
+    opacity: 0.75;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 18px;
+    }
+  }
+
+  .field--name-field-link {
+    margin-top: 30px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 40px;
+    }
+
+    a {
+      display: inline-block;
+      background: $white url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 25px;
+      border-radius: 27.5px;
+      padding: 15px 60px 15px 30px;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: $white url(../images/arrow-right-blue.png) no-repeat right 25px center;
+        font-size: 18px;
+        padding: 15px 65px 15px 27px;
+      }
+
+      &:hover,
+      &:focus {
+        background: $subtle-grey-01 url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+        color: $dark-blue-01;
+        text-decoration: none;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat right 25px center;
+        }
+      }
+    }
+  }
+
+  .field--name-field-bg-image {
+    img {
+      display: none;
+    }
+  }
+
+  .field--name-field-bg-image-mobile {
+    display: none;
+  }
+}
+
+// Guide selection
+.paragraph--type--guide-selection {
+  padding: 50px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 70px 0;
+  }
+
+  .container {
+    background-color: $subtle-grey-02;
+    border-top: 3px solid $blue;
+    padding: 30px 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      display: flex;
+      padding: 45px 30px;
+    }
+  }
+
+  .field--name-field-title {
+    h2 {
+      font-size: 27px;
+      max-width: 450px;
+      margin-bottom: 45px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 45px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .field--name-field-links {
+    a {
+      display: inline-block;
+      background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      line-height: 1.2;
+      padding-right: 25px;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: none;
+        font-size: 18px;
+        margin-right: 55px;
+        padding-right: 0;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .field__item {
+      border-bottom: 1px solid $cold-grey-01;
+      padding: 15px 0;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/arrow-circle-grey.png) no-repeat right 10px center;
+        padding: 17px 0;
+      }
+
+      &:first-child {
+        border-top: 1px solid $cold-grey-01;
+
+        @media (min-width: #{$screen-tablet}) {
+          border-top: none;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Text
+.paragraph--type--text {
+  font-size: 16px;
+  line-height: 25px;
+  padding: 50px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 70px 0;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      list-style-type: none;
+      line-height: 25px;
+      padding-bottom: 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        align-items: center;
+        line-height: 30px;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:before {
+        display: inline-block;
+        content: '';
+        width: 9px;
+        height: 9px;
+        background: $blue;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: my-badass-counter;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      list-style-type: none;
+      line-height: 25px;
+      padding-bottom: 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        align-items: center;
+        line-height: 30px;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:before {
+        width: 9px;
+        content: counter(my-badass-counter);
+        counter-increment: my-badass-counter;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 30px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+  }
+
+  blockquote {
+    font-size: 23px;
+    line-height: 35px;
+    border-top: 3px solid $blue;
+    padding-top: 15px;
+    padding-right: 35px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 35px;
+      line-height: 50px;
+      padding-right: 0;
+    }
+  }
+}
+
+// Image/Video in container
+.paragraph--type--image-video-container {
+  img,
+  video {
+    @media (max-width: #{$screen-tablet}) {
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+
+  .field--name-field-caption {
+    clear: left;
+    margin-top: 20px;
+  }
+}
+
+// Teaser big paragraph
+.paragraph--type--teaser-big {
+  margin: 0 -15px;
+
+  .container {
+    padding: 0;
+  }
+}

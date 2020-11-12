@@ -1,0 +1,224 @@
+// Buttons
+
+// btn blue
+.btn-default,
+.btn-blue {
+  display: inline-block;
+  background: $dark-blue-01 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+  color: $white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  border-radius: 27.5px;
+  padding: 15px 60px 15px 30px;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: $dark-blue-01 url(../images/arrow-right-white.png) no-repeat right 25px center;
+    font-size: 18px;
+    padding: 15px 65px 15px 27px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $dark-blue-02 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+    color: $white;
+    text-decoration: none;
+
+    @media (min-width: #{$screen-tablet}) {
+      background: $dark-blue-02 url(../images/arrow-right-white.png) no-repeat right 25px center;
+    }
+  }
+}
+
+// btn white
+.btn-secondary,
+.btn-white {
+  display: inline-block;
+  background: $white url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+  color: $dark-blue-01;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  border-radius: 27.5px;
+  padding: 15px 60px 15px 30px;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: $white url(../images/arrow-right-blue.png) no-repeat right 25px center;
+    font-size: 18px;
+    padding: 15px 65px 15px 27px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $subtle-grey-01 url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+    color: $dark-blue-01;
+    text-decoration: none;
+
+    @media (min-width: #{$screen-tablet}) {
+      background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat right 25px center;
+    }
+  }
+}
+
+// btn blue circle arrow
+.btn-blue-circle-arrow {
+  display: inline-block;
+  background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+  color: $body-color;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px 50px 10px 10px;
+  transition: padding .3s;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/arrow-circle-blue.png) no-repeat right center;
+    font-size: 18px;
+    padding: 10px 65px 10px 10px;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $body-color;
+    padding: 10px 57px 10px 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 10px 72px 10px 10px;
+    }
+  }
+}
+
+// btn white circle arrow
+.btn-white-circle-arrow {
+  display: inline-block;
+  background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+  color: $white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px 50px 10px 10px;
+  transition: padding .3s;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/arrow-circle-blue.png) no-repeat right center;
+    font-size: 18px;
+    padding: 10px 65px 10px 10px;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $white;
+    padding: 10px 57px 10px 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 10px 72px 10px 10px;
+    }
+  }
+}
+
+// Textual link blue
+.btn-link-blue,
+.btn-link-blue-xs {
+  color: $dark-blue-01;
+  font-weight: 600;
+  line-height: 30px;
+  transition: padding .3s;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn-link-blue {
+  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  font-size: 16px;
+  padding-right: 20px;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+    font-size: 18px;
+    padding-right: 25px;
+  }
+
+  &:hover,
+  &:focus {
+    padding-right: 25px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding-right: 30px;
+    }
+  }
+}
+
+.btn-link-blue-xs {
+  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  font-size: 14px;
+  font-weight: 600;
+  padding-right: 15px;
+
+  &:hover,
+  &:focus {
+    padding-right: 20px;
+  }
+}
+
+.more-link {
+  display: none;
+  @media (min-width: #{$screen-tablet}) {
+    display: inline;
+  }
+  a {
+    background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+    color: $dark-blue-01;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    padding-right: 20px;
+    transition: padding .3s;
+
+    @media (min-width: #{$screen-tablet}) {
+      background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+      font-size: 18px;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      padding-right: 25px;
+
+      @media (min-width: #{$screen-tablet}) {
+        padding-right: 30px;
+      }
+    }
+  }
+}
+
+// Textual link white
+.btn-link-white {
+  background: url(../images/short-arrow-right-white-small.png) no-repeat right center;
+  color: $white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  padding-right: 20px;
+  transition: padding .3s;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/short-arrow-right-white.png) no-repeat right center;
+    font-size: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    padding-right: 25px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding-right: 30px;
+    }
+  }
+}

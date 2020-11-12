@@ -1,0 +1,8 @@
+# Ignore Mac OsX files
+.DS_Store
+
+#ignore theme node_modules
+node_modules
+
+#ignore build target directory
+target

@@ -1,0 +1,343 @@
+// Teaser small list
+.block-views-blockteaser-small-blocks-block-1 {
+  position: relative;
+  padding: 0 25px;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 0;
+  }
+
+  .col-md-3 {
+    padding: 0 20px 0 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 27px;
+    padding: 25px 0 30px;
+    border-top: 2px solid $dark-blue-01;
+    border-bottom: 1px solid $cold-grey-03;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 45px;
+      padding: 25px 0 60px;
+      margin-bottom: 35px;
+    }
+  }
+  .more-link {
+    position: absolute;
+    top: 25px;
+    right: 0;
+  }
+  .views-row {
+    border-bottom: 1px solid $cold-grey-03;
+    padding: 25px 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      border-bottom: none;
+      border-right: 1px solid $cold-grey-03;
+      padding: 0 35px 0 25px;
+    }
+
+    &:first-child {
+      @media (min-width: #{$screen-tablet}) {
+        padding: 0 45px 0 0;
+      }
+    }
+
+    &:last-child {
+      display: none;
+      border-right: 0;
+      @media (min-width: #{$screen-tablet}) {
+        display: block;
+        padding: 0 0 0 25px;
+      }
+    }
+
+    .node--view-mode-teaser-list-small {
+      .field--name-created {
+        color: $soft-blue-02;
+        font-size: 14px;
+        font-style: normal;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 18px;
+        line-height: 1.6rem;
+        padding: 0;
+        border: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Teaser list
+.block-views-blockteaser-list-block-1 {
+  position: relative;
+  padding: 0 25px;
+  margin: 50px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 0;
+  }
+
+  .col-md-3 {
+    padding: 0 20px 0 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 27px;
+    padding: 25px 0 30px;
+    border-top: 2px solid $dark-blue-01;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 45px;
+      padding: 25px 0 60px;
+      margin-bottom: 35px;
+    }
+  }
+  .views-row {
+    border-bottom: 1px solid $cold-grey-03;
+    padding: 25px 0;
+    display: flex;
+
+    @media (min-width: #{$screen-tablet}) {
+      border-bottom: none;
+      border-right: 1px solid $cold-grey-03;
+      padding: 0 25px;
+    }
+
+    &:first-child {
+      @media (min-width: #{$screen-tablet}) {
+        margin-left: -25px;
+      }
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    .node--view-mode-teaser-list {
+      &.no-image-teaser {
+        background-color: #F1F4F7;
+        padding: 30px 25px;
+
+        .field--name-title {
+          h2 {
+            font-size: 35px;
+            font-weight: normal;
+            line-height: 1.2em
+          }
+        }
+      }
+      .node__content {
+        margin-top: 0;
+        @media (max-width: #{$screen-tablet}) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+      .node__meta {
+        color: $soft-blue-02;
+        font-size: 14px;
+        font-style: normal;
+        margin-bottom: 10px;
+      }
+
+      .field--type-image {
+        margin: 0;
+      }
+
+      .field--name-field-image {
+        @media (max-width: #{$screen-tablet}) {
+          flex: 1 0 30%;
+          order: 2;
+        }
+      }
+
+      .field--name-title {
+        @media (max-width: #{$screen-tablet}) {
+          flex: 1 0 70%;
+          order: 1;
+        }
+        h2 {
+          font-size: 23px;
+          line-height: 1.6rem;
+          padding: 0;
+          border: none;
+          margin-bottom: 25px;
+        }
+      }
+
+      .field--name-body {
+        @media (max-width: #{$screen-tablet}) {
+          flex: 1 0 70%;
+          order: 3;
+        }
+      }
+
+      &:hover {
+        .field--name-title {
+          h2 {
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Teaser big
+.node--view-mode-teaser-big {
+  @media (max-width: #{$screen-tablet}) {
+    padding: 0 40px;
+  }
+}
+
+// Member grid
+.paragraph--type--consortia-list {
+  padding: 110px 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #01243E;
+    padding-bottom: 15px;
+
+    h2 {
+      font-size: 47px;
+      line-height: 90px;
+      margin: 0;
+    }
+  }
+
+  .field--name-field-consortia-items {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+}
+
+.node--type-consortia {
+  width: 190px;
+  margin-top: 55px;
+  border-top: 1px solid $cold-grey-03;
+
+  .node__content {
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+  }
+
+  .field--name-field-link {
+    a {
+      color: $blue;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+// Resource grid
+.paragraph--type--resource-list {
+  padding: 110px 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #01243E;
+    padding-bottom: 15px;
+
+    h2 {
+      font-size: 47px;
+      line-height: 90px;
+      margin: 0;
+    }
+  }
+
+  .field--name-field-resource-items {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+
+  .resource-item {
+    flex: 1 0 30%;
+    margin: 15px;
+    border: 1px solid $cold-grey-03;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+}
+
+.node--type-resource {
+  position: relative;
+  min-height: 420px;
+  background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+  padding: 80px 30px;
+  border-top: 5px solid transparent;
+  transition: all .3s ease;
+
+  &:hover,
+  &:focus {
+    border-top: 5px solid $blue;
+
+    .field--name-title {
+      h2 {
+        text-decoration: underline;
+      }
+    }
+
+    .tag {
+      text-decoration: underline;
+    }
+  }
+
+  .field--name-title {
+    h2 {
+      font-size: 27px;
+      line-height: 36px;
+      margin: 0 0 8px;
+    }
+  }
+
+  .field--name-body {
+    color: $dark-blue-01;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .field--name-field-link {
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      float: left;
+      text-indent: -9999px;
+    }
+  }
+
+  .tag {
+    position: absolute;
+    bottom: 40px;
+    color: $blue;
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
