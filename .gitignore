@@ -4,5 +4,9 @@
 #ignore theme node_modules
 node_modules
 
-#ignore build target directory
-target
+#ignore bootstrap barrio
+bootstrap_barrio
+
+#ignore build target directories
+dist
+clarin_bootstrap

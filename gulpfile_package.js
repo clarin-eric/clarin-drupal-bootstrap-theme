@@ -20,18 +20,32 @@ let gulp = require('gulp'),
 		})
   ];
 
+const distPath = './dist/clarin_bootstrap';
+
 const paths = {
   scss: {
     src: './assets/styles/style.scss',
-    dest: './css',
+    dest: distPath.concat("/css"),
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
   },
   js: {
+    src: 'assets/scripts/*.js',
+    dest:  distPath.concat("/js"),
     bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
     jquery: './node_modules/jquery/dist/jquery.min.js',
     popper: './node_modules/popper.js/dist/umd/popper.min.js',
     poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
     barrio: './bootstrap_barrio/js/barrio.js',
+  },
+  static: {
+    dest: distPath,
+    images: '*images/**/*',
+    config: '*config/**/*',
+    templates: '*templates/**/*',
+    ymlFiles: './clarin_bootstrap.*.yml',
+    composerFile: './composer.json',
+    logo: './logo.svg',
+    screenshot: 'screenshot.png',
   }
 }
 
@@ -67,11 +81,19 @@ function styles () {
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, 'assets/scripts/*.js'])
-    .pipe(gulp.dest("./js"))
+  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
+    .pipe(gulp.dest(paths.js.dest))
 }
 
-const build = gulp.series(styles, js)
+// Move the static files into our distribution
+function static () {
+  return gulp.src([paths.static.images, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
+    paths.static.composerFile, paths.static.logo, paths.static.screenshot])
+    .pipe(gulp.dest(paths.static.dest))
+}
+
+// Default task
+const build = gulp.series(styles, js, static)
 
 exports.styles = styles
 exports.js = js
