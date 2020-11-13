@@ -27,9 +27,10 @@ echo 'Using local gulp: ' ${GULP}
 
 echo 'Retrieving bootstrap barrio...'
 # Retrieve bootstrap barrio drupal theme
+mkdir "${OUTPUT_DIRECTORY}"
 curl --fail --location --show-error --silent --tlsv1 \
     "https://ftp.drupal.org/files/projects/bootstrap_barrio-${BOOTSTRAP_BARRIO_VERSION}.tar.gz" | \
-tar -x -z -p
+tar -x -z -p -C "${OUTPUT_DIRECTORY}"
 
 #echo 'Customising...'
 

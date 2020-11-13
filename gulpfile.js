@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
@@ -21,10 +23,15 @@ let gulp = require('gulp'),
   ];
 
 var distPath = '.'
+// Existing bootstrap barrio location inside a Drupal installation
 var bootstrapBarrioPath = '../../contrib/bootstrap_barrio'
+if (!fs.existsSync(bootstrapBarrioPath)) {
+  bootstrapBarrioPath = './dist/bootstrap_barrio'
+}
+
 if ( process.argv.includes('dist') ) {
   distPath = './dist/clarin_bootstrap'
-  bootstrapBarrioPath = './bootstrap_barrio'
+  bootstrapBarrioPath = './dist/bootstrap_barrio'
 }
 
 const paths = {
@@ -33,7 +40,7 @@ const paths = {
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
     includes: [
         './node_modules/bootstrap/scss',
-        './bootstrap_barrio/scss'
+        bootstrapBarrioPath.concat('/scss'),
     ],
     dest: distPath.concat("/css"),
     watch: './assets/styles/**/*.scss',
