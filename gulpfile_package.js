@@ -24,7 +24,6 @@ const paths = {
   scss: {
     src: './assets/styles/style.scss',
     dest: './css',
-    watch: './assets/styles/**/*.scss',
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
   },
   js: {
@@ -33,7 +32,6 @@ const paths = {
     popper: './node_modules/popper.js/dist/umd/popper.min.js',
     poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
     barrio: './bootstrap_barrio/js/barrio.js',
-    watch: './assets/scripts/*.js'
   }
 }
 
