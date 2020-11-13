@@ -22,13 +22,14 @@ let gulp = require('gulp'),
     })
   ];
 
+// Custom paths for development build
 var distPath = '.'
-// Existing bootstrap barrio location inside a Drupal installation
-var bootstrapBarrioPath = '../../contrib/bootstrap_barrio'
+var bootstrapBarrioPath = '../../contrib/bootstrap_barrio' // Existing bootstrap barrio location inside a Drupal installation
 if (!fs.existsSync(bootstrapBarrioPath)) {
   bootstrapBarrioPath = './dist/bootstrap_barrio'
 }
 
+// Custom paths for distribution build
 if ( process.argv.includes('dist') ) {
   distPath = './dist/clarin_bootstrap'
   bootstrapBarrioPath = './dist/bootstrap_barrio'
