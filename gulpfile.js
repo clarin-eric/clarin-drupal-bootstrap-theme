@@ -20,7 +20,7 @@ let gulp = require('gulp'),
     })
   ];
 
-var distPath = './'
+var distPath = '.'
 var bootstrapBarrioPath = '../../contrib/bootstrap_barrio'
 if ( process.argv.includes('dist') ) {
   distPath = './dist/clarin_bootstrap'
