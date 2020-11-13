@@ -34,7 +34,7 @@ tar -x -z -p
 #echo 'Customising...'
 
 echo 'Building ...'
-${GULP} -f "./gulpfile_dist.js"
+${GULP} "dist"
 
 echo 'Packaging ...'
 tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "clarin_bootstrap"

@@ -9,43 +9,63 @@ let gulp = require('gulp'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
   pxtorem = require('postcss-pxtorem'),
-	postcssProcessors = [
-		postcssInlineSvg({
+  postcssProcessors = [
+    postcssInlineSvg({
       removeFill: true,
       paths: ['./node_modules/bootstrap-icons/icons']
     }),
-		pxtorem({
-			propList: ['font', 'font-size', 'line-height', 'letter-spacing', '*margin*', '*padding*'],
-			mediaQuery: true
-		})
+    pxtorem({
+      propList: ['font', 'font-size', 'line-height', 'letter-spacing', '*margin*', '*padding*'],
+      mediaQuery: true
+    })
   ];
+
+var distPath = './'
+var bootstrapBarrioPath = '../../contrib/bootstrap_barrio'
+if ( process.argv.includes('dist') ) {
+  distPath = './dist/clarin_bootstrap'
+  bootstrapBarrioPath = './bootstrap_barrio'
+}
 
 const paths = {
   scss: {
     src: './assets/styles/style.scss',
-    dest: './css',
-    watch: './assets/styles/**/*.scss',
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
+    includes: [
+        './node_modules/bootstrap/scss',
+        './bootstrap_barrio/scss'
+    ],
+    dest: distPath.concat("/css"),
+    watch: './assets/styles/**/*.scss',
   },
   js: {
+    src: 'assets/scripts/*.js',
     bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
     jquery: './node_modules/jquery/dist/jquery.min.js',
     popper: './node_modules/popper.js/dist/umd/popper.min.js',
     poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
-    barrio: '../../contrib/bootstrap_barrio/js/barrio.js',
+    barrio: bootstrapBarrioPath.concat('/js/barrio.js'),
+    dest:  distPath.concat("/js"),
     watch: './assets/scripts/*.js'
+  },
+  static: {
+    dest: distPath,
+    images: '*images/**/*',
+    config: '*config/**/*',
+    templates: '*templates/**/*',
+    ymlFiles: './clarin_bootstrap.*.yml',
+    composerFile: './composer.json',
+    logo: './logo.svg',
+    screenshot: 'screenshot.png',
   }
 }
 
-// Compile sass into CSS & auto-inject into browsers
+// Compile sass into CSS
 function styles () {
   return gulp.src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: [
-        './node_modules/bootstrap/scss',
-        '../../contrib/bootstrap_barrio/scss'
-      ]
+      includePaths: paths.scss.includes
     }).on('error', sass.logError))
     .pipe($.postcss(postcssProcessors))
     .pipe(postcss([autoprefixer({
@@ -65,14 +85,28 @@ function styles () {
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.scss.dest))
-    .pipe(browserSync.stream())
 }
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, 'assets/scripts/*.js'])
-    .pipe(gulp.dest("./js"))
-    .pipe(browserSync.stream())
+  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
+    .pipe(gulp.dest(paths.js.dest))
+}
+
+// Move the static files into our distribution
+function static () {
+  return gulp.src([paths.static.images, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
+    paths.static.composerFile, paths.static.logo, paths.static.screenshot])
+    .pipe(gulp.dest(paths.static.dest))
+}
+
+// Add auto-inject into browsers for development
+function stylesDev () {
+  return styles().pipe(browserSync.stream())
+}
+
+function jsDev () {
+  return js().pipe(browserSync.stream())
 }
 
 // Static Server + watching scss/html files
@@ -83,13 +117,14 @@ function serve () {
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
   // Watch js-files
-  gulp.watch(['assets/scripts/*.js'], js).on('change', browserSync.reload)
+  gulp.watch([paths.js.src], js).on('change', browserSync.reload)
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve))
+// Tasks
+const dist = gulp.series(styles, js, static)
+const dev = gulp.series(stylesDev, gulp.parallel(jsDev, serve))
 
-exports.styles = styles
-exports.js = js
-exports.serve = serve
+exports.dist = dist
+exports.dev = dev
 
-exports.default = build
+exports.default = dev
