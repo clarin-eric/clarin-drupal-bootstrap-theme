@@ -16,7 +16,7 @@ BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tar.gz"
 RM=`which grm||which rm`  #if grm available (on Mac), use it instead of BSD rm
 
 # Cleanup potential previous build output
-${RM} -fr -- "${OUTPUT_DIRECTORY}" "node-modules" "bootstrap_barrio"
+${RM} -fr -- "${OUTPUT_DIRECTORY}" "node-modules"
 
 # Install build environment
 echo 'Installing npm dependencies ...'
