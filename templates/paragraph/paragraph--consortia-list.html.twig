@@ -46,12 +46,20 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+
+{% set title = paragraph.field_title %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="container">
-        <div class="header">{{ content.field_title }}<div><a href="/participating-consortia" class="btn-link-blue">See all</a></div></div>
+
+        {% if title is not empty %}
+          <div class="header">{{ content.field_title }}<div class="hidden-xs"><a href="/participating-consortia" class="btn-link-blue">See all</a></div></div>
+        {% endif %}
+
         {{ content.field_consortia_items }}
+        <div class="link visible-xs"><a href="/participating-consortia" class="btn-link-blue">See total overview</a></div>
       </div>
     {% endblock %}
   </div>

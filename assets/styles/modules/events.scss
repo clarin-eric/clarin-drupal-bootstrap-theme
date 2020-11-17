@@ -1,0 +1,59 @@
+// Events
+.view-upcoming-events {
+  .node {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .views-row {
+    border-top: 1px solid $cold-grey-03;
+    padding: 30px 0;
+    margin-bottom: 40px;
+
+    &:first-child {
+      margin-top: 15px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .event-date {
+    flex: 1 1 25%;
+    padding-right: 100px;
+  }
+
+  .field--name-field-date-range {
+    max-width: 250px;
+  }
+
+  .datetime {
+    color: $blue;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .event-details {
+    flex: 1 1 50%;
+    padding: 0 15px;
+  }
+
+  .node__title {
+    font-size: 30px;
+    line-height: 44px;
+    margin: 0;
+  }
+
+  .event-image {
+    flex: 1 1 25%;
+    padding-left: 25px;
+
+    .field--name-field-image {
+      width: 275px;
+      height: 160px;
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+}

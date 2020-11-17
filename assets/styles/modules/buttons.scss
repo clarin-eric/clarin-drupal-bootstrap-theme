@@ -120,6 +120,7 @@
 
 // Textual link blue
 .btn-link-blue,
+.btn-link-blue-s,
 .btn-link-blue-xs {
   color: $dark-blue-01;
   font-weight: 600;
@@ -153,9 +154,9 @@
   }
 }
 
-.btn-link-blue-xs {
+.btn-link-blue-s {
   background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   padding-right: 15px;
 
@@ -165,34 +166,15 @@
   }
 }
 
-.more-link {
-  display: none;
-  @media (min-width: #{$screen-tablet}) {
-    display: inline;
-  }
-  a {
-    background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
-    color: $dark-blue-01;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
+.btn-link-blue-xs {
+  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  font-size: 14px;
+  font-weight: 600;
+  padding-right: 15px;
+
+  &:hover,
+  &:focus {
     padding-right: 20px;
-    transition: padding .3s;
-
-    @media (min-width: #{$screen-tablet}) {
-      background: url(../images/short-arrow-right-blue.png) no-repeat right center;
-      font-size: 18px;
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      padding-right: 25px;
-
-      @media (min-width: #{$screen-tablet}) {
-        padding-right: 30px;
-      }
-    }
   }
 }
 

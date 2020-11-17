@@ -1,25 +1,20 @@
 // Teaser small list
 .block-views-blockteaser-small-blocks-block-1 {
   position: relative;
-  padding: 0 25px;
-
-  @media (min-width: #{$screen-tablet}) {
-    padding: 0;
-  }
 
   .col-md-3 {
     padding: 0 20px 0 0;
   }
   h2 {
-    font-weight: bold;
     font-size: 27px;
-    padding: 25px 0 30px;
+    padding: 10px 0 30px;
+    margin-bottom: 0;
     border-top: 2px solid $dark-blue-01;
     border-bottom: 1px solid $cold-grey-03;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 45px;
-      padding: 25px 0 60px;
+      padding: 15px 0 55px;
       margin-bottom: 35px;
     }
   }
@@ -30,17 +25,17 @@
   }
   .views-row {
     border-bottom: 1px solid $cold-grey-03;
-    padding: 25px 0;
+    padding: 25px 0 0;
 
     @media (min-width: #{$screen-tablet}) {
       border-bottom: none;
       border-right: 1px solid $cold-grey-03;
-      padding: 0 35px 0 25px;
+      padding: 0 20px;
     }
 
     &:first-child {
       @media (min-width: #{$screen-tablet}) {
-        padding: 0 45px 0 0;
+        padding: 0 20px 0 0;
       }
     }
 
@@ -49,11 +44,16 @@
       border-right: 0;
       @media (min-width: #{$screen-tablet}) {
         display: block;
-        padding: 0 0 0 25px;
+        padding: 0 0 0 20px;
       }
     }
 
     .node--view-mode-teaser-list-small {
+      .node__content {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
       .field--name-created {
         color: $soft-blue-02;
         font-size: 14px;
@@ -66,6 +66,7 @@
         padding: 0;
         border: none;
         margin-bottom: 0;
+        margin-top: 5px;
       }
     }
   }
@@ -74,60 +75,74 @@
 // Teaser list
 .block-views-blockteaser-list-block-1 {
   position: relative;
-  padding: 0 25px;
-  margin: 50px 0;
-
-  @media (min-width: #{$screen-tablet}) {
-    padding: 0;
-  }
+  padding-top: 30px;
+  border-top: 1px solid $cold-grey-03;
+  margin-bottom: 90px;
 
   .col-md-3 {
     padding: 0 20px 0 0;
   }
   h2 {
-    font-weight: bold;
     font-size: 27px;
-    padding: 25px 0 30px;
+    padding: 10px 0 30px;
+    margin-bottom: 0;
     border-top: 2px solid $dark-blue-01;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 45px;
-      padding: 25px 0 60px;
+      padding: 15px 0 45px;
       margin-bottom: 35px;
     }
   }
+
+  .field--type-image {
+    img {
+      @media (min-width: #{$screen-tablet}) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .view-content {
+    @media (min-width: #{$screen-tablet}) {
+      margin: 0 -20px !important;
+    }
+  }
+
   .views-row {
     border-bottom: 1px solid $cold-grey-03;
-    padding: 25px 0;
-    display: flex;
+    padding: 15px 0 10px;
 
     @media (min-width: #{$screen-tablet}) {
       border-bottom: none;
       border-right: 1px solid $cold-grey-03;
-      padding: 0 25px;
+      padding: 0 20px 30px;
     }
 
-    &:first-child {
-      @media (min-width: #{$screen-tablet}) {
-        margin-left: -25px;
-      }
+    @media (min-width: #{$screen-desktop}) {
+      display: flex;
     }
 
     &:last-child {
       border-right: none;
+      padding-bottom: 0;
     }
 
     .node--view-mode-teaser-list {
       &.no-image-teaser {
+        height: 100%;
         background-color: #F1F4F7;
-        padding: 30px 25px;
+        padding: 35px 20px;
 
-        .field--name-title {
-          h2 {
-            font-size: 35px;
-            font-weight: normal;
-            line-height: 1.2em
-          }
+        h2 {
+          font-size: 35px;
+          font-weight: normal;
+          line-height: 1.2em;
+          margin-bottom: 20px;
+        }
+
+        .field--name-body {
+          color: $soft-blue-01;
         }
       }
       .node__content {
@@ -156,24 +171,54 @@
         }
       }
 
+      h2 {
+        font-size: 18px;
+        line-height: 26px;
+        padding: 0;
+        border: none;
+        margin-bottom: 15px;
+
+        @media (min-width: #{$screen-tablet}) {
+          font-size: 23px;
+          line-height: 1.6rem;
+        }
+      }
+
       .field--name-title {
         @media (max-width: #{$screen-tablet}) {
           flex: 1 0 70%;
           order: 1;
         }
-        h2 {
-          font-size: 23px;
-          line-height: 1.6rem;
-          padding: 0;
-          border: none;
-          margin-bottom: 25px;
-        }
       }
 
       .field--name-body {
+        color: $soft-blue-02;
+        padding-bottom: 30px;
+        font-size: 16px;
+
         @media (max-width: #{$screen-tablet}) {
+          color: $soft-blue-02;
           flex: 1 0 70%;
           order: 3;
+          font-size: 14px;
+          padding-bottom: 0;
+        }
+
+        div.btn-link-blue-s {
+          display: none;
+          position: absolute;
+          bottom: 25px;
+          background: none;
+          padding-right: 0;
+
+          @media (min-width: #{$screen-tablet}) {
+            display: block;
+          }
+
+          &:hover,
+          &:focus {
+            padding-right: 0;
+          }
         }
       }
 
@@ -199,7 +244,11 @@
 
 // Member grid
 .paragraph--type--consortia-list {
-  padding: 110px 0;
+  padding: 35px 0 25px;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 70px 0 50px;
+  }
 
   .header {
     display: flex;
@@ -209,9 +258,15 @@
     padding-bottom: 15px;
 
     h2 {
-      font-size: 47px;
-      line-height: 90px;
-      margin: 0;
+      font-size: 27px;
+      line-height: 33px;
+      margin: 10px 0 0;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 47px;
+        line-height: 90px;
+        margin: 0;
+      }
     }
   }
 
@@ -220,21 +275,38 @@
     flex-flow: wrap;
     justify-content: space-between;
   }
+
+  .link {
+    border-top: 1px solid $cold-grey-03;
+    margin-top: 35px;
+    padding-top: 10px;
+  }
 }
 
 .node--type-consortia {
-  width: 190px;
-  margin-top: 55px;
+  width: 160px;
+  margin-top: 35px;
   border-top: 1px solid $cold-grey-03;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 
-  .node__content {
-    margin-top: 10px;
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 374px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 140px;
+  }
+
+  @media (min-width: #{$screen-tablet}) {
+    width: 190px;
+    margin-top: 55px;
   }
 
   h2 {
     font-size: 18px;
     line-height: 25px;
-    margin: 0;
+    margin: 10px 0 0;
   }
 
   .field--name-field-link {
@@ -249,7 +321,11 @@
 
 // Resource grid
 .paragraph--type--resource-list {
-  padding: 110px 0;
+  padding: 30px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 110px 0;
+  }
 
   .header {
     display: flex;
@@ -259,9 +335,15 @@
     padding-bottom: 15px;
 
     h2 {
-      font-size: 47px;
-      line-height: 90px;
-      margin: 0;
+      font-size: 27px;
+      line-height: 33px;
+      margin: 10px 0 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 47px;
+        line-height: 90px;
+        margin: 0;
+      }
     }
   }
 
@@ -269,25 +351,39 @@
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
-    margin: 0 -15px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin: 0 -15px;
+    }
   }
 
   .resource-item {
-    flex: 1 0 30%;
-    margin: 15px;
     border: 1px solid $cold-grey-03;
     border-radius: 2px;
     overflow: hidden;
+    margin: 20px 0 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 0 30%;
+      margin: 15px;
+    }
   }
 }
 
 .node--type-resource {
   position: relative;
-  min-height: 420px;
-  background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
-  padding: 80px 30px;
+  background: url(../images/resource_icon.png) no-repeat right 20px top 25px;
+  background-size: 31px;
+  padding: 25px 60px 25px 20px;
   border-top: 5px solid transparent;
   transition: all .3s ease;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+    background-size: auto;
+    min-height: 420px;
+    padding: 80px 30px;
+  }
 
   &:hover,
   &:focus {
@@ -304,18 +400,37 @@
     }
   }
 
+  .node__content {
+    margin-top: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 15px;
+    }
+  }
+
   .field--name-title {
     h2 {
-      font-size: 27px;
-      line-height: 36px;
+      font-size: 23px;
+      line-height: 31px;
       margin: 0 0 8px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 27px;
+        line-height: 36px;
+      }
     }
   }
 
   .field--name-body {
-    color: $dark-blue-01;
-    font-size: 18px;
-    line-height: 27px;
+    color: $soft-blue-02;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (min-width: #{$screen-tablet}) {
+      color: $dark-blue-01;
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 
   .field--name-field-link {
@@ -334,10 +449,16 @@
   }
 
   .tag {
-    position: absolute;
-    bottom: 40px;
     color: $blue;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 27px;
+    padding-top: 15px;
+
+    @media (min-width: #{$screen-tablet}) {
+      position: absolute;
+      bottom: 40px;
+      font-size: 18px;
+      padding-top: 0;
+    }
   }
 }

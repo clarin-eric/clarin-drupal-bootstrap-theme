@@ -48,6 +48,7 @@
 %}
 
 {% set title = paragraph.field_title %}
+{% set link = paragraph.field_link_header %}
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
@@ -55,10 +56,15 @@
       <div class="container">
 
         {% if title is not empty %}
-          <div class="header">{{ content.field_title }}<div class="hidden-xs"><a href="/resources" class="btn-link-blue">See all</a></div></div>
+          <div class="header">{{ content.field_title }}<div class="hidden-xs">{{ content.field_link_header }}</div></div>
         {% endif %}
 
-        {{ content.field_resource_items }}
+        {{ content.field_content }}
+
+        {% if link is not empty %}
+          <div class="link visible-xs">{{ content.field_link_header }}</div>
+        {% endif %}
+
       </div>
     {% endblock %}
   </div>

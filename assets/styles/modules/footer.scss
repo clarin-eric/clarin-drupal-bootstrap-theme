@@ -1,6 +1,10 @@
 .site-footer {
-  margin: 120px 0 0;
+  margin: 35px 0 0;
   padding: 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    margin: 60px 0 0;
+  }
 
   .site-footer__top {
     padding: 50px 0 0;
