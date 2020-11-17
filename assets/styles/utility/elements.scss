@@ -39,3 +39,22 @@ h6 {
 .row {
   margin: 0 !important;
 }
+
+img {
+  max-width: 100%;
+}
+
+.field--name-field-user-picture,
+.field--type-image {
+  img {
+    margin: 0;
+  }
+}
+
+.field--type-entity-reference {
+  margin: 0;
+}
+
+.node__content {
+  margin-top: 0;
+}

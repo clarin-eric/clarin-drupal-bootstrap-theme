@@ -73,14 +73,16 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <div class="col-md-8">
-    {{ content.field_image }}
+  <div class="event-date">
+    {{ content.field_date_range }}
   </div>
-  <div class="col-md-4">
-    {{ content.field_tags }}
+  <div class="event-details">
     <h2{{ title_attributes.addClass('node__title') }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
-    {{ content.body }}
+    <div class="locality">{{ content.field_address.locality.name }}</div>
+  </div>
+  <div class="event-image">
+    {{ content.field_image }}
   </div>
 </article>
