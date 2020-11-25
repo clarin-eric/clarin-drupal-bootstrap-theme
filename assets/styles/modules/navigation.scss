@@ -4,9 +4,16 @@
 .breadcrumb {
   color: $dark-blue-01;
   background: none;
-  font-size: 16px;
-  padding: 0;
+  font-size: 14px !important;
+  padding: 20px 0;
   margin: 0;
+  border-top: 1px solid rgba(5,45,77,0.13);
+  border-radius: 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 16px !important;
+    padding: 30px 0;
+  }
 
   .breadcrumb-item+.breadcrumb-item {
     padding-left: 15px;
@@ -15,5 +22,143 @@
   .breadcrumb-item+.breadcrumb-item::before {
     color: $dark-blue-01;
     padding-right: 15px;
+  }
+}
+
+// Pagination
+.pagination {
+  margin: 35px 0 0;
+  border-radius: 0;
+  justify-content: center;
+
+  @media (min-width: #{$screen-tablet}) {
+    margin: 50px 0 0;
+  }
+
+  li {
+    margin: 0 3px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin: 0 6px;
+    }
+
+    &.active {
+      .page-link {
+        color: $dark-blue-01;
+        background-color: transparent;
+        border-bottom: 2px solid $blue ;
+
+        @media (min-width: #{$screen-tablet}) {
+          border-bottom: 3px solid $blue ;
+        }
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      .page-link {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &.pager__item--previous {
+      margin-right: 20px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-right: 25px;
+      }
+
+      .page-link {
+        background: $subtle-grey-02 url(../images/arrow-right-blue.png) no-repeat center center;
+        float: left;
+        text-indent: -9999px;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        transform: rotate(180deg);
+
+        @media (min-width: #{$screen-tablet}) {
+          width: 47px;
+          height: 47px;
+        }
+
+        &:hover,
+        &:focus {
+          background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat center center;
+          border-bottom: none;
+        }
+      }
+    }
+
+    &.pager__item--next {
+      margin-left: 20px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-left: 25px;
+      }
+
+      .page-link {
+        background: $subtle-grey-02 url(../images/arrow-right-blue.png) no-repeat center center;
+        float: left;
+        text-indent: -9999px;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+
+        @media (min-width: #{$screen-tablet}) {
+          width: 47px;
+          height: 47px;
+        }
+
+        &:hover,
+        &:focus {
+          background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat center center;
+          border-bottom: none;
+        }
+      }
+    }
+
+    &.ellipses {
+      .page-link {
+        &:hover,
+        &:focus {
+          border-bottom: none;
+        }
+      }
+    }
+
+    a,
+    span.page-link {
+      color: $dark-blue-01;
+      background-color: transparent;
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 500;
+      border: none;
+      margin-left: 0;
+      padding: 3px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 21px;
+        line-height: 28px;
+        padding: 6px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $dark-blue-01;
+        background-color: transparent;
+        border-bottom: 2px solid $dark-blue-01;
+        outline: none;
+        box-shadow: none;
+
+        @media (min-width: #{$screen-tablet}) {
+          border-bottom: 3px solid $dark-blue-01;
+        }
+      }
+    }
   }
 }
