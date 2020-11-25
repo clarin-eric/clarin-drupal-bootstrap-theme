@@ -18,13 +18,18 @@
     text-transform: uppercase;
     color: $blue;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 15px ;
+    font-size: 12px;
+    line-height: 13px;
     border: 1px solid $blue;
     border-radius: 50px;
     padding: 4px 12px;
     display: block;
     margin: 0 5px 5px 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 13px;
+      line-height: 15px;
+    }
 
     &:hover,
     &:focus {

@@ -100,7 +100,7 @@
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 23px;
-    padding: 100px 0 40px;
+    padding: 60px 0 40px;
   }
 
   h1 {
@@ -374,6 +374,7 @@
       @media (min-width: #{$screen-tablet}) {
         font-size: 45px;
         margin-top: 25px;
+        margin-bottom: 30px;
       }
     }
   }
@@ -381,11 +382,12 @@
   .field--name-field-body {
     max-width: 630px;
     font-size: 16px;
-    line-height: 28px;
+    line-height: 24px;
     opacity: 0.75;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 18px;
+      line-height: 28px;
     }
   }
 
@@ -438,16 +440,20 @@
 
 // Guide selection
 .paragraph--type--guide-selection {
-  padding: 50px 0;
+  padding: 25px 0;
 
   @media (min-width: #{$screen-tablet}) {
-    padding: 70px 0;
+    padding: 50px 0;
   }
 
-  .container {
+  .content {
     background-color: $subtle-grey-02;
     border-top: 3px solid $blue;
     padding: 30px 10px;
+
+    @media (max-width: #{$screen-tablet}) {
+      padding: 30px 10px 20px;
+    }
 
     @media (min-width: #{$screen-tablet}) {
       display: flex;
@@ -494,6 +500,20 @@
       border-bottom: 1px solid $cold-grey-01;
       padding: 15px 0;
 
+      @media (max-width: #{$screen-tablet}) {
+        display: none;
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: block;
+        }
+
+        &:nth-child(3) {
+          border-bottom: none;
+        }
+      }
+
       @media (min-width: #{$screen-tablet}) {
         background: url(../images/arrow-circle-grey.png) no-repeat right 10px center;
         padding: 17px 0;
@@ -518,12 +538,12 @@
 .paragraph--type--text {
   font-size: 16px;
   line-height: 25px;
-  padding: 50px 0;
+  padding: 25px 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 18px;
     line-height: 28px;
-    padding: 70px 0;
+    padding: 50px 0;
   }
 
   ul {
@@ -708,25 +728,74 @@
     }
   }
 
+  .link {
+    padding-top: 10px;
+
+    a {
+      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-right: 20px;
+      transition: padding .3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        font-size: 18px;
+        padding-right: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        padding-right: 25px;
+
+        @media (min-width: #{$screen-tablet}) {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
   .field--name-field-content {
-    padding: 30px 0 0;
-    border-top: 1px solid $cold-grey-03;
+    padding: 0 0 30px;
+    border-bottom: 1px solid $cold-grey-03;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 30px 0;
+      border-top: 1px solid $cold-grey-03;
+    }
   }
 
   .col-md-8 {
-    padding-left: 0;
+    padding: 0 0 25px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 0 15px 0 0;
+    }
   }
 
   .col-md-4 {
-    padding-right: 0;
+    padding: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 0 0 0 15px;
+    }
   }
 
   .node--type-news {
-    display: flex;
+    @media (min-width: #{$screen-tablet}) {
+      display: flex;
+    }
   }
 
-  .field--name-title {
-    h2 {
+  h2.node__title {
+    font-size: 21px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+    @media (min-width: #{$screen-tablet}) {
       font-size: 30px;
       line-height: 39px;
       margin-bottom: 15px;
@@ -735,7 +804,14 @@
 
   .field--name-body {
     color: $soft-blue-02;
-    padding-bottom: 30px;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 16px;
+      line-height: 25px;
+      padding-bottom: 50px;
+    }
   }
 
   div.btn-link-blue-s {
@@ -807,6 +883,37 @@
           @media (min-width: #{$screen-tablet}) {
             padding-right: 30px;
           }
+        }
+      }
+    }
+  }
+
+  .link {
+    border-top: 1px solid $cold-grey-03;
+    padding-top: 10px;
+
+    a {
+      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-right: 20px;
+      transition: padding .3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        font-size: 18px;
+        padding-right: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        padding-right: 25px;
+
+        @media (min-width: #{$screen-tablet}) {
+          padding-right: 30px;
         }
       }
     }
