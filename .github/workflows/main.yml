@@ -30,7 +30,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/*/}
       - name: Build theme
         run: |
-          sudo apt-get install bsdtar curl nodejs,
+          sudo apt-get install bsdtar curl nodejs
           sh -x ./build.sh
         env:
           THEME_VERSION: ${{ steps.get_version.outputs.VERSION }}
