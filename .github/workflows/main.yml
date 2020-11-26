@@ -51,4 +51,3 @@ jobs:
         asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         tag: ${{ steps.get_version.outputs.VERSION }}
         overwrite: true
-        body: "This is my release text"
