@@ -12,10 +12,12 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+  schedule:
+  - cron: "23 2 12 * *"
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2  
       - name: Get the version
@@ -32,10 +34,11 @@ jobs:
         with:
           name: build-package
           path: dist/clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
+
   release:
     if: github.event_name == 'release' || github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     needs: [build]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Get the version
       id: get_version
@@ -56,7 +59,7 @@ jobs:
         overwrite: true
     # Create a release when a tag is pushed to the repository
     - name: Create Draft Release
-      if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+      if: github.event_name == 'push'
       id: create_release
       uses: actions/create-release@v1
       env:
@@ -67,16 +70,16 @@ jobs:
         draft: true
         prerelease: true
     - uses: actions/upload-release-asset@v1.0.1
-      if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+      if: github.event_name == 'push'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_path: ./clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_content_type: application/tar+gzip
     - uses: eregon/publish-release@v1
-      if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+      if: github.event_name == 'push'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
