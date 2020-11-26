@@ -1,3 +1,5 @@
+![CI](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/workflows/CI/badge.svg)
+
 CONTENTS OF THIS FILE
 ---------------------
 
