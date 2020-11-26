@@ -58,7 +58,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-        asset_name: ${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         tag: ${{ steps.get_version.outputs.VERSION }}
         overwrite: true
         body: "This is my release text"
