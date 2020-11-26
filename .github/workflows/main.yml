@@ -21,7 +21,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-xenial
+    runs-on: ubuntu-18.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -42,7 +42,7 @@ jobs:
         env:
           THEME_VERSION: ${GITHUB_REF##*/}
   release:
-    runs-on: ubuntu-xenial
+    runs-on: ubuntu-18.04
     steps:
     - name: Create Draft Release
       id: create_release
