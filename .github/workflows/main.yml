@@ -49,5 +49,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-        tag: ${{ steps.get_version.outputs.VERSION }}
+        tag: ${{ github.ref }}
         overwrite: true
