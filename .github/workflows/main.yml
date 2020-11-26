@@ -65,7 +65,7 @@ jobs:
         tag_name: ${{ steps.get_version.outputs.VERSION }}
         release_name: Release ${{ steps.get_version.outputs.VERSION }}
         draft: true
-        prerelease: false
+        prerelease: true
     - uses: actions/upload-release-asset@v1.0.1
       if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
       env:
