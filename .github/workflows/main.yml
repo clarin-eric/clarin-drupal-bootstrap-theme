@@ -33,6 +33,7 @@ jobs:
           name: build-package
           path: dist/clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
   release:
+    # Also run when a tag is pushed to the repository
     if: github.event_name == 'release' || github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     needs: [build]
     runs-on: ubuntu-18.04
