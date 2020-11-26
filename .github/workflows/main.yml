@@ -13,6 +13,8 @@ on:
     branches:
     - main
     - github-actions-ci
+  release:
+    types: [published, prereleased]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -37,7 +39,7 @@ jobs:
         env:
           THEME_VERSION: ${{ steps.get_version.outputs.VERSION }}
   release:
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    if: github.event_name == 'release' || github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     needs: [build]
     runs-on: ubuntu-18.04
     steps:
