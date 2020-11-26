@@ -72,7 +72,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: dist/clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_path: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_content_type: application/tar+gzip
     - uses: eregon/publish-release@v1
