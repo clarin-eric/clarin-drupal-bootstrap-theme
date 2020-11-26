@@ -7,7 +7,7 @@ BOOTSTRAP_BARRIO_VERSION="5.1.4"
 BASE_DIRECTORY=$(cd "$(dirname "$BASH_SOURCE[0]")"; pwd)
 OUTPUT_DIRECTORY="${BASE_DIRECTORY}/dist"
 
-if [ "${PACKAGE_VERSION}" == "" ]; then
+if [ -z "${PACKAGE_VERSION}" ]; then
 	PACKAGE_VERSION="dev"
 fi
 BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tar.gz"
