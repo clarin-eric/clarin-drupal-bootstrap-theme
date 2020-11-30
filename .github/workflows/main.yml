@@ -44,12 +44,12 @@ jobs:
       - name: Build
         run: sh -x ./build.sh
         env:
-          THEME_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          THEME_VERSION: ${{ needs.prepare.outputs.version }}
       - name: Upload build package
         uses: actions/upload-artifact@v2
         with:
           name: drupal-theme-build-package
-          path: dist/clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
+          path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
   release:
     needs: [prepare, build]
     # Run job for github releases and tag pushes (without github release)
@@ -79,8 +79,8 @@ jobs:
       with:
         # Pseudo-ternary expression: get "upload_url" from the release created above, or from github "release" event if release is pre-created
         upload_url: ${{ needs.prepare.outputs.create_release == 'true' && steps.create_release.outputs.upload_url || github.event.release.upload_url }} 
-        asset_path: ./clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-        asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_path: ./clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
+        asset_name: clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
         asset_content_type: application/tar+gzip
     - uses: eregon/publish-release@v1
       if: needs.prepare.outputs.create_release == 'true'
