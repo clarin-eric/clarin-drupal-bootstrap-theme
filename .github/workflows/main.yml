@@ -2,84 +2,88 @@ name: CI
 
 on:
   push:
-    branches:
-    - main
-    tags:
-    - '*'
   pull_request:
-    branches:
-    - main
   release:
     types: [published]
   workflow_dispatch:
   schedule:
   - cron: "23 2 12 * *"
-
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-18.04
+    outputs:
+      version: ${{ steps.get_version.outputs.VERSION }}
+      create_release: ${{ steps.check_release.outputs.CREATE_RELEASE }}
     steps:
-      - uses: actions/checkout@v2  
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/*/}
-      - name: Build theme
+        run: echo ::set-output name=VERSION::${GITHUB_REF##*/}
+      - name: Check create release for tag
+        if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+        id: check_release
         run: |
-          sudo apt-get install bsdtar curl nodejs
-          sh -x ./build.sh
+          URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ steps.get_version.outputs.VERSION }}"
+          StatusCode=$(curl -o -I -L -s -w "%{http_code}" -X GET -G $URL)
+          if [ "$StatusCode" == 200 ]; then
+            echo "Release exists"
+            echo ::set-output name=CREATE_RELEASE::false
+          else
+            echo "Release does not exist"
+            echo ::set-output name=CREATE_RELEASE::true
+          fi
+  build:
+    needs: [prepare]
+    # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
+    if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: '50'
+      - name: Build
+        run: sh -x ./build.sh
         env:
           THEME_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: Upload build package
         uses: actions/upload-artifact@v2
         with:
-          name: build-package
+          name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-
   release:
-    if: github.event_name == 'release' || github.event_name == 'push' && contains(github.ref, 'refs/tags/')
-    needs: [build]
+    needs: [prepare, build]
+    # Run job for github releases and tag pushes (without github release)
+    if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true'
     runs-on: ubuntu-18.04
     steps:
-    - name: Get the version
-      id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/*/}
     - name: Download build package from build job
       uses: actions/download-artifact@v2
       with:
-        name: build-package
-    # For releases created via GitHub webUI
-    - name: Upload binaries to release
-      if: github.event_name == 'release'
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-        asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
-        tag: ${{ github.ref }}
-        overwrite: true
-    # Create a release when a tag is pushed to the repository
-    - name: Create Draft Release
-      if: github.event_name == 'push'
+        name: drupal-theme-build-package
+    # For github releases -> upload release package to existing release
+    # For tag pushes without github release -> create a github release with release package
+    - name: Create prelease for this tag
+      if: needs.prepare.outputs.create_release == 'true'
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.get_version.outputs.VERSION }}
-        release_name: Release ${{ steps.get_version.outputs.VERSION }}
+        tag_name: ${{ needs.prepare.outputs.version }}
+        release_name: Release ${{ needs.prepare.outputs.version }}
         draft: true
         prerelease: true
     - uses: actions/upload-release-asset@v1.0.1
-      if: github.event_name == 'push'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        # Pseudo-ternary expression: get "upload_url" from the release created above, or from github "release" event if release is pre-created
+        upload_url: ${{ needs.prepare.outputs.create_release == 'true' && steps.create_release.outputs.upload_url || github.event.release.upload_url }} 
         asset_path: ./clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_name: clarin_bootstrap-${{ steps.get_version.outputs.VERSION }}.tar.gz
         asset_content_type: application/tar+gzip
     - uses: eregon/publish-release@v1
-      if: github.event_name == 'push'
+      if: needs.prepare.outputs.create_release == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
