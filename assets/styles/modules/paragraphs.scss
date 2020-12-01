@@ -88,6 +88,7 @@
     background: url(../images/arrow-down-white.png) no-repeat center center;
     width: 24px;
     height: 29px;
+    cursor: pointer;
   }
 }
 
@@ -318,14 +319,13 @@
   }
 
   img {
-    @media (max-width: #{$screen-tablet}) {
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
+    width: 100%;
+    height: auto;
+    margin: 0;
   }
 
   .field--name-field-media-image {
+    width: 100%;
     margin: 0;
   }
 
