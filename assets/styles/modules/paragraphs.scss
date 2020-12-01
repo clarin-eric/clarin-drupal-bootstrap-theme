@@ -42,6 +42,7 @@
   background-size: cover;
   background-position: left;
   padding-top: 45px;
+  margin-bottom: 25px;
 
   @media (min-width: #{$screen-tablet}) {
     display: flex;
@@ -52,6 +53,7 @@
     background-position: center;
     padding-bottom: 60px;
     padding-top: 0;
+    margin-bottom: 50px;
   }
 
   h1 {
@@ -86,6 +88,7 @@
     background: url(../images/arrow-down-white.png) no-repeat center center;
     width: 24px;
     height: 29px;
+    cursor: pointer;
   }
 }
 
@@ -98,7 +101,7 @@
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 23px;
-    padding: 100px 0 40px;
+    padding: 60px 0 40px;
   }
 
   h1 {
@@ -122,9 +125,13 @@
 
 // Image text
 .field--name-field-blocks {
+  padding: 10px 0;
+
   .field__item {
     .paragraph--type--image-text {
-      border-bottom: 1px solid $cold-grey-03;
+      @media (max-width: #{$screen-tablet}) {
+        border-bottom: 1px solid $cold-grey-03;
+      }
     }
 
     &:last-child {
@@ -147,10 +154,12 @@
     &.image-left {
       .content {
         order: 2;
+        padding-right: 0;
       }
 
       .image-content {
         order: 1;
+        padding-left: 0;
       }
 
       img {
@@ -161,10 +170,12 @@
     &.image-right {
       .content {
         order: 1;
+        padding-left: 0;
       }
 
       .image-content {
         order: 2;
+        padding-right: 0;
       }
 
       img {
@@ -173,6 +184,82 @@
 
       .field--name-field-image {
         float: right;
+      }
+    }
+  }
+
+  &.btn-bg-blue {
+    .field--name-field-link {
+      margin-top: 25px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-top: 40px;
+      }
+
+      a {
+        display: inline-block;
+        background: $dark-blue-01 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 25px;
+        border-radius: 27.5px;
+        padding: 15px 60px 15px 30px;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: $dark-blue-01 url(../images/arrow-right-white.png) no-repeat right 25px center;
+          font-size: 18px;
+          padding: 15px 65px 15px 27px;
+        }
+
+        &:hover,
+        &:focus {
+          background: $dark-blue-02 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+          color: $white;
+          text-decoration: none;
+
+          @media (min-width: #{$screen-tablet}) {
+            background: $dark-blue-02 url(../images/arrow-right-white.png) no-repeat right 25px center;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-arrow-circle {
+    .field--name-field-link {
+      margin-top: 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-top: 30px;
+      }
+
+      a {
+        display: inline-block;
+        background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+        color: $body-color;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        padding: 10px 50px 10px 0;
+        transition: padding .3s;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: url(../images/arrow-circle-blue.png) no-repeat right center;
+          font-size: 18px;
+          padding: 10px 65px 10px 0;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $body-color;
+          padding: 10px 57px 10px 0;
+
+          @media (min-width: #{$screen-tablet}) {
+            padding: 10px 72px 10px 0;
+          }
+        }
       }
     }
   }
@@ -202,66 +289,55 @@
     }
   }
 
+  .field--name-field-media-image,
+  .field--name-field-image {
+    margin: 0;
+  }
+
   img {
-    max-width: 440px;
+    max-width: 100%;
     height: auto;
     margin-top: 35px;
+    margin-bottom: 0;
 
     @media (min-width: #{$screen-tablet}) {
       margin-top: 0;
     }
-  }
 
-  .field--name-field-link {
-    margin-top: 15px;
-
-    @media (min-width: #{$screen-tablet}) {
-      margin-top: 30px;
-    }
-
-    a {
-      display: inline-block;
-      background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
-      color: $body-color;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 30px;
-      padding: 10px 50px 10px 10px;
-      transition: padding .3s;
-
-      @media (min-width: #{$screen-tablet}) {
-        background: url(../images/arrow-circle-blue.png) no-repeat right center;
-        font-size: 18px;
-        padding: 10px 65px 10px 10px;
-      }
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        color: $body-color;
-        padding: 10px 57px 10px 10px;
-
-        @media (min-width: #{$screen-tablet}) {
-          padding: 10px 72px 10px 10px;
-        }
-      }
+    @media (min-width: #{$screen-desktop}) {
+      max-width: 440px;
     }
   }
 }
 
 // Image
 .paragraph--type--image {
+  padding: 25px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 50px 0;
+  }
+
   img {
-    @media (max-width: #{$screen-tablet}) {
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .field--name-field-media-image {
+    width: 100%;
+    margin: 0;
   }
 
   .field--name-field-caption {
     clear: left;
-    margin-top: 20px;
+    padding: 15px 0;
+
+    p {
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -298,6 +374,7 @@
       @media (min-width: #{$screen-tablet}) {
         font-size: 45px;
         margin-top: 25px;
+        margin-bottom: 30px;
       }
     }
   }
@@ -305,11 +382,12 @@
   .field--name-field-body {
     max-width: 630px;
     font-size: 16px;
-    line-height: 28px;
+    line-height: 24px;
     opacity: 0.75;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 18px;
+      line-height: 28px;
     }
   }
 
@@ -362,16 +440,20 @@
 
 // Guide selection
 .paragraph--type--guide-selection {
-  padding: 50px 0;
+  padding: 25px 0;
 
   @media (min-width: #{$screen-tablet}) {
-    padding: 70px 0;
+    padding: 50px 0;
   }
 
-  .container {
+  .content {
     background-color: $subtle-grey-02;
     border-top: 3px solid $blue;
     padding: 30px 10px;
+
+    @media (max-width: #{$screen-tablet}) {
+      padding: 30px 10px 20px;
+    }
 
     @media (min-width: #{$screen-tablet}) {
       display: flex;
@@ -418,6 +500,20 @@
       border-bottom: 1px solid $cold-grey-01;
       padding: 15px 0;
 
+      @media (max-width: #{$screen-tablet}) {
+        display: none;
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: block;
+        }
+
+        &:nth-child(3) {
+          border-bottom: none;
+        }
+      }
+
       @media (min-width: #{$screen-tablet}) {
         background: url(../images/arrow-circle-grey.png) no-repeat right 10px center;
         padding: 17px 0;
@@ -442,12 +538,12 @@
 .paragraph--type--text {
   font-size: 16px;
   line-height: 25px;
-  padding: 50px 0;
+  padding: 25px 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 18px;
     line-height: 28px;
-    padding: 70px 0;
+    padding: 50px 0;
   }
 
   ul {
@@ -545,6 +641,12 @@
 
 // Image/Video in container
 .paragraph--type--image-video-container {
+  padding: 25px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 50px 0;
+  }
+
   img,
   video {
     @media (max-width: #{$screen-tablet}) {
@@ -554,17 +656,267 @@
     }
   }
 
+  .field--name-field-media-image {
+    margin: 0;
+  }
+
   .field--name-field-caption {
     clear: left;
-    margin-top: 20px;
+    padding: 15px 0;
+
+    p {
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 }
 
 // Teaser big paragraph
 .paragraph--type--teaser-big {
-  margin: 0 -15px;
+  padding: 35px 0 30px;
 
-  .container {
+  @media (min-width: #{$screen-tablet}) {
+    padding: 70px 0 30px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #01243E;
+    padding-bottom: 40px;
+
+    h2 {
+      font-size: 27px;
+      line-height: 33px;
+      margin: 10px 0 0;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 47px;
+        line-height: 90px;
+        margin: 0;
+      }
+    }
+
+    .field--name-field-link-header {
+      a {
+        background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+        color: $dark-blue-01;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        padding-right: 20px;
+        transition: padding .3s;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+          font-size: 18px;
+          padding-right: 25px;
+        }
+
+        &:hover,
+        &:focus {
+          padding-right: 25px;
+          text-decoration: none;
+
+          @media (min-width: #{$screen-tablet}) {
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .link {
+    padding-top: 10px;
+
+    a {
+      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-right: 20px;
+      transition: padding .3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        font-size: 18px;
+        padding-right: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        padding-right: 25px;
+
+        @media (min-width: #{$screen-tablet}) {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
+  .field--name-field-content {
+    padding: 0 0 30px;
+    border-bottom: 1px solid $cold-grey-03;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 30px 0;
+      border-top: 1px solid $cold-grey-03;
+    }
+  }
+
+  .col-md-8 {
+    padding: 0 0 25px;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 0 15px 0 0;
+    }
+  }
+
+  .col-md-4 {
     padding: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 0 0 0 15px;
+    }
+  }
+
+  .node--type-news {
+    @media (min-width: #{$screen-tablet}) {
+      display: flex;
+    }
+  }
+
+  h2.node__title {
+    font-size: 21px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 30px;
+      line-height: 39px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .field--name-body {
+    color: $soft-blue-02;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 16px;
+      line-height: 25px;
+      padding-bottom: 50px;
+    }
+  }
+
+  div.btn-link-blue-s {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    background: none;
+    padding-right: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      padding-right: 0;
+    }
   }
 }
+
+// Block
+.paragraph--type--block {
+  padding: 0 0 25px;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 0 0 50px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #01243E;
+    padding-bottom: 40px;
+
+    h2 {
+      font-size: 27px;
+      line-height: 33px;
+      margin: 10px 0 0;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 47px;
+        line-height: 90px;
+        margin: 0;
+      }
+    }
+
+    .field--name-field-link-header {
+      a {
+        background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+        color: $dark-blue-01;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        padding-right: 20px;
+        transition: padding .3s;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+          font-size: 18px;
+          padding-right: 25px;
+        }
+
+        &:hover,
+        &:focus {
+          padding-right: 25px;
+          text-decoration: none;
+
+          @media (min-width: #{$screen-tablet}) {
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .link {
+    border-top: 1px solid $cold-grey-03;
+    padding-top: 10px;
+
+    a {
+      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-right: 20px;
+      transition: padding .3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        font-size: 18px;
+        padding-right: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        padding-right: 25px;
+
+        @media (min-width: #{$screen-tablet}) {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,248 @@
+// Resource overview
+.view-resources {
+  .view-content {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin: 0 -15px !important;
+    }
+  }
+
+  .views-row {
+    border: 1px solid $cold-grey-03;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 20px 0 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 0 30%;
+      margin: 15px;
+    }
+  }
+
+  .resource-content {
+    position: relative;
+    background: url(../images/resource_icon.png) no-repeat right 20px top 25px;
+    background-size: 31px;
+    padding: 25px 60px 25px 20px;
+    border-top: 5px solid transparent;
+    transition: all .3s ease;
+
+    @media (min-width: #{$screen-tablet}) {
+      background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+      background-size: auto;
+      min-height: 420px;
+      padding: 80px 30px;
+    }
+
+    &:hover,
+    &:focus {
+      border-top: 5px solid $blue;
+
+      h2.node__title {
+        text-decoration: underline;
+      }
+
+      .tag {
+        text-decoration: underline;
+      }
+    }
+
+    h2.node__title {
+      font-size: 23px;
+      line-height: 31px;
+      margin: 20px 0 8px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 27px;
+        line-height: 36px;
+      }
+    }
+
+    .field--name-body {
+      color: $soft-blue-02;
+      font-size: 14px;
+      line-height: 21px;
+
+      @media (min-width: #{$screen-tablet}) {
+        color: $dark-blue-01;
+        font-size: 18px;
+        line-height: 27px;
+        margin-top: 10px;
+      }
+    }
+
+    .more-link {
+      a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        float: left;
+        text-indent: -9999px;
+        z-index: 1;
+      }
+    }
+
+    .tag {
+      color: $blue;
+      font-size: 14px;
+      line-height: 27px;
+      padding-top: 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        position: absolute;
+        bottom: 40px;
+        font-size: 18px;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+// Resource grid
+.paragraph--type--resource-list {
+  padding: 30px 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    padding: 110px 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #01243E;
+    padding-bottom: 15px;
+
+    h2 {
+      font-size: 27px;
+      line-height: 33px;
+      margin: 10px 0 15px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 47px;
+        line-height: 90px;
+        margin: 0;
+      }
+    }
+  }
+
+  .field--name-field-resource-items {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin: 0 -15px;
+    }
+  }
+
+  .resource-item {
+    border: 1px solid $cold-grey-03;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 20px 0 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 0 30%;
+      margin: 15px;
+    }
+  }
+}
+
+.node--type-resource {
+  position: relative;
+  background: url(../images/resource_icon.png) no-repeat right 20px top 25px;
+  background-size: 31px;
+  padding: 25px 60px 25px 20px;
+  border-top: 5px solid transparent;
+  transition: all .3s ease;
+
+  @media (min-width: #{$screen-tablet}) {
+    background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+    background-size: auto;
+    min-height: 420px;
+    padding: 80px 30px;
+  }
+
+  &:hover,
+  &:focus {
+    border-top: 5px solid $blue;
+
+    h2.node__title {
+      text-decoration: underline;
+    }
+
+    .tag {
+      text-decoration: underline;
+    }
+  }
+
+  .node__content {
+    margin-top: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 10px;
+    }
+  }
+
+  h2.node__title {
+    font-size: 23px;
+    line-height: 31px;
+    margin: 20px 0 8px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 27px;
+      line-height: 36px;
+    }
+  }
+
+  .field--name-body {
+    color: $soft-blue-02;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (min-width: #{$screen-tablet}) {
+      color: $dark-blue-01;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  .field--name-field-link {
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      float: left;
+      text-indent: -9999px;
+      z-index: 1;
+    }
+  }
+
+  .tag {
+    color: $blue;
+    font-size: 14px;
+    line-height: 27px;
+    padding-top: 15px;
+
+    @media (min-width: #{$screen-tablet}) {
+      position: absolute;
+      bottom: 40px;
+      font-size: 18px;
+      padding-top: 0;
+    }
+  }
+}

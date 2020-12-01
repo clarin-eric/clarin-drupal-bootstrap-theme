@@ -16,6 +16,16 @@
         $(this).find('.paragraph--type--header-large, .paragraph--type--cta').css("background-image", "url('"+image+"')");
       });
 
+      // Navbar toggle add active class
+      $('.navbar-toggle').click(function() {
+        $(this).toggleClass('active');
+      });
+
+      // Header scroll down arrow function
+      $(".paragraph--type--header-large .arrow-down").click(function(event){
+        $('html, body').animate({scrollTop: '+=660px'}, 800);
+      });
+
     }
   };
 

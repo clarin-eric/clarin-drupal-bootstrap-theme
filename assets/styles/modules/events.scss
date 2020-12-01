@@ -1,0 +1,94 @@
+// Events
+.view-upcoming-events {
+  .node {
+    @media (min-width: #{$screen-tablet}) {
+      display: flex;
+      flex-flow: row;
+    }
+  }
+
+  .views-row {
+    border-top: 1px solid $cold-grey-03;
+    padding: 20px 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 30px 0;
+      margin-bottom: 40px;
+    }
+
+    &:first-child {
+      @media (min-width: #{$screen-tablet}) {
+        margin-top: 15px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .event-date {
+    padding-bottom: 5px;
+
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 1 25%;
+      padding-right: 30px;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: #{$screen-desktop}) {
+      padding-right: 100px;
+    }
+  }
+
+  .field--name-field-date-range {
+    max-width: 250px;
+  }
+
+  .datetime {
+    color: $blue;
+    font-size: 14px;
+    line-height: 22px;
+
+    @media (min-width: #{$screen-desktop}) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+
+  .event-details {
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 1 50%;
+      padding: 0 15px;
+    }
+  }
+
+  .node__title {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+
+    @media (min-width: #{$screen-desktop}) {
+      font-size: 30px;
+      line-height: 44px;
+    }
+  }
+
+  .event-image {
+    @media (max-width: #{$screen-tablet}) {
+      display: none;
+    }
+
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 1 25%;
+      padding-left: 25px;
+    }
+
+    .field--name-field-image {
+      width: 275px;
+      height: 160px;
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+}
