@@ -69,16 +69,16 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    node.field_media.isEmpty() ? 'no-image-teaser',
     'clearfix',
+    'teaser-list',
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <div class="col-md-8">
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content.field_media }}
-  </div>
-  <div class="col-md-4">
     {{ content.field_tags }}
-    <h2{{ title_attributes.addClass('node__title') }}>
+    <h2>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
     {{ content.body }}

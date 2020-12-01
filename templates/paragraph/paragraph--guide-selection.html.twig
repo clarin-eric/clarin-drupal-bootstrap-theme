@@ -50,11 +50,13 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="container">
-        <div class="col-md-6">
-          {{ content.field_title }}
-        </div>
-        <div class="col-md-6">
-          {{ content.field_links }}
+        <div class="content">
+          <div class="col-md-6">
+            {{ content.field_title }}
+          </div>
+          <div class="col-md-6">
+            {{ content.field_links }}
+          </div>
         </div>
       </div>
     {% endblock %}
