@@ -1,0 +1,57 @@
+// Banner alert
+.sitewide-alert {
+  position: relative;
+  background-color: $blue;
+  color: $white;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 18px 65px 18px 15px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+
+  @media (min-width: #{$screen-tablet}) {
+    text-align: center;
+    line-height: 30px;
+    padding: 18px 15px;
+  }
+
+  a {
+    color: $white;
+
+    &:after {
+      @media (min-width: #{$screen-tablet}) {
+        display: inline-block;
+        content: "";
+        background: url(../images/arrow-right-white.png) no-repeat center center;
+        width: 21px;
+        height: 18px;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .close {
+    top: 15px;
+    right: 20px;
+    width: 17px;
+    height: 17px;
+    background: url(../images/close_icon.png) no-repeat center center;
+    opacity: 1;
+
+    @media (min-width: #{$screen-tablet}) {
+      top: 20px;
+      right: 25px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
