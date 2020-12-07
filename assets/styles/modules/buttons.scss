@@ -4,7 +4,8 @@
 .btn-default,
 .btn-blue {
   display: inline-block;
-  background: $dark-blue-01 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+  background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 30px center;
+  background-size: 17px;
   color: $white;
   font-size: 16px;
   font-weight: 600;
@@ -13,19 +14,22 @@
   padding: 15px 60px 15px 30px;
 
   @media (min-width: #{$screen-tablet}) {
-    background: $dark-blue-01 url(../images/arrow-right-white.png) no-repeat right 25px center;
+    background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 25px center;
+    background-size: 20px;
     font-size: 18px;
     padding: 15px 65px 15px 27px;
   }
 
   &:hover,
   &:focus {
-    background: $dark-blue-02 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+    background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 30px center;
+    background-size: 17px;
     color: $white;
     text-decoration: none;
 
     @media (min-width: #{$screen-tablet}) {
-      background: $dark-blue-02 url(../images/arrow-right-white.png) no-repeat right 25px center;
+      background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 25px center;
+      background-size: 20px;
     }
   }
 }
@@ -34,7 +38,8 @@
 .btn-secondary,
 .btn-white {
   display: inline-block;
-  background: $white url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+  background: $white url(../images/arrow-right-blue.svg) no-repeat right 30px center;
+  background-size: 17px;
   color: $dark-blue-01;
   font-size: 16px;
   font-weight: 600;
@@ -43,27 +48,31 @@
   padding: 15px 60px 15px 30px;
 
   @media (min-width: #{$screen-tablet}) {
-    background: $white url(../images/arrow-right-blue.png) no-repeat right 25px center;
+    background: $white url(../images/arrow-right-blue.svg) no-repeat right 25px center;
+    background-size: 20px;
     font-size: 18px;
     padding: 15px 65px 15px 27px;
   }
 
   &:hover,
   &:focus {
-    background: $subtle-grey-01 url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+    background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat right 30px center;
+    background-size: 17px;
     color: $dark-blue-01;
     text-decoration: none;
 
     @media (min-width: #{$screen-tablet}) {
-      background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat right 25px center;
+      background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat right 25px center;
+      background-size: 20px;
     }
   }
 }
 
 // btn blue circle arrow
 .btn-blue-circle-arrow {
-  display: inline-block;
-  background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+  display: inline-table;
+  background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+  background-size: 40px;
   color: $body-color;
   font-size: 16px;
   font-weight: 600;
@@ -72,7 +81,8 @@
   transition: padding .3s;
 
   @media (min-width: #{$screen-tablet}) {
-    background: url(../images/arrow-circle-blue.png) no-repeat right center;
+    background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+    background-size: 47px;
     font-size: 18px;
     padding: 10px 65px 10px 10px;
   }
@@ -91,8 +101,9 @@
 
 // btn white circle arrow
 .btn-white-circle-arrow {
-  display: inline-block;
-  background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+  display: inline-table;
+  background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+  background-size: 40px;
   color: $white;
   font-size: 16px;
   font-weight: 600;
@@ -101,7 +112,8 @@
   transition: padding .3s;
 
   @media (min-width: #{$screen-tablet}) {
-    background: url(../images/arrow-circle-blue.png) no-repeat right center;
+    background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+    background-size: 47px;
     font-size: 18px;
     padding: 10px 65px 10px 10px;
   }
@@ -134,14 +146,15 @@
 }
 
 .btn-link-blue {
-  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+  background-size: 8px;
   font-size: 16px;
   padding-right: 20px;
 
   @media (min-width: #{$screen-tablet}) {
-    background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+    background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+    background-size: 9px;
     font-size: 18px;
-    padding-right: 25px;
   }
 
   &:hover,
@@ -155,7 +168,8 @@
 }
 
 .btn-link-blue-s {
-  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+  background-size: 8px;
   font-size: 16px;
   font-weight: 600;
   padding-right: 15px;
@@ -167,7 +181,8 @@
 }
 
 .btn-link-blue-xs {
-  background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+  background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+  background-size: 8px;
   font-size: 14px;
   font-weight: 600;
   padding-right: 15px;
@@ -180,7 +195,8 @@
 
 // Textual link white
 .btn-link-white {
-  background: url(../images/short-arrow-right-white-small.png) no-repeat right center;
+  background: url(../images/short-arrow-right-white.svg) no-repeat right center;
+  background-size: 8px;
   color: $white;
   font-size: 16px;
   font-weight: 600;
@@ -189,7 +205,8 @@
   transition: padding .3s;
 
   @media (min-width: #{$screen-tablet}) {
-    background: url(../images/short-arrow-right-white.png) no-repeat right center;
+    background: url(../images/short-arrow-right-white.svg) no-repeat right center;
+    background-size: 9px;
     font-size: 18px;
   }
 

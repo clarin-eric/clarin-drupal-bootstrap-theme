@@ -85,7 +85,7 @@
   .arrow-down {
     position: absolute;
     bottom: 45px;
-    background: url(../images/arrow-down-white.png) no-repeat center center;
+    background: url(../images/arrow-down-white.svg) no-repeat center center;
     width: 24px;
     height: 29px;
     cursor: pointer;
@@ -198,7 +198,8 @@
 
       a {
         display: inline-block;
-        background: $dark-blue-01 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+        background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 30px center;
+        background-size: 17px;
         color: $white;
         font-size: 16px;
         font-weight: 600;
@@ -207,19 +208,22 @@
         padding: 15px 60px 15px 30px;
 
         @media (min-width: #{$screen-tablet}) {
-          background: $dark-blue-01 url(../images/arrow-right-white.png) no-repeat right 25px center;
+          background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 25px center;
+          background-size: 20px;
           font-size: 18px;
           padding: 15px 65px 15px 27px;
         }
 
         &:hover,
         &:focus {
-          background: $dark-blue-02 url(../images/arrow-right-white-small.png) no-repeat right 30px center;
+          background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 30px center;
+          background-size: 17px;
           color: $white;
           text-decoration: none;
 
           @media (min-width: #{$screen-tablet}) {
-            background: $dark-blue-02 url(../images/arrow-right-white.png) no-repeat right 25px center;
+            background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 25px center;
+            background-size: 20px;
           }
         }
       }
@@ -235,8 +239,9 @@
       }
 
       a {
-        display: inline-block;
-        background: url(../images/arrow-circle-blue-small.png) no-repeat right center;
+        display: inline-table;
+        background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+        background-size: 40px;
         color: $body-color;
         font-size: 16px;
         font-weight: 600;
@@ -245,7 +250,8 @@
         transition: padding .3s;
 
         @media (min-width: #{$screen-tablet}) {
-          background: url(../images/arrow-circle-blue.png) no-repeat right center;
+          background: url(../images/arrow-circle-blue.svg) no-repeat right center;
+          background-size: 47px;
           font-size: 18px;
           padding: 10px 65px 10px 0;
         }
@@ -400,7 +406,8 @@
 
     a {
       display: inline-block;
-      background: $white url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+      background: $white url(../images/arrow-right-blue.svg) no-repeat right 30px center;
+      background-size: 17px;
       color: $dark-blue-01;
       font-size: 16px;
       font-weight: 600;
@@ -409,19 +416,22 @@
       padding: 15px 60px 15px 30px;
 
       @media (min-width: #{$screen-tablet}) {
-        background: $white url(../images/arrow-right-blue.png) no-repeat right 25px center;
+        background: $white url(../images/arrow-right-blue.svg) no-repeat right 25px center;
+        background-size: 20px;
         font-size: 18px;
         padding: 15px 65px 15px 27px;
       }
 
       &:hover,
       &:focus {
-        background: $subtle-grey-01 url(../images/arrow-right-blue-small.png) no-repeat right 30px center;
+        background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat right 30px center;
+        background-size: 17px;
         color: $dark-blue-01;
         text-decoration: none;
 
         @media (min-width: #{$screen-tablet}) {
-          background: $subtle-grey-01 url(../images/arrow-right-blue.png) no-repeat right 25px center;
+          background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat right 25px center;
+          background-size: 20px;
         }
       }
     }
@@ -477,7 +487,8 @@
   .field--name-field-links {
     a {
       display: inline-block;
-      background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+      background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+      background-size: 9px;
       color: $dark-blue-01;
       font-size: 16px;
       line-height: 1.2;
@@ -515,7 +526,7 @@
       }
 
       @media (min-width: #{$screen-tablet}) {
-        background: url(../images/arrow-circle-grey.png) no-repeat right 10px center;
+        background: url(../images/arrow-circle-grey.svg) no-repeat right 10px center;
         padding: 17px 0;
       }
 
@@ -701,7 +712,8 @@
 
     .field--name-field-link-header {
       a {
-        background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+        background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+        background-size: 8px;
         color: $dark-blue-01;
         font-size: 16px;
         font-weight: 600;
@@ -710,7 +722,8 @@
         transition: padding .3s;
 
         @media (min-width: #{$screen-tablet}) {
-          background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+          background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+          background-size: 9px;
           font-size: 18px;
           padding-right: 25px;
         }
@@ -732,7 +745,8 @@
     padding-top: 10px;
 
     a {
-      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+      background-size: 8px;
       color: $dark-blue-01;
       font-size: 16px;
       font-weight: 600;
@@ -741,7 +755,8 @@
       transition: padding .3s;
 
       @media (min-width: #{$screen-tablet}) {
-        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+        background-size: 9px;
         font-size: 18px;
         padding-right: 25px;
       }
@@ -765,6 +780,13 @@
     @media (min-width: #{$screen-tablet}) {
       padding: 30px 0;
       border-top: 1px solid $cold-grey-03;
+    }
+  }
+
+  .field--name-field-media {
+    img {
+      max-height: 420px;
+      width: auto;
     }
   }
 
@@ -817,7 +839,7 @@
   div.btn-link-blue-s {
     display: none;
     position: absolute;
-    bottom: 25px;
+    bottom: 10px;
     background: none;
     padding-right: 0;
 
@@ -861,7 +883,8 @@
 
     .field--name-field-link-header {
       a {
-        background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+        background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+        background-size: 8px;
         color: $dark-blue-01;
         font-size: 16px;
         font-weight: 600;
@@ -870,7 +893,8 @@
         transition: padding .3s;
 
         @media (min-width: #{$screen-tablet}) {
-          background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+          background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+          background-size: 9px;
           font-size: 18px;
           padding-right: 25px;
         }
@@ -893,7 +917,8 @@
     padding-top: 10px;
 
     a {
-      background: url(../images/short-arrow-right-blue-small.png) no-repeat right center;
+      background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+      background-size: 8px;
       color: $dark-blue-01;
       font-size: 16px;
       font-weight: 600;
@@ -902,7 +927,8 @@
       transition: padding .3s;
 
       @media (min-width: #{$screen-tablet}) {
-        background: url(../images/short-arrow-right-blue.png) no-repeat right center;
+        background: url(../images/short-arrow-right-blue.svg) no-repeat right center;
+        background-size: 9px;
         font-size: 18px;
         padding-right: 25px;
       }

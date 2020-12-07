@@ -24,14 +24,14 @@
 
   .resource-content {
     position: relative;
-    background: url(../images/resource_icon.png) no-repeat right 20px top 25px;
+    background: url(../images/resource_icon.svg) no-repeat right 20px top 25px;
     background-size: 31px;
     padding: 25px 60px 25px 20px;
     border-top: 5px solid transparent;
     transition: all .3s ease;
 
     @media (min-width: #{$screen-tablet}) {
-      background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+      background: url(../images/resource_icon.svg) no-repeat left 30px top 30px;
       background-size: auto;
       min-height: 420px;
       padding: 80px 30px;
@@ -159,14 +159,14 @@
 
 .node--type-resource {
   position: relative;
-  background: url(../images/resource_icon.png) no-repeat right 20px top 25px;
+  background: url(../images/resource_icon.svg) no-repeat right 20px top 25px;
   background-size: 31px;
   padding: 25px 60px 25px 20px;
   border-top: 5px solid transparent;
   transition: all .3s ease;
 
   @media (min-width: #{$screen-tablet}) {
-    background: url(../images/resource_icon.png) no-repeat left 30px top 30px;
+    background: url(../images/resource_icon.svg) no-repeat left 30px top 30px;
     background-size: auto;
     min-height: 420px;
     padding: 80px 30px;

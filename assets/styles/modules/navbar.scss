@@ -59,7 +59,7 @@
             padding-right: 18px;
 
             &:before {
-              background: url(../images/arrow-down-blue.png) no-repeat center center;
+              background: url(../images/arrow-down-blue.svg) no-repeat center center;
               margin-left: 3px;
               width: 14px;
               height: 14px;
@@ -224,7 +224,8 @@
           display: none;
         }
 
-        .field--type-image {
+        .field--type-image,
+        .field--name-field-media-image {
           margin: 0;
         }
 
@@ -528,7 +529,7 @@
 // Dropdown toggle
 .dropdown-toggle {
   &:after {
-    background: url(../images/arrow-down-blue.png) no-repeat center center;
+    background: url(../images/arrow-down-blue.svg) no-repeat center center;
     margin-left: 3px;
     width: 14px;
     height: 14px;
@@ -698,7 +699,7 @@ body.toggled {
   }
 
   a {
-    background: url(../images/search_icon.png) no-repeat center center;
+    background: url(../images/search_icon.svg) no-repeat center center;
     width: 20px;
     height: 20px;
     float: left;
