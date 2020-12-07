@@ -23,7 +23,7 @@
       @media (min-width: #{$screen-tablet}) {
         display: inline-block;
         content: "";
-        background: url(../images/arrow-right-white.png) no-repeat center center;
+        background: url(../images/arrow-right-white.svg) no-repeat center center;
         width: 21px;
         height: 18px;
         margin-left: 15px;
@@ -42,7 +42,7 @@
     right: 20px;
     width: 17px;
     height: 17px;
-    background: url(../images/close_icon.png) no-repeat center center;
+    background: url(../images/close_icon.svg) no-repeat center center;
     opacity: 1;
 
     @media (min-width: #{$screen-tablet}) {

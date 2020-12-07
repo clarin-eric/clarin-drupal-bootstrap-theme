@@ -82,6 +82,7 @@
     @media (min-width: #{$screen-tablet}) {
       flex: 1 1 25%;
       padding-left: 25px;
+      min-width: 300px;
     }
 
     .field--name-field-image {
