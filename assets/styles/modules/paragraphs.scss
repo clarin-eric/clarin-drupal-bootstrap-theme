@@ -639,12 +639,15 @@
     font-size: 23px;
     line-height: 35px;
     border-top: 3px solid $blue;
+    border-left: none;
     padding-top: 15px;
+    padding-left: 0;
     padding-right: 35px;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 35px;
       line-height: 50px;
+      padding-top: 20px;
       padding-right: 0;
     }
   }

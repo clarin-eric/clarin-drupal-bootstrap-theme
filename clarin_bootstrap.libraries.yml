@@ -13,3 +13,10 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+
+toc:
+  js:
+    js/toc.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
