@@ -5,6 +5,8 @@
 
   @media (min-width: #{$screen-tablet}) {
     display: block;
+    position: relative;
+    z-index: 9;
   }
 
   ul.links {
@@ -39,8 +41,44 @@
   }
 }
 
+.node--view-mode-teaser-list,
 .node--view-mode-teaser-big {
   .field--name-field-tags {
     display: block;
+
+    ul {
+      &.hide-more {
+        li:nth-of-type(n+3) {
+          display: none;
+        }
+        .show-tags {
+          display: block !important;
+        }
+      }
+      .show-tags {
+        display: none;
+        text-transform: uppercase;
+        color: $blue;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 13px;
+        border: 1px solid $blue;
+        border-radius: 50px;
+        padding: 4px 12px;
+        margin: 0 5px 5px 0;
+        cursor: pointer;
+
+        @media (min-width: #{$screen-tablet}) {
+          font-size: 13px;
+          line-height: 15px;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #F0F6FB;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }

@@ -15,3 +15,85 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
     'btn-link-blue'
   );
 }
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function clarin_bootstrap_preprocess_node(&$variables)
+{
+  $node = $variables['node'];
+  if ($node->hasField('field_show_toc') && $node->hasField('body')) {
+    if ($node->get('field_show_toc')->value == 1) {
+      $variables['toc'] = clarin_bootstrap_function_generate_navigation($node->get('body')->value);
+      $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
+    }
+  }
+}
+
+function clarin_bootstrap_function_generate_navigation($HTML) {
+  $DOM = new DOMDocument();
+  $DOM->loadHTML($HTML);
+
+  $navigation = '<ul>';
+
+  // Iterating through all elements
+  $h2IteratorStatus = 0; //0-closed, 1-open
+  $h3IteratorStatus = 0; //0-closed, 1-open
+  $h4IteratorStatus = 0; //0-closed, 1-open
+  $h2i = 0;
+  $h3i = 0;
+  $h4i = 0;
+  foreach($DOM->getElementsByTagName('*') as $element) {
+    if($element->tagName == 'h2') {
+
+      if($h3IteratorStatus){
+        //it's open, need to close
+        $navigation .= '</ul>';
+        $h3IteratorStatus = 0;
+      }
+
+      if($h2IteratorStatus){
+        //it's open, need to close
+        $navigation .= '</li>';
+        $h2IteratorStatus = 0;
+      }
+
+      $h2IteratorStatus = 1;
+      $navigation .= '<li><a href="#heading-2-' . $h2i . '">' . $element->textContent .'</a></li>';
+      $h2i++;
+    } else if($element->tagName == 'h3') {
+      if(!$h3IteratorStatus){
+        $navigation .= '<ul>';
+        $h2IteratorStatus = 1;
+      }
+      $h3IteratorStatus = 1;
+      $navigation .= '<li><a href="#heading-3-' . $h3i . '">' . $element->textContent .'</a></li>';
+      $h3i++;
+    } else if ($element->tagName == 'h4') {
+
+      if(!$h4IteratorStatus){
+        $navigation .= '<ul>';
+        $h3IteratorStatus = 1;
+      }
+      $h4IteratorStatus = 1;
+      $navigation .= '<li><a href="#heading-4-' . $h4i . '">' . $element->textContent .'</a></li>';
+      $h4i++;
+    }
+  }
+
+  //check for last opened h3
+  if($h4IteratorStatus){
+    $navigation .= '</ul>';
+  }
+  //check for last opened h3
+  if($h3IteratorStatus){
+    $navigation .= '</ul>';
+  }
+  //check for last opened h2
+  if($h2IteratorStatus){
+    //it's open, need to close
+    $navigation .= '</li>';
+  }
+
+  return $navigation.'</ul>';
+}
