@@ -232,6 +232,224 @@
   }
 }
 
+// News detailpage
+body.node--type-news {
+  .main-content {
+    padding: 0;
+  }
+
+  #block-clarin-bootstrap-breadcrumbs {
+    .container {
+      padding: 0;
+    }
+  }
+
+  #block-clarin-bootstrap-page-title {
+    h1 {
+      line-height: 57px;
+      margin-top: 50px;
+    }
+  }
+}
+
+article.node--type-news {
+  position: relative;
+  font-size: 16px;
+  line-height: 25px;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  header {
+    em {
+      color: $soft-blue-02;
+      font-size: 14px;
+      line-height: 22px;
+      font-style: normal;
+    }
+  }
+
+  .field--name-body {
+    ul {
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: baseline;
+        list-style-type: none;
+        line-height: 25px;
+        padding-bottom: 15px;
+
+        @media (min-width: #{$screen-tablet}) {
+          align-items: center;
+          line-height: 30px;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        &:before {
+          display: inline-block;
+          content: '';
+          width: 9px;
+          height: 9px;
+          background: $blue;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    ol {
+      counter-reset: my-badass-counter;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: baseline;
+        list-style-type: none;
+        line-height: 25px;
+        padding-bottom: 15px;
+
+        @media (min-width: #{$screen-tablet}) {
+          align-items: center;
+          line-height: 30px;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        &:before {
+          width: 9px;
+          content: counter(my-badass-counter);
+          counter-increment: my-badass-counter;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 23px;
+      margin-bottom: 20px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 30px;
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    }
+
+    h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 23px;
+      line-height: 35px;
+      border-top: 3px solid $blue;
+      border-left: none;
+      padding-top: 15px;
+      padding-left: 0;
+      padding-right: 35px;
+
+      @media (min-width: #{$screen-tablet}) {
+        font-size: 35px;
+        line-height: 50px;
+        padding-top: 20px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .sidebar {
+    padding-right: 0;
+    padding-left: 40px;
+  }
+
+  .toc {
+    margin-top: -80px;
+
+    @media (min-width: #{$screen-tablet}) {
+      &.fixed-text {
+        position: sticky;
+        top: 120px;
+        z-index: 2;
+        transition: all .6s ease;
+      }
+
+      &.bottom-text {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+      }
+    }
+
+    h2 {
+      color: #6A7A88;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      padding: 0;
+      margin: 0 0 20px;
+      border: none;
+      text-shadow: none;
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style-type: none;
+
+        &.active {
+          a {
+            color: $dark-blue-01;
+            font-weight: 700;
+            border-left: 2px solid $dark-blue-01;
+          }
+        }
+
+        a {
+          display: inline-block;
+          font-size: 16px;
+          line-height: 30px;
+          color: #153D57;
+          border-left: 2px solid #EAEAEA;
+          padding: 6px 0 6px 20px;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            color: $dark-blue-01;
+            font-weight: 700;
+            border-left: 2px solid $dark-blue-01;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.node--type-news {
+  padding-right: 40px;
+  padding-left: 0;
+  margin-top: 55px;
+}
+
 // Teaser small list
 .block-views-blockteaser-small-blocks-block-1 {
   position: relative;

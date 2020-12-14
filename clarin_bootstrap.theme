@@ -23,8 +23,10 @@ function clarin_bootstrap_preprocess_node(&$variables)
 {
   $node = $variables['node'];
   if ($node->hasField('field_show_toc') && $node->hasField('body')) {
-    $variables['toc'] = clarin_bootstrap_function_generate_navigation($node->get('body')->value);
-    $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
+    if ($node->get('field_show_toc')->value == 1) {
+      $variables['toc'] = clarin_bootstrap_function_generate_navigation($node->get('body')->value);
+      $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
+    }
   }
 }
 
