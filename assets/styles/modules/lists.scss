@@ -245,9 +245,24 @@ body.node--type-news {
   }
 
   #block-clarin-bootstrap-page-title {
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      -webkit-box-flex: 0;
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+      padding-right: 40px;
+    }
+
     h1 {
       line-height: 57px;
       margin-top: 50px;
+
+      @media (max-width: #{$screen-tablet}) {
+        font-size: 30px;
+        line-height: 35px;
+        margin-top: 45px;
+      }
     }
   }
 }
@@ -262,7 +277,25 @@ article.node--type-news {
     line-height: 28px;
   }
 
+  @media (max-width: #{$screen-tablet}) {
+    display: flex;
+    flex-flow: wrap;
+  }
+
   header {
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      -webkit-box-flex: 0;
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+      padding-right: 40px;
+    }
+
+    @media (max-width: #{$screen-tablet}) {
+      order: 1;
+    }
+
     em {
       color: $soft-blue-02;
       font-size: 14px;
@@ -375,25 +408,22 @@ article.node--type-news {
 
   .sidebar {
     padding-right: 0;
-    padding-left: 40px;
+    padding-left: 0;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding-left: 40px;
+    }
+
+    @media (max-width: #{$screen-tablet}) {
+      order: 2;
+    }
   }
 
   .toc {
-    margin-top: -80px;
+    margin-top: 50px;
 
     @media (min-width: #{$screen-tablet}) {
-      &.fixed-text {
-        position: sticky;
-        top: 120px;
-        z-index: 2;
-        transition: all .6s ease;
-      }
-
-      &.bottom-text {
-        position: absolute;
-        bottom: 0;
-        right: 30px;
-      }
+      margin-top: -80px;
     }
 
     h2 {
@@ -445,9 +475,22 @@ article.node--type-news {
 }
 
 div.node--type-news {
-  padding-right: 40px;
+  padding-right: 0;
   padding-left: 0;
-  margin-top: 55px;
+  margin-top: 30px;
+  width: 100%;
+
+  @media (min-width: #{$screen-tablet}) {
+    -webkit-box-flex: 0;
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    padding-right: 40px;
+    margin-top: 55px;
+  }
+
+  @media (max-width: #{$screen-tablet}) {
+    order: 3;
+  }
 }
 
 // Teaser small list

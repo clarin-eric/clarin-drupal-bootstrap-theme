@@ -1,6 +1,12 @@
 // On page navigation
 
 // Breadcrumbs
+#block-clarin-bootstrap-breadcrumbs {
+  .container {
+    padding: 0;
+  }
+}
+
 .breadcrumb {
   color: $dark-blue-01;
   background: none;
