@@ -1,2 +1,12 @@
 // Basicpage
+.main-content {
+  padding: 0;
+}
 
+.node--type-landing-page {
+  #block-clarin-bootstrap-breadcrumbs {
+    .container {
+      padding: 0 15px;
+    }
+  }
+}
