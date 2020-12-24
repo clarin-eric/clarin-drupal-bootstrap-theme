@@ -76,6 +76,7 @@
   set node_classes = [
   'node__content',
   toc ? 'col-sm-8',
+  more_links ? 'col-sm-8',
   'clearfix',
 ]
 %}
@@ -101,13 +102,25 @@
     {% endif %}
   </header>
   <div{{ attributes.addClass(node_classes) }}>
-    {{ content }}
+    {% if more_links %}
+      {{ content|without('field_see_also_links') }}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </div>
   {% if toc %}
     <div class="sidebar col-sm-4">
       <div class="toc">
         <h2>Table of Contents</h2>
         {{ toc|raw }}
+      </div>
+    </div>
+  {% endif %}
+  {% if more_links %}
+    <div class="sidebar more-link col-sm-4">
+      <div class="more-links">
+        <h2>See also</h2>
+        {{ content.field_see_also_links }}
       </div>
     </div>
   {% endif %}

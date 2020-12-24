@@ -23,6 +23,12 @@
         $(this).toggleClass('active');
       });
 
+      // Form field label as placeholder
+      $( ".mailchimp-signup-subscribe-form .form-type-email, .path-search .search-form .form-type-search" ).each(function( index ) {
+        var label = $(this).find('label').text();
+        $(this).find('.form-control').attr("placeholder", label);
+      });
+
       // Header scroll down arrow function
       $(".paragraph--type--header-large .arrow-down").click(function(event){
         $('html, body').animate({scrollTop: '+=660px'}, 800);
