@@ -28,6 +28,12 @@ function clarin_bootstrap_preprocess_node(&$variables)
       $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
     }
   }
+
+  if ($node->hasField('field_see_also_links')) {
+    if (count($node->get('field_see_also_links')->getValue()) > 0) {
+      $variables['more_links'] = 1;
+    }
+  }
 }
 
 function clarin_bootstrap_function_generate_navigation($HTML) {

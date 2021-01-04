@@ -28,6 +28,7 @@
 // Header large
 .paragraph--type--header-large {
   position: relative;
+  overflow: hidden;
   min-height: 500px;
   color: $white;
   font-size: 16px;
@@ -37,6 +38,10 @@
   background-position: left;
   padding-top: 45px;
   margin-bottom: 25px;
+
+  @media (max-width: #{$screen-tablet}) {
+    background-image: none !important;
+  }
 
   @media (min-width: #{$screen-tablet}) {
     display: flex;
@@ -63,6 +68,8 @@
   }
 
   .content {
+    position: relative;
+    z-index: 1;
     max-width: 710px;
   }
 
@@ -73,7 +80,18 @@
   }
 
   .field--name-field-bg-image-mobile {
-    display: none;
+    @media (min-width: #{$screen-tablet}) {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 0;
+    }
   }
 
   .arrow-down {
@@ -83,6 +101,7 @@
     width: 24px;
     height: 29px;
     cursor: pointer;
+    z-index: 9;
   }
 }
 
@@ -343,12 +362,18 @@
 
 // CTA
 .paragraph--type--cta {
+  position: relative;
+  overflow: hidden;
   min-height: 525px;
   color: $white;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   padding: 30px 10px;
+
+  @media (max-width: #{$screen-tablet}) {
+    background-image: none !important;
+  }
 
   @media (min-width: #{$screen-tablet}) {
     height: 525px;
@@ -361,6 +386,11 @@
     display: flex;
     align-items: center;
     height: 100%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
   }
 
   .field--name-field-title {
@@ -438,7 +468,18 @@
   }
 
   .field--name-field-bg-image-mobile {
-    display: none;
+    @media (min-width: #{$screen-tablet}) {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 0;
+    }
   }
 }
 
