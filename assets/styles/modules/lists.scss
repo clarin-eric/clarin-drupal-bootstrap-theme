@@ -133,6 +133,33 @@
           }
         }
       }
+
+      .content_link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        float: left;
+        text-indent: -9999px;
+      }
+
+      &:hover {
+        h2 {
+          a {
+            text-decoration: underline;
+          }
+        }
+
+        div.btn-link-blue-s {
+          a {
+            padding-right: 20px;
+          }
+        }
+      }
     }
 
     .node--view-mode-teaser-list {

@@ -528,17 +528,27 @@
       font-size: 16px;
       line-height: 1.2;
       padding-right: 25px;
+      transition: padding .3s;
 
       @media (min-width: #{$screen-tablet}) {
-        background: none;
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        background: url(../images/arrow-circle-grey.svg) no-repeat right 10px center;
         font-size: 18px;
-        margin-right: 55px;
-        padding-right: 0;
+        padding-right: 55px;
+        transition: background .3s;
       }
 
       &:hover,
       &:focus {
         text-decoration: underline;
+        padding-right: 32px;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: url(../images/arrow-circle-grey.svg) no-repeat right 3px center;
+          padding-right: 55px;
+        }
       }
     }
 
@@ -561,8 +571,7 @@
       }
 
       @media (min-width: #{$screen-tablet}) {
-        background: url(../images/arrow-circle-grey.svg) no-repeat right 10px center;
-        padding: 17px 0;
+        padding: 9px 0;
       }
 
       &:first-child {

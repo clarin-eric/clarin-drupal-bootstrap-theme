@@ -9,28 +9,16 @@
       padding: 0 15px;
     }
   }
+
+  .block-page-title-block {
+    display: none;
+  }
 }
 
 // Search page
 .path-search {
   .search-form {
-    &:before {
-      content: "Search";
-      display: block;
-      color: $dark-blue-01;
-      font-size: 30px;
-      line-height: 41px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      margin-top: 25px;
-
-      @media (min-width: #{$screen-tablet}) {
-        font-size: 45px;
-        line-height: 57px;
-        margin-bottom: 30px;
-        margin-top: 55px;
-      }
-    }
+    margin-top: 30px;
 
     .search-help-link {
       display: none;

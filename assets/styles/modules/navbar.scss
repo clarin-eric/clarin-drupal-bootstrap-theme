@@ -48,14 +48,16 @@
 
         &:last-child {
           @media (max-width: #{$screen-desktop}) {
-            .we-megamenu-nolink {
+            > .we-megamenu-nolink,
+            > a.we-mega-menu-li {
               border-bottom: 1px solid $cold-grey-01;
             }
           }
         }
 
         &.dropdown-menu {
-          .we-megamenu-nolink {
+          > .we-megamenu-nolink,
+          > a.we-mega-menu-li {
             padding-right: 18px;
 
             &:before {
@@ -75,7 +77,8 @@
           }
 
           &:hover {
-            .we-megamenu-nolink {
+            > .we-megamenu-nolink,
+            > a.we-mega-menu-li {
               &:before {
                 @media (min-width: #{$screen-desktop}) {
                   transform: rotate(180deg);
@@ -98,7 +101,8 @@
           }
 
           &.open {
-            .we-megamenu-nolink {
+            > .we-megamenu-nolink,
+            > a.we-mega-menu-li {
               &:after {
                 @media (max-width: #{$screen-desktop}) {
                   transform: rotate(180deg);
@@ -108,7 +112,8 @@
           }
         }
 
-        .we-megamenu-nolink {
+        > .we-megamenu-nolink,
+        > a.we-mega-menu-li {
           background-color: transparent;
           color: $link-color;
           font-family: $font-family-base;
@@ -134,6 +139,19 @@
 
           &:hover {
             text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .we-mega-menu-submenu-inner {
+      .we-mega-menu-li.dropdown-menu {
+        &:hover {
+          &:after {
+            top: -8px;
+            bottom: unset;
+            left: unset;
+            right: -80px;
           }
         }
       }
@@ -501,6 +519,52 @@
   }
 }
 
+// Private secondary menu
+#block-privatesecondarymenu {
+  margin-left: auto;
+  z-index: 9;
+
+  .we-mega-menu-submenu-inner {
+    .span12 {
+      margin: 0;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .nav {
+      padding: 0;
+
+      li.we-mega-menu-li {
+        list-style-type: none;
+        margin-bottom: 15px;
+        padding: 0;
+
+        @media (min-width: #{$screen-desktop}) {
+          margin-bottom: 8px;
+        }
+
+        a.we-mega-menu-li,
+        a.we-megamenu-nolink {
+          color: $dark-blue-01;
+          font-size: 16px;
+          padding: 0;
+          border: none;
+          margin: 0;
+
+          @media (min-width: #{$screen-desktop}) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .navbar-we-mega-menu {
   .type-of-block {
     font-family: $font-family-base;
@@ -708,5 +772,23 @@ body.toggled {
 
   p {
     margin: 0;
+  }
+}
+
+// External links in menu
+#navbar-main {
+  .we-mega-menu-submenu {
+    .block-inner {
+      ul {
+        li {
+          a.ext-link {
+            display: inline;
+            background: url(../images/external-link_icon.svg) no-repeat right center;
+            background-size: 12px;
+            padding-right: 20px;
+          }
+        }
+      }
+    }
   }
 }
