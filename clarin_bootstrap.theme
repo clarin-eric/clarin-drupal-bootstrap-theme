@@ -36,6 +36,7 @@ function clarin_bootstrap_preprocess_node(&$variables)
   }
 }
 
+
 function clarin_bootstrap_function_generate_navigation($HTML) {
   $DOM = new DOMDocument();
   $DOM->loadHTML($HTML);
