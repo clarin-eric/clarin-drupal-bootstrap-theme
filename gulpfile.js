@@ -62,6 +62,7 @@ const paths = {
     config: '*config/**/*',
     templates: '*templates/**/*',
     ymlFiles: './clarin_bootstrap.*.yml',
+    themeFile: './clarin_bootstrap.theme',
     composerFile: './composer.json',
     logo: './logo.svg',
     screenshot: 'screenshot.png',
@@ -104,7 +105,7 @@ function js () {
 // Move the static files into our distribution
 function static () {
   return gulp.src([paths.static.images, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
-    paths.static.composerFile, paths.static.logo, paths.static.screenshot])
+    paths.static.themeFile, paths.static.composerFile, paths.static.logo, paths.static.screenshot])
     .pipe(gulp.dest(paths.static.dest))
 }
 
