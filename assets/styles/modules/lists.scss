@@ -1,5 +1,6 @@
 // News overview
-.view-sharing-knowledge {
+.view-sharing-knowledge,
+.grid-container-view {
   position: relative;
   margin-bottom: 35px;
 
@@ -93,7 +94,8 @@
       }
     }
 
-    .node--type-blog-post {
+    .node--type-blog-post,
+    .node--type-news {
       &.no-image-teaser {
         height: 100%;
         padding: 15px 0 10px;
