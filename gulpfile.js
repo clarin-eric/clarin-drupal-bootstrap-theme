@@ -60,6 +60,7 @@ const paths = {
   static: {
     dest: distPath,
     images: '*images/**/*',
+    fonts: '*fonts/**/*',
     config: '*config/**/*',
     templates: '*templates/**/*',
     ymlFiles: './clarin_bootstrap.*.yml',
@@ -106,7 +107,7 @@ function js () {
 
 // Move the static files into our distribution
 function static () {
-  return gulp.src([paths.static.images, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
+  return gulp.src([paths.static.images, paths.static.fonts, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
     paths.static.themeFile, paths.static.composerFile, paths.static.logo, paths.static.screenshot])
     .pipe(gulp.dest(paths.static.dest))
 }
