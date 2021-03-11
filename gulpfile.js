@@ -8,6 +8,7 @@ let gulp = require('gulp'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
+  replace = require('gulp-replace'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
   pxtorem = require('postcss-pxtorem'),
@@ -76,6 +77,7 @@ function styles () {
     .pipe(sass({
       includePaths: paths.scss.includes
     }).on('error', sass.logError))
+    .pipe(replace(/(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi, '$1$2'))
     .pipe($.postcss(postcssProcessors))
     .pipe(postcss([autoprefixer({
       browsers: [
