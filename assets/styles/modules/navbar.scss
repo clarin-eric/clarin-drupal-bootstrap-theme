@@ -76,7 +76,7 @@
             }
           }
 
-          &:hover {
+          &.clicked {
             > .we-megamenu-nolink,
             > a.we-mega-menu-li {
               &:before {
@@ -152,6 +152,32 @@
             bottom: unset;
             left: unset;
             right: -80px;
+          }
+        }
+      }
+
+      .span12 {
+        margin: 0;
+      }
+
+      .we-mega-menu-li {
+        padding: 0;
+        margin-bottom: 15px;
+
+        @media (min-width: #{$screen-desktop}) {
+          margin-bottom: 8px;
+        }
+
+        a.we-mega-menu-li {
+          color: $dark-blue-01;
+          font-size: 16px;
+          line-height: 1.5;
+          padding: 0;
+          margin: 0;
+          border: none;
+
+          @media (min-width: #{$screen-desktop}) {
+            font-size: 18px;
           }
         }
       }

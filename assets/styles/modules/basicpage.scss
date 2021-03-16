@@ -15,6 +15,22 @@
   }
 }
 
+.node {
+  .field--name-body {
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.paragraph {
+  .field--name-field-body {
+    a {
+      color: $blue;
+    }
+  }
+}
+
 // Search page
 .path-search {
   .search-form {
