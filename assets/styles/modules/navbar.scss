@@ -543,6 +543,34 @@
   @media (min-width: #{$screen-lg-desktop}) {
     height: unset;
   }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+.block-we-megamenu {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+.we-mega-menu-col.span12 {
+  .nav {
+    @media (max-width: #{$screen-tablet}) {
+      padding: 0;
+
+      li {
+        a {
+          line-height: 1 !important;
+        }
+      }
+
+      .we-mega-menu-li:last-child>a.we-mega-menu-li {
+        border-bottom: none !important;
+      }
+    }
+  }
 }
 
 // Private secondary menu
