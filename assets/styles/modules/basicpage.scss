@@ -17,7 +17,7 @@
 
 .node {
   .field--name-body {
-    a {
+    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
       color: $blue;
     }
   }
@@ -25,8 +25,23 @@
 
 .paragraph {
   .field--name-field-body {
-    a {
+    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
       color: $blue;
+    }
+  }
+}
+
+// Sidebar
+.sidebar {
+  .block {
+    display: flex;
+    flex-flow: column;
+    border: 1px solid rgba(5,45,77,.13);
+  }
+
+  nav {
+    ul.nav {
+      margin: 0;
     }
   }
 }

@@ -295,3 +295,33 @@
     }
   }
 }
+
+body.node--type-resource {
+  border-top: none;
+
+  &:hover,
+  &:focus {
+    border-top: none;
+
+    h2.node__title {
+      text-decoration: none;
+    }
+
+    .tag {
+      text-decoration: none;
+    }
+  }
+
+  .node.node--type-resource {
+    border-top: none;
+
+    &:hover,
+    &:focus {
+      border-top: none;
+
+      .tag {
+        text-decoration: underline;
+      }
+    }
+  }
+}
