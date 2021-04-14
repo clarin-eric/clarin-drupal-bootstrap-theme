@@ -16,7 +16,11 @@ global-styling:
 
 toc:
   js:
+    //cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js: { type: external }
     js/toc.js: {}
+  css:
+    component:
+      //cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css: { type: external }
   dependencies:
     - core/jquery
     - core/drupal

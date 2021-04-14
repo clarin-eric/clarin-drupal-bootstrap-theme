@@ -101,7 +101,7 @@
       </div>
     {% endif %}
   </header>
-  <div{{ attributes.addClass(node_classes) }}>
+  <div{{ attributes.addClass(node_classes) }} id="tocscope">
     {% if more_links %}
       {{ content|without('field_see_also_links') }}
     {% else %}
