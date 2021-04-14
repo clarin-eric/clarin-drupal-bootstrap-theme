@@ -17,7 +17,19 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
 }
 
 /**
- * Implements hook_preprocess_paragraph().
+ * Implements hook_preprocess_page().
+ */
+function clarin_bootstrap_preprocess_page(&$variables)
+{
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node->getType() == "news") {
+      $variables['show_toc'] = $node->get('field_show_toc')->value;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
  */
 function clarin_bootstrap_preprocess_node(&$variables)
 {

@@ -452,60 +452,6 @@ article.node--type-news {
     }
   }
 
-  .toc {
-    margin-top: 50px;
-
-    @media (min-width: #{$screen-tablet}) {
-      margin-top: -80px;
-    }
-
-    h2 {
-      color: #6A7A88;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 30px;
-      padding: 0;
-      margin: 0 0 20px;
-      border: none;
-      text-shadow: none;
-      text-transform: uppercase;
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
-
-      li {
-        list-style-type: none;
-
-        &.active {
-          a {
-            color: $dark-blue-01;
-            font-weight: 700;
-            border-left: 2px solid $dark-blue-01;
-          }
-        }
-
-        a {
-          display: inline-block;
-          font-size: 16px;
-          line-height: 30px;
-          color: #153D57;
-          border-left: 2px solid #EAEAEA;
-          padding: 6px 0 6px 20px;
-
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            color: $dark-blue-01;
-            font-weight: 700;
-            border-left: 2px solid $dark-blue-01;
-          }
-        }
-      }
-    }
-  }
-
   // See also links
   .more-links {
     margin-top: 50px;
@@ -929,6 +875,58 @@ div.node--type-news {
       font-size: 14px;
       line-height: 15px;
       font-weight: 600;
+    }
+  }
+}
+
+#toc {
+  top: inherit;
+  left: inherit;
+
+  @media (min-width: #{$screen-tablet}) {
+    display: block;
+  }
+
+  h2 {
+    color: #6A7A88;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 0;
+    margin: 0 0 20px;
+    border: none;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+
+  ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+      float: left;
+      width: 100%;
+
+      a {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 30px;
+        color: #153D57;
+        border-left: 2px solid #EAEAEA;
+        padding: 6px 0 6px 20px;
+
+        &.active,
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $dark-blue-01;
+          font-weight: 700;
+          border-left: 2px solid $dark-blue-01;
+        }
+      }
     }
   }
 }
