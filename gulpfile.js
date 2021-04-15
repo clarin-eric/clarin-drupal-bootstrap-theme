@@ -47,6 +47,9 @@ const paths = {
     dest: distPath.concat("/css"),
     watch: './assets/styles/**/*.scss',
   },
+  csslib: {
+    bootstraptoc: './assets/styles/lib/bootstrap-toc.css',
+  },
   js: {
     src: 'assets/scripts/*.js',
     bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -56,6 +59,9 @@ const paths = {
     barrio: bootstrapBarrioPath.concat('/js/barrio.js'),
     dest:  distPath.concat("/js"),
     watch: './assets/scripts/*.js'
+  },
+  jslib: {
+    bootstraptoc: './assets/scripts/lib/bootstrap-toc.min.js',
   },
   static: {
     dest: distPath,
@@ -74,7 +80,7 @@ const paths = {
 
 // Compile sass into CSS
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.bootstrap, paths.csslib.bootstraptoc, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: paths.scss.includes
@@ -102,7 +108,7 @@ function styles () {
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
+  return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
     .pipe(gulp.dest(paths.js.dest))
 }
 
