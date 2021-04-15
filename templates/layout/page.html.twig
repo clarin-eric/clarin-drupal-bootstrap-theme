@@ -115,12 +115,20 @@
               {{ page.content }}
             </section>
           </main>
-          {% if page.sidebar_second %}
+          {% if show_toc == 0 %}
+            {% if page.sidebar_second and show_toc == 0 %}             
+              <div{{ sidebar_second_attributes }}>                       
+                <aside class="section" role="complementary">               
+                  {{ page.sidebar_second }}               
+                </aside>                                                 
+              </div>                                                 
+            {% endif %}                                                   
+          {% else %}                                                        
             <div{{ sidebar_second_attributes }}>
-              <aside class="section" role="complementary">
-                {{ page.sidebar_second }}
-              </aside>
-            </div>
+              <nav id="toc" class="affix">                            
+                <h2>Table of Contents</h2>                                 
+              </nav>                                               
+            </div>        
           {% endif %}
         </div>
       </div>
