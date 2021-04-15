@@ -22,10 +22,10 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
 function clarin_bootstrap_preprocess_page(&$variables)
 {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    if ($node->getType() == "news") {
-      $variables['show_toc'] = $node->get('field_show_toc')->value;
-    }
-  }
+    if ($node->hasField('field_show_toc')) {
+        $variables['show_toc'] = $node->get('field_show_toc')->value;
+      }
+}
 }
 
 /**
