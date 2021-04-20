@@ -131,7 +131,7 @@ function jsDev () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'http://clarin.siteacceptatie.nl',
+    proxy: 'https://grrr-www.clarin.eu',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
