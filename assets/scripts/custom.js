@@ -18,11 +18,6 @@
         $(this).find('.paragraph--type--header-large, .paragraph--type--cta').css("background-image", "url('"+image+"')");
       });
 
-      // Navbar toggle add active class
-      $('.navbar-toggle').click(function() {
-        $(this).toggleClass('active');
-      });
-
       // Form field label as placeholder
       $( ".mailchimp-signup-subscribe-form .form-type-email, .path-search .search-form .form-type-search" ).each(function( index ) {
         var label = $(this).find('label').text();
