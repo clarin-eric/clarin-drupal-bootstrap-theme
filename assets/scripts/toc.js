@@ -1,6 +1,6 @@
 /**
  * @file
- * Re-positions the submenu
+ * Initialize TOC
  *
  */
 (function($) {
