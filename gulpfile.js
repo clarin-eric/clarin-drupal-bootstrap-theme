@@ -57,7 +57,6 @@ const paths = {
     poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
     barrio: bootstrapBarrioPath.concat('/js/barrio.js'),
     dest:  distPath.concat("/js"),
-    watch: './assets/scripts/*.js'
   },
   jslib: {
     bootstraptoc: './assets/scripts/lib/bootstrap-toc.min.js',
