@@ -39,7 +39,6 @@ if ( process.argv.includes('dist') ) {
 const paths = {
   scss: {
     src: './assets/styles/style.scss',
-    bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
     includes: [
         './node_modules/bootstrap/scss',
         bootstrapBarrioPath.concat('/scss'),
@@ -80,7 +79,7 @@ const paths = {
 
 // Compile sass into CSS
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.csslib.bootstraptoc, paths.scss.src])
+  return gulp.src([paths.csslib.bootstraptoc, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: paths.scss.includes
@@ -134,7 +133,7 @@ function serve () {
     proxy: 'https://grrr-www.clarin.eu',
   })
 
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.watch], styles).on('change', browserSync.reload)
   // Watch js-files
   gulp.watch([paths.js.src], js).on('change', browserSync.reload)
 }
