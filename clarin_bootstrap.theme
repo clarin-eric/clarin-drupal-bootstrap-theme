@@ -25,7 +25,7 @@ function clarin_bootstrap_preprocess_page(&$variables)
     if ($node->hasField('field_show_toc')) {
         $variables['show_toc'] = $node->get('field_show_toc')->value;
       }
-}
+  }
 }
 
 /**
@@ -37,7 +37,7 @@ function clarin_bootstrap_preprocess_node(&$variables)
   if ($node->hasField('field_show_toc') && $node->hasField('body')) {
     if ($node->get('field_show_toc')->value == 1) {
       $variables['toc'] = clarin_bootstrap_function_generate_navigation($node->get('body')->value);
-      $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
+      $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_toc';
     }
   }
 

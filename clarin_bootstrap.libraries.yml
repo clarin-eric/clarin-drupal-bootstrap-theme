@@ -1,6 +1,6 @@
 global-styling:
   version: VERSION
-  js: 
+  js:
     js/popper.min.js: {}
     js/bootstrap.min.js: {}
     js/barrio.js: {}
@@ -12,8 +12,7 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
-
-toc:
+clarin_toc:
   js:
     js/bootstrap-toc.min.js: { }
     js/toc.js: {}
