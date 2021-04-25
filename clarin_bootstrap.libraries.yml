@@ -4,7 +4,6 @@ global-styling:
     js/popper.min.js: {}
     js/bootstrap.min.js: {}
     js/barrio.js: {}
-    js/dropdown.js: {}
     js/custom.js: {}
   css:
     component:
