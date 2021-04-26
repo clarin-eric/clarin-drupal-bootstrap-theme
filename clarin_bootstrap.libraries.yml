@@ -18,7 +18,7 @@ clarin_toc:
     js/toc.js: {}
   css:
     component:
-      js/bootstrap-toc.min.css: { }
+      css/bootstrap-toc.min.css: { }
   dependencies:
     - core/jquery
     - core/drupal
