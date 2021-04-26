@@ -91,7 +91,15 @@
     display: block;
     padding: 2px 0 !important;
   }
-  box-shadow: 0px 2px 20px rgba(0,0,0,0.25) !important;
+
+  @media (max-width: #{$screen-desktop}) {
+    border: none;
+    padding-top: 0px;
+  }
+  @media (min-width: #{$screen-desktop}) {
+    box-shadow: 0px 2px 20px rgba(0,0,0,0.25) !important;
+  }
+
   padding: 20px 15px;
 }
 
@@ -117,7 +125,6 @@
   }
 }
 
-
 // Mobile navbar
 body.toggled {
   right: 0;
@@ -131,8 +138,16 @@ body.toggled {
   }
 }
 
-#CollapsingNavbar .nav > a.nav-link {
-  padding-left: 11px;
+#CollapsingNavbar {
+  @media (max-width: #{$screen-desktop}) {
+    &.navbar-collapse nav.block-menu:not(:last-of-type) li.nav-item:last-of-type {
+      border-bottom: 1px solid #{$cold-grey-01};
+      padding-bottom: 10px !important;
+    }
+  }
+  .nav > a.nav-link {
+    padding-left: 11px;
+  }
 }
 
 // Search icon
