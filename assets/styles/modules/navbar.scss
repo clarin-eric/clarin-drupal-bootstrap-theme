@@ -194,6 +194,7 @@ body.toggled {
 }
 
 .navbar-toggler {
+  transform: translatez(0);
   &.collapsed {
     transition: 250ms ease-in;
   }
