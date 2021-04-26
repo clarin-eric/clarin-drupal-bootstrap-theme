@@ -890,9 +890,8 @@ div.node--type-news {
   h2 {
     color: #6A7A88;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 30px;
-    padding: 0;
     margin: 0 0 20px;
     border: none;
     text-shadow: none;
@@ -902,7 +901,6 @@ div.node--type-news {
   ul {
     float: left;
     width: 100%;
-    padding: 0;
     margin: 0;
 
     li {
@@ -912,11 +910,10 @@ div.node--type-news {
 
       a {
         display: inline-block;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 30px;
         color: #153D57;
         border-left: 2px solid #EAEAEA;
-        padding: 6px 0 6px 20px;
 
         &.active,
         &:hover,
