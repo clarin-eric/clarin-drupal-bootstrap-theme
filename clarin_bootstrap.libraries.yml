@@ -15,7 +15,7 @@ global-styling:
 clarin_slidenav:
   css:
     component:
-      css/slide-nav.min.css: {}
+      css/slidenav.min.css: {}
 clarin_toc:
   js:
     js/bootstrap-toc.min.js: { }
