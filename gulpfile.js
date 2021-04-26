@@ -44,12 +44,12 @@ const paths = {
         './node_modules/bootstrap/scss',
         bootstrapBarrioPath.concat('/scss'),
     ],
+    slidenav: './assets/styles/modules/slidenav.scss',
     dest: distPath.concat("/css"),
     watch: './assets/styles/**/*.scss',
   },
   csslib: {
     bootstraptoc: './assets/styles/lib/bootstrap-toc.css',
-    slidenav: './assets/styles/lib/slide-nav.scss',
   },
   js: {
     src: 'assets/scripts/*.js',
@@ -79,7 +79,7 @@ const paths = {
 
 // Compile sass into CSS
 function styles () {
-  return gulp.src([paths.csslib.bootstraptoc, paths.csslib.slidenav, paths.scss.src])
+  return gulp.src([paths.csslib.bootstraptoc, paths.scss.slidenav, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: paths.scss.includes
@@ -98,7 +98,6 @@ function styles () {
         'Android >= 4',
         'Opera >= 12']
     })]))
-    .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
