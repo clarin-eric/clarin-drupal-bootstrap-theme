@@ -48,6 +48,7 @@ const paths = {
   },
   csslib: {
     bootstraptoc: './assets/styles/lib/bootstrap-toc.css',
+    slidenav: './assets/styles/lib/slide-nav.scss',
   },
   js: {
     src: 'assets/scripts/*.js',
@@ -78,7 +79,7 @@ const paths = {
 
 // Compile sass into CSS
 function styles () {
-  return gulp.src([paths.csslib.bootstraptoc, paths.scss.src])
+  return gulp.src([paths.csslib.bootstraptoc, paths.csslib.slidenav, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: paths.scss.includes

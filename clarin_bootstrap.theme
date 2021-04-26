@@ -26,6 +26,10 @@ function clarin_bootstrap_preprocess_page(&$variables)
         $variables['show_toc'] = $node->get('field_show_toc')->value;
       }
   }
+  $slide = theme_get_setting('bootstrap_barrio_navbar_slide');
+  if ($slide) {
+    $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_slidenav';
+  }
 }
 
 /**

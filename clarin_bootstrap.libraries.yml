@@ -5,6 +5,7 @@ global-styling:
     js/bootstrap.min.js: {}
     js/barrio.js: {}
     js/custom.js: {}
+    js/mobile-toolbar.js: {}
   css:
     component:
       css/bootstrap.min.css: {}
@@ -12,6 +13,10 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+clarin_slidenav:
+  css:
+    component:
+      css/slide-nav.min.css: {}
 clarin_toc:
   js:
     js/bootstrap-toc.min.js: { }
