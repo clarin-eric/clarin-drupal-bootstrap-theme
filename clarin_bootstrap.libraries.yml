@@ -3,9 +3,9 @@ global-styling:
   js:
     js/popper.min.js: {}
     js/bootstrap.min.js: {}
-    js/barrio.js: {}
-    js/custom.js: {}
-    js/mobile-toolbar.js: {}
+    js/barrio.min.js: {}
+    js/custom.min.js: {}
+    js/mobile-toolbar.min.js: {}
   css:
     component:
       css/bootstrap.min.css: {}

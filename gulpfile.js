@@ -8,6 +8,7 @@ let gulp = require('gulp'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
+  uglify = require('gulp-uglify'),
   replace = require('gulp-replace'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
@@ -52,15 +53,14 @@ const paths = {
   },
   js: {
     src: 'assets/scripts/*.js',
-    bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    jquery: './node_modules/jquery/dist/jquery.min.js',
-    popper: './node_modules/popper.js/dist/umd/popper.min.js',
-    poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
+    bootstrap: './node_modules/bootstrap/dist/js/bootstrap.js',
+    jquery: './node_modules/jquery/dist/jquery.js',
+    popper: './node_modules/popper.js/dist/umd/popper.js',
     barrio: bootstrapBarrioPath.concat('/js/barrio.js'),
     dest:  distPath.concat("/js"),
   },
   jslib: {
-    bootstraptoc: './assets/scripts/lib/bootstrap-toc.min.js',
+    bootstraptoc: './assets/scripts/lib/bootstrap-toc.js',
   },
   static: {
     dest: distPath,
@@ -98,16 +98,22 @@ function styles () {
         'Android >= 4',
         'Opera >= 12']
     })]))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest(paths.scss.dest))
 }
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
+  return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.barrio, paths.js.src])
+    .pipe(sourcemaps.init())
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest(paths.js.dest))
 }
 
