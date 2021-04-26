@@ -131,6 +131,9 @@ body.toggled {
   }
 }
 
+#CollapsingNavbar .nav > a.nav-link {
+  padding-left: 11px;
+}
 
 // Search icon
 #block-searchicon {
@@ -144,6 +147,7 @@ body.toggled {
     width: 20px;
     height: 20px;
     float: left;
+    padding-left: 43px;
     text-indent: -9999px;
   }
 
