@@ -23,9 +23,9 @@
 
     .navbar-collapse.collapsing {
         height: 100%;
-        left: -75%
+        left: -75%;
         transition: height 0s ease;
-        position: fixed
+        position: fixed;
         z-index: 10;
         background-color: white
     }
@@ -51,13 +51,13 @@
     }
 
     .navbar-collapse li.dropdown ul.dropdown-menu:not(.show) {
-        display: block
+        display: block;
         visibility: hidden;
         padding: 0px;
     }
-    
+
     .navbar-collapse li.dropdown ul.dropdown-menu:not(.show) li.dropdown-item {
-        height: 0px
+        height: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
     }
