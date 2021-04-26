@@ -45,26 +45,23 @@
 
           // Use a mutation observer to detect visual changes in the adminbar trays and trigger resize events when they happen
           $('.toolbar-tray', context).each(function (index, trayElement) {
-            var observer = new MutationObserver( function(mutations){
+            var observer = new MutationObserver( function(mutations, obs){
               mutations.forEach(function(mutation) {
                 if (mutation.target.className.includes("toolbar-tray")){
-                  var oldValue = mutation.oldValue;
-                  if (oldValue) {
-                    var currentValue = mutation.target.className;
-
-                    if (currentValue.includes('is-active') === !oldValue.includes('is-active')) {
-                      console.log("Horizontal tray visibility changed!");
-                      $(window, context).trigger('resize');
-                    }
+                  var currentValue = mutation.target.className;
+                  if (currentValue.includes('is-active') !== this.previousValue.includes('is-active')) {
+                    console.log("Horizontal tray visibility changed!");
+                    $(window, context).trigger('resize');
+                    this.previousValue = mutation.target.className;
                   }
                 }
-              });
+              }, obs);
             });
 
+            observer.previousValue = trayElement.className;
             observer.observe(trayElement, { 
               attributes: true,
-              attributeFilter: ['class'],
-              attributeOldValue: true
+              attributeFilter: ['class']
             });
           });
         }
