@@ -194,9 +194,11 @@ body.toggled {
 }
 
 .navbar-toggler {
-  transition: 250ms ease-out;
+  &.collapsed {
+    transition: 250ms ease-in;
+  }
   &:not(.collapsed) {
-      background-color: grey;
-      transition: 250ms ease-in;
-    }
+    background-color: grey;
+    transition: 250ms ease-in-out;
+  }
 }
