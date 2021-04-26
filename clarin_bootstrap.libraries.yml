@@ -8,7 +8,6 @@ global-styling:
     js/mobile-toolbar.min.js: {}
   css:
     component:
-      css/bootstrap.min.css: {}
       css/style.min.css: {}
   dependencies:
     - core/jquery
