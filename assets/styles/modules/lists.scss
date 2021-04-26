@@ -883,6 +883,7 @@ div.node--type-news {
   position: sticky;
   top: 100px;
   left: inherit;
+  z-index: 900;
 
   @media (min-width: #{$screen-tablet}) {
     display: block;
@@ -903,6 +904,7 @@ div.node--type-news {
     float: left;
     width: 100%;
     margin: 0;
+    padding-bottom: 0px;
 
     li {
       list-style-type: none;
@@ -912,9 +914,11 @@ div.node--type-news {
       a {
         display: inline-block;
         font-size: 14px;
-        line-height: 30px;
+        line-height: 20px;
         color: #153D57;
         border-left: 2px solid #EAEAEA;
+        padding-right: 0px;
+        padding-top: 10px;
 
         &.active,
         &:hover,
