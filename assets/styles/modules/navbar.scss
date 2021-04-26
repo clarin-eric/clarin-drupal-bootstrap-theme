@@ -194,7 +194,7 @@ body.toggled {
 }
 
 .navbar-toggler {
-  transition: 250ms ease-in;
+  transition: 250ms ease-out;
   &:not(.collapsed) {
       background-color: grey;
       transition: 250ms ease-in;
