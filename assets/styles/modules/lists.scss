@@ -880,7 +880,8 @@ div.node--type-news {
 }
 
 #toc {
-  top: inherit;
+  position: sticky;
+  top: 100px;
   left: inherit;
 
   @media (min-width: #{$screen-tablet}) {

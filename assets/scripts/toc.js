@@ -18,11 +18,5 @@
         target: navSelector
       });
     });
-    $('#toc').affix({
-      offset: {
-        top: 250,
-        bottom: 200,
-      }
-    });
   });
 })(jQuery);
