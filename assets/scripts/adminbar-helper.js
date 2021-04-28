@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 (function($, Drupal) {
 
   "use strict";
@@ -15,7 +14,7 @@
           const activeTrays = $("div.toolbar-tray-horizontal.is-active");
           if (activeTrays.length) {
             activeTrays.each((index, elem) => { 
-                toolbarTotalHeight += elem.clientHeight;
+              toolbarTotalHeight += elem.clientHeight;
             });
           }
         } else {

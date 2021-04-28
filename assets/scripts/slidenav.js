@@ -18,7 +18,7 @@
               $("header button.navbar-toggler", context).trigger("click");
           });
         } else {
-            mainwrapper.unbind("click");
+          mainwrapper.unbind("click");
         }
       }
 
