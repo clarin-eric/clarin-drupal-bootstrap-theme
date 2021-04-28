@@ -9,6 +9,7 @@ let gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
   uglify = require('gulp-uglify-es').default,
+  eslint = require('gulp-eslint'),
   replace = require('gulp-replace'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
@@ -94,6 +95,13 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest))
 }
 
+
+function jslint () {
+   return gulp.src([paths.js.src, "gulpfile.js"])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+}
 // Move the javascript files into our js folder
 function js () {
   return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.barrio, paths.js.src])
@@ -133,10 +141,12 @@ function serve () {
 }
 
 // Tasks
-const dist = gulp.series(styles, js, static)
-const dev = gulp.series(stylesDev, gulp.parallel(jsDev, serve))
+const dist = gulp.series(styles, jslint, js, static)
+const dev = gulp.series(stylesDev, jslint, gulp.parallel(jsDev, serve))
+const lintjs = gulp.series(jslint)
 
 exports.dist = dist
 exports.dev = dev
+exports.lintjs = lintjs
 
 exports.default = dev
