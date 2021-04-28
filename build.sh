@@ -20,7 +20,7 @@ ${RM} -fr -- "${OUTPUT_DIRECTORY}" "node-modules"
 
 # Install build environment
 echo 'Installing npm dependencies ...'
-npm install
+npm ci
 
 GULP="./node_modules/gulp/bin/gulp.js"
 echo 'Using local gulp: ' ${GULP}
