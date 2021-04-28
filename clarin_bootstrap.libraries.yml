@@ -5,7 +5,7 @@ global-styling:
     js/bootstrap.min.js: {}
     js/barrio.min.js: {}
     js/custom.min.js: {}
-    js/mobile-toolbar.min.js: {}
+    js/adminbar-helper.min.js: {}
   css:
     component:
       css/style.min.css: {}
@@ -13,6 +13,8 @@ global-styling:
     - core/jquery
     - core/drupal
 clarin_slidenav:
+  js:
+      js/slidenav.min.js: {}
   css:
     component:
       css/slidenav.min.css: {}
