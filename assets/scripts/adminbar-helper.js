@@ -7,10 +7,14 @@
   Drupal.behaviors.clarin_theme_adminbar_helper = {
     attach: function(context, settings) {
       // Reposition content and floating menu
-      function repositionContent(mainToolbar, collapsingNavbar, pageBody, barElem, elemHeight) {
-        let toolbarTotalHeight = elemHeight;
-        if (barElem.id === "toolbar-bar" ) {
-          // When we receive the main toolbar height, add the trays height to it
+      function repositionContent(mainToolbar, collapsingNavbar, pageBody, toolbarElem) {
+        let toolbarTotalHeight = toolbarElem.clientHeight;
+        const toolbarElemHeight = Math.floor(toolbarTotalHeight);
+
+        // We will try to avoid calls to mainToolbar.outerHeight(true) as toolbarElem might already contain
+        // all the necessary height information to reposition the content
+        if (toolbarElem.id === "toolbar-bar" ) {
+          // When we receive the main toolbar height -> add the trays height to it:
           const activeTrays = $("div.toolbar-tray-horizontal.is-active");
           if (activeTrays.length) {
             activeTrays.each((index, elem) => { 
@@ -18,24 +22,26 @@
             });
           }
         } else {
-          // When we receive a toolbar horizontal tray height, add to the the main toolbar height
-          if (elemHeight === 0) {
+          // When we receive a toolbar tray height -> add the main toolbar height to it
+          if (toolbarElemHeight === 0) {
+            // Tray became invisible:
             if ($("div.toolbar-tray-horizontal.is-active").length) {
-              // Tray became invisible but other tray is visible -> ignore as the other tray 
-              // observer will do the repositioning
+              // Other tray is now visible (tray switch) -> ignore as the other 
+              // tray observer will do the repositioning
               return;
             }
             // All toolbar trays are invisible -> [total height] = [main toolbar height]
             toolbarTotalHeight = Math.floor(mainToolbar.outerHeight(true));
-          } else if (barElem.classList.contains("toolbar-tray-horizontal")) {
+          } else if (toolbarElem.classList.contains("toolbar-tray-horizontal")) {
             // Toolbar tray is visible and horizontal -> [total height] = [tray top offset] + [tray height]
-            toolbarTotalHeight = Math.floor(barElem.offsetTop) + elemHeight;
+            toolbarTotalHeight = Math.floor(toolbarElem.offsetTop) + toolbarElemHeight;
           } else {
             // Toolbar tray is visible but vertical -> [total height] = [main toolbar height]
             toolbarTotalHeight = Math.floor(mainToolbar.outerHeight(true));
           }
         }
         
+        // Reposition content
         if (collapsingNavbar.css("position") === "fixed") {
           collapsingNavbar.css("padding-top", toolbarTotalHeight + 15 + "px");
         } else {
@@ -45,8 +51,8 @@
       }
 
       if (context === document) {
-        // Admin toolbar is active
         if (settings.toolbar) {
+          // Admin toolbar is active:
           const mainToolbar = $("#toolbar-bar", context);
           const collapsingNavbar = $("#CollapsingNavbar", context);
           const pageBody = $("body", context);
@@ -56,9 +62,8 @@
           $("#toolbar-bar, .toolbar-tray", context).each((index, adminBarElement) => {         
             const trayResizeObserver = new ResizeObserver(entries => {
               for (let entry of entries) {
-                const currentHeight = Math.floor(entry.contentRect.height);
-                console.log("Admin toolbar: #" + entry.target.id + " height changed to: " + currentHeight);
-                repositionContent(mainToolbar, collapsingNavbar, pageBody, entry.target, currentHeight);
+                console.log("Admin toolbar: #" + entry.target.id + " height changed to: " + entry.target.clientHeight);
+                repositionContent(mainToolbar, collapsingNavbar, pageBody, entry.target);
               }
             });
             trayResizeObserver.observe(adminBarElement);
