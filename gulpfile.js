@@ -8,7 +8,7 @@ let gulp = require('gulp'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
-  uglify = require('gulp-uglify'),
+  uglify = require('gulp-uglify-es').default,
   replace = require('gulp-replace'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
@@ -86,18 +86,7 @@ function styles () {
     }).on('error', sass.logError))
     .pipe(replace(/(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi, '$1$2'))
     .pipe($.postcss(postcssProcessors))
-    .pipe(postcss([autoprefixer({
-      browsers: [
-        'Chrome >= 35',
-        'Firefox >= 38',
-        'Edge >= 12',
-        'Explorer >= 10',
-        'iOS >= 8',
-        'Safari >= 8',
-        'Android 2.3',
-        'Android >= 4',
-        'Opera >= 12']
-    })]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
