@@ -143,7 +143,9 @@ function serve () {
       route: ["/themes/custom/clarin_bootstrap"],
       dir: ["."]
     }],
-    browser: ["chromium"]
+    browser: ["chromium"],
+    open: "ui",
+    logConnections: true
   });
 
   gulp.watch([paths.scss.watch], stylesDev);
