@@ -7,7 +7,7 @@
   Drupal.behaviors.clarin_theme_adminbar_helper = {
     attach: function(context, settings) {
       // Reposition content and floating menu
-      function repositionContent(mainToolbar, collapsingNavbar, pageBody, toolbarElem) {
+      function repositionContent(mainToolbar, collapsingNavbar, body, toolbarElem) {
         let toolbarTotalHeight = toolbarElem.clientHeight;
         const toolbarElemHeight = Math.floor(toolbarTotalHeight);
 
@@ -15,7 +15,7 @@
         // all the necessary height information to reposition the content
         if (toolbarElem.id === "toolbar-bar" ) {
           // When we receive the main toolbar height -> add the trays height to it:
-          const activeTrays = $("div.toolbar-tray-horizontal.is-active");
+          const activeTrays = $("div.toolbar-tray-horizontal.is-active", body);
           if (activeTrays.length) {
             activeTrays.each((index, elem) => { 
               toolbarTotalHeight += elem.clientHeight;
@@ -25,7 +25,7 @@
           // When we receive a toolbar tray height -> add the main toolbar height to it
           if (toolbarElemHeight === 0) {
             // Tray became invisible:
-            if ($("div.toolbar-tray-horizontal.is-active").length) {
+            if ($("div.toolbar-tray-horizontal.is-active", body).length) {
               // Other tray is now visible (tray switch) -> ignore as the other 
               // tray observer will do the repositioning
               return;
@@ -47,23 +47,23 @@
         } else {
           collapsingNavbar.css("padding-top", "");
         }
-        pageBody.css("padding-top", toolbarTotalHeight + "px");
+        body.css("padding-top", toolbarTotalHeight + "px");
       }
 
       if (context === document) {
         if (settings.toolbar) {
           // Admin toolbar is active:
-          const mainToolbar = $("#toolbar-bar", context);
-          const collapsingNavbar = $("#CollapsingNavbar", context);
-          const pageBody = $("body", context);
+          const body = $("body", context);
+          const mainToolbar = $("#toolbar-bar", body);
+          const collapsingNavbar = $("#CollapsingNavbar", body);
 
           // Use a resize observer on the admin toolbar and each of its trays to detect changes in height
           // Reposition the content when they happen
-          $("#toolbar-bar, .toolbar-tray", context).each((index, adminBarElement) => {         
+          $("#toolbar-bar, .toolbar-tray", body).each((index, adminBarElement) => {         
             const trayResizeObserver = new ResizeObserver(entries => {
               for (let entry of entries) {
-                console.log("Admin toolbar: #" + entry.target.id + " height changed to: " + entry.target.clientHeight);
-                repositionContent(mainToolbar, collapsingNavbar, pageBody, entry.target);
+                //console.log("Admin toolbar: #" + entry.target.id + " height changed to: " + entry.target.clientHeight);
+                repositionContent(mainToolbar, collapsingNavbar, body, entry.target);
               }
             });
             trayResizeObserver.observe(adminBarElement);
