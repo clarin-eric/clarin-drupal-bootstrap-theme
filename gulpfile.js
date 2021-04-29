@@ -95,8 +95,14 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest));
 }
 
+function lintjs_gulpfile () {
+  return gulp.src("gulpfile.js")
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+}
 
-function jslint () {
+function lintjs_theme () {
   return gulp.src([paths.js.src, "gulpfile.js"])
     .pipe(eslint())
     .pipe(eslint.format())
@@ -137,8 +143,7 @@ function serve () {
       route: ["/themes/custom/clarin_bootstrap"],
       dir: ["."]
     }],
-    browser: ["chromium"],
-    open: "ui"
+    browser: ["chromium"]
   });
 
   gulp.watch([paths.scss.watch], stylesDev);
@@ -148,9 +153,9 @@ function serve () {
 }
 
 // Tasks
-const dist = gulp.series(styles, jslint, js, resources);
-const dev = gulp.series(jslint, gulp.parallel(stylesDev, jsDev, serve));
-const lintjs = gulp.series(jslint);
+const lintjs = gulp.parallel(lintjs_gulpfile, lintjs_theme);
+const dist = gulp.parallel(styles, gulp.series(lintjs, js), resources);
+const dev = gulp.parallel(stylesDev, gulp.series(lintjs, jsDev), serve);
 
 exports.dist = dist;
 exports.dev = dev;
