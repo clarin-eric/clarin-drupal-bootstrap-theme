@@ -42,7 +42,7 @@ jobs:
           submodules: true
           fetch-depth: '50'
       - name: Build
-        run: sh -x ./build.sh
+        run: sh -x ./build.sh ci
         env:
           THEME_VERSION: ${{ needs.prepare.outputs.version }}
       - name: Upload build package
