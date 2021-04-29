@@ -16,7 +16,7 @@ let gulp = require("gulp"),
   postcssProcessors = [
     postcssInlineSvg({
       removeFill: true,
-      paths: ["./node_modules/bootstrap-icons/icons"]
+      paths: ["node_modules/bootstrap-icons/icons"]
     }),
     pxtorem({
       propList: ["font", "font-size", "line-height", "letter-spacing", "*margin*", "*padding*"],
@@ -26,42 +26,42 @@ let gulp = require("gulp"),
   browserSync = require("browser-sync").create();
 
 // Custom paths for development build
-var distPath = ".";
+var distPath = "";
 var bootstrapBarrioPath = "../../contrib/bootstrap_barrio"; // Existing bootstrap barrio location inside a Drupal installation
 if (!fs.existsSync(bootstrapBarrioPath)) {
-  bootstrapBarrioPath = "./dist/bootstrap_barrio";
+  bootstrapBarrioPath = "dist/bootstrap_barrio/";
 }
 
 // Custom paths for distribution build
 if ( process.argv.includes("dist") ) {
-  distPath = "./dist/clarin_bootstrap";
-  bootstrapBarrioPath = "./dist/bootstrap_barrio";
+  distPath = "dist/clarin_bootstrap/";
+  bootstrapBarrioPath = "dist/bootstrap_barrio/";
 }
 
 const paths = {
   scss: {
-    src: "./assets/styles/style.scss",
+    src: "assets/styles/style.scss",
     includes: [
-      "./node_modules/bootstrap/scss",
-      bootstrapBarrioPath.concat("/scss"),
+      "node_modules/bootstrap/scss",
+      bootstrapBarrioPath.concat("scss"),
     ],
-    slidenav: "./assets/styles/modules/slidenav.scss",
-    dest: distPath.concat("/css"),
-    watch: "./assets/styles/**/*.scss",
+    slidenav: "assets/styles/modules/slidenav.scss",
+    dest: distPath.concat("css"),
+    watch: "assets/styles/**/*.scss",
   },
   csslib: {
-    bootstraptoc: "./assets/styles/lib/bootstrap-toc.css",
+    bootstraptoc: "assets/styles/lib/bootstrap-toc.css",
   },
   js: {
     src: "assets/scripts/*.js",
-    bootstrap: "./node_modules/bootstrap/dist/js/bootstrap.js",
-    jquery: "./node_modules/jquery/dist/jquery.js",
-    popper: "./node_modules/popper.js/dist/umd/popper.js",
-    barrio: bootstrapBarrioPath.concat("/js/barrio.js"),
-    dest:  distPath.concat("/js"),
+    bootstrap: "node_modules/bootstrap/dist/js/bootstrap.js",
+    jquery: "node_modules/jquery/dist/jquery.js",
+    popper: "node_modules/popper.js/dist/umd/popper.js",
+    barrio: bootstrapBarrioPath.concat("js/barrio.js"),
+    dest:  distPath.concat("js"),
   },
   jslib: {
-    bootstraptoc: "./assets/scripts/lib/bootstrap-toc.js",
+    bootstraptoc: "assets/scripts/lib/bootstrap-toc.js",
   },
   static: {
     dest: distPath,
@@ -69,11 +69,11 @@ const paths = {
     fonts: "*fonts/**/*",
     config: "*config/**/*",
     templates: "*templates/**/*",
-    ymlFiles: "./clarin_bootstrap.*.yml",
-    themeFile: "./clarin_bootstrap.theme",
-    composerFile: "./composer.json",
-    logo: "./logo.svg",
-    favicon: "./favicon.ico",
+    ymlFiles: "clarin_bootstrap.*.yml",
+    themeFile: "clarin_bootstrap.theme",
+    composerFile: "composer.json",
+    logo: "logo.svg",
+    favicon: "favicon.ico",
     screenshot: "screenshot.png",
   }
 };
@@ -120,29 +120,36 @@ function resources () {
     .pipe(gulp.dest(paths.static.dest));
 }
 
-// Add auto-inject into browsers for development
+// Add auto-inject styles into browsers for development
 function stylesDev () {
-  return styles().pipe(browserSync.stream());
+  return styles().pipe(browserSync.stream({match: "**/*.css"}));
 }
 
 function jsDev () {
-  return js().pipe(browserSync.stream());
+  return js().pipe(browserSync.stream({match: "**/*.js"}));
 }
 
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
     proxy: "https://grrr-www.clarin.eu",
+    serveStatic: [{
+      route: ["/themes/custom/clarin_bootstrap"],
+      dir: ["."]
+    }],
+    browser: ["chromium"],
+    open: "ui"
   });
 
-  gulp.watch([paths.scss.watch], styles).on("change", browserSync.reload);
-  // Watch js-files
-  gulp.watch([paths.js.src], js).on("change", browserSync.reload);
+  gulp.watch([paths.scss.watch], stylesDev);
+  
+  // Watch js-files and reload on changes
+  gulp.watch([paths.js.src], jsDev);
 }
 
 // Tasks
 const dist = gulp.series(styles, jslint, js, resources);
-const dev = gulp.series(stylesDev, jslint, gulp.parallel(jsDev, serve));
+const dev = gulp.series(jslint, gulp.parallel(stylesDev, jsDev, serve));
 const lintjs = gulp.series(jslint);
 
 exports.dist = dist;
