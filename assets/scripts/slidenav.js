@@ -6,18 +6,16 @@
   // - Add click handler to dismiss (slide out) the mobile floating menu when clicking outside of it
   Drupal.behaviors.clarin_theme_slidenav = {
     attach: function(context, settings) {
-      function setDismissHandler(body, isAttached) {
-        var collapsingNavbar = $("div#CollapsingNavbar", body);
+      function setDismissHandler(body, collapsingNavbar, isAttached) {
         //console.log(collapsingNavbar.css("position"));
         if(collapsingNavbar.css("position") === "fixed") {
           // When the viewport is narrow enough #collapsingNavbar becomes "fixed" -> attach handler to body
           if (!isAttached) {
             body.on("click",function(event) {
-              if (!event.target.classList.contains("navbar-toggler") && //avoid event recursion since the toggler is part of body
-                  !collapsingNavbar[0].contains(event.target) &&  // do not close menu if clicking on it
+              if (!collapsingNavbar[0].contains(event.target) &&  // do not close menu if clicking on it
                   collapsingNavbar.css("display") !== "none") {  // is closed
-                //send click event to toggler
-                $("header button.navbar-toggler", context).trigger("click");
+                //collapse navbar
+                collapsingNavbar.collapse('hide');
               }
             });
             //console.log("handler attached");
@@ -35,10 +33,11 @@
 
       if (context === document) {
         var body = $("body", context);
-        var isAttached = setDismissHandler(body);
+        var collapsingNavbar = $("#CollapsingNavbar", body);
+        var isAttached = setDismissHandler(body, collapsingNavbar);
         // On resize event set click handler to dismiss the mobile floating menu when clicking outside of it
         $(window, context).on("resize", function() {
-          isAttached = setDismissHandler(body, isAttached);
+          isAttached = setDismissHandler(body, collapsingNavbar, isAttached);
         });
       }
     }
