@@ -15,7 +15,7 @@
               if (!collapsingNavbar[0].contains(event.target) &&  // do not close menu if clicking on it
                   collapsingNavbar.css("display") !== "none") {  // is closed
                 //collapse navbar
-                collapsingNavbar.collapse('hide');
+                collapsingNavbar.collapse("hide");
               }
             });
             //console.log("handler attached");
