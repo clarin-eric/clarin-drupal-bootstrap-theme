@@ -13,7 +13,7 @@
         if(collapsingNavbar.css("position") === "fixed") {
           // When the viewport is narrow enough #collapsingNavbar becomes "fixed" -> bind handler to body
           if (!isBond) {
-            body.bind("click",function(event) {
+            body.on("click",function(event) {
               if (!event.target.classList.contains("navbar-toggler") && //avoid event recursion since the toggler is part of body
                   !collapsingNavbar[0].contains(event.target) &&  // do not close menu if clicking on it
                   collapsingNavbar.css("display") !== "none") {  // is closed
@@ -27,7 +27,7 @@
         } else {
           // When the viewport is wide enough  -> unbind handler from body
           if (isBond) {
-            body.unbind("click");
+            body.off("click");
             //console.log("handler unbond");
           }
           return false;
