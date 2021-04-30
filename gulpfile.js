@@ -151,7 +151,6 @@ function serve () {
       route: ["/themes/custom/clarin_bootstrap"],
       dir: ["."]
     }],
-    browser: ["chromium"],
     open: false,
     logConnections: true
   });
