@@ -26,7 +26,7 @@ let gulp = require("gulp"),
   browserSync = require("browser-sync").create();
 
 // Custom paths for development build
-var distPath = "";
+var distPath = ".";
 var bootstrapBarrioPath = "../../contrib/bootstrap_barrio"; // Existing bootstrap barrio location inside a Drupal installation
 if (!fs.existsSync(bootstrapBarrioPath)) {
   bootstrapBarrioPath = "dist/bootstrap_barrio/";
@@ -34,7 +34,7 @@ if (!fs.existsSync(bootstrapBarrioPath)) {
 
 // Custom paths for distribution build
 if ( process.argv.includes("dist") ) {
-  distPath = "dist/clarin_bootstrap/";
+  distPath = "dist/clarin_bootstrap";
   bootstrapBarrioPath = "dist/bootstrap_barrio/";
 }
 
@@ -46,7 +46,7 @@ const paths = {
       bootstrapBarrioPath.concat("scss"),
     ],
     slidenav: "assets/styles/modules/slidenav.scss",
-    dest: distPath.concat("css"),
+    dest: distPath.concat("/css"),
     watch: "assets/styles/**/*.scss",
   },
   csslib: {
@@ -58,23 +58,25 @@ const paths = {
     jquery: "node_modules/jquery/dist/jquery.js",
     popper: "node_modules/popper.js/dist/umd/popper.js",
     barrio: bootstrapBarrioPath.concat("js/barrio.js"),
-    dest:  distPath.concat("js"),
+    dest:  distPath.concat("/js"),
   },
   jslib: {
     bootstraptoc: "assets/scripts/lib/bootstrap-toc.js",
   },
   static: {
     dest: distPath,
-    images: "*images/**/*",
-    fonts: "*fonts/**/*",
-    config: "*config/**/*",
-    templates: "*templates/**/*",
-    ymlFiles: "clarin_bootstrap.*.yml",
-    themeFile: "clarin_bootstrap.theme",
-    composerFile: "composer.json",
-    logo: "logo.svg",
-    favicon: "favicon.ico",
-    screenshot: "screenshot.png",
+    src: [
+      "*images/**/*",
+      "*fonts/**/*",
+      "*config/**/*",
+      "*templates/**/*",
+      "clarin_bootstrap.*.yml",
+      "clarin_bootstrap.theme",
+      "composer.json",
+      "logo.svg",
+      "favicon.ico",
+      "screenshot.png"
+    ]
   }
 };
 
@@ -120,10 +122,16 @@ function js () {
 }
 
 // Move the static files into our distribution
+function resourcesSrc () {
+  return gulp.src(paths.static.src);
+}
+
 function resources () {
-  return gulp.src([paths.static.images, paths.static.fonts, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
-    paths.static.themeFile, paths.static.composerFile, paths.static.logo, paths.static.favicon, paths.static.screenshot])
-    .pipe(gulp.dest(paths.static.dest));
+  return resourcesSrc().pipe(gulp.dest(paths.static.dest));
+}
+
+function resourcesDev () {
+  return resourcesSrc().pipe(browserSync.stream());
 }
 
 // Add auto-inject styles into browsers for development
@@ -144,20 +152,20 @@ function serve () {
       dir: ["."]
     }],
     browser: ["chromium"],
-    open: "ui",
+    open: false,
     logConnections: true
   });
 
-  gulp.watch([paths.scss.watch], stylesDev);
-  
-  // Watch js-files and reload on changes
-  gulp.watch([paths.js.src], jsDev);
+  // Watch scss, js and resource files
+  gulp.watch(paths.scss.watch, stylesDev);
+  gulp.watch(paths.js.src, jsDev);
+  gulp.watch(paths.static.src, resourcesDev);
 }
 
 // Tasks
 const lintjs = gulp.parallel(lintjs_gulpfile, lintjs_theme);
 const dist = gulp.parallel(styles, gulp.series(lintjs, js), resources);
-const dev = gulp.parallel(stylesDev, gulp.series(lintjs, jsDev), serve);
+const dev = gulp.parallel(resourcesDev, stylesDev, gulp.series(lintjs, jsDev), serve);
 
 exports.dist = dist;
 exports.dev = dev;
