@@ -55,6 +55,7 @@ echo 'Building ...'
 ${GULP} "ci"
 
 echo 'Packaging ...'
+ls -Fla
 tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "clarin_bootstrap"
 
 echo 'Done!
