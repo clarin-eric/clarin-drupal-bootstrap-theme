@@ -53,8 +53,12 @@ jobs:
     if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: '50'
       - name: Build
-        run: sh -x ./build.sh ci
+        run: sh -x ./build.sh clean
         env:
           THEME_VERSION: ${{ needs.prepare.outputs.version }}
       - name: Upload build package
