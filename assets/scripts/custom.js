@@ -5,7 +5,7 @@
  */
 (function($, Drupal) {
 
-  "use strict";
+  'use strict';
 
   Drupal.behaviors.clarin = {
     attach: function(context, settings) {
