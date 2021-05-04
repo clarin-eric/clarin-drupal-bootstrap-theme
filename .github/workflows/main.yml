@@ -46,7 +46,7 @@ jobs:
         run: gulp lintscripts
       - name: Lint SCSS
         id: lint_scss
-        run: gulp lintsctyles
+        run: gulp lintstyles
   build:
     needs: [prepare]
     # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
