@@ -58,9 +58,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/download-artifact@master
-      with:
-        name: workspace
-        path: .
+        with:
+          name: workspace
+          path: .
       - name: Build
         run: sh -x ./build.sh ci
         env:
