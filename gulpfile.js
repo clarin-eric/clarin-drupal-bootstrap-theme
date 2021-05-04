@@ -4,8 +4,11 @@ let gulp = require("gulp"),
   sass = require("gulp-sass"),
   sourcemaps = require("gulp-sourcemaps"),
   $ = require("gulp-load-plugins")(),
+  gulpStylelint = require("gulp-stylelint"),
   cleanCss = require("gulp-clean-css"),
   rename = require("gulp-rename"),
+  gulpIf = require("gulp-if"),
+  count = require("gulp-count"),
   postcss = require("gulp-postcss"),
   autoprefixer = require("autoprefixer"),
   uglify = require("gulp-uglify-es").default,
@@ -23,7 +26,8 @@ let gulp = require("gulp"),
       mediaQuery: true
     })
   ],
-  browserSync = require("browser-sync").create();
+  browserSync = require("browser-sync").create(),
+  lazypipe = require("lazypipe");
 
 // Custom paths for development build
 var distPath = ".";
@@ -97,19 +101,41 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest));
 }
 
-function lintjs_gulpfile () {
-  return gulp.src("gulpfile.js")
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+function hasFixFlag () {
+  return process.argv.slice(2).includes("--fix");
 }
 
-function lintjs_theme () {
-  return gulp.src([paths.js.src, "gulpfile.js"])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+function isJsFixed (file) {
+  return file.eslint != null && file.eslint.fixed;
 }
+
+function lintscss () {
+  return gulp.src([paths.scss.watch], { base: "." })
+    .pipe(gulpStylelint({
+      failAfterError: true,
+      fix: hasFixFlag(),
+      reporters: [
+        {formatter: "verbose", console: true}
+      ]
+    }))
+    .pipe(gulpIf(hasFixFlag(), gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
+}
+
+function lintjs () {
+  const fixAndReport = lazypipe()
+    .pipe(gulp.dest, ".")
+    .pipe(count, "\x1b[32mJavascript autofix applied to: <%= files %>.\x1b[0m\n\n",
+      {logFiles: "\x1b[32m[AUTOFIXED]: \x1b[4m<%= file.path %>\x1b[0m"});
+
+  return gulp.src([paths.js.src, "gulpfile.js"], { base: "." })
+    .pipe(eslint({
+      fix: hasFixFlag()
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    .pipe(gulpIf(isJsFixed, fixAndReport()));
+}
+
 // Move the javascript files into our js folder
 function js () {
   return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.barrio, paths.js.src])
@@ -162,12 +188,14 @@ function serve () {
 }
 
 // Tasks
-const lintjs = gulp.parallel(lintjs_gulpfile, lintjs_theme);
-const dist = gulp.parallel(styles, gulp.series(lintjs, js), resources);
+const lintstyles = lintscss;
+const lintscripts = lintjs;
+const dist = gulp.parallel(resources, gulp.series(lintscss, stylesDev), gulp.series(lintjs, js));
 const dev = gulp.parallel(resourcesDev, stylesDev, gulp.series(lintjs, jsDev), serve);
 
 exports.dist = dist;
 exports.dev = dev;
-exports.lintjs = lintjs;
+exports.lintstyles = lintstyles;
+exports.lintscripts = lintscripts;
 
 exports.default = dev;
