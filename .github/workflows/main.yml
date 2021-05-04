@@ -31,6 +31,12 @@ jobs:
             echo "Release does not exist"
             echo ::set-output name=CREATE_RELEASE::true
           fi
+  provision-environment:
+    needs: [prepare]
+    # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
+    if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
+    runs-on: ubuntu-18.04
+    steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
@@ -41,21 +47,45 @@ jobs:
           echo 'Installing npm dependencies ...'
           rm -fr node-modules
           npm ci
-      - name: Lint Javascript
-        id: lint_js
-        run: gulp lintscripts
-      - name: Lint SCSS
-        id: lint_scss
-        run: gulp lintstyles
-      - name: 'Tar workspace'
+            - name: 'Tar workspace'
         run: tar -cvf workspace.tar .
       - uses: actions/upload-artifact@master
         with:
           name: workspace
           path: workspace.tar
           retention-days: 1
+  lintJS:
+    needs: [provision-environment]
+    # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
+    if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: workspace
+          path: .
+      - name: 'Untar workspace'
+        run: tar -xvf workspace.tar .
+      - name: Lint Javascript
+        id: lint_js
+        run: gulp lintscripts
+  lintSCSS:
+    needs: [provision-environment]
+    # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
+    if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: workspace
+          path: .
+      - name: 'Untar workspace'
+        run: tar -xvf workspace.tar .
+      - name: Lint Javascript
+        id: lint_js
+        run: gulp lintstyles
   build:
-    needs: [prepare]
+    needs: [lintJS, lintSCSS]
     # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
     if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
     runs-on: ubuntu-18.04
