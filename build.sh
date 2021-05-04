@@ -16,7 +16,11 @@ BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tar.gz"
 RM=`which grm||which rm`  #if grm available (on Mac), use it instead of BSD rm
 
 case "${1}" in
-    "ci" | "clean")
+    "ci")
+        # Packages already installed in CI environment during "prepare" job
+        ${RM} -fr -- "${OUTPUT_DIRECTORY}"
+        ;;
+    "clean")
         # Cleanup everything from potential previous build
         ${RM} -fr -- "${OUTPUT_DIRECTORY}" "node-modules"
         echo 'Installing npm dependencies ...'
