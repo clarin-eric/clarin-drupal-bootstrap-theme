@@ -47,7 +47,7 @@ jobs:
       - name: Lint SCSS
         id: lint_scss
         run: gulp lintstyles
-      - uses: actions/download-artifact@master
+      - uses: actions/upload-artifact@master
         with:
           name: workspace
           path: .
