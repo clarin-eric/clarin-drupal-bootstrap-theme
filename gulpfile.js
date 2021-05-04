@@ -37,7 +37,7 @@ if (!fs.existsSync(bootstrapBarrioPath)) {
 }
 
 // Custom paths for distribution build
-if ( process.argv.includes("dist") ) {
+if ( process.argv.includes("dist") || process.argv.includes("ci") ) {
   distPath = "dist/clarin_bootstrap";
   bootstrapBarrioPath = "dist/bootstrap_barrio/";
 }

@@ -8,7 +8,7 @@ BASE_DIRECTORY=$(cd "$(dirname "$BASH_SOURCE[0]")"; pwd)
 OUTPUT_DIRECTORY="${BASE_DIRECTORY}/dist"
 
 if [ -z "${PACKAGE_VERSION}" ]; then
-	PACKAGE_VERSION="dev"
+    PACKAGE_VERSION="dev"
 fi
 BUILD_PACKAGE="${OUTPUT_DIRECTORY}/clarin_bootstrap-${PACKAGE_VERSION}.tar.gz"
 
@@ -36,8 +36,8 @@ case "${1}" in
         ;;
     *) 
         echo "Invalide build parameter: \"${1}\" ... exiting ...\n"
-	    exit 1
-	    ;;
+        exit 1
+        ;;
 esac
 
     
@@ -55,8 +55,7 @@ echo 'Building ...'
 ${GULP} "ci"
 
 echo 'Packaging ...'
-ls -Fla
-tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "clarin_bootstrap"
+tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "${OUTPUT_DIRECTORY}/clarin_bootstrap"
 
 echo 'Done!
 Result written to' "${BUILD_PACKAGE}"
