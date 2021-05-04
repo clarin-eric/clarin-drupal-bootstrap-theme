@@ -85,7 +85,7 @@ jobs:
         id: lint_js
         run: gulp lintstyles
   build:
-    needs: [lintJS, lintSCSS]
+    needs: [prepare, lintJS, lintSCSS]
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/download-artifact@v2
