@@ -48,7 +48,7 @@ curl --fail --location --show-error --silent --tlsv1 \
 tar -x -z -p -C "${OUTPUT_DIRECTORY}"
 
 echo 'Building ...'
-${GULP} "dist"
+${GULP} "ci"
 
 echo 'Packaging ...'
 tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "clarin_bootstrap"

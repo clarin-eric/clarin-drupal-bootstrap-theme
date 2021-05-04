@@ -190,8 +190,9 @@ function serve () {
 // Tasks
 const lintstyles = lintscss;
 const lintscripts = lintjs;
-const dist = gulp.parallel(resources, gulp.series(lintscss, stylesDev), gulp.series(lintjs, js));
+const dist = gulp.parallel(resources, gulp.series(lintscss, styles), gulp.series(lintjs, js));
 const dev = gulp.parallel(resourcesDev, stylesDev, gulp.series(lintjs, jsDev), serve);
+const ci = gulp.parallel(resources, styles, js);
 
 exports.dist = dist;
 exports.dev = dev;

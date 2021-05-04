@@ -31,6 +31,12 @@ jobs:
             echo "Release does not exist"
             echo ::set-output name=CREATE_RELEASE::true
           fi
+      - name: Lint Javascript
+        id: lint_js
+        run: gulp lintscripts
+      - name: Lint SCSS
+        id: lint_scss
+        run: gulp lintsctyles
   build:
     needs: [prepare]
     # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
