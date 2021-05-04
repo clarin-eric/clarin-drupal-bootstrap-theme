@@ -47,10 +47,13 @@ jobs:
       - name: Lint SCSS
         id: lint_scss
         run: gulp lintstyles
+      - name: 'Tar workspace'
+        run: tar -cvf workspace.tar .
       - uses: actions/upload-artifact@master
         with:
           name: workspace
-          path: .
+          path: workspace.tar
+          retention-days: 1
   build:
     needs: [prepare]
     # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
@@ -61,6 +64,8 @@ jobs:
         with:
           name: workspace
           path: .
+      - name: 'Untar workspace'
+        run: tar -xvf workspace.tar .
       - name: Build
         run: sh -x ./build.sh ci
         env:
