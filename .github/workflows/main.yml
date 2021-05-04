@@ -50,7 +50,7 @@ jobs:
           npm ci
       - name: 'Tar workspace'
         run: tar -cvf workspace.tar .
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v2
         with:
           name: workspace
           path: workspace.tar
@@ -59,7 +59,7 @@ jobs:
     needs: [provision-environment]
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v2
         with:
           name: workspace
           path: .
@@ -72,7 +72,7 @@ jobs:
     needs: [provision-environment]
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v2
         with:
           name: workspace
           path: .
@@ -87,7 +87,7 @@ jobs:
     if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v2
         with:
           name: workspace
           path: .
@@ -125,7 +125,7 @@ jobs:
         release_name: Release ${{ needs.prepare.outputs.version }}
         draft: true
         prerelease: true
-    - uses: actions/upload-release-asset@v1.0.1
+    - uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
