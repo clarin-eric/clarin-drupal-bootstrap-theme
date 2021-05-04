@@ -198,5 +198,6 @@ exports.dist = dist;
 exports.dev = dev;
 exports.lintstyles = lintstyles;
 exports.lintscripts = lintscripts;
+exports.ci = ci;
 
 exports.default = dev;
