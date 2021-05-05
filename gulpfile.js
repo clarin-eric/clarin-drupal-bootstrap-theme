@@ -197,7 +197,9 @@ const ci = gulp.parallel(resources, styles, js);
 exports.dist = dist;
 exports.dev = dev;
 exports.lintstyles = lintstyles;
+exports.lcss = lintstyles;
 exports.lintscripts = lintscripts;
+exports.ljs = lintscripts;
 exports.ci = ci;
 
 exports.default = dev;
