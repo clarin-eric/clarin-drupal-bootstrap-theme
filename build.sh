@@ -55,7 +55,7 @@ echo 'Building ...'
 ${GULP} "ci"
 
 echo 'Packaging ...'
-tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "${OUTPUT_DIRECTORY}/clarin_bootstrap"
+tar -c -p -z -f "${BUILD_PACKAGE}"  -C "${OUTPUT_DIRECTORY}" "clarin_bootstrap"
 
 echo 'Done!
 Result written to' "${BUILD_PACKAGE}"
