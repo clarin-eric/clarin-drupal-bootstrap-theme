@@ -118,7 +118,7 @@ function lintscss () {
         {formatter: "verbose", console: true}
       ]
     }))
-    .pipe(gulpIf(isScssFixed, gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
+    .pipe(gulpIf(hasFixFlag(), gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
 }
 
 function lintjs () {
