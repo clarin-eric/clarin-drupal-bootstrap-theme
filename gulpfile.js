@@ -118,7 +118,7 @@ function lintscss () {
         {formatter: "verbose", console: true}
       ]
     }))
-    .pipe(gulpIf(hasFixFlag(), gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
+    .pipe(gulpIf(hasFixFlag, gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
 }
 
 function lintjs () {
@@ -127,7 +127,7 @@ function lintjs () {
     .pipe(count, "\x1b[32mJavascript autofix applied to: <%= files %>.\x1b[0m\n\n",
       {logFiles: "\x1b[32m[AUTOFIXED]: \x1b[4m<%= file.path %>\x1b[0m"});
 
-  return gulp.src([paths.js.src, "gulpfile.js"], { base: "." })
+  return gulp.src(["gulpfile.js", paths.js.src], { base: "." })
     .pipe(eslint({
       fix: hasFixFlag()
     }))
