@@ -16,6 +16,28 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
   );
 }
 
+
+/**
+ * Implements hook_page_attachments_alter()
+ * @param array $page
+ */
+function clarin_bootstrap_page_attachments_alter(&$attachments) {
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no',
+    ),
+  );
+  $attachments['#attached']['html_head'][] = [$viewport, 'viewport'];
+
+  $slide = theme_get_setting('bootstrap_barrio_navbar_slide');
+  if ($slide) {
+    $attachments['#attached']['library'][] = 'clarin_bootstrap/clarin_slidenav';
+  }
+}
+
 /**
  * Implements hook_preprocess_page().
  */
@@ -25,10 +47,6 @@ function clarin_bootstrap_preprocess_page(&$variables)
     if ($node->hasField('field_show_toc')) {
         $variables['show_toc'] = $node->get('field_show_toc')->value;
       }
-  }
-  $slide = theme_get_setting('bootstrap_barrio_navbar_slide');
-  if ($slide) {
-    $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_slidenav';
   }
 }
 
