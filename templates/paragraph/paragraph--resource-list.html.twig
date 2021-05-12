@@ -55,7 +55,7 @@
       <div class="container">
 
         {% if title is not empty %}
-          <div class="header">{{ content.field_title }}<div class="hidden-xs"><a href="/resources" class="btn-link-blue">See all</a></div></div>
+          <div class="header">{{ content.field_title }}<div class="d-none d-sm-block"><a href="/resources" class="btn-link-blue">See all</a></div></div>
         {% endif %}
 
         {{ content.field_resource_items }}
