@@ -78,26 +78,30 @@ function clarin_bootstrap_preprocess_node(&$variables)
  */                     
 function clarin_bootstrap_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'user_login_form' ) {
-    // Add placeholders.
+    // Customize form title
     $form['#title'] = t('Intranet login');
-    $form['msg']['#type'] = 'label';
 
-    $form['msg']['#title'] = t('
-      <br />                               
-      <p>            
+    // Customize label for the login input field
+    $form['name']['#title'] = t('E-mail address');
+
+    // Add custom explanation text about the login
+    $markup = '
+      <br />
+      <p>
         <span class="fa fa-fw fa-exclamation-circle">&nbsp;</span> This login page
         leads to the <strong>CLARIN intranet</strong>. If you are trying to access
         one of the CLARIN corpora or tools instead, please see
         <a class="linkblue" href="/content/easy-access-protected-resources">easy access to protected resources</a>.
-      </p>');        
-                           
-    $form['msg']['#weight'] = -1;
-                                                                                            
-    $form['name']['#title'] = t('E-mail address');
-    $form['name']['#attributes']['placeholder'] = t('E-mail address');
-    $form['pass']['#attributes']['placeholder'] = t('Password');     
+      </p>
+    ';
+
+    $form['field_login_explanation'] = [
+      '#type' => 'markup',
+      '#markup' => $markup,
+      '#weight' => -1,
+    ];
   }
-} 
+}
 
 
 function clarin_bootstrap_function_generate_navigation($HTML) {
