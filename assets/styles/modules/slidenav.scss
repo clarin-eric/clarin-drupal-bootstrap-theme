@@ -1,59 +1,75 @@
-@import "../utility/variables";
-@media (max-width: #{$screen-desktop}) {                            
-    .navbar-collapse .dropdown-menu {
-        box-shadow: none !important;
-        padding: 0.5rem 0;
-        border: none;
-        border-left: 1px solid rgba(0,0,0,0.15);
-        border-radius: 0;
+@import '../utility/variables';
+
+@media (max-width: #{$screen-desktop}) {
+  .header {
+    position: sticky;
+    top: -59px;
+    transition: box-shadow 0.25s ease-out;
+    z-index: 500;
+
+    .navbar {
+      background-color: #{$white};
+      padding-bottom: 0;
+      padding-top: 0;
     }
 
-    .navbar-collapse {
-        position: fixed;
-        top: 0px;
-        padding-top: 25px;
-        opacity: 0.97;
-        left: 0;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 15px;
-        height: 100%;
-        box-shadow: 0px 2px 20px rgba(0,0,0,0.25);
+    &.shadow-header {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .navbar-collapse.collapsing {
-        height: 100%;
-        left: -75%;
-        transition: height 0s ease;
-        position: fixed;
-        z-index: 10;
-        background-color: white
+    .searchicon {
+      padding-right: 5px;
+    }
+  }
+
+  .navbar-collapse {
+    background-color: #{$white};
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    height: calc(100vh + 5px) !important;
+    left: 0;
+    opacity: 0.97;
+    overflow-y: auto;
+    padding-bottom: 225px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    position: absolute;
+    top: 54px;
+    z-index: -1;
+
+    &.collapsing {
+      left: -75%;
     }
 
-    .navbar-collapse.show {
-        height: 100%; 
-        left: 0;
-        z-index: 10;
-        background-color: white;
-        overflow-y: auto;
-        transition: left 250ms ease-in-out;
-        border-right: 1px solid rgba(0,0,0,0.15);
+    &.show {
+      left: 0;
+      transition: left 250ms ease-in-out;
     }
 
-    .navbar-toggler.collapsed ~ .navbar-collapse {
-        position: fixed;
-        transition: left 250ms ease-in;
+    .navbar-toggler.collapsed ~ & {
+      transition: left 250ms ease-in;
     }
 
-    // Make submenu items only hidden so that their width is taken into account when calculating the total menu width
-    .navbar-collapse li.dropdown ul.dropdown-menu:not(.show) {
-        display: block;
-        visibility: hidden;
-        padding: 0px;
+    .dropdown-menu {
+      border-left: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0;
+      box-shadow: none !important;
+      padding: 0.5rem 0;
     }
-    .navbar-collapse li.dropdown ul.dropdown-menu:not(.show) li.dropdown-item {
-        height: 0px;
-        padding-top: 0px;
-        padding-bottom: 0px;
+
+    // Make submenu items only hidden so that their width is taken into account
+    //   when calculating the total menu width
+    .dropdown .dropdown-menu:not(.show) {
+      display: block;
+      padding: 0;
+      visibility: hidden;
+
+      .dropdown-item {
+        height: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
     }
+  }
 }

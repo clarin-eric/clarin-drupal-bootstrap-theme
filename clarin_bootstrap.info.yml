@@ -13,8 +13,9 @@ libraries-override:
   bootstrap_barrio/file: false
   bootstrap_barrio/slide_nav: false
 regions:
-  navigation: 'Navigation'
+  navigation_left: 'Navigation - left'
   navigation_collapsible: 'Navigation (Collapsible)'
+  navigation_right: 'Navigation - right'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'

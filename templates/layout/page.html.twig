@@ -35,8 +35,9 @@
  *   comment/reply/12345).
  *
  * Regions:
- * - page.navigation: Items for the navigation region.
+ * - page.navigation_left: Items for the navigation_left region.
  * - page.navigation_collapsible: Items for the navigation (collapsible) region.
+ * - page.navigation_right: Items for the navigation_right region.
  * - page.highlighted: Items for the highlighted content region.
  * - page.help: Dynamic help text, mostly for admin pages.
  * - page.content: The main content of the current page.
@@ -51,7 +52,7 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {# Navbar #}
-{% if page.navigation or page.navigation_collapsible %}
+{% if page.navigation_left or page.navigation_collapsible or page.navigation_right %}
   {% block navbar %}
     {%
       set navbar_classes = [
@@ -64,16 +65,21 @@
       <nav{{ navbar_attributes }}>
         {% if container_navbar %}
         <div class="container">
+        {% endif %}
+          {% if page.navigation_left %}
+          {{ page.navigation_left }}
           {% endif %}
-          {{ page.navigation }}
           {# Navigation (collapsible) #}
           {% if page.navigation_collapsible %}
-            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse flex-wrap" id="CollapsingNavbar">
-              {{ page.navigation_collapsible }}
-            </div>
+          <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation" title="Menu"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse flex-wrap justify-content-center" id="CollapsingNavbar">
+            {{ page.navigation_collapsible }}
+          </div>
           {% endif %}
-          {% if container_navbar %}
+          {% if page.navigation_right %}
+          {{ page.navigation_right }}
+          {% endif %}
+        {% if container_navbar %}
         </div>
         {% endif %}
       </nav>
@@ -164,6 +170,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-

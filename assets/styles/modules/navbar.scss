@@ -1,3 +1,50 @@
+.searchicon {
+  margin: 0 10px;
+
+  a {
+    background: url('../images/search_icon.svg') no-repeat center center;
+    float: left;
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.appsicon {
+  margin: 0 10px;
+
+  a {
+    background: url('../images/applications-icon.svg');
+    float: left;
+    height: 30px;
+    text-indent: -9999px;
+    width: 30px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.menu-fa-icon {
+  margin: 0 5px;
+
+  a {
+    float: left;
+    height: 30px;
+    text-decoration: none;
+    width: 30px;
+
+    span {
+      display: none;
+    }
+  }
+}
+
 // Navbar
 #navbar-main {
   margin: 0;
@@ -9,29 +56,31 @@
     padding-left: 0;
   }
 
-  @media (min-width: #{$screen-desktop}) {
-    top: 15px;
-  }
-
   .container {
     padding: 0 15px;
   }
 
   .block-menu {
     margin-left: auto;
+    margin-bottom: 3px;
+
+    &:first-of-type:not(:only-of-type) {
+      margin-top: 10px
+    }
 
     li {
       padding: 0 11px;
 
       @media (min-width: #{$screen-desktop}) {
-        padding: 0 5px;
+        padding: 0 4px;
       }
 
       @media (min-width: #{$screen-lg-desktop}) {
-        padding: 0 11px;
+        padding: 0 8px;
       }
 
-      a {
+      a,
+      span {
         padding: 0;
 
         @media (min-width: #{$screen-desktop}) {
@@ -50,6 +99,11 @@
       }
     }
   }
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: underline;
 }
 
 // Dropdown toggle
@@ -108,13 +162,13 @@
 // Logo
 .navbar-brand {
   height: auto;
+  margin-left: 0;
+  margin-right: 0;
   padding: 0;
-  margin-left: 0 !important;
-  margin-right: 10px;
 
   img {
-    max-width: 110px;
     height: auto;
+    max-width: 110px;
 
     @media (min-width: #{$screen-desktop}) {
       max-width: 135px;
@@ -125,21 +179,27 @@
     }
   }
 }
+// Navigation right
+.region-navigation-right {
+  align-items: center;
+  flex-flow: row;
 
-// Mobile navbar
-body.toggled {
-  right: 0;
-
-  .btn-close {
-    display: none;
+  @media (min-width: #{$screen-desktop}) {
+    margin-left: 25px !important;
   }
+}
 
-  .overlay {
-    top: 60px;
+.main-content {
+  @media (max-width: #{$screen-desktop}) {
+    border-top: 1px solid rgba(5, 45, 77, 0.13);
   }
 }
 
 #CollapsingNavbar {
+  @media (min-width: #{$screen-desktop}) {
+    margin-top: 3px;
+  }
+
   @media (max-width: #{$screen-desktop}) {
     &.navbar-collapse nav.block-menu:not(:last-of-type) li.nav-item:last-of-type {
       border-bottom: 1px solid #{$cold-grey-01};
@@ -151,25 +211,8 @@ body.toggled {
   }
 }
 
-// Search icon
-#block-searchicon {
-  @media (max-width: #{$screen-desktop}) {
-    order: 2;
-    margin-left: auto;
-  }
-
-  a {
-    background: url(../images/search_icon.svg) no-repeat center center;
-    width: 20px;
-    height: 20px;
-    float: left;
-    padding-left: 43px;
-    text-indent: -9999px;
-  }
-
-  p {
-    margin: 0;
-  }
+.navbar {
+  padding: 0;
 }
 
 // External links in menu
@@ -179,7 +222,7 @@ body.toggled {
       li {
         a.ext-link {
           display: inline;
-          background: url(../images/external-link_icon.svg) no-repeat right center;
+          background: url('../images/external-link_icon.svg') no-repeat right center;
           background-size: 12px;
           padding-right: 20px;
         }
@@ -190,10 +233,11 @@ body.toggled {
 
 // Fix invisible toggler icon see barrio bugs
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%285, 45, 77, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-toggler {
+  margin-left: auto;
   &.collapsed {
     transition: 250ms ease-in;
   }
