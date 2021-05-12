@@ -21,6 +21,10 @@ a {
     color: $link-color;
 }
 
+a.linkblue {
+    color: $blue;
+}
+
 .bg-inverse {
     background: $inverse-bg !important;
 }
