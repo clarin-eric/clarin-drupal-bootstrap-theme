@@ -71,7 +71,8 @@ function clarin_bootstrap_preprocess_node(&$variables)
 }
 
 /**
- * Implements hook_form_alter().              
+ * Implements hook_form_alter().
+ * Customizes the default login form
  * @param $form      
  * @param $form_state
  * @param $form_id                                      
