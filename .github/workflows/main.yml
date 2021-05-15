@@ -105,7 +105,7 @@ jobs:
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
       # Deploy to dist branch
       - name: Publish to dist branch
-        uses: s0/git-publish-subdir-action@v2
+        uses: s0/git-publish-subdir-action@v2.5
         env:
           REPO: self
           BRANCH: 1.x
