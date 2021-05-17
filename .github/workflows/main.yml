@@ -104,9 +104,15 @@ jobs:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
 
+      - name: Verify target branch in distribution repository
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          branch: ${{ needs.prepare.outputs.version }}.x
 
       - name: Publish to distribution repository
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@v1.3
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
