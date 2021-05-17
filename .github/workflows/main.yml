@@ -103,17 +103,10 @@ jobs:
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-      - name: Import CLARIN Bot signing key
-        uses: crazy-max/ghaction-import-gpg@v3
-        with:
-          gpg-private-key: ${{ secrets.CLARIN_BOT_GPG_KEY }}
-          passphrase: ${{ secrets.CLARIN_BOT_GPG_KEY_PASS }}
-          git-user-signingkey: true
-          git-commit-gpgsign: true
       - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
-          REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
+          REPO: https://clarin-bot@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
           BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
