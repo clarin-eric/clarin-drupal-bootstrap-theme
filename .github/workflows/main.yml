@@ -104,11 +104,11 @@ jobs:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
 
-
       - name: Verify target branch in distribution repository
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_REPOSITORY: 'clarin-eric/clarin-drupal-bootstrap-theme-dist'
         with:
           branch: ${{ needs.prepare.outputs.version }}.x
 
