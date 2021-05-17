@@ -109,7 +109,7 @@ jobs:
           REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
           BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
-          SSH_PRIVATE_KEY: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           MESSAGE: "Distribution update from commit {sha}:\n{msg}"
   release:
     needs: [prepare, build]
