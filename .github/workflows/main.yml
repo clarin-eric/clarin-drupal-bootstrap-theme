@@ -109,11 +109,12 @@ jobs:
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_branch: ${{ needs.prepare.outputs.version }}
           src_path: dist/clarin_bootstrap
+          dst_repo_name: clarin-drupal-bootstrap-theme-dist
           dst_branch: ${{ needs.prepare.outputs.version }}.x
           dst_path: /
           dst_owner: clarin-eric
-          dst_repo_name: clarin-drupal-bootstrap-theme-dist
           username: 'clarin-bot'
           email: sysops@clarin.eu
 
