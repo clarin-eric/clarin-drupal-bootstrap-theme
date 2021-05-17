@@ -65,7 +65,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: workspace
-          path: .
       - name: 'Untar workspace'
         run: tar -xf workspace.tar .
       - name: Lint Javascript
@@ -108,17 +107,18 @@ jobs:
     needs: [prepare, build]
     runs-on: ubuntu-18.04
     steps:
-    - name: Get build package from build job
-      uses: actions/download-artifact@v2
-      with:
-        name: drupal-theme-build-package
-    - name: 'Untar build package'
-        run: tar -xf dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz .
-    - name: Publish to distribution repository
-        uses: s0/git-publish-subdir-action@v2.5.0
-        env:
-          REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
-          BRANCH: ${{ needs.prepare.outputs.version }}.x
-          FOLDER: clarin_bootstrap
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
-          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
+      - name: Get build package from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: drupal-theme-build-package
+      - name: 'Untar build package'
+          run: tar -xf dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz .
+      - name: Publish to distribution repository
+          uses: s0/git-publish-subdir-action@v2.5.0
+          env:
+            REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
+            BRANCH: ${{ needs.prepare.outputs.version }}.x
+            FOLDER: clarin_bootstrap
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
+            MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
+  
