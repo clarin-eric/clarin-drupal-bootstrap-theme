@@ -108,7 +108,7 @@ jobs:
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
           REPO: self
-          BRANCH: 1.x
+          BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
           MESSAGE: "Distribution update from commit {sha}:\n{msg}"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

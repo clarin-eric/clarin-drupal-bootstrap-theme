@@ -1,5 +1,5 @@
 {
-    "name": "drupal/clarin_bootstrap_sass",
+    "name": "drupal/clarin_bootstrap",
     "type": "drupal-theme",
     "description": "A Bootstrap Barrio sub-theme for Drupal 8 developed for the CLARIN website",
     "homepage": "https://github.com/clarin-eric/clarin-drupal-bootstrap-theme",
