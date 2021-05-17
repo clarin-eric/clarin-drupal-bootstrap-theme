@@ -103,15 +103,21 @@ jobs:
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-      # Deploy to dist branch
-      - name: Publish to dist branch
-        uses: s0/git-publish-subdir-action@v2.5.0
+
+
+      - name: Publish to distribution repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
-          REPO: self
-          BRANCH: ${{ needs.prepare.outputs.version }}.x
-          FOLDER: dist/clarin_bootstrap
-          MESSAGE: "Distribution update from commit {sha}:\n{msg}"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'dist/clarin_bootstrap'
+          destination-github-username: 'clarin-eric'
+          destination-repository-name: 'clarin-drupal-bootstrap-theme-dist'
+          user-name: 'clarin-bot'
+          user-email: sysops@clarin.eu
+          target-branch: ${{ needs.prepare.outputs.version }}.x
+
+
   release:
     needs: [prepare, build]
     # Run job for github releases and tag pushes (without github release)
