@@ -103,6 +103,14 @@ jobs:
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
+      - name: Import git signing key
+        uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.CLARIN_BOT_GPG_KEY }}
+          PASSPHRASE: ${{ secrets.CLARIN_BOT_GPG_KEY_PASS }}
       - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
@@ -110,7 +118,7 @@ jobs:
           BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
-          MESSAGE: "CI update from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}. Last commit message:\n{msg}"
+          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}. Last commit message:\n{msg}"
   release:
     needs: [prepare, build]
     # Run job for github releases and tag pushes (without github release)
