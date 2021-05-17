@@ -114,11 +114,11 @@ jobs:
       - name: 'Untar build package'
         run: tar -xf dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz .
       - name: Publish to distribution repository
-          uses: s0/git-publish-subdir-action@v2.5.0
-          env:
-            REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
-            BRANCH: ${{ needs.prepare.outputs.version }}.x
-            FOLDER: clarin_bootstrap
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
-            MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
+        uses: s0/git-publish-subdir-action@v2.5.0
+        env:
+          REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
+          BRANCH: ${{ needs.prepare.outputs.version }}.x
+          FOLDER: clarin_bootstrap
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
+          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
   
