@@ -1,14 +1,15 @@
 @import '../utility/variables';
 
 @media (max-width: #{$screen-desktop}) {
-  .header {
+  #header {
+    opacity: 0.98;
     position: sticky;
     top: -59px;
     transition: box-shadow 0.25s ease-out;
     z-index: 500;
 
     .navbar {
-      background-color: #{$white};
+      background-color: $white;
       padding-bottom: 0;
       padding-top: 0;
     }
@@ -22,13 +23,12 @@
     }
   }
 
-  .navbar-collapse {
-    background-color: #{$white};
+  #CollapsingNavbar {
+    background-color: $white;
     border-right: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
     height: calc(100vh + 5px) !important;
     left: 0;
-    opacity: 0.97;
     overflow-y: auto;
     padding-bottom: 225px;
     padding-left: 15px;

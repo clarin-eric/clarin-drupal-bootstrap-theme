@@ -7,7 +7,7 @@ plugins:
     - stylelint-scss
 rules:
   # Disallows
-  selector-max-id: 0
+  selector-max-id: 1
   # Nesting
   max-nesting-depth:
     - 3
