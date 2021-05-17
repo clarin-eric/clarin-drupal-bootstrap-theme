@@ -103,49 +103,22 @@ jobs:
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-      - name: Publish to distribution repository
+
+  publish:
+    needs: [prepare, build]
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Get build package from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: drupal-theme-build-package
+    - name: 'Untar build package'
+        run: tar -xf dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz .
+    - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
           REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
           BRANCH: ${{ needs.prepare.outputs.version }}.x
-          FOLDER: dist/clarin_bootstrap
+          FOLDER: clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
-          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}.\nLast commit message:\n{msg}"
-  release:
-    needs: [prepare, build]
-    # Run job for github releases and tag pushes (without github release)
-    if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true'
-    runs-on: ubuntu-18.04
-    steps:
-    - name: Download build package from build job
-      uses: actions/download-artifact@v2
-      with:
-        name: drupal-theme-build-package
-    # For github releases -> upload release package to existing release
-    # For tag pushes without github release -> create a github release with release package
-    - name: Create prelease for this tag
-      if: needs.prepare.outputs.create_release == 'true'
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ needs.prepare.outputs.version }}
-        release_name: Release ${{ needs.prepare.outputs.version }}
-        draft: true
-        prerelease: true
-    - uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        # Pseudo-ternary expression: get "upload_url" from the release created above, or from github "release" event when release is pre-created
-        upload_url: ${{ needs.prepare.outputs.create_release == 'true' && steps.create_release.outputs.upload_url || github.event.release.upload_url }} 
-        asset_path: ./clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-        asset_name: clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-        asset_content_type: application/tar+gzip
-    - uses: eregon/publish-release@v1
-      if: needs.prepare.outputs.create_release == 'true'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        release_id: ${{ steps.create_release.outputs.id }}
+          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
