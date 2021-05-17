@@ -111,7 +111,7 @@ jobs:
         with:
           name: drupal-theme-build-package
       - name: 'Untar build package'
-        run: ls -Fla && tar -xf clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
+        run: tar -xf "clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz" .
       - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
