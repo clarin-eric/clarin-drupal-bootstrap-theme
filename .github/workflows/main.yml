@@ -106,7 +106,7 @@ jobs:
       - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
-          REPO: https://clarin-bot@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
+          REPO: clarin-bot@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
           BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
