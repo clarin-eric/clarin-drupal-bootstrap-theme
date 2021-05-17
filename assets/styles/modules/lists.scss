@@ -883,7 +883,7 @@ div.node--type-news {
   position: sticky;
   top: 100px;
   left: inherit;
-  z-index: 900;
+  z-index: 500;
 
   @media (min-width: #{$screen-tablet}) {
     display: block;
@@ -901,6 +901,7 @@ div.node--type-news {
   }
 
   ul {
+    background-color: $white;
     float: left;
     width: 100%;
     margin: 0;
