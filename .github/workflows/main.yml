@@ -110,7 +110,7 @@ jobs:
           BRANCH: ${{ needs.prepare.outputs.version }}.x
           FOLDER: dist/clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
-          MESSAGE: "CI update from clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}. Last commit message:\n{msg}"
+          MESSAGE: "CI update from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}. Last commit message:\n{msg}"
   release:
     needs: [prepare, build]
     # Run job for github releases and tag pushes (without github release)
