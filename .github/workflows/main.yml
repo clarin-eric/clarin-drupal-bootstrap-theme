@@ -119,6 +119,7 @@ jobs:
           FOLDER: clarin_bootstrap
           SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
           MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
+          SKIP_EMPTY_COMMITS: true
   release:
     needs: [prepare, publish]
     # Run job for github releases and tag pushes (without github release)
