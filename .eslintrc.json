@@ -1,0 +1,10 @@
+{
+    "globals": {
+         "Toc": true
+    },
+    "extends": "drupal",
+    "rules": {
+        // enable additional rules
+        "no-var": ["warn"]
+    }
+}

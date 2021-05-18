@@ -30,6 +30,6 @@
 <span{{ attributes.addClass(classes) }}>
   {%- for item in items -%}
 
-    {% trans %}Posted on{% endtrans %} {{ item.content }}
+    {% trans %} {% endtrans %} {{ item.content }}
   {%- endfor -%}
 </span>

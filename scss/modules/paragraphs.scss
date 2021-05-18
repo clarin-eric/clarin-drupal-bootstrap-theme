@@ -41,6 +41,10 @@
 
   @media (max-width: #{$screen-tablet}) {
     background-image: none !important;
+
+    .contextual-region {
+      position: unset;
+    }
   }
 
   @media (min-width: #{$screen-tablet}) {
@@ -373,6 +377,10 @@
 
   @media (max-width: #{$screen-tablet}) {
     background-image: none !important;
+
+    .contextual-region {
+      position: unset;
+    }
   }
 
   @media (min-width: #{$screen-tablet}) {

@@ -880,8 +880,10 @@ div.node--type-news {
 }
 
 #toc {
-  top: inherit;
+  position: sticky;
+  top: 100px;
   left: inherit;
+  z-index: 500;
 
   @media (min-width: #{$screen-tablet}) {
     display: block;
@@ -890,9 +892,8 @@ div.node--type-news {
   h2 {
     color: #6A7A88;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 30px;
-    padding: 0;
     margin: 0 0 20px;
     border: none;
     text-shadow: none;
@@ -900,10 +901,11 @@ div.node--type-news {
   }
 
   ul {
+    background-color: $white;
     float: left;
     width: 100%;
-    padding: 0;
     margin: 0;
+    padding-bottom: 0px;
 
     li {
       list-style-type: none;
@@ -912,11 +914,12 @@ div.node--type-news {
 
       a {
         display: inline-block;
-        font-size: 16px;
-        line-height: 30px;
+        font-size: 14px;
+        line-height: 20px;
         color: #153D57;
         border-left: 2px solid #EAEAEA;
-        padding: 6px 0 6px 20px;
+        padding-right: 0px;
+        padding-top: 10px;
 
         &.active,
         &:hover,

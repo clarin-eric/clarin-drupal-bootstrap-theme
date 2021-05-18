@@ -11,17 +11,16 @@ libraries:
 libraries-override:
   bootstrap_barrio/global-styling: false
   bootstrap_barrio/file: false
+  bootstrap_barrio/slide_nav: false
 regions:
-  navigation: 'Navigation'
+  navigation_left: 'Navigation - left'
   navigation_collapsible: 'Navigation (Collapsible)'
-  header: 'Top Bar'
+  navigation_right: 'Navigation - right'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
-  footer: 'Footer'
-  page_top: 'Page top'
   footer_first: 'Footer first'
   footer_second: 'Footer second'
   footer_third: 'Footer third'

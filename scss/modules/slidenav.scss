@@ -1,0 +1,75 @@
+@import '../utility/variables';
+
+@media (max-width: #{$screen-desktop}) {
+  #header {
+    opacity: 0.98;
+    position: sticky;
+    top: -59px;
+    transition: box-shadow 0.25s ease-out;
+    z-index: 500;
+
+    .navbar {
+      background-color: $white;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    &.shadow-header {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .searchicon {
+      padding-right: 5px;
+    }
+  }
+
+  #CollapsingNavbar {
+    background-color: $white;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    height: calc(100vh + 5px) !important;
+    left: 0;
+    overflow-y: auto;
+    padding-bottom: 225px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    position: absolute;
+    top: 54px;
+    z-index: -1;
+
+    &.collapsing {
+      left: -75%;
+    }
+
+    &.show {
+      left: 0;
+      transition: left 250ms ease-in-out;
+    }
+
+    .navbar-toggler.collapsed ~ & {
+      transition: left 250ms ease-in;
+    }
+
+    .dropdown-menu {
+      border-left: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0;
+      box-shadow: none !important;
+      padding: 0.5rem 0;
+    }
+
+    // Make submenu items only hidden so that their width is taken into account
+    //   when calculating the total menu width
+    .dropdown .dropdown-menu:not(.show) {
+      display: block;
+      padding: 0;
+      visibility: hidden;
+
+      .dropdown-item {
+        height: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}

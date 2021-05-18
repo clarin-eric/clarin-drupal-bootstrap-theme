@@ -82,7 +82,9 @@
     </h2>
     <div class="locality">{{ content.field_address.locality.name }}</div>
   </div>
-  <div class="event-image">
-    {{ content.field_media }}
-  </div>
+  {% if content.field_media %}
+    <div class="event-image">
+      {{ content.field_media }}
+    </div>
+  {% endif %}
 </article>

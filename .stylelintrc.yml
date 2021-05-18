@@ -1,0 +1,18 @@
+defaultSeverity: warning
+extends:
+    - stylelint-config-standard
+    - stylelint-config-recommended
+    - stylelint-config-sass-guidelines
+plugins:
+    - stylelint-scss
+rules:
+  # Disallows
+  selector-max-id: 1
+  # Nesting
+  max-nesting-depth:
+    - 3
+    - ignore: ['blockless-at-rules', 'pseudo-classes']  
+  # Style Guide
+  unit-case: lower
+  selector-max-compound-selectors: 6
+

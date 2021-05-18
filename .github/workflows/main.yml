@@ -15,34 +15,85 @@ jobs:
       version: ${{ steps.get_version.outputs.VERSION }}
       create_release: ${{ steps.check_release.outputs.CREATE_RELEASE }}
     steps:
-      - name: Get the version
+      - name: Get build version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF##*/}
-      - name: Check create release for tag
+        run: |
+          echo ::set-output name=VERSION::${GITHUB_REF##*/}
+          echo "Version: ${GITHUB_REF##*/}"
+        # Releases created via the GitHub webGUI will also create and push a tag.
+        # Both events will trigger this workflow, so we cancel the run for tags and allow it for releases.
+      - name: Check if workflow is running for a tagged release
         if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
         id: check_release
         run: |
           URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ steps.get_version.outputs.VERSION }}"
           StatusCode=$(curl -o -I -L -s -w "%{http_code}" -X GET -G $URL)
           if [ "$StatusCode" == 200 ]; then
-            echo "Release exists"
+            echo "GitHub release already exists: stopping this workflow.\nSee parallel `Release` workflow."
             echo ::set-output name=CREATE_RELEASE::false
           else
-            echo "Release does not exist"
+            echo "Tag pushed without release: building and creating a new GitHub release."
             echo ::set-output name=CREATE_RELEASE::true
           fi
-  build:
+  provision-environment:
     needs: [prepare]
-    # Run job for: github releases, tag pushes without github release and regular pushes (not tag)
-    if: github.event_name == 'release' || !contains(github.ref, 'refs/tags/') || needs.prepare.outputs.create_release == 'true'
+    # Run workflow proper for: github releases, tag pushes without github release and regular pushes (not tag)
+    if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true' || !contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
           fetch-depth: '50'
+      - name: Install npm dependencies
+        id: npm_install
+        run: |
+          echo 'Installing npm dependencies ...'
+          rm -fr node-modules
+          npm ci
+      - name: 'Tar workspace'
+        run: tar -cvf workspace.tar .
+      - uses: actions/upload-artifact@v2
+        with:
+          name: workspace
+          path: workspace.tar
+          retention-days: 1
+  lintJS:
+    needs: [provision-environment]
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: workspace
+      - name: 'Untar workspace'
+        run: tar -xf workspace.tar
+      - name: Lint Javascript
+        id: lint_js
+        run: gulp lintjs
+  lintSCSS:
+    needs: [provision-environment]
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: workspace
+          path: .
+      - name: 'Untar workspace'
+        run: tar -xf workspace.tar
+      - name: Lint SCSS
+        id: lint_js
+        run: gulp lintscss
+  build:
+    needs: [prepare, lintJS, lintSCSS]
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: workspace
+      - name: 'Untar workspace'
+        run: tar -xf workspace.tar
       - name: Build
-        run: sh -x ./build.sh
+        run: sh -x ./build.sh ci
         env:
           THEME_VERSION: ${{ needs.prepare.outputs.version }}
       - name: Upload build package
@@ -50,8 +101,27 @@ jobs:
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-  release:
+  publish:
     needs: [prepare, build]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get build package from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: drupal-theme-build-package
+      - name: 'Untar build package'
+        run: tar -xf clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
+      - name: Publish to distribution repository
+        uses: s0/git-publish-subdir-action@v2.5.0
+        env:
+          REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
+          BRANCH: ${{ needs.prepare.outputs.version }}.x
+          FOLDER: clarin_bootstrap
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_DIST_KEY }}
+          MESSAGE: "Updated from https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/commit/{sha}\nLast commit message:\n{msg}"
+          SKIP_EMPTY_COMMITS: true
+  release:
+    needs: [prepare, publish]
     # Run job for github releases and tag pushes (without github release)
     if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true'
     runs-on: ubuntu-18.04
@@ -73,11 +143,11 @@ jobs:
         release_name: Release ${{ needs.prepare.outputs.version }}
         draft: true
         prerelease: true
-    - uses: actions/upload-release-asset@v1.0.1
+    - uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        # Pseudo-ternary expression: get "upload_url" from the release created above, or from github "release" event if release is pre-created
+        # Pseudo-ternary expression: get "upload_url" from the release created above, or from github "release" event when release is pre-created
         upload_url: ${{ needs.prepare.outputs.create_release == 'true' && steps.create_release.outputs.upload_url || github.event.release.upload_url }} 
         asset_path: ./clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
         asset_name: clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz

@@ -16,6 +16,28 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
   );
 }
 
+
+/**
+ * Implements hook_page_attachments_alter()
+ * @param array $page
+ */
+function clarin_bootstrap_page_attachments_alter(&$attachments) {
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no',
+    ),
+  );
+  $attachments['#attached']['html_head'][] = [$viewport, 'viewport'];
+
+  $slide = theme_get_setting('bootstrap_barrio_navbar_slide');
+  if ($slide) {
+    $attachments['#attached']['library'][] = 'clarin_bootstrap/clarin_slidenav';
+  }
+}
+
 /**
  * Implements hook_preprocess_page().
  */
@@ -25,7 +47,7 @@ function clarin_bootstrap_preprocess_page(&$variables)
     if ($node->hasField('field_show_toc')) {
         $variables['show_toc'] = $node->get('field_show_toc')->value;
       }
-}
+  }
 }
 
 /**
@@ -37,7 +59,7 @@ function clarin_bootstrap_preprocess_node(&$variables)
   if ($node->hasField('field_show_toc') && $node->hasField('body')) {
     if ($node->get('field_show_toc')->value == 1) {
       $variables['toc'] = clarin_bootstrap_function_generate_navigation($node->get('body')->value);
-      $variables['#attached']['library'][] = 'clarin_bootstrap/toc';
+      $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_toc';
     }
   }
 
@@ -45,6 +67,40 @@ function clarin_bootstrap_preprocess_node(&$variables)
     if (count($node->get('field_see_also_links')->getValue()) > 0) {
       $variables['more_links'] = 1;
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * Customizes the default login form
+ * @param $form      
+ * @param $form_state
+ * @param $form_id                                      
+ */                     
+function clarin_bootstrap_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'user_login_form' ) {
+    // Customize form title
+    $form['#title'] = t('Intranet login');
+
+    // Customize label for the login input field
+    $form['name']['#title'] = t('E-mail address');
+
+    // Add custom explanation text about the login
+    $markup = '
+      <br />
+      <p>
+        <span class="fa fa-fw fa-exclamation-circle">&nbsp;</span> This login page
+        leads to the <strong>CLARIN intranet</strong>. If you are trying to access
+        one of the CLARIN corpora or tools instead, please see
+        <a class="linkblue" href="/content/easy-access-protected-resources">easy access to protected resources</a>.
+      </p>
+    ';
+
+    $form['field_login_explanation'] = [
+      '#type' => 'markup',
+      '#markup' => $markup,
+      '#weight' => -1,
+    ];
   }
 }
 

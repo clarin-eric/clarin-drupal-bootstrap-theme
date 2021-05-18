@@ -1,149 +1,249 @@
-const fs = require("fs");
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
+const gulpStylelint = require("gulp-stylelint");
+const cleanCss = require("gulp-clean-css");
+const rename = require("gulp-rename");
+const gulpIf = require("gulp-if");
+const count = require("gulp-count");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const uglify = require("gulp-uglify-es").default;
+const eslint = require("gulp-eslint");
+const replace = require("gulp-replace");
+const postcssInlineSvg = require("postcss-inline-svg");
+const pxtorem = require("postcss-pxtorem");
+const browserSync = require("browser-sync").create();
+const lazypipe = require("lazypipe");
+const $ = require("gulp-load-plugins")();
 
-let gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  sourcemaps = require('gulp-sourcemaps'),
-  $ = require('gulp-load-plugins')(),
-  cleanCss = require('gulp-clean-css'),
-  rename = require('gulp-rename'),
-  postcss = require('gulp-postcss'),
-  autoprefixer = require('autoprefixer'),
-  replace = require('gulp-replace'),
-  postcssInlineSvg = require('postcss-inline-svg'),
-  browserSync = require('browser-sync').create()
-  pxtorem = require('postcss-pxtorem'),
-  postcssProcessors = [
-    postcssInlineSvg({
-      removeFill: true,
-      paths: ['./node_modules/bootstrap-icons/icons']
-    }),
-    pxtorem({
-      propList: ['font', 'font-size', 'line-height', 'letter-spacing', '*margin*', '*padding*'],
-      mediaQuery: true
-    })
-  ];
+const postcssProcessors = [
+  postcssInlineSvg({
+    removeFill: true,
+    paths: ["node_modules/bootstrap-icons/icons"]
+  }),
+  pxtorem({
+    propList: [
+      "font",
+      "font-size",
+      "line-height",
+      "letter-spacing",
+      "*margin*",
+      "*padding*"
+    ],
+    mediaQuery: true
+  })
+];
 
 // Custom paths for development build
-var distPath = '.'
-var bootstrapBarrioPath = '../../contrib/bootstrap_barrio' // Existing bootstrap barrio location inside a Drupal installation
-if (!fs.existsSync(bootstrapBarrioPath)) {
-  bootstrapBarrioPath = './dist/bootstrap_barrio'
-}
-
-// Custom paths for distribution build
-if ( process.argv.includes('dist') ) {
-  distPath = './dist/clarin_bootstrap'
-  bootstrapBarrioPath = './dist/bootstrap_barrio'
-}
+const distPath = "dist/clarin_bootstrap";
 
 const paths = {
   scss: {
-    src: './assets/styles/style.scss',
-    bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
-    includes: [
-        './node_modules/bootstrap/scss',
-        bootstrapBarrioPath.concat('/scss'),
-    ],
+    src: "scss/style.scss",
+    barrio: "scss/barrio-custom.scss",
+    slidenav: "scss/modules/slidenav.scss",
     dest: distPath.concat("/css"),
-    watch: './assets/styles/**/*.scss',
-  },
-  csslib: {
-    bootstraptoc: './assets/styles/lib/bootstrap-toc.css',
+    watch: "scss/**/*.scss"
   },
   js: {
-    src: 'assets/scripts/*.js',
-    bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    jquery: './node_modules/jquery/dist/jquery.min.js',
-    popper: './node_modules/popper.js/dist/umd/popper.min.js',
-    poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
-    barrio: bootstrapBarrioPath.concat('/js/barrio.js'),
-    dest:  distPath.concat("/js"),
-    watch: './assets/scripts/*.js'
+    src: "js/*.js",
+    dest: distPath.concat("/js")
   },
-  jslib: {
-    bootstraptoc: './assets/scripts/lib/bootstrap-toc.min.js',
+  lib: {
+    css: {
+      bootstraptoc: "lib/css/bootstrap-toc.css"
+    },
+    js: {
+      bootstraptoc: "lib/js/bootstrap-toc.js"
+    }
   },
   static: {
     dest: distPath,
-    images: '*images/**/*',
-    fonts: '*fonts/**/*',
-    config: '*config/**/*',
-    templates: '*templates/**/*',
-    ymlFiles: './clarin_bootstrap.*.yml',
-    themeFile: './clarin_bootstrap.theme',
-    composerFile: './composer.json',
-    logo: './logo.svg',
-    favicon: './favicon.ico',
-    screenshot: 'screenshot.png',
+    src: [
+      "*images/**/*",
+      "*fonts/**/*",
+      "*config/**/*",
+      "*templates/**/*",
+      "*scss/**/*",
+      "clarin_bootstrap.*.yml",
+      "clarin_bootstrap.theme",
+      "composer.json",
+      "LICENSE",
+      "DISTRIBUTION-README.md",
+      "logo.svg",
+      "favicon.ico",
+      "screenshot.png"
+    ],
+    watch: [
+      "*images/**/*",
+      "*fonts/**/*",
+      "logo.svg",
+      "favicon.ico",
+      "screenshot.png"
+    ]
   }
-}
+};
 
 // Compile sass into CSS
-function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.csslib.bootstraptoc, paths.scss.src])
+function styles() {
+  return gulp
+    .src([
+      paths.lib.css.bootstraptoc,
+      paths.scss.barrio,
+      paths.scss.slidenav,
+      paths.scss.src
+    ])
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: paths.scss.includes
-    }).on('error', sass.logError))
-    .pipe(replace(/(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi, '$1$2'))
+    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      replace(
+        /(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi,
+        "$1$2"
+      )
+    )
     .pipe($.postcss(postcssProcessors))
-    .pipe(postcss([autoprefixer({
-      browsers: [
-        'Chrome >= 35',
-        'Firefox >= 38',
-        'Edge >= 12',
-        'Explorer >= 10',
-        'iOS >= 8',
-        'Safari >= 8',
-        'Android 2.3',
-        'Android >= 4',
-        'Opera >= 12']
-    })]))
-    .pipe(sourcemaps.write())
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.scss.dest))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(sourcemaps.write("maps"))
+    .pipe(gulp.dest(paths.scss.dest));
+}
+
+function hasFixFlag() {
+  return process.argv.slice(2).includes("--fix");
+}
+
+function isJsFixed(file) {
+  return file.eslint != null && file.eslint.fixed;
+}
+
+function lintscss() {
+  return gulp
+    .src([paths.scss.watch], { base: "." })
+    .pipe(
+      gulpStylelint({
+        failAfterError: true,
+        fix: hasFixFlag(),
+        reporters: [{ formatter: "verbose", console: true }]
+      })
+    )
+    .pipe(
+      gulpIf(
+        hasFixFlag,
+        gulp.dest("."),
+        count(
+          "\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n"
+        )
+      )
+    );
+}
+
+function lintjs() {
+  const fixAndReport = lazypipe()
+    .pipe(gulp.dest, ".")
+    .pipe(
+      count,
+      "\x1b[32mJavascript autofix applied to: <%= files %>.\x1b[0m\n\n",
+      { logFiles: "\x1b[32m[AUTOFIXED]: \x1b[4m<%= file.path %>\x1b[0m" }
+    );
+
+  return gulp
+    .src(["gulpfile.js", paths.js.src], { base: "." })
+    .pipe(
+      eslint({
+        fix: hasFixFlag()
+      })
+    )
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    .pipe(gulpIf(isJsFixed, fixAndReport()));
 }
 
 // Move the javascript files into our js folder
-function js () {
-  return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.poppermap, paths.js.barrio, paths.js.src])
+function js() {
+  return gulp
+    .src([paths.lib.js.bootstraptoc, paths.js.src])
+    .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.js.dest))
+    .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(sourcemaps.write("maps"))
+    .pipe(gulp.dest(paths.js.dest));
 }
 
 // Move the static files into our distribution
-function static () {
-  return gulp.src([paths.static.images, paths.static.fonts, paths.static.config, paths.static.templates, paths.static.ymlFiles, 
-    paths.static.themeFile, paths.static.composerFile, paths.static.logo, paths.static.favicon, paths.static.screenshot])
-    .pipe(gulp.dest(paths.static.dest))
+function resourcesSrc() {
+  return gulp.src(paths.static.src);
 }
 
-// Add auto-inject into browsers for development
-function stylesDev () {
-  return styles().pipe(browserSync.stream())
+function resources() {
+  return resourcesSrc()
+    .pipe(
+      rename(path => {
+        if (path.basename + path.extname === "DISTRIBUTION-README.md") {
+          path.basename = "README";
+        }
+      })
+    )
+    .pipe(gulp.dest(paths.static.dest));
 }
 
-function jsDev () {
-  return js().pipe(browserSync.stream())
+function resourcesDev() {
+  return resources().pipe(browserSync.stream());
+}
+
+// Add auto-inject styles into browsers for development
+function stylesDev() {
+  return styles().pipe(browserSync.stream({ match: "**/*.css" }));
+}
+
+function jsDev() {
+  return js().pipe(browserSync.stream({ match: "**/*.js" }));
 }
 
 // Static Server + watching scss/html files
-function serve () {
+function serve() {
   browserSync.init({
-    proxy: 'http://clarin.siteacceptatie.nl',
-  })
+    proxy: "https://grrr-www.clarin.eu",
+    serveStatic: [
+      {
+        route: ["/themes/custom/clarin_bootstrap"],
+        dir: ["dist/clarin_bootstrap"]
+      }
+    ],
+    open: false,
+    ghostMode: false,
+    logConnections: true
+  });
 
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
-  // Watch js-files
-  gulp.watch([paths.js.src], js).on('change', browserSync.reload)
+  // Watch scss, js and resource files
+  gulp.watch(paths.scss.watch, stylesDev);
+  gulp.watch(paths.js.src, jsDev);
+  gulp.watch(paths.static.watch, resourcesDev);
 }
 
 // Tasks
-const dist = gulp.series(styles, js, static)
-const dev = gulp.series(stylesDev, gulp.parallel(jsDev, serve))
+const lintSCSS = lintscss;
+const lintES = lintjs;
+const dist = gulp.parallel(
+  resources,
+  gulp.series(lintscss, styles),
+  gulp.series(lintjs, js)
+);
+const dev = gulp.parallel(
+  resourcesDev,
+  stylesDev,
+  gulp.series(lintjs, jsDev),
+  serve
+);
+const ci = gulp.parallel(resources, styles, js);
 
-exports.dist = dist
-exports.dev = dev
+exports.dist = dist;
+exports.dev = dev;
+exports.lintscss = lintSCSS;
+exports.lintjs = lintES;
+exports.ci = ci;
 
-exports.default = dev
+exports.default = dev;

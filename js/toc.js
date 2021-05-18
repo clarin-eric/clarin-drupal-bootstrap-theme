@@ -1,28 +1,24 @@
 /**
  * @file
- * Re-positions the submenu
+ * Initialize TOC
  *
  */
-(function($) {
-  'use strict';
-
-  $(document).ready(function($) {
-    $(function() {
-      var navSelector = '#toc';
-      var scopeSelector = '#tocscope';
-      Toc.init({
-        $nav: $(navSelector),
-        $scope: $(scopeSelector)
-      });
-      $('body').scrollspy({
-        target: navSelector
-      });
-    });
-    $('#toc').affix({
-      offset: {
-        top: 250,
-        bottom: 200,
+(function($, Drupal) {
+  Drupal.behaviors.clarin = {
+    attach: function attach(context) {
+      if (context === document) {
+        $(function initToc() {
+          var navSelector = "#toc";
+          var scopeSelector = "#tocscope";
+          Toc.init({
+            $nav: $(navSelector, context),
+            $scope: $(scopeSelector, context)
+          });
+          $("body").scrollspy({
+            target: navSelector
+          });
+        });
       }
-    });
-  });
-})(jQuery);
+    }
+  };
+})(jQuery, Drupal);

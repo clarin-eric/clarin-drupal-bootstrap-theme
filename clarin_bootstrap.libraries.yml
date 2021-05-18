@@ -1,26 +1,25 @@
 global-styling:
   version: VERSION
-  js: 
-    js/popper.min.js: {}
-    js/bootstrap.min.js: {}
-    js/barrio.js: {}
-    js/dropdown.js: {}
-    js/custom.js: {}
+  js:
+    js/custom.min.js: {}
+    js/adminbar-helper.min.js: {}
   css:
     component:
-      css/bootstrap.min.css: {}
-      css/style.min.css: {}
+      css/barrio-custom.min.css: { weight: 10 }
+      css/style.min.css: { weight: 10 }
   dependencies:
     - core/jquery
     - core/drupal
-
-toc:
+clarin_slidenav:
+  js:
+      js/slidenav.min.js: {}
+  css:
+    component:
+      css/slidenav.min.css: {}
+clarin_toc:
   js:
     js/bootstrap-toc.min.js: { }
     js/toc.js: {}
   css:
     component:
-      js/bootstrap-toc.min.css: { }
-  dependencies:
-    - core/jquery
-    - core/drupal
+      css/bootstrap-toc.min.css: { }

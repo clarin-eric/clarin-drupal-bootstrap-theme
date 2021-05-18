@@ -1,6 +1,9 @@
-/* 
-Theme Name: Bootstrap 4 Sass
-Description: Bootstrap 4 with Sass
+/*
+Theme Name: CLARIN Bootstrap 4 theme
+Description: A Bootstrap Barrio sub-theme for Drupal 8 developed for the CLARIN website
+https://www.clarin.eu
+
+Based on Bootstrap 4 - Barrio SASS Starter Kit
 */
 
 // import files
@@ -19,6 +22,10 @@ body {
 
 a {
     color: $link-color;
+}
+
+a.linkblue {
+    color: $blue;
 }
 
 .bg-inverse {
