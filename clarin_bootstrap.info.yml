@@ -9,11 +9,7 @@ base theme: bootstrap_barrio
 libraries:
   - clarin_bootstrap/global-styling
 libraries-override:
-  bootstrap_barrio/global-styling:
-    css:
-      component:
-        css/components/table.css: false
-        css/components/site-footer.css: false
+  bootstrap_barrio/global-styling: false
   bootstrap_barrio/file: false
   bootstrap_barrio/slide_nav: false
 regions:
