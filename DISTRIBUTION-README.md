@@ -21,7 +21,7 @@ To configure `composer` to use this repository as VCS add the following to the `
         "url": "https://github.com/clarin-eric/clarin-drupal-bootstrap-theme-dist",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.x"
+                "dev-main": "1.0.x"
             }
         }
     }
