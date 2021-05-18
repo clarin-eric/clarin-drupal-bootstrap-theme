@@ -69,7 +69,7 @@ jobs:
         run: tar -xf workspace.tar
       - name: Lint Javascript
         id: lint_js
-        run: gulp lintscripts
+        run: gulp lintjs
   lintSCSS:
     needs: [provision-environment]
     runs-on: ubuntu-18.04
@@ -82,7 +82,7 @@ jobs:
         run: tar -xf workspace.tar
       - name: Lint SCSS
         id: lint_js
-        run: gulp lintstyles
+        run: gulp lintscss
   build:
     needs: [prepare, lintJS, lintSCSS]
     runs-on: ubuntu-18.04
