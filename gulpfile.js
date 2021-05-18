@@ -1,9 +1,6 @@
-const fs = require("fs");
-
 let gulp = require("gulp"),
   sass = require("gulp-sass"),
   sourcemaps = require("gulp-sourcemaps"),
-  $ = require("gulp-load-plugins")(),
   gulpStylelint = require("gulp-stylelint"),
   cleanCss = require("gulp-clean-css"),
   rename = require("gulp-rename"),
@@ -27,45 +24,31 @@ let gulp = require("gulp"),
     })
   ],
   browserSync = require("browser-sync").create(),
-  lazypipe = require("lazypipe");
+  lazypipe = require("lazypipe"),
+  $ = require("gulp-load-plugins")();
 
 // Custom paths for development build
-var distPath = ".";
-var bootstrapBarrioPath = "../../contrib/bootstrap_barrio"; // Existing bootstrap barrio location inside a Drupal installation
-if (!fs.existsSync(bootstrapBarrioPath)) {
-  bootstrapBarrioPath = "dist/bootstrap_barrio/";
-}
-
-// Custom paths for distribution build
-if ( process.argv.includes("dist") || process.argv.includes("ci") ) {
-  distPath = "dist/clarin_bootstrap";
-  bootstrapBarrioPath = "dist/bootstrap_barrio/";
-}
+var distPath = "dist/clarin_bootstrap";
 
 const paths = {
   scss: {
-    src: "assets/styles/style.scss",
-    includes: [
-      "node_modules/bootstrap/scss",
-      bootstrapBarrioPath.concat("scss"),
-    ],
-    slidenav: "assets/styles/modules/slidenav.scss",
+    src: "scss/style.scss",
+    barrio: "scss/barrio-custom.scss",
+    slidenav: "scss/modules/slidenav.scss",
     dest: distPath.concat("/css"),
-    watch: "assets/styles/**/*.scss",
-  },
-  csslib: {
-    bootstraptoc: "assets/styles/lib/bootstrap-toc.css",
+    watch: "scss/**/*.scss",
   },
   js: {
-    src: "assets/scripts/*.js",
-    bootstrap: "node_modules/bootstrap/dist/js/bootstrap.js",
-    jquery: "node_modules/jquery/dist/jquery.js",
-    popper: "node_modules/popper.js/dist/umd/popper.js",
-    barrio: bootstrapBarrioPath.concat("js/barrio.js"),
+    src: "js/*.js",
     dest:  distPath.concat("/js"),
   },
-  jslib: {
-    bootstraptoc: "assets/scripts/lib/bootstrap-toc.js",
+  lib: {
+    css: {
+      bootstraptoc: "lib/css/bootstrap-toc.css",
+    },
+    js: {
+      bootstraptoc: "lib/js/bootstrap-toc.js",
+    }
   },
   static: {
     dest: distPath,
@@ -74,9 +57,19 @@ const paths = {
       "*fonts/**/*",
       "*config/**/*",
       "*templates/**/*",
+      "*scss/**/*",
       "clarin_bootstrap.*.yml",
       "clarin_bootstrap.theme",
       "composer.json",
+      "LICENSE",
+      "DISTRIBUTION-README.md",
+      "logo.svg",
+      "favicon.ico",
+      "screenshot.png"
+    ],
+    watch: [
+      "*images/**/*",
+      "*fonts/**/*",
       "logo.svg",
       "favicon.ico",
       "screenshot.png"
@@ -86,11 +79,9 @@ const paths = {
 
 // Compile sass into CSS
 function styles () {
-  return gulp.src([paths.csslib.bootstraptoc, paths.scss.slidenav, paths.scss.src])
+  return gulp.src([paths.lib.css.bootstraptoc, paths.scss.barrio, paths.scss.slidenav, paths.scss.src])
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: paths.scss.includes
-    }).on("error", sass.logError))
+    .pipe(sass().on("error", sass.logError))
     .pipe(replace(/(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi, "$1$2"))
     .pipe($.postcss(postcssProcessors))
     .pipe(postcss([autoprefixer()]))
@@ -138,7 +129,7 @@ function lintjs () {
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.jslib.bootstraptoc, paths.js.jquery, paths.js.popper, paths.js.barrio, paths.js.src])
+  return gulp.src([paths.lib.js.bootstraptoc, paths.js.src])
     .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.js.dest))
     .pipe(uglify())
@@ -153,11 +144,17 @@ function resourcesSrc () {
 }
 
 function resources () {
-  return resourcesSrc().pipe(gulp.dest(paths.static.dest));
+  return resourcesSrc()
+    .pipe(rename(function(path) {
+      if (path.basename + path.extname === "DISTRIBUTION-README.md") {
+        path.basename = "README";
+      }
+    }))
+    .pipe(gulp.dest(paths.static.dest));
 }
 
 function resourcesDev () {
-  return resourcesSrc().pipe(browserSync.stream());
+  return resources().pipe(browserSync.stream());
 }
 
 // Add auto-inject styles into browsers for development
@@ -175,7 +172,7 @@ function serve () {
     proxy: "https://www2.clarin-dev.eu",
     serveStatic: [{
       route: ["/themes/custom/clarin_bootstrap"],
-      dir: ["."]
+      dir: ["dist/clarin_bootstrap"]
     }],
     open: false,
     ghostMode: false,
@@ -185,22 +182,20 @@ function serve () {
   // Watch scss, js and resource files
   gulp.watch(paths.scss.watch, stylesDev);
   gulp.watch(paths.js.src, jsDev);
-  gulp.watch(paths.static.src, resourcesDev);
+  gulp.watch(paths.static.watch, resourcesDev);
 }
 
 // Tasks
-const lintstyles = lintscss;
-const lintscripts = lintjs;
+const lintSCSS = lintscss;
+const lintES = lintjs;
 const dist = gulp.parallel(resources, gulp.series(lintscss, styles), gulp.series(lintjs, js));
 const dev = gulp.parallel(resourcesDev, stylesDev, gulp.series(lintjs, jsDev), serve);
 const ci = gulp.parallel(resources, styles, js);
 
 exports.dist = dist;
 exports.dev = dev;
-exports.lintstyles = lintstyles;
-exports.lcss = lintstyles;
-exports.lintscripts = lintscripts;
-exports.ljs = lintscripts;
+exports.lintscss = lintSCSS;
+exports.lintjs = lintES;
 exports.ci = ci;
 
 exports.default = dev;

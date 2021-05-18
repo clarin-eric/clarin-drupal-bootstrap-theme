@@ -1,8 +1,7 @@
 {
-  "name": "barrio_sass",
-  "version": "8.4.1",
-  "description": "Barrio SASS implementation",
-  "main": "index.js",
+  "name": "clarin_barrio",
+  "version": "1.0.0",
+  "description": "Bootstrap Barrio sub-theme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "bootstrap-icons": "^1.4.1",
-    "jquery": "^3.6.0",
-    "popper.js": "^1.16.1"
+    "bootstrap-icons": "^1.5.0"
   },
   "browserslist": [
     "Chrome >= 35",
@@ -34,14 +31,13 @@
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
-    "eslint": "^7.25.0",
+    "eslint": "^7.26.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-count": "^1.0.0",
     "gulp-eslint": "6.0.0",
-    "gulp-html-replace": "^1.6.2",
     "gulp-if": "^3.0.0",
     "gulp-load-plugins": "^2.0.6",
     "gulp-postcss": "^9.0.0",
@@ -52,8 +48,7 @@
     "gulp-stylelint": "^13.0.0",
     "gulp-uglify-es": "^2.0.0",
     "lazypipe": "^1.0.2",
-    "merge-stream": "^2.0.0",
-    "postcss": "^8.2.13",
+    "postcss": "^8.2.15",
     "postcss-inline-svg": "^5.0.0",
     "postcss-pxtorem": "^6.0.0",
     "stylelint": "^13.13.1",

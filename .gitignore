@@ -6,5 +6,3 @@ node_modules
 
 #ignore build target directories
 dist
-css/*
-js/*

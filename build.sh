@@ -35,7 +35,7 @@ case "${1}" in
         npm install
         ;;
     *) 
-        echo "Invalide build parameter: \"${1}\" ... exiting ...\n"
+        echo "Invalid build parameter: \"${1}\" ... exiting ...\n"
         exit 1
         ;;
 esac
