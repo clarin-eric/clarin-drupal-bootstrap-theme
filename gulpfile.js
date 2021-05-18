@@ -1,34 +1,42 @@
-let gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  sourcemaps = require("gulp-sourcemaps"),
-  gulpStylelint = require("gulp-stylelint"),
-  cleanCss = require("gulp-clean-css"),
-  rename = require("gulp-rename"),
-  gulpIf = require("gulp-if"),
-  count = require("gulp-count"),
-  postcss = require("gulp-postcss"),
-  autoprefixer = require("autoprefixer"),
-  uglify = require("gulp-uglify-es").default,
-  eslint = require("gulp-eslint"),
-  replace = require("gulp-replace"),
-  postcssInlineSvg = require("postcss-inline-svg"),
-  pxtorem = require("postcss-pxtorem"),
-  postcssProcessors = [
-    postcssInlineSvg({
-      removeFill: true,
-      paths: ["node_modules/bootstrap-icons/icons"]
-    }),
-    pxtorem({
-      propList: ["font", "font-size", "line-height", "letter-spacing", "*margin*", "*padding*"],
-      mediaQuery: true
-    })
-  ],
-  browserSync = require("browser-sync").create(),
-  lazypipe = require("lazypipe"),
-  $ = require("gulp-load-plugins")();
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
+const gulpStylelint = require("gulp-stylelint");
+const cleanCss = require("gulp-clean-css");
+const rename = require("gulp-rename");
+const gulpIf = require("gulp-if");
+const count = require("gulp-count");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const uglify = require("gulp-uglify-es").default;
+const eslint = require("gulp-eslint");
+const replace = require("gulp-replace");
+const postcssInlineSvg = require("postcss-inline-svg");
+const pxtorem = require("postcss-pxtorem");
+const browserSync = require("browser-sync").create();
+const lazypipe = require("lazypipe");
+const $ = require("gulp-load-plugins")();
+
+const postcssProcessors = [
+  postcssInlineSvg({
+    removeFill: true,
+    paths: ["node_modules/bootstrap-icons/icons"]
+  }),
+  pxtorem({
+    propList: [
+      "font",
+      "font-size",
+      "line-height",
+      "letter-spacing",
+      "*margin*",
+      "*padding*"
+    ],
+    mediaQuery: true
+  })
+];
 
 // Custom paths for development build
-var distPath = "dist/clarin_bootstrap";
+const distPath = "dist/clarin_bootstrap";
 
 const paths = {
   scss: {
@@ -36,18 +44,18 @@ const paths = {
     barrio: "scss/barrio-custom.scss",
     slidenav: "scss/modules/slidenav.scss",
     dest: distPath.concat("/css"),
-    watch: "scss/**/*.scss",
+    watch: "scss/**/*.scss"
   },
   js: {
     src: "js/*.js",
-    dest:  distPath.concat("/js"),
+    dest: distPath.concat("/js")
   },
   lib: {
     css: {
-      bootstraptoc: "lib/css/bootstrap-toc.css",
+      bootstraptoc: "lib/css/bootstrap-toc.css"
     },
     js: {
-      bootstraptoc: "lib/js/bootstrap-toc.js",
+      bootstraptoc: "lib/js/bootstrap-toc.js"
     }
   },
   static: {
@@ -78,11 +86,22 @@ const paths = {
 };
 
 // Compile sass into CSS
-function styles () {
-  return gulp.src([paths.lib.css.bootstraptoc, paths.scss.barrio, paths.scss.slidenav, paths.scss.src])
+function styles() {
+  return gulp
+    .src([
+      paths.lib.css.bootstraptoc,
+      paths.scss.barrio,
+      paths.scss.slidenav,
+      paths.scss.src
+    ])
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(replace(/(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi, "$1$2"))
+    .pipe(
+      replace(
+        /(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi,
+        "$1$2"
+      )
+    )
     .pipe($.postcss(postcssProcessors))
     .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest(paths.scss.dest))
@@ -92,44 +111,60 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest));
 }
 
-function hasFixFlag () {
+function hasFixFlag() {
   return process.argv.slice(2).includes("--fix");
 }
 
-function isJsFixed (file) {
+function isJsFixed(file) {
   return file.eslint != null && file.eslint.fixed;
 }
 
-function lintscss () {
-  return gulp.src([paths.scss.watch], { base: "." })
-    .pipe(gulpStylelint({
-      failAfterError: true,
-      fix: hasFixFlag(),
-      reporters: [
-        {formatter: "verbose", console: true}
-      ]
-    }))
-    .pipe(gulpIf(hasFixFlag, gulp.dest("."), count("\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n")));
+function lintscss() {
+  return gulp
+    .src([paths.scss.watch], { base: "." })
+    .pipe(
+      gulpStylelint({
+        failAfterError: true,
+        fix: hasFixFlag(),
+        reporters: [{ formatter: "verbose", console: true }]
+      })
+    )
+    .pipe(
+      gulpIf(
+        hasFixFlag,
+        gulp.dest("."),
+        count(
+          "\x1b[91m\x1b[1mSome warnings might be fixable with the `--fix` option.\x1b[0m\n\n"
+        )
+      )
+    );
 }
 
-function lintjs () {
+function lintjs() {
   const fixAndReport = lazypipe()
     .pipe(gulp.dest, ".")
-    .pipe(count, "\x1b[32mJavascript autofix applied to: <%= files %>.\x1b[0m\n\n",
-      {logFiles: "\x1b[32m[AUTOFIXED]: \x1b[4m<%= file.path %>\x1b[0m"});
+    .pipe(
+      count,
+      "\x1b[32mJavascript autofix applied to: <%= files %>.\x1b[0m\n\n",
+      { logFiles: "\x1b[32m[AUTOFIXED]: \x1b[4m<%= file.path %>\x1b[0m" }
+    );
 
-  return gulp.src(["gulpfile.js", paths.js.src], { base: "." })
-    .pipe(eslint({
-      fix: hasFixFlag()
-    }))
+  return gulp
+    .src(["gulpfile.js", paths.js.src], { base: "." })
+    .pipe(
+      eslint({
+        fix: hasFixFlag()
+      })
+    )
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
     .pipe(gulpIf(isJsFixed, fixAndReport()));
 }
 
 // Move the javascript files into our js folder
-function js () {
-  return gulp.src([paths.lib.js.bootstraptoc, paths.js.src])
+function js() {
+  return gulp
+    .src([paths.lib.js.bootstraptoc, paths.js.src])
     .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.js.dest))
     .pipe(uglify())
@@ -139,41 +174,45 @@ function js () {
 }
 
 // Move the static files into our distribution
-function resourcesSrc () {
+function resourcesSrc() {
   return gulp.src(paths.static.src);
 }
 
-function resources () {
+function resources() {
   return resourcesSrc()
-    .pipe(rename(function(path) {
-      if (path.basename + path.extname === "DISTRIBUTION-README.md") {
-        path.basename = "README";
-      }
-    }))
+    .pipe(
+      rename(path => {
+        if (path.basename + path.extname === "DISTRIBUTION-README.md") {
+          path.basename = "README";
+        }
+      })
+    )
     .pipe(gulp.dest(paths.static.dest));
 }
 
-function resourcesDev () {
+function resourcesDev() {
   return resources().pipe(browserSync.stream());
 }
 
 // Add auto-inject styles into browsers for development
-function stylesDev () {
-  return styles().pipe(browserSync.stream({match: "**/*.css"}));
+function stylesDev() {
+  return styles().pipe(browserSync.stream({ match: "**/*.css" }));
 }
 
-function jsDev () {
-  return js().pipe(browserSync.stream({match: "**/*.js"}));
+function jsDev() {
+  return js().pipe(browserSync.stream({ match: "**/*.js" }));
 }
 
 // Static Server + watching scss/html files
-function serve () {
+function serve() {
   browserSync.init({
-    proxy: "https://www2.clarin-dev.eu",
-    serveStatic: [{
-      route: ["/themes/custom/clarin_bootstrap"],
-      dir: ["dist/clarin_bootstrap"]
-    }],
+    proxy: "https://grrr-www.clarin.eu",
+    serveStatic: [
+      {
+        route: ["/themes/custom/clarin_bootstrap"],
+        dir: ["dist/clarin_bootstrap"]
+      }
+    ],
     open: false,
     ghostMode: false,
     logConnections: true
@@ -188,8 +227,17 @@ function serve () {
 // Tasks
 const lintSCSS = lintscss;
 const lintES = lintjs;
-const dist = gulp.parallel(resources, gulp.series(lintscss, styles), gulp.series(lintjs, js));
-const dev = gulp.parallel(resourcesDev, stylesDev, gulp.series(lintjs, jsDev), serve);
+const dist = gulp.parallel(
+  resources,
+  gulp.series(lintscss, styles),
+  gulp.series(lintjs, js)
+);
+const dev = gulp.parallel(
+  resourcesDev,
+  stylesDev,
+  gulp.series(lintjs, jsDev),
+  serve
+);
 const ci = gulp.parallel(resources, styles, js);
 
 exports.dist = dist;

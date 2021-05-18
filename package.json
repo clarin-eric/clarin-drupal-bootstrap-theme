@@ -29,11 +29,12 @@
     "Opera >= 12"
   ],
   "devDependencies": {
+    "autoprefixer": "^10.2.5",
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "eslint": "^7.26.0",
+    "eslint-config-drupal": "^5.0.2",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-count": "^1.0.0",

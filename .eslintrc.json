@@ -1,25 +1,10 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "jquery": true,
-        "node" : true
-    },
     "globals": {
-         "Drupal": true,
          "Toc": true
     },
-    "extends": "eslint:recommended",
+    "extends": "drupal",
     "rules": {
         // enable additional rules
-        "indent": ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "no-unused-vars": ["warn"]
-    },
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
+        "no-var": ["warn"]
     }
 }
