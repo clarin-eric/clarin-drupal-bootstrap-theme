@@ -1,7 +1,7 @@
 CLARIN Bootstrap Barrio sub-theme for Drupal 8.
 ---------------------
 
-The CLARIN theme for Drupal 8 is a sub-theme of the [Bootstrap Barrio](https://www.drupal.org/project/bootstrap_barrio) theme based on Bootstrap 4.
+The CLARIN theme for Drupal 8 is a sub-theme of [Bootstrap Barrio](https://www.drupal.org/project/bootstrap_barrio) Bootstrap 4 theme.
 
 Here you will find the sub-theme distribution files and releases. Additionally, this repository can be used as a [composer VCS](https://getcomposer.org/doc/05-repositories.md#vcs), see bellow for details.
 
