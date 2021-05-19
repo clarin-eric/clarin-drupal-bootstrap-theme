@@ -103,6 +103,7 @@ jobs:
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
   publish:
     needs: [prepare, build]
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-18.04
     steps:
       - name: Get build package from build job
