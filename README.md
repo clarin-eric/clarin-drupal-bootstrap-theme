@@ -1,4 +1,4 @@
-[![CI](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/workflows/CI/badge.svg)](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/actions?query=workflow%3ACI+branch%3Amain)
+[![CI](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/workflows/CI/badge.svg)](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme/actions?query=workflow%3ACI+branch%3A1.0)
 
 CONTENTS OF THIS FILE
 ---------------------
