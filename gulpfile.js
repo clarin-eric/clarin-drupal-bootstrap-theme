@@ -209,7 +209,7 @@ function serve() {
     proxy: "https://grrr-www.clarin.eu",
     serveStatic: [
       {
-        route: ["/themes/custom/clarin_bootstrap"],
+        route: ["/themes/contrib/clarin_bootstrap"],
         dir: ["dist/clarin_bootstrap"]
       }
     ],
