@@ -28,7 +28,7 @@ To configure `composer` to use this repository as VCS add the following to the `
 ]
 ```
 
-Due to GitHub API rate limitations you will also need to create a [GitHub PAT](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and add it to the `config:` section of your website's `comppser.json`:
+Due to GitHub API rate limitations you might need to create a [GitHub PAT](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and add it to the `config:` section of your website's `composer.json`:
 ```
 "config": {
     "github-oauth": { "github.com": "<YOUR PAT HERE>" }
