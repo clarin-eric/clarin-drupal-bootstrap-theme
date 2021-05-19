@@ -32,6 +32,10 @@ SETUP ENVIRONMENT
 
 * You will need `npm` ([see](https://www.npmjs.com/get-npm)).
 
+Run `build.sh` from inside `clarin-drupal-bootstrap-theme` directory. The script will run all required setup commands, build the project and create a distribution build inside `dist/`.
+
+**Alternatively** you can setup the development environment manually:
+
 * Checkout this repository.
 
 * From inside `clarin-drupal-bootstrap-theme` folder run `npm install`.
@@ -42,11 +46,6 @@ mkdir dist
 curl "https://ftp.drupal.org/files/projects/bootstrap_barrio-${BOOTSTRAP_BARRIO_VERSION}.tar.gz" | \
 tar -x -z -p -C dist/
 ```
-
-Alternatively just run `build.sh` from inside `clarin-drupal-bootstrap-theme` directory
-
-The script will run all required setup commands, build the project and create a distribution build inside `dist/`.
-
 
 RUN
 -------------
