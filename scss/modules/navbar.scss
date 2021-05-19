@@ -33,10 +33,13 @@
 .menu-fa-icon {
   margin: 0 5px;
 
+  .fa {
+    text-decoration: none;
+  }
+
   a {
     float: left;
     height: 30px;
-    text-decoration: none;
 
     span {
       display: none;
