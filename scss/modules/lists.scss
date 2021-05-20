@@ -843,6 +843,19 @@ div.node--type-news {
   }
 }
 
+.application-button-large {
+  height: 200px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 200px;
+
+  a {
+    background-color: transparent !important;
+  }
+}
+
 .node--type-consortia {
   width: 160px;
   margin-top: 35px;
