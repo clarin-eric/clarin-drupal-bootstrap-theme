@@ -79,7 +79,18 @@
 
   .field--name-field-bg-image {
     img {
-      display: none;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 0;
+      top: 0;
+    }
+
+    .contextual-region {
+      position: unset;
     }
   }
 
@@ -471,7 +482,18 @@
 
   .field--name-field-bg-image {
     img {
-      display: none;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 0;
+      top: 0;
+    }
+
+    .contextual-region {
+      position: unset;
     }
   }
 
