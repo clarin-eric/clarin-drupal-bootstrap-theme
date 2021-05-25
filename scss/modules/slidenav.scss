@@ -39,7 +39,7 @@
 
     &.collapsing {
       left: -100%;
-      transition: left 0s ease-out;
+      transition: left 0s;
     }
 
     &.show {
