@@ -45,6 +45,10 @@
       margin: 0;
     }
   }
+
+  a:not(.nav-link) {
+    color: $blue;
+  }
 }
 
 // Search page
