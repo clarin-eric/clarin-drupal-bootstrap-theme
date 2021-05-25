@@ -239,18 +239,46 @@
   }
 }
 
-// Fix invisible toggler icon see barrio bugs
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%285, 45, 77, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
+// Navbar toggle with X transition
+@media (max-width: #{$screen-desktop}) {
+  .navbar-toggler {
+    align-items: center;
+    border-radius: 0;
+    display: flex;
+    flex-flow: wrap;
+    height: 28px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 11px;
+    padding: 0;
+    width: 28px;
 
-.navbar-toggler {
-  margin-left: auto;
-  &.collapsed {
-    transition: 250ms ease-in;
-  }
-  &:not(.collapsed) {
-    background-color: $subtle-grey-01;
-    transition: 250ms ease-in-out;
+    .icon-bar {
+      background-color: $dark-blue-01;
+      height: 2px;
+      transform: 50% 50%;
+      transition: transform 350ms ease-in-out;
+      width: 25px;
+
+      &:nth-child(1) {
+        transition: opacity 0.1s linear, transform 150ms ease-in-out;
+      }
+    }
+
+    &:not(.collapsed) {
+      .icon-bar {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate3d(6px, 6px, 0);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate3d(6.5px, -6.5px, 0);
+        }
+      }
+    }
   }
 }

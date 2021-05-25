@@ -72,7 +72,11 @@
           {% endif %}
           {# Navigation (collapsible) #}
           {% if page.navigation_collapsible %}
-          <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation" title="Menu"><span class="navbar-toggler-icon"></span></button>
+          <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation" title="Menu">
+            <span class="icon-bar top-bar"></span>        
+            <span class="icon-bar middle-bar"></span>                              
+            <span class="icon-bar bottom-bar"></span> 
+          </button>
           <div class="collapse navbar-collapse flex-wrap justify-content-center" id="CollapsingNavbar">
             {{ page.navigation_collapsible }}
           </div>
