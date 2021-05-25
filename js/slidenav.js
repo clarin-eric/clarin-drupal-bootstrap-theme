@@ -18,11 +18,9 @@
         if (
           !header.contains(event.target) && // do not close menu if clicking on it
           (adminBar == null ? true : !adminBar.contains(event.target)) && // do not close menu if clicking on adminBar
-          collapsingNavbar.css("display") !== "none"
+          collapsingNavbar.css("display") !== "none" // is closed
         ) {
-          // is closed
-
-          // collapse navbar
+          // close menu
           collapsingNavbar.collapse("hide");
         }
       }
