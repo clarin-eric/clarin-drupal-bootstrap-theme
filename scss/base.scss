@@ -1,24 +1,23 @@
 /* IMPORTS */
 
 // utility
-@import "utility/variables";
-@import "utility/mixins";
-@import "utility/typography";
-
-@import "utility/fonts";
-@import "utility/elements";
+@import 'utility/variables';
+@import 'utility/mixins';
+@import 'utility/typography';
+@import 'utility/fonts';
+@import 'utility/elements';
 
 // modules
-@import "modules/affix";
-@import "modules/tags";
-@import "modules/navbar";
-@import "modules/footer";
-@import "modules/basicpage";
-@import "modules/navigation";
-@import "modules/buttons";
-@import "modules/banner";
-@import "modules/paragraphs";
-@import "modules/lists";
-@import "modules/events";
-@import "modules/resources";
-@import "modules/tablesort-indicator.scss";
+@import 'modules/affix';
+@import 'modules/tags';
+@import 'modules/navbar';
+@import 'modules/footer';
+@import 'modules/basicpage';
+@import 'modules/navigation';
+@import 'modules/buttons';
+@import 'modules/banner';
+@import 'modules/paragraphs';
+@import 'modules/lists';
+@import 'modules/events';
+@import 'modules/resources';
+@import 'modules/tablesort-indicator';

@@ -7,27 +7,26 @@ Based on Bootstrap 4 - Barrio SASS Starter Kit
 */
 
 // import files
-@import "base";
+@import 'base';
 
 /* GENERAL STYLES
--------------------------------------------------*/
+------------------------------------------------- */
 
 body {
-    background: $white;
+  background: $white;
 }
 
-
-/* COLORS 
---------------------------------------------------*/
+/* COLORS
+-------------------------------------------------- */
 
 a {
-    color: $link-color;
+  color: $link-color;
 }
 
-a.linkblue {
-    color: $blue;
+.linkblue {
+  color: $blue;
 }
 
 .bg-inverse {
-    background: $inverse-bg !important;
+  background: $inverse-bg !important;
 }
