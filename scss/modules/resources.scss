@@ -41,7 +41,7 @@
     &:focus {
       border-top: 5px solid $blue;
 
-      h2.node--title {
+      h2.node__title {
         text-decoration: underline;
       }
 
@@ -67,7 +67,7 @@
       }
     }
 
-    h2.node--title {
+    h2.node__title {
       font-size: 23px;
       line-height: 31px;
       margin: 15px 0 8px;
@@ -199,7 +199,7 @@
   &:focus {
     border-top: 5px solid $blue;
 
-    h2.node--title {
+    h2.node__title {
       text-decoration: underline;
     }
 
@@ -208,7 +208,7 @@
     }
   }
 
-  .node--content {
+  .node__content {
     margin-top: 0;
 
     @media (min-width: #{$screen-tablet}) {
@@ -233,7 +233,7 @@
     }
   }
 
-  h2.node--title {
+  h2.node__title {
     font-size: 23px;
     line-height: 31px;
     margin: 20px 0 8px;
@@ -303,7 +303,7 @@ body.node--type-resource {
   &:focus {
     border-top: none;
 
-    h2.node--title {
+    h2.node__title {
       text-decoration: none;
     }
 
