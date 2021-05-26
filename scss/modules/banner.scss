@@ -1,32 +1,32 @@
 // Banner alert
 .sitewide-alert {
-  position: relative;
   background-color: $blue;
-  color: $white;
-  line-height: 24px;
-  font-weight: 600;
-  padding: 18px 65px 18px 15px;
-  margin: 0;
-  border: none;
+  border: 0;
   border-radius: 0;
+  color: $white;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+  padding: 18px 65px 18px 15px;
+  position: relative;
 
   @media (min-width: #{$screen-tablet}) {
-    text-align: center;
     line-height: 30px;
     padding: 18px 15px;
+    text-align: center;
   }
 
   a {
     color: $white;
 
-    &:after {
+    &::after {
       @media (min-width: #{$screen-tablet}) {
+        background: url('../images/arrow-right-white.svg') no-repeat center center;
+        content: '';
         display: inline-block;
-        content: "";
-        background: url(../images/arrow-right-white.svg) no-repeat center center;
-        width: 21px;
         height: 18px;
         margin-left: 15px;
+        width: 21px;
       }
     }
   }
@@ -38,16 +38,16 @@
   }
 
   .close {
-    top: 15px;
-    right: 20px;
-    width: 17px;
+    background: url('../images/close_icon.svg') no-repeat center center;
     height: 17px;
-    background: url(../images/close_icon.svg) no-repeat center center;
     opacity: 1;
+    right: 20px;
+    top: 15px;
+    width: 17px;
 
     @media (min-width: #{$screen-tablet}) {
-      top: 20px;
       right: 25px;
+      top: 20px;
     }
 
     span {

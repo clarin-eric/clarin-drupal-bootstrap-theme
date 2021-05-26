@@ -3,6 +3,26 @@
   padding: 0;
 }
 
+// Sidebar
+.sidebar {
+  .block {
+    border: 1px solid rgba(5, 45, 77, 0.13);
+    display: flex;
+    flex-flow: column;
+  }
+
+  .section nav {
+    ul {
+      flex-flow: column;
+      margin: 0;
+    }
+  }
+
+  a:not(.nav-link) {
+    color: $blue;
+  }
+}
+
 .node--type-landing-page {
   #block-clarin-bootstrap-breadcrumbs {
     .container {
@@ -31,23 +51,171 @@
   }
 }
 
-// Sidebar
-.sidebar {
-  .block {
+.node_search-results {
+  .list-group-item {
+    border: 0;
+    border-radius: 0;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
+// Mailchimp
+.block-mailchimp-signup {
+  background-color: $subtle-grey-02;
+  border-top: 3px solid $blue;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  padding: 35px 15px 20px;
+
+  @media (min-width: #{$screen-tablet}) {
     display: flex;
-    flex-flow: column;
-    border: 1px solid rgba(5,45,77,.13);
+    padding: 40px 45px 90px;
   }
 
-  nav {
-    ul.nav {
-      flex-flow: column;
+  h2 {
+    font-size: 30px;
+    line-height: 41px;
+    margin: 0 0 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 45px;
+      line-height: 55px;
       margin: 0;
+      padding-right: 10px;
+      width: 50%;
     }
   }
 
-  a:not(.nav-link) {
-    color: $blue;
+  .content {
+    @media (min-width: #{$screen-tablet}) {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 50%;
+    }
+  }
+
+  .mailchimp-signup-subscribe-form {
+    color: $soft-blue-01;
+    font-size: 16px;
+    line-height: 30px;
+
+    @media (min-width: #{$screen-tablet}) {
+      color: $dark-blue-01;
+      display: flex;
+      flex-flow: wrap;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+
+  .mailchimp-newsletter-mergefields {
+    margin-top: 35px;
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      max-width: 200px;
+    }
+
+    @media (min-width: #{$screen-desktop}) {
+      max-width: 320px;
+    }
+
+    @media (min-width: #{$screen-lg-desktop}) {
+      max-width: 390px;
+    }
+  }
+
+  label {
+    color: $soft-blue-01;
+  }
+
+  .form-type-email {
+    label {
+      display: none;
+    }
+  }
+
+  .form-control {
+    background-color: transparent;
+    border: 1px solid $cold-grey-01;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    box-shadow: none;
+    color: $dark-blue-01;
+    font-size: 14px;
+    height: 45px;
+    line-height: 30px;
+    padding: 10px 25px;
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+      font-size: 16px;
+      height: 56px;
+      max-width: 200px;
+    }
+
+    @media (min-width: #{$screen-desktop}) {
+      max-width: 320px;
+    }
+
+    @media (min-width: #{$screen-lg-desktop}) {
+      max-width: 390px;
+    }
+  }
+
+  .form-submit {
+    background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30% center;
+    background-size: 20px;
+    border: 1px solid $dark-blue-01;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    height: 45px;
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      background: transparent url('../images/arrow-right-blue.svg') no-repeat 24px center;
+      border: 1px solid $cold-grey-01;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+      border-top-left-radius: 0;
+      float: left;
+      height: 56px;
+      text-indent: -9999px;
+      width: 74px;
+    }
+
+    &:hover,
+    &:focus {
+      background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30% center;
+      background-size: 20px;
+      outline: none;
+
+      @media (min-width: #{$screen-tablet}) {
+        background: transparent url('../images/arrow-right-blue.svg') no-repeat 24px center;
+        background-size: 20px;
+      }
+    }
+  }
+
+  .form-actions {
+    margin-top: 10px;
+
+    @media (min-width: #{$screen-tablet}) {
+      margin-top: 35px;
+      width: 74px;
+    }
   }
 }
 
@@ -58,6 +226,10 @@
 
     .search-help-link {
       display: none;
+    }
+
+    label {
+      color: $soft-blue-02;
     }
 
     .form-type-search {
@@ -73,25 +245,21 @@
       display: flex;
     }
 
-    label {
-      color: $soft-blue-02;
-    }
-
     .form-control {
-      max-width: 780px;
-      width: 100%;
-      height: 56px;
+      border: 1px solid $cold-grey-01;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 0;
+      box-shadow: none;
       color: $dark-blue-01;
       font-size: 16px;
+      height: 56px;
       line-height: 30px;
+      max-width: 780px;
       padding: 10px 25px;
-      border: 1px solid $cold-grey-01;
-      border-right: none;
-      border-top-left-radius: 28px;
-      border-bottom-left-radius: 28px;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      box-shadow: none;
+      width: 100%;
 
       @media (min-width: #{$screen-tablet}) {
         font-size: 18px;
@@ -99,22 +267,22 @@
     }
 
     .form-submit {
-      float: left;
-      text-indent: -9999px;
-      width: 74px;
-      height: 56px;
-      background: $dark-blue-01 url(../images/search_icon_white.svg) no-repeat 24px center;
+      background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat 24px center;
       background-size: 20px;
       border: 1px solid $dark-blue-01;
-      border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-top-right-radius: 28px;
       border-bottom-right-radius: 28px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 28px;
       box-shadow: none;
+      float: left;
+      height: 56px;
+      text-indent: -9999px;
+      width: 74px;
 
       &:hover,
       &:focus {
-        background: $dark-blue-02 url(../images/search_icon_white.svg) no-repeat 24px center;
+        background: $dark-blue-02 url('../images/search_icon_white.svg') no-repeat 24px center;
         background-size: 20px;
         outline: none;
       }
@@ -124,174 +292,6 @@
   .block-system-main-block {
     h3 {
       font-size: 23px;
-    }
-  }
-}
-
-.node_search-results {
-  .list-group-item {
-    padding: 0;
-    margin: 10px 0;
-    border: none;
-    border-radius: 0;
-  }
-}
-
-// Mailchimp
-.block-mailchimp-signup {
-  background-color: $subtle-grey-02;
-  border-top: 3px solid $blue;
-  padding: 35px 15px 20px;
-  margin-top: 40px;
-  margin-bottom: 50px;
-
-  @media (min-width: #{$screen-tablet}) {
-    display: flex;
-    padding: 40px 45px 90px;
-  }
-
-  h2 {
-    font-size: 30px;
-    line-height: 41px;
-    margin: 0 0 10px;
-
-    @media (min-width: #{$screen-tablet}) {
-      width: 50%;
-      font-size: 45px;
-      line-height: 55px;
-      padding-right: 10px;
-      margin: 0;
-    }
-  }
-
-  .content {
-    @media (min-width: #{$screen-tablet}) {
-      width: 50%;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-
-  .mailchimp-signup-subscribe-form {
-    color: $soft-blue-01;
-    font-size: 16px;
-    line-height: 30px;
-
-    @media (min-width: #{$screen-tablet}) {
-      display: flex;
-      flex-flow: wrap;
-      color: $dark-blue-01;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-  }
-
-  .mailchimp-newsletter-mergefields {
-    width: 100%;
-    margin-top: 35px;
-
-    @media (min-width: #{$screen-tablet}) {
-      max-width: 200px;
-    }
-
-    @media (min-width: #{$screen-desktop}) {
-      max-width: 320px;
-    }
-
-    @media (min-width: #{$screen-lg-desktop}) {
-      max-width: 390px;
-    }
-  }
-
-  .form-type-email {
-    label {
-      display: none;
-    }
-  }
-
-  label {
-    color: $soft-blue-01;
-  }
-
-  .form-control {
-    width: 100%;
-    height: 45px;
-    color: $dark-blue-01;
-    background-color: transparent;
-    font-size: 14px;
-    line-height: 30px;
-    padding: 10px 25px;
-    border: 1px solid $cold-grey-01;
-    border-top-left-radius: 28px;
-    border-bottom-left-radius: 28px;
-    border-top-right-radius: 28px;
-    border-bottom-right-radius: 28px;
-    box-shadow: none;
-
-    @media (min-width: #{$screen-tablet}) {
-      max-width: 200px;
-      height: 56px;
-      font-size: 16px;
-      border-right: none;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    @media (min-width: #{$screen-desktop}) {
-      max-width: 320px;
-    }
-
-    @media (min-width: #{$screen-lg-desktop}) {
-      max-width: 390px;
-    }
-  }
-
-  .form-submit {
-    width: 100%;
-    height: 45px;
-    background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 30% center;
-    background-size: 20px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    border: 1px solid $dark-blue-01;
-    border-top-left-radius: 28px;
-    border-bottom-left-radius: 28px;
-    border-top-right-radius: 28px;
-    border-bottom-right-radius: 28px;
-    box-shadow: none;
-
-    @media (min-width: #{$screen-tablet}) {
-      float: left;
-      text-indent: -9999px;
-      width: 74px;
-      height: 56px;
-      background: transparent url(../images/arrow-right-blue.svg) no-repeat 24px center;
-      border: 1px solid $cold-grey-01;
-      border-left: none;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: $dark-blue-01 url(../images/arrow-right-white.svg) no-repeat right 30% center;
-      background-size: 20px;
-      outline: none;
-
-      @media (min-width: #{$screen-tablet}) {
-        background: transparent url(../images/arrow-right-blue.svg) no-repeat 24px center;
-        background-size: 20px;
-      }
-    }
-  }
-
-  .form-actions {
-    margin-top: 10px;
-
-    @media (min-width: #{$screen-tablet}) {
-      width: 74px;
-      margin-top: 35px;
     }
   }
 }
