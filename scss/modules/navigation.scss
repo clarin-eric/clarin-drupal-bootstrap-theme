@@ -8,15 +8,15 @@
 }
 
 .breadcrumb {
-  color: $dark-blue-01;
   background: none;
+  color: $dark-blue-01;
   font-size: 14px !important;
-  padding: 20px 0;
   margin: 0;
+  padding: 20px 0;
 
   @media (min-width: #{$screen-desktop}) {
-    border-top: 1px solid rgba(5,45,77,0.13);
     border-radius: 0;
+    border-top: 1px solid rgba(5, 45, 77, 0.13);
   }
 
   @media (min-width: #{$screen-tablet}) {
@@ -24,11 +24,11 @@
     padding: 30px 0;
   }
 
-  .breadcrumb-item+.breadcrumb-item {
+  .breadcrumb-item + .breadcrumb-item {
     padding-left: 15px;
   }
 
-  .breadcrumb-item+.breadcrumb-item::before {
+  .breadcrumb-item + .breadcrumb-item::before {
     color: $dark-blue-01;
     padding-right: 15px;
   }
@@ -36,9 +36,9 @@
 
 // Pagination
 .pagination {
-  margin: 35px 0 0;
   border-radius: 0;
   justify-content: center;
+  margin: 35px 0 0;
 
   @media (min-width: #{$screen-tablet}) {
     margin: 50px 0 0;
@@ -53,12 +53,12 @@
 
     &.active {
       .page-link {
-        color: $dark-blue-01;
         background-color: transparent;
-        border-bottom: 2px solid $blue ;
+        border-bottom: 2px solid $blue;
+        color: $dark-blue-01;
 
         @media (min-width: #{$screen-tablet}) {
-          border-bottom: 3px solid $blue ;
+          border-bottom: 3px solid $blue;
         }
       }
     }
@@ -66,10 +66,10 @@
     &:first-child,
     &:last-child {
       .page-link {
-        border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
       }
     }
 
@@ -81,23 +81,23 @@
       }
 
       .page-link {
-        background: $subtle-grey-02 url(../images/arrow-right-blue.svg) no-repeat center center;
-        float: left;
-        text-indent: -9999px;
-        width: 36px;
-        height: 36px;
+        background: $subtle-grey-02 url('../images/arrow-right-blue.svg') no-repeat center center;
         border-radius: 100%;
+        float: left;
+        height: 36px;
+        text-indent: -9999px;
         transform: rotate(180deg);
+        width: 36px;
 
         @media (min-width: #{$screen-tablet}) {
-          width: 47px;
           height: 47px;
+          width: 47px;
         }
 
         &:hover,
         &:focus {
-          background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat center center;
-          border-bottom: none;
+          background: $subtle-grey-01 url('../images/arrow-right-blue.svg') no-repeat center center;
+          border-bottom: 0;
         }
       }
     }
@@ -110,22 +110,22 @@
       }
 
       .page-link {
-        background: $subtle-grey-02 url(../images/arrow-right-blue.svg) no-repeat center center;
+        background: $subtle-grey-02 url('../images/arrow-right-blue.svg') no-repeat center center;
+        border-radius: 100%;
         float: left;
+        height: 36px;
         text-indent: -9999px;
         width: 36px;
-        height: 36px;
-        border-radius: 100%;
 
         @media (min-width: #{$screen-tablet}) {
-          width: 47px;
           height: 47px;
+          width: 47px;
         }
 
         &:hover,
         &:focus {
-          background: $subtle-grey-01 url(../images/arrow-right-blue.svg) no-repeat center center;
-          border-bottom: none;
+          background: $subtle-grey-01 url('../images/arrow-right-blue.svg') no-repeat center center;
+          border-bottom: 0;
         }
       }
     }
@@ -134,19 +134,19 @@
       .page-link {
         &:hover,
         &:focus {
-          border-bottom: none;
+          border-bottom: 0;
         }
       }
     }
 
     a,
     span.page-link {
-      color: $dark-blue-01;
       background-color: transparent;
+      border: 0;
+      color: $dark-blue-01;
       font-size: 14px;
-      line-height: 19px;
       font-weight: 500;
-      border: none;
+      line-height: 19px;
       margin-left: 0;
       padding: 3px;
 
@@ -158,11 +158,11 @@
 
       &:hover,
       &:focus {
-        color: $dark-blue-01;
         background-color: transparent;
         border-bottom: 2px solid $dark-blue-01;
-        outline: none;
         box-shadow: none;
+        color: $dark-blue-01;
+        outline: none;
 
         @media (min-width: #{$screen-tablet}) {
           border-bottom: 3px solid $dark-blue-01;
