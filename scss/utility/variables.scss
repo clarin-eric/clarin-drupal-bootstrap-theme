@@ -1,43 +1,43 @@
 /* VARIABLES */
 
 // Colors
-$blue: #0273CB;
-$dark-blue-01: #052D4D;
-$dark-blue-02: #10436B;
-$soft-blue-01: #415D71;
-$soft-blue-02: #5A778D;
-$white: #FFFFFF;
-$black: #000000;
-$accent-light: #FFFFFF;
+$blue: #0273cb;
+$dark-blue-01: #052d4d;
+$dark-blue-02: #10436b;
+$soft-blue-01: #415d71;
+$soft-blue-02: #5a778d;
+$white: #fff;
+$black: #000;
+$accent-light: #fff;
 $accent-dark: $blue;
-$primary-light: #FFFFFF;
+$primary-light: #fff;
 $primary-dark: $blue;
 $primary-shade: $blue;
 // Greys
-$cold-grey-01: #C0C9D6;
-$cold-grey-02: #C0CAD2;
-$cold-grey-03: #DAE1E6;
-$subtle-grey-01: #E1E5EA;
-$subtle-grey-02: #F4F6F9;
+$cold-grey-01: #c0c9d6;
+$cold-grey-02: #c0cad2;
+$cold-grey-03: #dae1e6;
+$subtle-grey-01: #e1e5ea;
+$subtle-grey-02: #f4f6f9;
 // Brand colors
 $brand-primary: $blue;
-$brand-success: #28A745;
-$brand-warning: #FFC107;
-$brand-danger: #DC3545;
-$brand-info: #17A2B8;
+$brand-success: #28a745;
+$brand-warning: #ffc107;
+$brand-danger: #dc3545;
+$brand-info: #17a2b8;
 // Body
 //
 // Settings for the `<body>` element.
 $body-bg: $white;
-$body-color: #052D4D;
+$body-color: #052d4d;
 $inverse-bg: $black;
 $inverse-color: $white;
 // Links
 //
 // Style anchor elements.
-$link-color: #153D57;
+$link-color: #153d57;
 $link-decoration: none;
-$link-hover-color: #153D57;
+$link-hover-color: #153d57;
 $link-hover-decoration: underline;
 // Comments
 $comment-spacer-x: 1.25em;
@@ -52,37 +52,37 @@ $enable-gradients: false;
 
 // Extra small screen / phone
 // Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
-$screen-xs:                  480px;
-$screen-xs-min:              $screen-xs;
-$screen-phone:               $screen-xs-min;
-$phone:                      480px;
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+$screen-phone: $screen-xs-min;
+$phone: 480px;
 
 // Small screen / tablet
 // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
-$screen-sm:                  768px;
-$screen-sm-min:              $screen-sm;
-$screen-tablet:              $screen-sm-min;
-$tablet:                     768px;
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-tablet: $screen-sm-min;
+$tablet: 768px;
 
 // Medium screen / desktop
 // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md:                  992px;
-$screen-md-min:              $screen-md;
-$screen-desktop:             $screen-md-min;
-$desktop:                    992px;
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+$desktop: 992px;
 
 // Large screen / wide desktop
 // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg:                  1200px;
-$screen-lg-min:              $screen-lg;
-$screen-lg-desktop:          $screen-lg-min;
-$desktop-large:              1200px;
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+$desktop-large: 1200px;
 
-$screen-xl:                  1500px;
+$screen-xl: 1500px;
 
-$screen-xl-custom:           1440px;
+$screen-xl-custom: 1440px;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1);
-$screen-sm-max:              ($screen-md-min - 1);
-$screen-md-max:              ($screen-lg-min - 1);
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
