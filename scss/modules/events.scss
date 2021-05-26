@@ -12,8 +12,8 @@
     padding: 20px 0;
 
     @media (min-width: #{$screen-tablet}) {
-      padding: 30px 0;
       margin-bottom: 40px;
+      padding: 30px 0;
     }
 
     &:first-child {
@@ -32,8 +32,8 @@
 
     @media (min-width: #{$screen-tablet}) {
       flex: 1 1 25%;
-      padding-right: 30px;
       padding-bottom: 0;
+      padding-right: 30px;
     }
 
     @media (min-width: #{$screen-desktop}) {
@@ -63,7 +63,7 @@
     }
   }
 
-  .node__title {
+  .node--title {
     font-size: 18px;
     line-height: 24px;
     margin: 0;
@@ -81,15 +81,15 @@
 
     @media (min-width: #{$screen-tablet}) {
       flex: 1 1 25%;
-      padding-left: 25px;
       min-width: 300px;
+      padding-left: 25px;
     }
 
     .field--name-field-image {
-      width: 275px;
       height: 160px;
-      overflow: hidden;
       margin: 0;
+      overflow: hidden;
+      width: 275px;
     }
   }
 }

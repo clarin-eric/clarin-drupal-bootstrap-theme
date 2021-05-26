@@ -74,7 +74,7 @@
 %}
 {%
   set node_classes = [
-  'node__content',
+  'node--content',
   more_links ? 'col-sm-8',
   'clearfix',
 ]
@@ -83,13 +83,13 @@
   <header>
     {{ title_prefix }}
     {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
+      <h2{{ title_attributes.addClass('node--title') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% endif %}
     {{ title_suffix }}
     {% if display_submitted %}
-      <div class="node__meta">
+      <div class="node--meta">
         {{ author_picture }}
         {% block submitted %}
           <em{{ author_attributes }}>

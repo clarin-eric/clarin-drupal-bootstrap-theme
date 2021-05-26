@@ -74,7 +74,7 @@
 %}
 <article{{ attributes.addClass(classes) }}>
   {% if display_submitted %}
-    <div class="node__meta">
+    <div class="node--meta">
       {{ author_picture }}
       {% block submitted %}
         {{ date }}
@@ -85,13 +85,13 @@
   <header>
     {{ title_prefix }}
     {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
+      <h2{{ title_attributes.addClass('node--title') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% endif %}
     {{ title_suffix }}
   </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+  <div{{ content_attributes.addClass('node--content', 'clearfix') }}>
     {{ content }}
   </div>
 </article>

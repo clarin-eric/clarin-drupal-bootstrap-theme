@@ -1,6 +1,6 @@
 body {
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
@@ -56,6 +56,6 @@ img {
   margin: 0;
 }
 
-.node__content {
+.node--content {
   margin-top: 0;
 }
