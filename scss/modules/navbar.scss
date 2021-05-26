@@ -61,15 +61,71 @@
   }
 }
 
+.dropdown.active > a {
+  font-weight: 600;
+}
+
+.dropdown-menu {
+  padding: 20px 15px;
+
+  .dropdown-item:hover,
+  .dropdown-item:focus,
+  .dropdown-item.active {
+    background-color: inherit;
+  }
+
+  .dropdown-item > a {
+    display: block;
+    padding: 2px 0 !important;
+  }
+
+  .dropdown-item.active > a {
+    font-weight: 600;
+  }
+
+  @media (max-width: #{$screen-desktop}) {
+    border: 0;
+    padding-top: 0;
+  }
+
+  @media (min-width: #{$screen-desktop}) {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25) !important;
+  }
+}
+
+.dropdown-header {
+  font-weight: 700;
+}
+
+// Dropdown toggle
+.dropdown {
+  .dropdown-toggle {
+    &::after {
+      background: url('../images/arrow-down-blue.svg') no-repeat center center;
+      border: 0;
+      height: 14px;
+      margin-left: 3px;
+      vertical-align: middle;
+      width: 14px;
+    }
+  }
+
+  &.show {
+    .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 // Navbar
 #navbar-main {
-  margin: 0;
-  border: none;
+  border: 0;
   border-radius: 0;
+  margin: 0;
 
   @media (max-width: #{$screen-tablet}) {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .container {
@@ -77,44 +133,58 @@
   }
 
   .block-menu {
-    margin-left: auto;
     margin-bottom: 3px;
+    margin-left: auto;
 
     &:first-of-type:not(:only-of-type) {
-      margin-top: 10px
+      margin-top: 10px;
     }
 
     li {
       padding: 0 11px;
 
-      @media (min-width: #{$screen-desktop}) {
-        padding: 0 4px;
-      }
-
-      @media (min-width: #{$screen-lg-desktop}) {
-        padding: 0 8px;
-      }
-
       a,
       span {
         padding: 0;
 
-        @media (min-width: #{$screen-desktop}) {
-          font-size: 15px;
-        }
-
-        @media (min-width: #{$screen-lg-desktop}) {
-          font-size: 16px;
-        }
-
         &:hover,
         &:focus {
-          text-decoration: underline;
           background-color: transparent;
           cursor: pointer;
+          text-decoration: underline;
         }
       }
     }
+
+    @media (min-width: #{$screen-desktop}) {
+      li {
+        padding: 0 4px;
+
+        a,
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+
+    @media (min-width: #{$screen-lg-desktop}) {
+      li {
+        padding: 0 8px;
+
+        a,
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  // External links in menu
+  .dropdown .dropdown-menu .dropdown-item .ext-link {
+    background: url('../images/external-link_icon.svg') no-repeat right center;
+    background-size: 12px;
+    display: inline;
+    padding-right: 20px !important;
   }
 }
 
@@ -123,59 +193,6 @@
   text-decoration: underline;
 }
 
-// Dropdown toggle
-.dropdown {
-  .dropdown-toggle {
-    &:after {
-      background: url(../images/arrow-down-blue.svg) no-repeat center center;
-      margin-left: 3px;
-      width: 14px;
-      height: 14px;
-      vertical-align: middle;
-      border: none;
-    }
-  }
-  &.show {
-    .dropdown-toggle:after {
-      transform: rotate(180deg);
-    }
-  }
-}
-
-.dropdown.active > a {
-  font-weight: 600;
-}
-
-.dropdown-menu {
-  .dropdown-item:hover,
-  .dropdown-item:focus,
-  .dropdown-item.active {
-    background-color: inherit;
-  }
-
-  .dropdown-item.active > a {
-    font-weight: 600;
-  }
-
-  li.dropdown-item > a {
-    display: block;
-    padding: 2px 0 !important;
-  }
-
-  @media (max-width: #{$screen-desktop}) {
-    border: none;
-    padding-top: 0px;
-  }
-  @media (min-width: #{$screen-desktop}) {
-    box-shadow: 0px 2px 20px rgba(0,0,0,0.25) !important;
-  }
-
-  padding: 20px 15px;
-}
-
-.dropdown-header {
-  font-weight: 700;
-}
 // Logo
 .navbar-brand {
   height: auto;
@@ -209,34 +226,19 @@
   }
 
   @media (max-width: #{$screen-desktop}) {
-    &.navbar-collapse nav.block-menu:not(:last-of-type) li.nav-item:last-of-type {
+    &.navbar-collapse .block-menu:not(:last-of-type) .nav-item:last-of-type {
       border-bottom: 1px solid $cold-grey-01;
       padding-bottom: 10px !important;
     }
   }
-  .nav > a.nav-link {
+
+  .nav > .nav-link {
     padding-left: 11px;
   }
 }
 
 .navbar {
   padding: 0;
-}
-
-// External links in menu
-#navbar-main {
-  .dropdown {
-    ul.dropdown-menu {
-      li {
-        a.ext-link {
-          display: inline;
-          background: url('../images/external-link_icon.svg') no-repeat right center;
-          background-size: 12px;
-          padding-right: 20px;
-        }
-      }
-    }
-  }
 }
 
 // Navbar toggle with X transition
