@@ -5,6 +5,6 @@
     "homepage": "https://github.com/clarin-eric/clarin-drupal-bootstrap-theme",
     "license": "GPL-3.0+",
     "require": {
-        "drupal/bootstrap_barrio": ">=5.1.4"
+        "drupal/bootstrap_barrio": ">=5.1.5"
     }
 }
