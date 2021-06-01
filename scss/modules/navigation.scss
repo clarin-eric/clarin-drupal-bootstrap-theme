@@ -73,7 +73,12 @@
       }
     }
 
-    &.pager__item--previous {
+    &.pager__item--previous .page-link {
+      transform: rotate(180deg);
+    }
+
+    &.pager__item--previous,
+    &.pager__item--next {
       margin-right: 20px;
 
       @media (min-width: #{$screen-tablet}) {
@@ -86,7 +91,6 @@
         float: left;
         height: 36px;
         text-indent: -9999px;
-        transform: rotate(180deg);
         width: 36px;
 
         @media (min-width: #{$screen-tablet}) {
@@ -96,46 +100,16 @@
 
         &:hover,
         &:focus {
-          background: $subtle-grey-01 url('../images/arrow-right-blue.svg') no-repeat center center;
-          border-bottom: 0;
-        }
-      }
-    }
-
-    &.pager__item--next {
-      margin-left: 20px;
-
-      @media (min-width: #{$screen-tablet}) {
-        margin-left: 25px;
-      }
-
-      .page-link {
-        background: $subtle-grey-02 url('../images/arrow-right-blue.svg') no-repeat center center;
-        border-radius: 100%;
-        float: left;
-        height: 36px;
-        text-indent: -9999px;
-        width: 36px;
-
-        @media (min-width: #{$screen-tablet}) {
-          height: 47px;
-          width: 47px;
-        }
-
-        &:hover,
-        &:focus {
-          background: $subtle-grey-01 url('../images/arrow-right-blue.svg') no-repeat center center;
+          background-color: $subtle-grey-01;
           border-bottom: 0;
         }
       }
     }
 
     &.ellipses {
-      .page-link {
-        &:hover,
-        &:focus {
-          border-bottom: 0;
-        }
+      .page-link:hover,
+      .page-link:focus {
+        border-bottom: 0;
       }
     }
 
