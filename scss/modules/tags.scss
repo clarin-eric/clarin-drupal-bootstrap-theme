@@ -49,16 +49,6 @@
     display: block;
 
     ul {
-      &.hide-more {
-        li:nth-of-type(n+3) {
-          display: none;
-        }
-
-        .show-tags {
-          display: block !important;
-        }
-      }
-
       .show-tags {
         border: 1px solid $blue;
         border-radius: 50px;
@@ -81,6 +71,16 @@
         &:focus {
           background-color: #f0f6fb;
           text-decoration: none;
+        }
+      }
+
+      &.hide-more {
+        li:nth-of-type(n+3) {
+          display: none;
+        }
+
+        .show-tags {
+          display: block !important;
         }
       }
     }
