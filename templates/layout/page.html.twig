@@ -124,7 +124,7 @@
             </section>
           </main>
           {% if show_toc == 0 %}
-            {% if page.sidebar_second and show_toc == 0 %}             
+            {% if page.sidebar_second %}             
               <div{{ sidebar_second_attributes }}>                       
                 <aside class="section" role="complementary">               
                   {{ page.sidebar_second }}               
