@@ -104,7 +104,7 @@
               </aside>
             </div>
           {% endif %}
-          <main{{ content_attributes }}>
+          <main{{ show_toc ? content_attributes.addClass("col-md-9").removeClass("col") : content_attributes }}>
             <section class="section">
               <a id="main-content" tabindex="-1"></a>
               {# Highlighted #}
