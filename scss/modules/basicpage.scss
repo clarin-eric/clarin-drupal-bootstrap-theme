@@ -241,23 +241,21 @@
       }
     }
 
-    #edit-basic {
-      display: flex;
+    .search-advanced {
+      max-width: 854px; // 780px + 74 px (basic search input + button)
     }
 
-    .form-control {
+    .form-control, {
       border: 1px solid $cold-grey-01;
       border-bottom-left-radius: 28px;
-      border-bottom-right-radius: 0;
-      border-right: 0;
+      border-bottom-right-radius: 28px;
       border-top-left-radius: 28px;
-      border-top-right-radius: 0;
+      border-top-right-radius: 28px;
       box-shadow: none;
       color: $dark-blue-01;
       font-size: 16px;
       height: 56px;
       line-height: 30px;
-      max-width: 780px;
       padding: 10px 25px;
       width: 100%;
 
@@ -267,24 +265,40 @@
     }
 
     .form-submit {
-      background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat 24px center;
+      background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat right 24px center;
       background-size: 20px;
       border: 1px solid $dark-blue-01;
-      border-bottom-left-radius: 0;
+      border-bottom-left-radius: 28px;
       border-bottom-right-radius: 28px;
-      border-top-left-radius: 0;
+      border-top-left-radius: 28px;
       border-top-right-radius: 28px;
-      box-shadow: none;
-      float: left;
       height: 56px;
-      text-indent: -9999px;
-      width: 74px;
+      padding: 0 55px 0 25px;
 
       &:hover,
       &:focus {
-        background: $dark-blue-02 url('../images/search_icon_white.svg') no-repeat 24px center;
-        background-size: 20px;
+        background-color: $dark-blue-02;
         outline: none;
+      }
+    }
+
+    #edit-basic {
+      display: flex;
+
+      .form-control {
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        border-top-right-radius: 0;
+      }
+
+      .form-submit {
+        background-position: 24px center;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        box-shadow: none;
+        text-indent: -9999px;
+        width: 74px;
+        padding: 0;
       }
     }
   }
