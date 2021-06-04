@@ -19,7 +19,7 @@ clarin_slidenav:
 clarin_toc:
   js:
     js/bootstrap-toc.min.js: { }
-    js/toc-min.js: {}
+    js/toc.min.js: {}
   css:
     component:
       css/bootstrap-toc.min.css: { }
