@@ -280,9 +280,7 @@ body.node--type-news {
     width: 100%;
 
     @media (min-width: #{$screen-tablet}) {
-      box-flex: 0;
-      flex: 0 0 66.66667%;
-      max-width: 66.66667%;
+      flex: 0;
       padding-right: 40px;
     }
 
@@ -318,9 +316,7 @@ article.node--type-news {
     width: 100%;
 
     @media (min-width: #{$screen-tablet}) {
-      box-flex: 0;
-      flex: 0 0 66.66667%;
-      max-width: 66.66667%;
+      flex: 0;
       padding-right: 40px;
     }
 
@@ -497,10 +493,8 @@ div.node--type-news {
   width: 100%;
 
   @media (min-width: #{$screen-tablet}) {
-    box-flex: 0;
-    flex: 0 0 66.66667%;
+    flex: 0;
     margin-top: 55px;
-    max-width: 66.66667%;
     padding-right: 40px;
   }
 
