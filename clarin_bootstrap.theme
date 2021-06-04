@@ -58,7 +58,7 @@ function clarin_bootstrap_preprocess_node(&$variables)
   $node = $variables['node'];
   if ($node->hasField('field_show_toc') && $node->hasField('body')) {
     if ($node->get('field_show_toc')->value == 1) {
-      $variables['toc'] = $node->get('field_show_toc')->value;
+      $variables['show_toc'] = $node->get('field_show_toc')->value;
       $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_toc';
     }
   }
