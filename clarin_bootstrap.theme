@@ -71,6 +71,15 @@ function clarin_bootstrap_preprocess_node(&$variables)
 }
 
 /**
+ * Implements hook_preprocess_item_list__search_results().
+ */
+function clarin_bootstrap_preprocess_item_list__search_results(&$variables) {
+  if (!\Drupal::request()->query->has('keys') && isset($variables['empty'])) {
+    unset($variables['empty']);
+  }
+}
+
+/**
  * Implements hook_form_alter().
  * Customizes the default login form
  * @param $form      
