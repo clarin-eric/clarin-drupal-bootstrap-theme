@@ -53,12 +53,12 @@
     right: 0;
     width: 300px;
 
-    form-control {
+    .form-control {
       border-bottom-left-radius: 25px;
       border-top-left-radius: 25px;
     }
 
-    form-submit {
+    .form-submit {
       background-color: $dark-blue-01;
       border: 1px solid $dark-blue-01 !important;
       border-bottom-left-radius: 0;
