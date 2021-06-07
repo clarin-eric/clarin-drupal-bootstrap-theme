@@ -914,10 +914,12 @@ div.node--type-news {
 }
 
 #toc {
+  background-color: $white;
+  display: none;
   left: inherit;
   position: sticky;
-  top: 100px;
-  z-index: 500;
+  top: 0;
+  z-index: 100;
 
   @media (min-width: #{$screen-tablet}) {
     display: block;

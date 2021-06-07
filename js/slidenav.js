@@ -11,6 +11,7 @@
       let lastScrollPosition;
       let body;
       let header;
+      let toc;
       let collapsingNavbar;
       let adminBar;
 
@@ -47,6 +48,8 @@
         ) {
           // in betwen stage
           header.style.top = `${relativeDelta}px`;
+          if (toc)
+            toc.style.top = `${relativeDelta + headerHeight + 10}px`
 
           if (
             pageScrollPosition >
@@ -59,10 +62,14 @@
         } else if (relativeDelta < defaultStickyTop) {
           // fully disappears
           header.style.top = `${defaultStickyTop}px`;
+          if (toc)
+            toc.style.top = `${defaultStickyTop + headerHeight + 10}px`;
           header.classList.remove("shadow-header");
         } else if (relativeDelta > fixedAdminBarHeight) {
           // fully appears
           header.style.top = `${fixedAdminBarHeight}px`;
+          if (toc)
+            toc.style.top = `${fixedAdminBarHeight + headerHeight + 10}px`;
 
           if (
             pageScrollPosition <=
@@ -78,6 +85,7 @@
         body = document.body;
         adminBar = document.getElementById("toolbar-administration");
         header = document.getElementById("header");
+        toc = document.getElementById("toc");
         collapsingNavbar = $("#CollapsingNavbar", body);
         lastScrollPosition =
           window.pageYOffset || document.documentElement.scrollTop;

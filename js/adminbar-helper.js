@@ -6,7 +6,7 @@
       let timer = null;
       let prevEffectiveStickyTop = 0;
 
-      function repositionContent(mainToolbar, header, body, toolbarElem) {
+      function repositionContent(mainToolbar, header, body, toc, toolbarElem) {
         let toolbarTotalHeight = toolbarElem.clientHeight;
 
         // We will try to avoid calls to mainToolbar.outerHeight(true) as toolbarElem might already contain
@@ -65,6 +65,8 @@
 
           // Reposition body
           body.css("padding-top", `${toolbarTotalHeight}px`);
+          if (toc)
+            toc.css("top", `${toolbarTotalHeight + 10}px`);
 
           if (header.css("position") === "sticky") {
             if (body.hasClass("toolbar-fixed")) {
@@ -93,6 +95,7 @@
           const body = $("body", context);
           const mainToolbar = $("#toolbar-bar", body);
           const header = $("#header", body);
+          const toc = $("#toc", body);
 
           // Use a resize observer on the admin toolbar and each of its trays to detect changes in height
           // Reposition the content when they happen
@@ -100,7 +103,7 @@
             (index, adminBarElement) => {
               const trayResizeObserver = new ResizeObserver(entries => {
                 entries.forEach(entry => {
-                  repositionContent(mainToolbar, header, body, entry.target);
+                  repositionContent(mainToolbar, header, body, toc, entry.target);
                 });
               });
               trayResizeObserver.observe(adminBarElement);
