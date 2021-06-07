@@ -101,8 +101,15 @@
     width: max-content;
 
     .form-control {
+      border: 1px solid $cold-grey-01;
       border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 0;
       border-top-left-radius: 25px;
+      border-top-right-radius: 0;
+
+      &:focus {
+        box-shadow: none;
+      }
     }
 
     .form-submit {
@@ -112,6 +119,12 @@
       border-bottom-right-radius: 28px;
       border-top-left-radius: 0;
       border-top-right-radius: 28px;
+
+      &:hover,
+      &:focus {
+        background-color: $dark-blue-02;
+        outline: none;
+      }
     }
   }
 }
