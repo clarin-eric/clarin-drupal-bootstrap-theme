@@ -123,6 +123,7 @@
       &:hover,
       &:focus {
         background-color: $dark-blue-02;
+        box-shadow: none;
         outline: none;
       }
     }
