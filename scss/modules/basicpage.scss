@@ -23,6 +23,12 @@
   }
 }
 
+.sidebar_second {
+  @media (max-width: #{$screen-tablet}) {
+    display: none;
+  }
+}
+
 .node--type-landing-page {
   #block-clarin-bootstrap-breadcrumbs {
     .container {
