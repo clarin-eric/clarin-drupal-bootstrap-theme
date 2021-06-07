@@ -65,8 +65,7 @@
 
           // Reposition body
           body.css("padding-top", `${toolbarTotalHeight}px`);
-          if (toc)
-            toc.css("top", `${toolbarTotalHeight + 10}px`);
+          if (toc) toc.css("top", `${toolbarTotalHeight + 10}px`);
 
           if (header.css("position") === "sticky") {
             if (body.hasClass("toolbar-fixed")) {
@@ -103,7 +102,13 @@
             (index, adminBarElement) => {
               const trayResizeObserver = new ResizeObserver(entries => {
                 entries.forEach(entry => {
-                  repositionContent(mainToolbar, header, body, toc, entry.target);
+                  repositionContent(
+                    mainToolbar,
+                    header,
+                    body,
+                    toc,
+                    entry.target
+                  );
                 });
               });
               trayResizeObserver.observe(adminBarElement);

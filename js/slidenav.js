@@ -48,8 +48,7 @@
         ) {
           // in betwen stage
           header.style.top = `${relativeDelta}px`;
-          if (toc)
-            toc.style.top = `${relativeDelta + headerHeight + 10}px`
+          if (toc) toc.style.top = `${relativeDelta + headerHeight + 10}px`;
 
           if (
             pageScrollPosition >
@@ -62,8 +61,7 @@
         } else if (relativeDelta < defaultStickyTop) {
           // fully disappears
           header.style.top = `${defaultStickyTop}px`;
-          if (toc)
-            toc.style.top = `${defaultStickyTop + headerHeight + 10}px`;
+          if (toc) toc.style.top = `${defaultStickyTop + headerHeight + 10}px`;
           header.classList.remove("shadow-header");
         } else if (relativeDelta > fixedAdminBarHeight) {
           // fully appears
