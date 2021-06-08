@@ -4,7 +4,7 @@
  *
  */
 (function($, Drupal) {
-  Drupal.behaviors.clarin = {
+  Drupal.behaviors.clarin_theme_custom = {
     attach: function attach(context) {
       if (context !== document) {
         return;
