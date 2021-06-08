@@ -1,0 +1,32 @@
+.faq-question {
+  a {
+    &::after {
+      background: url('../images/arrow-down-blue.svg') no-repeat center center;
+      border: 0;
+      content: '';
+      display: inline-block;
+      height: 14px;
+      margin-left: 3px;
+      transition: transform 200ms;
+      vertical-align: middle;
+      width: 14px;
+    }
+  }
+
+  &.faq-qa-visible {
+    a::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.faq-answer {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  margin-left: 40px;
+  padding-left: 10px;
+  padding-top: 10px;
+
+  a {
+    color: $blue;
+  }
+}
