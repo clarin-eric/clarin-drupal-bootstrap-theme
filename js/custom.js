@@ -55,8 +55,8 @@
       // Auto select input search box
       $("#searchMenuDropdown", document).on("shown.bs.dropdown", function() {
         $("#edit-keys-dropdown", $(this))
-          .select()
-          .focus();
+          .focus()
+          .select();
       });
     }
   };
