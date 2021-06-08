@@ -1,12 +1,13 @@
 .searchicon {
   margin: 0 10px;
 
-  a {
-    background: url('../images/search_icon.svg') no-repeat center center;
+  a,
+  span {
+    background: url('../images/search_icon.svg') no-repeat center center/22px;
     float: left;
-    height: 20px;
+    height: 22px;
     text-indent: -9999px;
-    width: 20px;
+    width: 22px;
   }
 
   p {
@@ -95,17 +96,25 @@
 }
 
 .dropdownsearch {
+  .contextual {
+    left: 78px;
+  }
+
   .dropdown-menu {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25) !important;
     left: auto;
+    min-width: 350px;
+    padding-top: 15px;
     right: -8px;
-    width: max-content;
 
     .form-control {
       border: 1px solid $cold-grey-01;
-      border-bottom-left-radius: 25px;
+      border-bottom-left-radius: 28px;
       border-bottom-right-radius: 0;
-      border-top-left-radius: 25px;
+      border-top-left-radius: 28px;
       border-top-right-radius: 0;
+      height: 50px;
+      width: 100%;
 
       &:focus {
         box-shadow: none;
@@ -119,6 +128,8 @@
       border-bottom-right-radius: 28px;
       border-top-left-radius: 0;
       border-top-right-radius: 28px;
+      height: 50px;
+      width: 60px;
 
       &:hover,
       &:focus {
@@ -126,6 +137,10 @@
         box-shadow: none;
         outline: none;
       }
+    }
+
+    @media (max-width: #{$screen-desktop}) {
+      z-index: -1;
     }
   }
 }

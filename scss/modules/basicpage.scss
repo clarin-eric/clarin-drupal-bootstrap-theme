@@ -301,6 +301,10 @@
         padding: 0;
         text-indent: -9999px;
         width: 74px;
+
+        @media (max-width: #{$screen-desktop}) {
+          background-position: 18px center;
+        }
       }
     }
   }
