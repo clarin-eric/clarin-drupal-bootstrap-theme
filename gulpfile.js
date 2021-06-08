@@ -206,7 +206,7 @@ function jsDev() {
 // Static Server + watching scss/html files
 function serve() {
   browserSync.init({
-    proxy: "https://www.clarin.eu",
+    proxy: "https://dev-www.clarin.eu",
     serveStatic: [
       {
         route: ["/themes/contrib/clarin_bootstrap"],
