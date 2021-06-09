@@ -198,13 +198,14 @@
       a,
       span {
         padding: 0;
+      }
 
-        &:hover,
-        &:focus {
-          background-color: transparent;
-          cursor: pointer;
-          text-decoration: underline;
-        }
+      &.dropdown-item span {
+        color: $dark-grey;
+        display: block;
+        font-weight: 700;
+        padding-top: 10px;
+        white-space: nowrap;
       }
     }
 
