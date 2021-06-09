@@ -915,11 +915,15 @@ div.node--type-news {
 
 #toc {
   background-color: $white;
-  display: block;
+  display: none;
   left: inherit;
   position: sticky;
   top: 0;
   z-index: 100;
+
+  @media (min-width: #{$screen-tablet}) {
+    display: block;
+  }
 
   h2 {
     border: 0;

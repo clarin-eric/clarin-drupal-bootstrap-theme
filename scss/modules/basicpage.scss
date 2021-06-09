@@ -25,7 +25,20 @@
 
 .sidebar_second {
   @media (max-width: #{$screen-tablet}) {
-    display: none;
+    padding-left: 0;
+    padding-right: 0;
+
+    .section nav ul {
+      flex-flow: wrap;
+      justify-content: space-between;
+      list-style: square;
+      padding: 10px;
+
+      li {
+        margin-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
 }
 
