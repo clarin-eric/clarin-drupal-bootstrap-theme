@@ -1,20 +1,30 @@
 .faq-question {
-  a {
-    &::after {
+  font-size: 19px;
+  font-weight: 400;
+  padding-left: 0;
+  padding-top: 20px;
+
+  span {
+    display: flex;
+    align-items: baseline;
+
+    a {
+      flex: 1;
+    }
+
+    &::before {
       background: url('../images/arrow-down-blue.svg') no-repeat center center;
       border: 0;
       content: '';
-      display: inline-block;
       height: 14px;
-      margin-left: 3px;
       transition: transform 200ms;
       vertical-align: middle;
-      width: 14px;
+      width: 30px;
     }
   }
 
   &.faq-qa-visible {
-    a::after {
+    span::before {
       transform: rotate(180deg);
     }
   }
@@ -22,11 +32,15 @@
 
 .faq-answer {
   border-left: 1px solid rgba(0, 0, 0, 0.15);
-  margin-left: 40px;
+  margin-left: 15px;
   padding-left: 10px;
   padding-top: 10px;
 
   a {
     color: $blue;
+  }
+
+  .text-formatted > p:last-child {
+    margin-bottom: 0;
   }
 }
