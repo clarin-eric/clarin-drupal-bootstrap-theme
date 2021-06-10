@@ -79,6 +79,10 @@
   .dropdown-item > a {
     display: block;
     padding: 2px 0 !important;
+
+    @media (max-width: #{$screen-desktop}) {
+      padding-left: 8px !important;
+    }
   }
 
   .dropdown-item.active > a {
@@ -193,30 +197,31 @@
     }
 
     li {
-      padding: 0 11px;
+      padding: 6px 11px;
+    }
 
-      a,
-      span {
-        padding: 0;
-      }
+    a,
+    span {
+      font-size: 19px;
+      padding: 0;
+    }
 
-      &.dropdown-item span {
-        color: $dark-grey;
-        display: block;
-        font-weight: 700;
-        padding-top: 10px;
-        white-space: nowrap;
-      }
+    .dropdown-item span {
+      color: $dark-grey;
+      display: block;
+      font-weight: 700;
+      padding-top: 10px;
+      white-space: nowrap;
     }
 
     @media (min-width: #{$screen-desktop}) {
       li {
         padding: 0 4px;
+      }
 
-        a,
-        span {
-          font-size: 15px;
-        }
+      a,
+      span {
+        font-size: 15px;
       }
     }
 
@@ -229,6 +234,12 @@
           font-size: 16px;
         }
       }
+    }
+  }
+
+  .menu-fa-icon {
+    @media (max-width: #{$screen-desktop}) {
+      font-size: 19px;
     }
   }
 
