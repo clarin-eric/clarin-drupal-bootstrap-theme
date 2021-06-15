@@ -211,7 +211,7 @@
 
   .field__item {
     .paragraph--type--image-text {
-      @media (max-width: #{$screen-tablet}) {
+      @media (max-width: #{$screen-xs-max}) {
         border-bottom: 1px solid $cold-grey-03;
       }
     }
@@ -266,7 +266,7 @@
   padding-top: 45px;
   position: relative;
 
-  @media (max-width: #{$screen-tablet}) {
+  @media (max-width: #{$screen-xs-max}) {
     .contextual-region {
       position: unset;
     }
@@ -350,7 +350,7 @@
   padding: 30px 10px;
   position: relative;
 
-  @media (max-width: #{$screen-tablet}) {
+  @media (max-width: #{$screen-xs-max}) {
     .contextual-region {
       position: unset;
     }
@@ -485,7 +485,7 @@
     border-top: 3px solid $blue;
     padding: 30px 10px;
 
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       padding: 30px 10px 20px;
     }
 
@@ -545,7 +545,7 @@
       border-bottom: 1px solid $cold-grey-01;
       padding: 15px 0;
 
-      @media (max-width: #{$screen-tablet}) {
+      @media (max-width: #{$screen-xs-max}) {
         display: none;
 
         &:first-child,
@@ -728,7 +728,7 @@
 
   img,
   video {
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       height: auto;
       margin: 0;
       max-width: 100%;

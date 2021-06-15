@@ -20,7 +20,7 @@
   .resource-icon {
     display: inline-block;
 
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       float: right;
     }
 
@@ -39,7 +39,7 @@
     line-height: 31px;
     margin: 20px 0 8px;
 
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       margin-top: 0;
       padding-right: 60px;
     }
@@ -55,7 +55,7 @@
     font-size: 14px;
     line-height: 21px;
 
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       padding-right: 60px;
     }
 
@@ -128,7 +128,7 @@
     margin: 20px 0 0;
     overflow: hidden;
 
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       width: 100%;
     }
 
@@ -152,7 +152,7 @@
     .resource-icon {
       display: inline-block;
 
-      @media (max-width: #{$screen-tablet}) {
+      @media (max-width: #{$screen-xs-max}) {
         float: right;
       }
 
@@ -171,7 +171,7 @@
       line-height: 31px;
       margin: 15px 0 8px;
 
-      @media (max-width: #{$screen-tablet}) {
+      @media (max-width: #{$screen-xs-max}) {
         margin-top: 0;
         padding-right: 60px;
       }
@@ -187,7 +187,7 @@
       font-size: 14px;
       line-height: 21px;
 
-      @media (max-width: #{$screen-tablet}) {
+      @media (max-width: #{$screen-xs-max}) {
         padding-right: 60px;
       }
 

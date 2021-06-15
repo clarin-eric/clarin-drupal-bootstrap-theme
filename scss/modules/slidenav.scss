@@ -1,6 +1,6 @@
 @import '../utility/variables';
 
-@media (max-width: #{$screen-desktop}) {
+@media (max-width: #{$screen-sm-max}) {
   #header {
     opacity: 0.98;
     position: sticky;

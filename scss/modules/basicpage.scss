@@ -24,7 +24,7 @@
 }
 
 .sidebar_second {
-  @media (max-width: #{$screen-tablet}) {
+  @media (max-width: #{$screen-xs-max}) {
     padding-left: 0;
     padding-right: 0;
 
@@ -315,7 +315,7 @@
         text-indent: -9999px;
         width: 74px;
 
-        @media (max-width: #{$screen-desktop}) {
+        @media (max-width: #{$screen-sm-max}) {
           background-position: 18px center;
         }
       }

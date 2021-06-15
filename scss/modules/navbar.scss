@@ -80,7 +80,7 @@
     display: block;
     padding: 2px 0 !important;
 
-    @media (max-width: #{$screen-desktop}) {
+    @media (max-width: #{$screen-sm-max}) {
       padding-left: 8px !important;
     }
   }
@@ -89,7 +89,7 @@
     font-weight: 600;
   }
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     border: 0;
     padding-top: 0;
   }
@@ -143,7 +143,7 @@
       }
     }
 
-    @media (max-width: #{$screen-desktop}) {
+    @media (max-width: #{$screen-sm-max}) {
       z-index: -1;
     }
   }
@@ -179,7 +179,7 @@
   border-radius: 0;
   margin: 0;
 
-  @media (max-width: #{$screen-tablet}) {
+  @media (max-width: #{$screen-xs-max}) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -238,7 +238,7 @@
   }
 
   .menu-fa-icon {
-    @media (max-width: #{$screen-desktop}) {
+    @media (max-width: #{$screen-sm-max}) {
       font-size: 19px;
     }
   }
@@ -279,7 +279,7 @@
 }
 
 .main-content {
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     border-top: 1px solid rgba(5, 45, 77, 0.13);
   }
 }
@@ -289,7 +289,7 @@
     margin-top: 3px;
   }
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     &.navbar-collapse .block-menu:not(:last-of-type) .nav-item:last-of-type {
       border-bottom: 1px solid $cold-grey-01;
       padding-bottom: 10px !important;
@@ -306,7 +306,7 @@
 }
 
 // Navbar toggle with X transition
-@media (max-width: #{$screen-desktop}) {
+@media (max-width: #{$screen-sm-max}) {
   .navbar-toggler {
     align-items: center;
     border-radius: 0;

@@ -16,7 +16,7 @@ h6 {
 h1 {
   font-size: $h1-font-size-h1;
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     font-size: $h2-font-size-h2;
   }
 
@@ -28,7 +28,7 @@ h1 {
 h2 {
   font-size: $h2-font-size-h2;
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     font-size: $h3-font-size-h3;
   }
 
@@ -40,7 +40,7 @@ h2 {
 h3 {
   font-size: $h3-font-size-h3;
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     font-size: $h4-font-size-h4;
   }
 
@@ -52,7 +52,7 @@ h3 {
 h4 {
   font-size: $h4-font-size-h4;
 
-  @media (max-width: #{$screen-desktop}) {
+  @media (max-width: #{$screen-sm-max}) {
     font-size: $h5-font-size-h5;
   }
 

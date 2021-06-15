@@ -75,7 +75,7 @@
   }
 
   .event-image {
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{$screen-xs-max}) {
       display: none;
     }
 
