@@ -44,7 +44,7 @@ function clarin_bootstrap_page_attachments_alter(&$attachments) {
 function clarin_bootstrap_preprocess_page(&$variables)
 {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    if ($node->hasField('field_show_toc')) {
+    if ($node instanceof \Drupal\node\NodeInterface && $node->hasField('field_show_toc')) {
         $variables['show_toc'] = $node->get('field_show_toc')->value;
       }
   }
