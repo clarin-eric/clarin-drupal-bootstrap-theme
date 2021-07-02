@@ -106,15 +106,15 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '1'
       - name: Get build package from build job
         uses: actions/download-artifact@v2
         with:
           name: drupal-theme-build-package
       - name: 'Untar build package'
         run: tar -xf clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '1'
       - name: Publish to distribution repository
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
