@@ -106,7 +106,8 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Get latest commit sha and message
+        uses: actions/checkout@v2
         with:
           fetch-depth: '1'
       - name: Get build package from build job
