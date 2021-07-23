@@ -350,8 +350,7 @@ article.node--type-news {
       padding: 0;
 
       li {
-        align-items: baseline;
-        display: flex;
+        display: inline-table;
         line-height: 25px;
         list-style-type: none;
         padding-bottom: 15px;
@@ -374,6 +373,10 @@ article.node--type-news {
           width: 9px;
         }
       }
+
+      &>ol, ul {
+        padding-left: 25px;
+      }
     }
 
     ol {
@@ -381,8 +384,7 @@ article.node--type-news {
       padding: 0;
 
       li {
-        align-items: baseline;
-        display: flex;
+        display: inline-table;
         line-height: 25px;
         list-style-type: none;
         padding-bottom: 15px;
@@ -401,6 +403,10 @@ article.node--type-news {
           counter-increment: my-badass-counter;
           margin-right: 20px;
           width: 9px;
+        }
+
+        &>ol, ul {
+         padding-left: 25px;
         }
       }
     }
