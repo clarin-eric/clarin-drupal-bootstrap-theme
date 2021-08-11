@@ -328,3 +328,18 @@
     }
   }
 }
+
+// Dropdown toggle
+.collapse-toggle {
+  &::after {
+    background: url('../images/arrow-down-blue.svg') no-repeat center center;
+    border: 0;
+    height: 14px;
+    margin-left: 3px;
+    vertical-align: middle;
+    width: 14px;
+  }
+  &:not(.collapsed)::after {
+    transform: rotate(180deg);
+  }
+}
