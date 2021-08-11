@@ -334,6 +334,8 @@
   &::after {
     background: url('../images/arrow-down-blue.svg') no-repeat center center;
     border: 0;
+    content: "";
+    display: inline-block;
     height: 14px;
     margin-left: 3px;
     vertical-align: middle;
