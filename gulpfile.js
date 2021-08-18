@@ -234,7 +234,7 @@ const dist = gulp.parallel(
 );
 const dev = gulp.parallel(
   resourcesDev,
-  stylesDev,
+  gulp.series(lintscss, stylesDev),
   gulp.series(lintjs, jsDev),
   serve
 );
