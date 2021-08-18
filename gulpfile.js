@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const gulpStylelint = require("gulp-stylelint");
 const cleanCss = require("gulp-clean-css");
@@ -206,7 +206,7 @@ function jsDev() {
 // Static Server + watching scss/html files
 function serve() {
   browserSync.init({
-    proxy: "https://dev-www.clarin.eu",
+    proxy: "https://www.clarin.eu",
     serveStatic: [
       {
         route: ["/themes/contrib/clarin_bootstrap"],
