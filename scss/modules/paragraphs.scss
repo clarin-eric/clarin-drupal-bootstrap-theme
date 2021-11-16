@@ -3,11 +3,11 @@
   color: $dark-blue-01;
   font-size: 16px;
   line-height: 1.5;
-  padding: 40px 0;
+  padding: 5px 0 0 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 23px;
-    padding: 60px 0 40px;
+    padding: 10px 0 0 0;
   }
 
   h1 {
@@ -15,7 +15,6 @@
     font-size: 30px;
     line-height: 1.2;
     margin-bottom: 20px;
-    max-width: 665px;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 55px;
@@ -24,9 +23,6 @@
     }
   }
 
-  .field--name-field-body {
-    max-width: 700px;
-  }
 }
 
 .paragraph--type--image-text {
@@ -582,12 +578,12 @@
 .paragraph--type--text {
   font-size: 16px;
   line-height: 25px;
-  padding: 25px 0;
+  padding: 25px 0 0 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 18px;
     line-height: 28px;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
   }
 
   ul {
@@ -654,7 +650,7 @@
     margin-bottom: 20px;
 
     @media (min-width: #{$screen-tablet}) {
-      font-size: 30px;
+      font-size: 35px;
     }
   }
 
