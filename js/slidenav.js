@@ -84,7 +84,7 @@
         adminBar = document.getElementById("toolbar-administration");
         header = document.getElementById("header");
         toc = document.getElementById("toc");
-        collapsingNavbar = $("#CollapsingNavbar", body);
+        collapsingNavbar = $("#collapsing-navbar", body);
         lastScrollPosition =
           window.pageYOffset || document.documentElement.scrollTop;
         window.setTimeout(() => {
@@ -92,7 +92,7 @@
         });
 
         if (collapsingNavbar.css("position") === "absolute") {
-          // When the viewport is narrow enough #collapsingNavbar becomes "fixed" -> attach handler to body
+          // When the viewport is narrow enough #collapsing-navbar becomes "fixed" -> attach handler to body
           if (!attached) {
             // Add listeners
             body.addEventListener("click", handleClickOut, true);

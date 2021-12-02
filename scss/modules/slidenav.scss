@@ -15,7 +15,7 @@
     }
 
     &.shadow-header {
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 20px rgb(0 0 0 / 25%);
     }
 
     .searchicon {
@@ -23,16 +23,13 @@
     }
   }
 
-  #CollapsingNavbar {
+  #collapsing-navbar {
     background-color: $white;
-    border-right: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    border-right: 1px solid rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 20px rgb(0 0 0 / 25%);
     height: calc(100vh + 5px) !important;
     overflow-y: auto;
-    padding-bottom: 225px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 30px;
+    padding: 30px 15px 225px;
     position: absolute;
     top: 54px;
     z-index: -1;
@@ -52,7 +49,7 @@
     }
 
     .dropdown-menu {
-      border-left: 1px solid rgba(0, 0, 0, 0.15);
+      border-left: 1px solid rgb(0 0 0 / 15%);
       border-radius: 0;
       box-shadow: none !important;
       padding: 0.5rem 0;

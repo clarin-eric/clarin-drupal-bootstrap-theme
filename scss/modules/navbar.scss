@@ -95,7 +95,7 @@
   }
 
   @media (min-width: #{$screen-desktop}) {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0 2px 20px rgb(0 0 0 / 25%) !important;
   }
 }
 
@@ -105,7 +105,7 @@
   }
 
   .dropdown-menu {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0 2px 20px rgb(0 0 0 / 25%) !important;
     left: auto;
     min-width: 350px;
     padding-top: 15px;
@@ -113,10 +113,7 @@
 
     .form-control {
       border: 1px solid $cold-grey-01;
-      border-bottom-left-radius: 28px;
-      border-bottom-right-radius: 0;
-      border-top-left-radius: 28px;
-      border-top-right-radius: 0;
+      border-radius: 28px 0 0 28px;
       height: 50px;
       width: 100%;
 
@@ -128,10 +125,7 @@
     .form-submit {
       background-color: $dark-blue-01;
       border: 1px solid $dark-blue-01 !important;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 28px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 28px;
+      border-radius: 0 28px 28px 0;
       height: 50px;
       width: 60px;
 
@@ -280,11 +274,11 @@
 
 .main-content {
   @media (max-width: #{$screen-sm-max}) {
-    border-top: 1px solid rgba(5, 45, 77, 0.13);
+    border-top: 1px solid rgb(5 45 77 / 13%);
   }
 }
 
-#CollapsingNavbar {
+#collapsing-navbar {
   @media (min-width: #{$screen-desktop}) {
     margin-top: 3px;
   }

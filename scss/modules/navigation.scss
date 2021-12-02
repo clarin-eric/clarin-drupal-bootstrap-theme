@@ -16,7 +16,7 @@
 
   @media (min-width: #{$screen-desktop}) {
     border-radius: 0;
-    border-top: 1px solid rgba(5, 45, 77, 0.13);
+    border-top: 1px solid rgb(5 45 77 / 13%);
   }
 
   @media (min-width: #{$screen-tablet}) {
@@ -66,10 +66,7 @@
     &:first-child,
     &:last-child {
       .page-link {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        border-radius: 0;
       }
     }
 
