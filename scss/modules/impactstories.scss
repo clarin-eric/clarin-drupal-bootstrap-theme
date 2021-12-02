@@ -1,0 +1,87 @@
+// Header large
+.impact-stories--header-large {
+  color: $white;
+  font-size: 16px;
+  left: 50%;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 150px;
+  overflow: hidden;
+  padding-top: 45px;
+  position: relative;
+  right: 50%;
+  width: 105vw;
+
+  @media (max-width: #{$screen-xs-max}) {
+    .contextual-region {
+      position: unset;
+    }
+  }
+
+  @media (max-width: #{$screen-sr-max}) {
+    .content {
+      margin-left: 50px;
+    }
+  }
+
+  @media (min-width: #{$screen-tablet}) {
+    align-items: center;
+    display: flex;
+    font-size: 23px;
+    height: 300px;
+    margin-bottom: 50px;
+    min-height: none;
+    padding-bottom: 60px;
+    padding-top: 0;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 30px;
+    line-height: 1.12;
+    margin-bottom: 20px;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 68px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .content {
+    max-width: 710px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .field--name-field-header-image {
+    img {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+  }
+
+  .field--name-field-header-image-mobile {
+    img {
+      bottom: 0;
+      left: 0;
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+  }
+
+  .contextual-region {
+    position: unset;
+  }
+}
