@@ -373,7 +373,8 @@ article.node--type-news {
         }
       }
 
-      &>ol, ul {
+      > ol,
+      ul {
         padding-left: 25px;
       }
     }
@@ -403,8 +404,9 @@ article.node--type-news {
           width: 9px;
         }
 
-        &>ol, ul {
-         padding-left: 25px;
+        > ol,
+        ul {
+          padding-left: 25px;
         }
       }
     }
@@ -892,8 +894,8 @@ div.node--type-news {
 
   @media only screen
     and (min-width: 320px)
-    and (max-device-width: 374px)
-    and (-webkit-min-device-pixel-ratio: 2) {
+    and (maxwidth: 374px)
+    and (min-device-pixel-ratio: 2) {
     width: 140px;
   }
 

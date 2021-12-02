@@ -3,11 +3,11 @@
   color: $dark-blue-01;
   font-size: 16px;
   line-height: 1.5;
-  padding: 5px 0 0 0;
+  padding: 5px 0 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 23px;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0;
   }
 
   h1 {
@@ -22,7 +22,6 @@
       margin-top: 15px;
     }
   }
-
 }
 
 .paragraph--type--image-text {
@@ -578,12 +577,12 @@
 .paragraph--type--text {
   font-size: 16px;
   line-height: 25px;
-  padding: 25px 0 0 0;
+  padding: 25px 0 0;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 18px;
     line-height: 28px;
-    padding: 50px 0 0 0;
+    padding: 50px 0 0;
   }
 
   ul {
