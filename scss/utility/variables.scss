@@ -58,6 +58,12 @@ $screen-xs-min: $screen-xs;
 $screen-phone: $screen-xs-min;
 $phone: 480px;
 
+// Smaller screen / phablet
+$screen-sr: 576px;
+$screen-sr-min: $screen-sr;
+$screen-phablet: $screen-sr-min;
+$phone: 576px;
+
 // Small screen / tablet
 // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
 $screen-sm: 768px;
@@ -84,6 +90,7 @@ $screen-xl: 1500px;
 $screen-xl-custom: 1440px;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max: ($screen-sm-min - 1);
+$screen-xs-max: ($screen-sr-min - 1);
+$screen-sr-max: ($screen-sm-min - 1);
 $screen-sm-max: ($screen-md-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
