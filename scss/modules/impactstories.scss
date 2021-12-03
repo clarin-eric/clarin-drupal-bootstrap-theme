@@ -104,6 +104,10 @@
     font-weight: $font-weight-bold;
   }
 
+  em {
+    color: $quote-blue;
+  }
+
   .node__meta {
     padding-left: 15px;
   }
@@ -217,7 +221,6 @@
 
   .paragraph--type--image-text {
     font-size: 16px;
-    font-weight: $font-weight-bold;
     padding: 10px 0;
 
     @media (min-width: #{$screen-tablet}) {
@@ -279,7 +282,7 @@
     }
 
     h2 {
-      font-size: 23px;
+      font-size: 16px;
       margin-bottom: 20px;
 
       &:empty {
@@ -287,7 +290,7 @@
       }
 
       @media (min-width: #{$screen-tablet}) {
-        font-size: 35px;
+        font-size: 18px;
         margin-bottom: 40px;
       }
     }
@@ -314,13 +317,13 @@
     }
 
     em {
-      color: $quote-blue;
+      font-weight: $font-weight-bold;
     }
   }
 
   .paragraph--type--contributors {
     font-size: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     .field__label {
       font-size: 23px;
@@ -362,5 +365,9 @@
         }
       }
     }
+  }
+
+  .field--name-field-tags {
+    padding: 15px;
   }
 }
