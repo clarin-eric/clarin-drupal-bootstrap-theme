@@ -100,6 +100,10 @@
     font-size: 35px;
   }
 
+  label {
+    font-weight: $font-weight-bold;
+  }
+
   .node__meta {
     padding-left: 15px;
   }
