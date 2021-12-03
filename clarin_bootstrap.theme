@@ -16,6 +16,19 @@ function clarin_bootstrap_preprocess_views_view(&$vars){
   );
 }
 
+/**
+ * Implements hook_preprocess_page_title()
+ * @param array $vars
+ */
+function clarin_bootstrap_preprocess_page_title(&$vars) {
+  if($node = \Drupal::request()->attributes->get('node')) {
+    if ($node->hasField('field_contributors')) {
+      if ($node->get('field_contributors')->value != '') {
+        $vars['field_contributors'] = $node->get('field_contributors')->value;
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_page_attachments_alter()
