@@ -1066,11 +1066,6 @@
 
   &.btn-arrow-circle {
     .field--name-field-links {
-      margin-top: 10px;
-
-      @media (min-width: #{$screen-tablet}) {
-        margin-top: 20px;
-      }
 
       a {
         background: url('../images/arrow-circle-blue.svg') no-repeat right center;
