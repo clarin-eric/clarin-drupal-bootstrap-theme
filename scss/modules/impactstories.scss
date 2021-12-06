@@ -100,12 +100,12 @@
     font-size: 35px;
   }
 
-  label {
-    font-weight: $font-weight-bold;
+  .quote {
+    color: $quote-blue;
   }
 
-  em {
-    color: $quote-blue;
+  label {
+    font-weight: $font-weight-bold;
   }
 
   .node__meta {
