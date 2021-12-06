@@ -24,8 +24,7 @@
   }
 }
 
-.paragraph--type--image-text,
-.paragraph--type--link-list {
+.paragraph--type--image-text {
   font-size: 16px;
   padding: 30px 0;
 
@@ -73,8 +72,7 @@
   }
 
   &.btn-bg-blue {
-    .field--name-field-link,
-    .field--name-field-links {
+    .field--name-field-link {
       margin-top: 25px;
 
       @media (min-width: #{$screen-tablet}) {
@@ -116,8 +114,7 @@
   }
 
   &.btn-arrow-circle {
-    .field--name-field-link,
-    .field--name-field-links {
+    .field--name-field-link {
       margin-top: 15px;
 
       @media (min-width: #{$screen-tablet}) {
@@ -1009,5 +1006,108 @@
         }
       }
     }
+  }
+}
+
+.paragraph--type--link-list {
+  font-size: 16px;
+  padding: 30px 15px;
+
+  @media (min-width: #{$screen-tablet}) {
+    font-size: 18px;
+    padding: 40px 15px;
+  }
+
+  &.btn-bg-blue {
+    .field--name-field-links {
+      margin-top: 10px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-top: 20px;
+      }
+
+      .field__item {
+        margin:10px 0;
+      }
+
+      a {
+        background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30px center;
+        background-size: 17px;
+        border-radius: 27.5px;
+        color: $white;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 25px;
+        padding: 15px 60px 15px 30px;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 25px center;
+          background-size: 20px;
+          font-size: 18px;
+          padding: 15px 65px 15px 27px;
+        }
+
+        &:hover,
+        &:focus {
+          background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 30px center;
+          background-size: 17px;
+          color: $white;
+          text-decoration: none;
+
+          @media (min-width: #{$screen-tablet}) {
+            background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 25px center;
+            background-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-arrow-circle {
+    .field--name-field-links {
+      margin-top: 10px;
+
+      @media (min-width: #{$screen-tablet}) {
+        margin-top: 20px;
+      }
+
+      a {
+        background: url('../images/arrow-circle-blue.svg') no-repeat right center;
+        background-size: 40px;
+        color: $body-color;
+        display: inline-table;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        padding: 10px 50px 10px 0;
+        transition: padding 0.3s;
+
+        @media (min-width: #{$screen-tablet}) {
+          background: url('../images/arrow-circle-blue.svg') no-repeat right center;
+          background-size: 47px;
+          font-size: 18px;
+          padding: 10px 65px 10px 0;
+        }
+
+        &:hover,
+        &:focus {
+          color: $body-color;
+          padding: 10px 57px 10px 0;
+          text-decoration: none;
+
+          @media (min-width: #{$screen-tablet}) {
+            padding: 10px 72px 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: wrap;
+    padding: 0;
   }
 }
