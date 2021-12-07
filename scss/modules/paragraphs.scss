@@ -1011,11 +1011,11 @@
 
 .paragraph--type--link-list {
   font-size: 16px;
-  padding: 30px 15px;
+  padding: 10px 15px;
 
   @media (min-width: #{$screen-tablet}) {
     font-size: 18px;
-    padding: 40px 15px;
+    padding: 20px 15px;
   }
 
   &.btn-bg-blue {
@@ -1094,6 +1094,17 @@
           @media (min-width: #{$screen-tablet}) {
             padding: 10px 72px 10px 0;
           }
+        }
+
+        &:after {
+          color: $link-color;
+          content: attr(href);
+          font-weight: $font-weight-normal;
+          padding-left: 5px;
+        }
+
+        &:hover:after {
+          text-decoration: underline;
         }
       }
     }
