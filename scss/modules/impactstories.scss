@@ -238,6 +238,7 @@
         .image-content {
           order: 1;
           padding-left: 0;
+          padding-right: 20px;
         }
 
         img {
@@ -253,6 +254,7 @@
 
         .image-content {
           order: 2;
+          padding-left: 20px;
           padding-right: 0;
         }
 
@@ -309,10 +311,6 @@
 
       @media (min-width: #{$screen-tablet}) {
         margin-top: 0;
-      }
-
-      @media (min-width: #{$screen-desktop}) {
-        max-width: 440px;
       }
     }
 
