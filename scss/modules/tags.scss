@@ -2,6 +2,7 @@
 .field--name-field-tags {
   display: none;
   margin-bottom: 15px;
+  margin-top: 15px;
 
   @media (min-width: #{$screen-tablet}) {
     display: block;
