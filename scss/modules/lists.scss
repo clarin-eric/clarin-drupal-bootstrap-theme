@@ -11,6 +11,18 @@
     list-style: inherit;
   }
 }
+
+.node--view-mode-teaser-list-small {
+  div {
+    &.btn-link-blue,
+    &.btn-link-blue-s,
+    &.btn-link-blue-xs,
+    &.node-readmore {
+      background: none;
+    }
+  }
+}
+
 // News overview
 .view-sharing-knowledge,
 .grid-container-view {
@@ -609,17 +621,6 @@ div.node--type-news {
     }
   }
 }
-
-.node--view-mode-teaser-list-small {
-      div {
-        &.btn-link-blue,
-        &.btn-link-blue-s,
-        &.btn-link-blue-xs,
-        &.node-readmore {
-          background: none;
-        }
-      }
-      }
 
 // Teaser list
 .block-views-blockteaser-list-block-1 {
