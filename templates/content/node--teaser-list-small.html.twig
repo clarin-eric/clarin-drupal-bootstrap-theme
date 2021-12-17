@@ -73,15 +73,6 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  {% if display_submitted %}
-    <div class="node__meta">
-      {{ author_picture }}
-      {% block submitted %}
-        {{ date }}
-      {% endblock %}
-      {{ metadata }}
-    </div>
-  {% endif %}
   <header>
     {{ title_prefix }}
     {% if label and not page %}
@@ -91,6 +82,15 @@
     {% endif %}
     {{ title_suffix }}
   </header>
+  {% if display_submitted %}
+    <div class="node__meta">
+      {{ author_picture }}
+      {% block submitted %}
+        {{ date }}
+      {% endblock %}
+      {{ metadata }}
+    </div>
+  {% endif %}
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content }}
   </div>

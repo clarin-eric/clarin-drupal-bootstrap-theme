@@ -610,6 +610,17 @@ div.node--type-news {
   }
 }
 
+.node--view-mode-teaser-list-small {
+      div {
+        &.btn-link-blue,
+        &.btn-link-blue-s,
+        &.btn-link-blue-xs,
+        &.node-readmore {
+          background: none;
+        }
+      }
+      }
+
 // Teaser list
 .block-views-blockteaser-list-block-1 {
   margin-bottom: 35px;
