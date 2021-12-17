@@ -48,6 +48,11 @@
 .page-view-news {
   .field--name-field-tags {
     margin: 0;
+
+    a {
+      font-size: 12px;
+      display: inline-block;
+    }
   }
 }
 
