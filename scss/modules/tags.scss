@@ -44,6 +44,13 @@
   }
 }
 
+.page-view-blogs-by-tag,
+.page-view-news {
+  .field--name-field-tags {
+    margin: 0;
+  }
+}
+
 .node--view-mode-teaser-list-small {
   .node__title {
     padding-top: 20px;
