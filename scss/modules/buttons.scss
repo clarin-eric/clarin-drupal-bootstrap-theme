@@ -109,7 +109,6 @@
 
   &:hover,
   &:focus {
-    color: $white;
     padding: 10px 57px 10px 10px;
     text-decoration: none;
 
@@ -203,14 +202,26 @@
 }
 
 // Navigation pages paragraph button. React on hover over the whole paragraph
-.paragraph--type--content-page:hover .btn {
-  background-color: $dark-blue-02;
-  background-position: center right 25px;
-  background-size: 17px;
-  color: $white;
-  text-decoration: none;
+.paragraph--type--content-page:hover,
+.paragraph--type--content-page:focus {
+  .btn {
+    background-color: $dark-blue-02;
+    background-position: center right 25px;
+    background-size: 17px;
+    color: $white;
+    text-decoration: none;
 
-  @media (min-width: #{$screen-tablet}) {
-    background-size: 20px;
+    @media (min-width: #{$screen-tablet}) {
+      background-size: 20px;
+    }
+  }
+
+  .btn-white-circle-arrow {
+    padding: 10px 57px 10px 10px;
+    text-decoration: none;
+
+    @media (min-width: #{$screen-tablet}) {
+      padding: 10px 72px 10px 10px;
+    }
   }
 }
