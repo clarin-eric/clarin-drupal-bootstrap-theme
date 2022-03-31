@@ -207,9 +207,12 @@
     @media (min-width: #{$screen-tablet}) {
       padding: 10px 50px 10px 10px;
     }
+  }
 
-    &:hover,
-    &:focus {
+  &:hover,
+  &:focus {
+    .btn-blue-circle-arrow,
+    .btn-white-circle-arrow {
       padding: 0 57px 0 0;
       text-decoration: none;
 
@@ -217,10 +220,7 @@
         padding: 0 57px 0 0;
       }
     }
-  }
 
-  &:hover,
-  &:focus {
     .btn {
       background-color: $dark-blue-02;
       background-position: center right 25px;
