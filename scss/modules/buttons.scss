@@ -80,7 +80,6 @@
 
   &:hover,
   &:focus {
-    color: $body-color;
     padding: 10px 57px 10px 10px;
     text-decoration: none;
 
@@ -216,6 +215,7 @@
     }
   }
 
+  .btn-blue-circle-arrow,
   .btn-white-circle-arrow {
     padding: 10px 57px 10px 10px;
     text-decoration: none;
