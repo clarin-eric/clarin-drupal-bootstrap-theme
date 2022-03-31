@@ -204,7 +204,7 @@
 .paragraph--type--content-page {
   .btn-blue-circle-arrow,
   .btn-white-circle-arrow {
-    margin-top: auto;
+    margin-bottom: auto;
     padding: 0 0 120px 50px;
 
     @media (min-width: #{$screen-tablet}) {
@@ -216,7 +216,7 @@
   &:focus {
     .btn-blue-circle-arrow,
     .btn-white-circle-arrow {
-      margin-top: auto;
+      margin-bottom: auto;
       padding: 0 0 120px 57px;
       text-decoration: none;
 
