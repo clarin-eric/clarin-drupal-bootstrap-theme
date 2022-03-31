@@ -204,10 +204,11 @@
 .paragraph--type--content-page {
   .btn-blue-circle-arrow,
   .btn-white-circle-arrow {
-    padding: 0 50px 0 0;
+    padding: 50px 50px 0 0;
+    margin-top: auto;
 
     @media (min-width: #{$screen-tablet}) {
-      padding: 0 50px 0 0;
+      padding: 50px 50px 0 0;
     }
   }
 
@@ -215,11 +216,12 @@
   &:focus {
     .btn-blue-circle-arrow,
     .btn-white-circle-arrow {
-      padding: 0 57px 0 0;
+      margin-top: auto;
+      padding: 50px 57px 0 0;
       text-decoration: none;
 
       @media (min-width: #{$screen-tablet}) {
-        padding: 0 57px 0 0;
+        padding: 50px 57px 0 0;
       }
     }
 
