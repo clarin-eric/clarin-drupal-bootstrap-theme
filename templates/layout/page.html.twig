@@ -51,6 +51,7 @@
  */
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
 {# Navbar #}
 {% if page.navigation_left or page.navigation_collapsible or page.navigation_right %}
   {% block navbar %}
@@ -104,7 +105,7 @@
               </aside>
             </div>
           {% endif %}
-          <main{{ show_toc or page.sidebar_second ? content_attributes.addClass("col-md-9").removeClass("col") : content_attributes }}>
+          <main{{ show_toc or has_sidebar_second ? content_attributes.addClass("col-md-9").removeClass("col") : content_attributes }}>
             <section class="section">
               <a id="main-content" tabindex="-1"></a>
               {# Highlighted #}
@@ -124,7 +125,7 @@
             </section>
           </main>
           {% if show_toc == 0 %}
-            {% if page.sidebar_second %}             
+            {% if has_sidebar_second %}             
               <div{{ sidebar_second_attributes }}>                       
                 <aside class="section" role="complementary">               
                   {{ page.sidebar_second }}               
