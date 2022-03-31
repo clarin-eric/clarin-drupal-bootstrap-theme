@@ -201,3 +201,16 @@
     }
   }
 }
+
+// Navigation pages paragraph button. React on hover over the whole paragraph
+.paragraph--type--content-page:hover .btn {
+  background-color: $dark-blue-02;
+  background-position: center right 25px;
+  background-size: 17px;
+  color: $white;
+  text-decoration: none;
+
+  @media (min-width: #{$screen-tablet}) {
+    background-size: 20px;
+  }
+}
