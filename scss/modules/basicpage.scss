@@ -158,10 +158,7 @@
   .form-control {
     background-color: transparent;
     border: 1px solid $cold-grey-01;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
+    border-radius: 28px;
     box-shadow: none;
     color: $dark-blue-01;
     font-size: 14px;
@@ -192,10 +189,7 @@
     background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30% center;
     background-size: 20px;
     border: 1px solid $dark-blue-01;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
+    border-radius: 28px;
     box-shadow: none;
     color: #fff;
     font-size: 16px;
@@ -262,10 +256,7 @@
 
     .form-control, {
       border: 1px solid $cold-grey-01;
-      border-bottom-left-radius: 28px;
-      border-bottom-right-radius: 28px;
-      border-top-left-radius: 28px;
-      border-top-right-radius: 28px;
+      border-radius: 28px;
       box-shadow: none;
       color: $dark-blue-01;
       font-size: 16px;
@@ -283,10 +274,7 @@
       background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat right 24px center;
       background-size: 20px;
       border: 1px solid $dark-blue-01;
-      border-bottom-left-radius: 28px;
-      border-bottom-right-radius: 28px;
-      border-top-left-radius: 28px;
-      border-top-right-radius: 28px;
+      border-radius: 28px;
       height: 56px;
       padding: 0 55px 0 25px;
 

@@ -185,8 +185,7 @@
 
         @media (max-width: #{$screen-xs-max}) {
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-flow: row wrap;
         }
       }
 
@@ -718,8 +717,7 @@ div.node--type-news {
 
         @media (max-width: #{$screen-xs-max}) {
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-flow: row wrap;
         }
       }
 
