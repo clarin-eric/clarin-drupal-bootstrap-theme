@@ -12,8 +12,8 @@
     "Barrio",
     "CLARIN"
   ],
-  "author": "@hatuhay",
-  "license": "MIT",
+  "author": "@andmor",
+  "license": "GPL-3",
   "dependencies": {
     "bootstrap": "^4.6.1"
   },
