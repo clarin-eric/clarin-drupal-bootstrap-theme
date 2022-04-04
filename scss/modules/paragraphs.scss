@@ -1027,7 +1027,7 @@
       }
 
       .field__item {
-        margin:10px 0;
+        margin: 10px 0;
       }
 
       a {
@@ -1066,7 +1066,6 @@
 
   &.btn-arrow-circle {
     .field--name-field-links {
-
       a {
         background: url('../images/arrow-circle-blue.svg') no-repeat right center;
         background-size: 40px;
@@ -1096,14 +1095,14 @@
           }
         }
 
-        &:after {
+        &::after {
           color: $link-color;
           content: attr(href);
           font-weight: $font-weight-normal;
           padding-left: 5px;
         }
 
-        &:hover:after {
+        &:hover::after {
           text-decoration: underline;
         }
       }
