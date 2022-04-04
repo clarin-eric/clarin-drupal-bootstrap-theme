@@ -123,7 +123,8 @@
       line-height: 28px;
     }
 
-    ul {
+    ul,
+    ol {
       padding: 0;
 
       li {
@@ -141,44 +142,27 @@
         &:last-child {
           padding-bottom: 0;
         }
-
-        &::before {
-          background: $blue;
-          content: '';
-          display: inline-block;
-          height: 9px;
-          margin-right: 20px;
-          width: 9px;
-        }
       }
+    }
+
+    ul li::before {
+      background: $blue;
+      content: '';
+      display: inline-block;
+      height: 9px;
+      margin-right: 20px;
+      width: 9px;
     }
 
     ol {
       counter-reset: my-badass-counter;
       padding: 0;
 
-      li {
-        align-items: baseline;
-        display: flex;
-        line-height: 25px;
-        list-style-type: none;
-        padding-bottom: 15px;
-
-        @media (min-width: #{$screen-tablet}) {
-          align-items: center;
-          line-height: 30px;
-        }
-
-        &:last-child {
-          padding-bottom: 0;
-        }
-
-        &::before {
-          content: counter(my-badass-counter);
-          counter-increment: my-badass-counter;
-          margin-right: 20px;
-          width: 9px;
-        }
+      li::before {
+        content: counter(my-badass-counter);
+        counter-increment: my-badass-counter;
+        margin-right: 20px;
+        width: 9px;
       }
     }
 
