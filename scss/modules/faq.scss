@@ -1,3 +1,18 @@
+.faq-answer {
+  border-left: 1px solid rgb(0 0 0 / 15%);
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
+
+  a {
+    color: $blue;
+  }
+
+  .text-formatted > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .faq-question {
   font-size: 19px;
   font-weight: 400;
@@ -31,20 +46,5 @@
     span::before {
       transform: rotate(180deg);
     }
-  }
-}
-
-.faq-answer {
-  border-left: 1px solid rgb(0 0 0 / 15%);
-  margin-left: 15px;
-  padding-left: 10px;
-  padding-top: 10px;
-
-  a {
-    color: $blue;
-  }
-
-  .text-formatted > p:last-child {
-    margin-bottom: 0;
   }
 }
