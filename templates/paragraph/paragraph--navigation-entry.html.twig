@@ -57,10 +57,9 @@
         {{ content.field_image }}
       </div>
       <h4 class="py-2">{{ content.field_title.0 }}</h4>
-      <div class="row flex-nowrap">
-        <div class="col-10 col-md-9 col-xl-10 px-0">{{ content.field_content_page_description }}</div>
-        <div class="col-1 btn-blue-circle-arrow"></div>
-      </div>
+      <div>{{ content.field_entry_page_description }}</div>
+      <div class="btn btn-default btn-sm mt-4">{{ content.field_link[0]['#title'] }}</div>
     {% endblock %}
   </a>
 {% endblock paragraph %}
+
