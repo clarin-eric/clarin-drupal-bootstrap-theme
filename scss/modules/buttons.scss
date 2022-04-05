@@ -226,17 +226,17 @@
         padding: 0 0 120px 55px;
       }
     }
-  }
 
-  .btn {
-    background-color: $dark-blue-02;
-    background-position: center right 25px;
-    background-size: 17px;
-    color: $white;
-    text-decoration: none;
+    .btn {
+      background-color: $dark-blue-02;
+      background-position: center right 25px;
+      background-size: 17px;
+      color: $white;
+      text-decoration: none;
 
-    @media (min-width: #{$screen-tablet}) {
-      background-size: 20px;
+      @media (min-width: #{$screen-tablet}) {
+        background-size: 20px;
+      }
     }
   }
 }
