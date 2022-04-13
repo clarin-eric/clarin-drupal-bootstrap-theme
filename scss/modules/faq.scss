@@ -14,11 +14,6 @@
   }
 }
 
-.faq .item-list {
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .faq-question {
   font-size: 18px;
   font-weight: 600;
@@ -53,4 +48,9 @@
       transform: rotate(180deg);
     }
   }
+}
+
+.faq .list-group-item a {
+  font-size: 17px;
+  font-weight: 600;
 }
