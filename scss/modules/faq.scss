@@ -50,7 +50,12 @@
   }
 }
 
-.faq .list-group-item a {
-  font-size: 17px;
-  font-weight: 600;
+.faq {
+  .list-group-item,
+  .faq-category-list {
+    a {
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
 }
