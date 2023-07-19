@@ -112,9 +112,8 @@ function clarin_bootstrap_form_alter(&$form, $form_state, $form_id) {
       <br />
       <p>
         <span class="fa fa-fw fa-exclamation-circle">&nbsp;</span> This login page
-        leads to the <strong>CLARIN intranet</strong>. If you are trying to access
-        one of the CLARIN corpora or tools instead, please see
-        <a class="linkblue" href="/content/easy-access-protected-resources">easy access to protected resources</a>.
+        has been deactivated. Please login using the CLARIN sigle-sign-on
+        <a class="linkblue" href="/saml/login">login page</a>.
       </p>
     ';
 
