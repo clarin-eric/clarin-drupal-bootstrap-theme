@@ -55,6 +55,14 @@
           headerObservedStickyTop - prevEffectiveStickyTop
         );
 
+        if (toc) {
+          const offsetValue = toolbarTotalHeight + 10;
+          toc.css("top", `${offsetValue}px`);
+          body.scrollspy({
+            offset: offsetValue
+          });
+        }
+
         window.cancelAnimationFrame(timer);
         timer = window.requestAnimationFrame(() => {
           // The original core/modules/toolbar/js/views/ToolbarVisualView.js tries to position the body
@@ -65,7 +73,6 @@
 
           // Reposition body
           body.css("padding-top", `${toolbarTotalHeight}px`);
-          if (toc) toc.css("top", `${toolbarTotalHeight + 10}px`);
 
           if (header.css("position") === "sticky") {
             if (body.hasClass("toolbar-fixed")) {
