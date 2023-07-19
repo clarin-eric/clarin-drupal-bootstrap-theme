@@ -10,7 +10,7 @@ on:
   - cron: "23 2 12 * *"
 jobs:
   prepare:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     outputs:
       version: ${{ steps.get_version.outputs.VERSION }}
       create_release: ${{ steps.check_release.outputs.CREATE_RELEASE }}
