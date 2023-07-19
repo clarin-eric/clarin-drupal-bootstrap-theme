@@ -112,7 +112,7 @@ function clarin_bootstrap_form_alter(&$form, $form_state, $form_id) {
       <br />
       <p>
         <span class="fa fa-fw fa-exclamation-circle">&nbsp;</span> This login page
-        has been deactivated. Please login using the CLARIN sigle-sign-on
+        has been deactivated. Please login using the CLARIN single sign-on
         <a class="linkblue" href="/saml/login">login page</a>.
       </p>
     ';
