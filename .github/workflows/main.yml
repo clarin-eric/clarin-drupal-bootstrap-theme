@@ -18,7 +18,7 @@ jobs:
       - name: Get build version
         id: get_version
         run: |
-          echo ::set-output name=VERSION::${GITHUB_REF##*/}
+          echo "VERSION=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
           echo "Version: ${GITHUB_REF##*/}"
         # Releases created via the GitHub webGUI will also create and push a tag.
         # Both events will trigger this workflow, so we cancel the run for tags and allow it for releases.
@@ -30,16 +30,16 @@ jobs:
           StatusCode=$(curl -o -I -L -s -w "%{http_code}" -X GET -G $URL)
           if [ "$StatusCode" == 200 ]; then
             echo "GitHub release already exists: stopping this workflow.\nSee parallel `Release` workflow."
-            echo ::set-output name=CREATE_RELEASE::false
+            echo "CREATE_RELEASE=false" >> $GITHUB_OUTPUT
           else
             echo "Tag pushed without release: building and creating a new GitHub release."
-            echo ::set-output name=CREATE_RELEASE::true
+            echo "CREATE_RELEASE=true" >> $GITHUB_OUTPUT
           fi
   provision-environment:
     needs: [prepare]
     # Run workflow proper for: github releases, tag pushes without github release and regular pushes (not tag)
     if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true' || !contains(github.ref, 'refs/tags/')
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -60,7 +60,7 @@ jobs:
           retention-days: 1
   lintJS:
     needs: [provision-environment]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v2
         with:
@@ -72,7 +72,7 @@ jobs:
         run: gulp lintjs
   lintSCSS:
     needs: [provision-environment]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v2
         with:
@@ -85,7 +85,7 @@ jobs:
         run: gulp lintscss
   build:
     needs: [prepare, lintJS, lintSCSS]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v2
         with:
@@ -104,7 +104,7 @@ jobs:
   publish:
     needs: [prepare, build]
     if: github.event_name != 'pull_request'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Get latest commit sha and message
         uses: actions/checkout@v2
@@ -129,7 +129,7 @@ jobs:
     needs: [prepare, publish]
     # Run job for github releases and tag pushes (without github release)
     if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Download build package from build job
       uses: actions/download-artifact@v2
