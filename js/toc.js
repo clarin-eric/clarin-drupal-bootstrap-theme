@@ -11,10 +11,10 @@
           var navSelector = "#toc";
           var scopeSelector = "#tocscope";
           Toc.init({
-            $nav: $(once("navSelectorID", navSelector, context)),
-            $scope: $(once("scopeSelectorID", scopeSelector, context))
+            $nav: $(once("selectorID", navSelector, context)),
+            $scope: $(once("selectorID", scopeSelector, context))
           });
-          const body = $(once("bodySelectorID", "body", context));
+          const body = $(once("selectorID", "body", context));
           body.scrollspy({
             target: navSelector
           });
