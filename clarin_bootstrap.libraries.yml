@@ -23,3 +23,6 @@ clarin_toc:
   css:
     component:
       css/bootstrap-toc.min.css: { }
+  dependencies:
+    - core/drupal
+    - core/once

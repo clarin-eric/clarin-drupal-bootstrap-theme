@@ -3,7 +3,7 @@
  * Initialize TOC
  *
  */
-(function($, Drupal) {
+(function($, Drupal, once) {
   Drupal.behaviors.clarin_theme_toc = {
     attach: function attach(context) {
       if (context === document) {
@@ -11,14 +11,15 @@
           var navSelector = "#toc";
           var scopeSelector = "#tocscope";
           Toc.init({
-            $nav: $(navSelector, context),
-            $scope: $(scopeSelector, context)
+            $nav: $(once("navSelectorID", navSelector, context)),
+            $scope: $(once("scopeSelectorID", scopeSelector, context))
           });
-          $("body").scrollspy({
+          const body = $(once("bodySelectorID", "body", context));
+          body.scrollspy({
             target: navSelector
           });
         });
       }
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
