@@ -62,36 +62,38 @@
 }
 
 // btn blue circle arrow
-.btn-blue-circle-arrow {
-  background: url('../images/arrow-circle-blue.svg') no-repeat right center/40px;
-  color: $body-color;
-  display: inline-table;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 30px;
-  padding: 10px 50px 10px 10px;
-  transition: padding 0.3s;
-
-  @media (min-width: #{$screen-tablet}) {
-    background-size: 47px;
-    font-size: 18px;
-    padding: 10px 65px 10px 10px;
-  }
-
-  &:hover,
-  &:focus {
-    padding: 10px 57px 10px 10px;
-    text-decoration: none;
+:not(.btn-blue-circle-arrow) {
+  > .btn-blue-circle-arrow {
+    background: url('../images/arrow-circle-blue.svg') no-repeat right center/40px;
+    color: $body-color;
+    display: inline-table;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 10px 50px 10px 10px;
+    transition: padding 0.3s;
 
     @media (min-width: #{$screen-tablet}) {
-      padding: 10px 72px 10px 10px;
+      background-size: 47px;
+      font-size: 18px;
+      padding: 10px 65px 10px 10px;
+    }
+
+    &:hover,
+    &:focus {
+      padding: 10px 57px 10px 10px;
+      text-decoration: none;
+
+      @media (min-width: #{$screen-tablet}) {
+        padding: 10px 72px 10px 10px;
+      }
     }
   }
 }
 
 // btn white circle arrow
 :not(.btn-white-circle-arrow) {
-  .btn-white-circle-arrow {
+  > .btn-white-circle-arrow {
     background: url('../images/arrow-circle-blue.svg') no-repeat right center/40px;
     color: $white;
     display: inline-table;
