@@ -7,5 +7,10 @@
     "rules": {
         // enable additional rules
         "no-var": ["warn"]
-    }
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+  }
 }
