@@ -62,8 +62,8 @@
 }
 
 // btn blue circle arrow
-:not(.btn-blue-circle-arrow) {
-  > .btn-blue-circle-arrow {
+.btn-blue-circle-arrow {
+  > :not(.btn-blue-circle-arrow) {
     background: url('../images/arrow-circle-blue.svg') no-repeat right center/40px;
     color: $body-color;
     display: inline-table;
@@ -92,8 +92,8 @@
 }
 
 // btn white circle arrow
-:not(.btn-white-circle-arrow) {
-  > .btn-white-circle-arrow {
+.btn-white-circle-arrow {
+  > :not(.btn-white-circle-arrow) {
     background: url('../images/arrow-circle-blue.svg') no-repeat right center/40px;
     color: $white;
     display: inline-table;
