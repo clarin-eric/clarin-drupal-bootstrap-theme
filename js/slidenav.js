@@ -1,4 +1,4 @@
-(function($, Drupal) {
+(($, Drupal) => {
   // CLARIN slidenav helper methods for the top navbar menu. The slidenav is only used on screens narrower
   // than 1200px and when activated in the theme options.
   // - When the window width is narrower than 1200px, add a click handler to dismiss (slide out) the mobile floating

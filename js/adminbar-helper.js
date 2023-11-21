@@ -1,4 +1,4 @@
-(function($, Drupal) {
+(($, Drupal) => {
   // Helper methods for the administration toolbar
   // - Reposition body and floating menu when user has admin toolbar enabled.
   Drupal.behaviors.clarin_theme_adminbar_helper = {

@@ -1,6 +1,7 @@
 {
     "globals": {
-         "Toc": true
+         "Toc": true,
+         "once": true
     },
     "extends": "drupal",
     "rules": {
