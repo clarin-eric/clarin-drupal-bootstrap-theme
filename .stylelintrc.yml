@@ -20,6 +20,4 @@ rules:
     - true
     - ignore: ["class"]
   # Style Guide
-  unit-case: lower
   selector-max-compound-selectors: 6
-
