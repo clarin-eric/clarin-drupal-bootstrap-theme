@@ -28,6 +28,9 @@
     "Android >= 4",
     "Opera >= 12"
   ],
+  "scripts": {
+    "lintstyle": "npx stylelint -f 'verbose' scss/**/*.scss"
+  },
   "devDependencies": {
     "@ronilaukkarinen/gulp-stylelint": "^14.1.2",
     "autoprefixer": "^10.4.16",

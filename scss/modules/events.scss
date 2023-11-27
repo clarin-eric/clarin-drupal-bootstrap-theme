@@ -2,6 +2,7 @@
 .view-upcoming-events {
   .node {
     @media (min-width: #{$screen-tablet}) {
+      align-items: center;
       display: flex;
       flex-flow: row;
     }
@@ -9,11 +10,12 @@
 
   .views-row {
     border-top: 1px solid $cold-grey-03;
-    padding: 20px 0;
+    padding: 15px 0;
 
     @media (min-width: #{$screen-tablet}) {
-      margin-bottom: 40px;
-      padding: 30px 0;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      padding: 15px 0;
     }
 
     &:first-child {
@@ -33,11 +35,11 @@
     @media (min-width: #{$screen-tablet}) {
       flex: 1 1 25%;
       padding-bottom: 0;
-      padding-right: 30px;
+      padding-right: 20px;
     }
 
     @media (min-width: #{$screen-desktop}) {
-      padding-right: 60px;
+      padding-right: 35px;
     }
   }
 
@@ -51,7 +53,7 @@
     line-height: 22px;
 
     @media (min-width: #{$screen-desktop}) {
-      font-size: 22px;
+      font-size: 20px;
       line-height: 30px;
     }
   }
@@ -69,8 +71,8 @@
     margin: 0;
 
     @media (min-width: #{$screen-desktop}) {
-      font-size: 30px;
-      line-height: 44px;
+      font-size: 28px;
+      line-height: 34px;
     }
   }
 

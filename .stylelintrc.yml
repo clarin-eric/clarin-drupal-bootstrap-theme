@@ -6,6 +6,7 @@ extends:
 plugins:
     - stylelint-scss
 rules:
+  import-notation: 'string'
   # Disallows
   selector-max-id: 1
   # Nesting
