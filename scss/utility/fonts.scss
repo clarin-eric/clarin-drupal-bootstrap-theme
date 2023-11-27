@@ -59,3 +59,66 @@
     url('../fonts/inter/Inter-BoldItalic.woff2?v=3.15') format('woff2'),
     url('../fonts/inter/Inter-BoldItalic.woff?v=3.15') format('woff');
 }
+
+/* Source Sans Pro font from https://github.com/rsms/inter/releases */
+
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-Regular.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-Regular.ttf.woff?v=3.052') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-It.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-It.ttf.woff?v=3.052') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-Semibold.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-Semibold.ttf.woff?v=3.052') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: italic;
+  font-weight: 600;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-SemiboldItalic.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-SemiboldItalic.ttf.woff?v=3.052') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-Bold.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-Bold.ttf.woff?v=3.052') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Sanspro;
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url('../fonts/sourcesans3/SourceSans3-BoldIt.ttf.woff2?v=3.052') format('woff2'),
+    url('../fonts/sourcesans3/SourceSans3-BoldIt.ttf.woff?v=3.052') format('woff');
+}
