@@ -273,6 +273,10 @@
   }
 }
 
+.sidebar_second .nav-link {
+  padding: 0.35rem 0;
+}
+
 .main-content {
   @media (max-width: #{$screen-sm-max}) {
     border-top: 1px solid rgb(5 45 77 / 13%);
