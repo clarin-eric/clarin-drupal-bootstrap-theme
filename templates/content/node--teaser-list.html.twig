@@ -77,11 +77,11 @@
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content.field_media }}
-    {{ content.field_tags }}
     <h2>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
     {{ content.body }}
+    {{ content.field_tags }}
     <a class="content_link" href="{{ url }}">Read more</a>
   </div>
 </article>

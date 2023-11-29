@@ -75,6 +75,8 @@
 .node--view-mode-teaser-big {
   .field--name-field-tags {
     display: block;
+    margin-top: -3rem;
+    position: absolute;
 
     ul {
       .show-tags {
