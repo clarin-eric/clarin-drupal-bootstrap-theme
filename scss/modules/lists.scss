@@ -532,7 +532,7 @@ div.node--type-news {
 
 // Teaser small list
 .block-views-blockteaser-small-blocks-block-1,
-.node--view-mode-teaser, .view-taxonomy-term {
+.node--view-mode-teaser {
   margin-bottom: 35px;
   position: relative;
 
@@ -606,7 +606,6 @@ div.node--type-news {
         font-size: 14px;
         font-style: normal;
         margin-bottom: 10px;
-        padding-left: 10px;
       }
 
       h2 {
