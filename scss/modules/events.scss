@@ -34,6 +34,7 @@
 
     @media (min-width: #{$screen-tablet}) {
       flex: 1 1 25%;
+      max-width: 25%;
       padding-bottom: 0;
       padding-right: 20px;
     }
@@ -77,6 +78,8 @@
   }
 
   .event-image {
+    display: contents;
+
     @media (max-width: #{$screen-xs-max}) {
       display: none;
     }
