@@ -592,11 +592,13 @@ div.node--type-news {
       .node__content {
         margin-bottom: 20px;
         margin-top: 0;
+        padding-left: 10px;
       }
 
       .node__meta {
         color: $soft-blue-02;
         margin-bottom: 5px;
+        padding-left: 10px;
       }
 
       .field--name-created {
