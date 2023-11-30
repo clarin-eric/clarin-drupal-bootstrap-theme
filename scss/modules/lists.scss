@@ -532,7 +532,7 @@ div.node--type-news {
 
 // Teaser small list
 .block-views-blockteaser-small-blocks-block-1,
-.node--view-mode-teaser {
+.node--view-mode-teaser, .view-taxonomy-term {
   margin-bottom: 35px;
   position: relative;
 
@@ -567,7 +567,7 @@ div.node--type-news {
     @media (min-width: #{$screen-tablet}) {
       border-bottom: 0;
       border-right: 1px solid $cold-grey-03;
-      padding: 0 20px;
+      padding: 0 0;
     }
 
     &:first-child {
