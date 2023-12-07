@@ -984,3 +984,7 @@ div.node--type-news {
     }
   }
 }
+
+:not(.contextual-region) .draggableviews-weight {
+  display: none;
+}
