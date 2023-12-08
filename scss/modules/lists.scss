@@ -985,6 +985,7 @@ div.node--type-news {
   }
 }
 
-:not(.contextual-region) .draggableviews-weight {
+// Hide weight field in drageable views
+.draggableviews-weight {
   display: none;
 }
