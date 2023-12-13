@@ -53,3 +53,9 @@ $h3-font-size-h3: 20px;
 $h4-font-size-h4: 18px;
 $h5-font-size-h5: 16px;
 $h6-font-size-h6: 14px;
+
+:root {
+  --bs-body-font-family: #{$font-sans-pro};
+  --bs-body-font-size: #{$font-size-base};
+  --bs-body-font-weight: #{$font-weight-normal};
+}
