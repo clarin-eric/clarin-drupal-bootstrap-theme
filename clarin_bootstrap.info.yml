@@ -2,7 +2,7 @@ name: CLARIN Bootstrap 4 theme
 type: theme
 description: 'CLARIN custom theme based on Bootstrap Barrio SubTheme.'
 # version: VERSION
-core: 8.x
+core: 10.x
 core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
 

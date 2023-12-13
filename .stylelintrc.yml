@@ -22,3 +22,4 @@ rules:
     - ignore: ["class"]
   # Style Guide
   selector-max-compound-selectors: 6
+  scss/dollar-variable-pattern: "[a-z][a-zA-Z_-]+"
