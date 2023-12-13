@@ -14,7 +14,7 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-Source repository for the CLARIN [Bootstrap Barrio](https://www.drupal.org/project/bootstrap_barrio) sub-theme for Drupal 8.
+Source repository for the CLARIN [Bootstrap Barrio](https://www.drupal.org/project/bootstrap_barrio) sub-theme for Drupal 10.
 
 The continuous integration system builds this repository and publishes the theme files to [the theme distribution repository](https://github.com/clarin-eric/clarin-drupal-bootstrap-theme-dist) which can be used as a [composer VCS](https://getcomposer.org/doc/05-repositories.md#vcs).
 

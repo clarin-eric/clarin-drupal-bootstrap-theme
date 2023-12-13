@@ -1,7 +1,7 @@
 {
     "name": "drupal/clarin_bootstrap",
     "type": "drupal-theme",
-    "description": "A Bootstrap Barrio sub-theme for Drupal 8 developed for the CLARIN website",
+    "description": "A Bootstrap Barrio sub-theme for Drupal 10 developed for the CLARIN website",
     "homepage": "https://github.com/clarin-eric/clarin-drupal-bootstrap-theme",
     "license": "GPL-3.0+",
     "require": {
