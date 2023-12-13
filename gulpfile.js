@@ -41,6 +41,7 @@ const distPath = "dist/clarin_bootstrap";
 const paths = {
   scss: {
     src: "scss/style.scss",
+    barrio: "scss/barrio-custom.scss",
     slidenav: "scss/modules/slidenav.scss",
     dest: distPath.concat("/css"),
     watch: "scss/**/*.scss"
@@ -87,7 +88,12 @@ const paths = {
 // Compile sass into CSS
 function styles() {
   return gulp
-    .src([paths.lib.css.bootstraptoc, paths.scss.slidenav, paths.scss.src])
+    .src([
+      paths.lib.css.bootstraptoc,
+      paths.scss.barrio,
+      paths.scss.slidenav,
+      paths.scss.src
+    ])
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(
