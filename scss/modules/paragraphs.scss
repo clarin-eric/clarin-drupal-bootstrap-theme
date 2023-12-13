@@ -298,15 +298,12 @@
 
   .field--name-field-bg-image {
     img {
-      bottom: 0;
-      left: 0;
+      inset: 0;
       margin: auto;
       min-height: 100%;
       min-width: 100%;
       object-fit: cover;
       position: absolute;
-      right: 0;
-      top: 0;
       z-index: 0;
     }
 
@@ -438,15 +435,12 @@
 
   .field--name-field-bg-image {
     img {
-      bottom: 0;
-      left: 0;
+      inset: 0;
       margin: auto;
       min-height: 100%;
       min-width: 100%;
       object-fit: cover;
       position: absolute;
-      right: 0;
-      top: 0;
       z-index: 0;
     }
 

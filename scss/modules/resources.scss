@@ -68,15 +68,12 @@
 
   .field--name-field-link {
     a {
-      bottom: 0;
+      inset: 0;
       float: left;
       height: 100%;
-      left: 0;
       margin: auto;
       position: absolute;
-      right: 0;
       text-indent: -9999px;
-      top: 0;
       width: 100%;
       z-index: 1;
     }
@@ -202,15 +199,12 @@
     .more-link,
     .content-link {
       a {
-        bottom: 0;
+        inset: 0;
         float: left;
         height: 100%;
-        left: 0;
         margin: auto;
         position: absolute;
-        right: 0;
         text-indent: -9999px;
-        top: 0;
         width: 100%;
         z-index: 1;
       }
