@@ -58,9 +58,9 @@
         if (toc) {
           const offsetValue = toolbarTotalHeight + 10;
           toc.css("top", `${offsetValue}px`);
-          body.scrollspy({
+          var scrollSpy = new bootstrap.ScrollSpy(body, {
             offset: offsetValue
-          });
+          })
         }
 
         window.cancelAnimationFrame(timer);
