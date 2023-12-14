@@ -55,12 +55,12 @@
           headerObservedStickyTop - prevEffectiveStickyTop
         );
 
-        if (toc) {
+        if (toc.length !== 0 && body.scrollspy) {
           const offsetValue = toolbarTotalHeight + 10;
           toc.css("top", `${offsetValue}px`);
-          new bootstrap.ScrollSpy(body, {
+          body.scrollspy({
             offset: offsetValue
-          })
+          });
         }
 
         window.cancelAnimationFrame(timer);
