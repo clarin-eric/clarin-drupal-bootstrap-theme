@@ -301,7 +301,18 @@
 }
 
 .navbar {
+  --bs-navbar-color: $body-color;
+
   padding: 0;
+
+  .row.region-navigation-right > * {
+  flex-shrink: unset;
+  width: unset;
+  max-width: unset;
+  padding-right: unset;
+  padding-left: unset;
+  margin-top: unset;
+  }
 }
 
 // Navbar toggle with X transition
