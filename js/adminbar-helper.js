@@ -58,7 +58,7 @@
         if (toc) {
           const offsetValue = toolbarTotalHeight + 10;
           toc.css("top", `${offsetValue}px`);
-          bootstrap.ScrollSpy(body, {
+          new bootstrap.ScrollSpy(body, {
             offset: offsetValue
           })
         }
