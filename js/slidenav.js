@@ -111,7 +111,7 @@
         return false;
       }
 
-      if (context === document) {
+      if (context === document && document.readyState !== "loading") {
         handlersAttached = setHandlers();
 
         // On resize event set click handler to dismiss the mobile floating menu
