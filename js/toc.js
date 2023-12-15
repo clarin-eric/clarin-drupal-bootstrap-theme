@@ -18,6 +18,7 @@
           body.scrollspy({
             target: navSelector
           });
+          body.scrollspy("refresh");
         });
       }
     }
