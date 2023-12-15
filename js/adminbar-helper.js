@@ -56,10 +56,10 @@
         );
 
         if (toc.length !== 0 && body.scrollspy) {
-          const offsetValue = `${toolbarTotalHeight + 10}px`;
+          const offsetValue = toolbarTotalHeight + 10;
           toc.css("top", `${offsetValue}px`);
           body.scrollspy({
-            rootMargin: offsetValue
+            offset: offsetValue
           });
         }
 
