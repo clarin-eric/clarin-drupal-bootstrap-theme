@@ -5,7 +5,6 @@ global-styling:
     js/adminbar-helper.min.js: {}
   css:
     component:
-      css/barrio-custom.min.css: { weight: 10 }
       css/style.min.css: { weight: 10 }
   dependencies:
     - core/jquery
