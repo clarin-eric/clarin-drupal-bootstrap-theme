@@ -61,7 +61,6 @@
           body.scrollspy({
             offset: offsetValue
           });
-          body.scrollspy("refresh");
         }
 
         window.cancelAnimationFrame(timer);
