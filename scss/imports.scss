@@ -1,0 +1,13 @@
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// utility
+@import 'utility/variables';
+@import 'utility/typography';
+@import 'utility/fonts';
+
+// bootstrap imports
+@import 'bootstrap-imports';
+
+// barrio imports
+@import '../dist/bootstrap_barrio/scss/barrio';

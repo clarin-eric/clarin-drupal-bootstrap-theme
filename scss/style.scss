@@ -6,8 +6,14 @@ https://www.clarin.eu
 Based on Bootstrap 5 - Barrio SASS Starter Kit
 */
 
-// import files
-@import 'base';
+@import 'imports';
+
+
+// utility elements
+@import 'utility/elements';
+
+// import modules
+@import 'modules';
 
 /* GENERAL STYLES
 ------------------------------------------------- */
