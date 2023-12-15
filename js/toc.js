@@ -6,7 +6,7 @@
 (($, Drupal) => {
   Drupal.behaviors.clarin_theme_toc = {
     attach: function attach(context) {
-      if (context === document && document.readyState !== "loading") {
+      if (context === document && document.readyState === "interactive") {
         $(function initToc() {
           const navSelector = "#toc";
           const scopeSelector = "#tocscope";
