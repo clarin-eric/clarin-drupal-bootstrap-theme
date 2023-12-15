@@ -1,7 +1,7 @@
 {
     "globals": {
          "Toc": true,
-         "once": true
+         "bootstrap": true
     },
     "extends": "drupal",
     "rules": {

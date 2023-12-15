@@ -18,6 +18,7 @@
           const scrollSpy = new bootstrap.ScrollSpy(body, {
             target: navSelector
           });
+          scrollSpy.refresh();
         });
       }
     }
