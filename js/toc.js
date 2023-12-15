@@ -10,11 +10,13 @@
         $(function initToc() {
           const navSelector = "#toc";
           const scopeSelector = "#tocscope";
-          window.setTimeout(() => {
-            Toc.init({
-              $nav: $(navSelector, context),
-              $scope: $(scopeSelector, context)
-            });
+          Toc.init({
+            $nav: $(navSelector, context),
+            $scope: $(scopeSelector, context)
+          });
+          const body = $("body", context);
+          body.scrollspy({
+            target: navSelector
           });
         });
       }
