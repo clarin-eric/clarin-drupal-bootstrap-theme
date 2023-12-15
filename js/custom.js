@@ -6,7 +6,7 @@
 (($, Drupal) => {
   Drupal.behaviors.clarin_theme_custom = {
     attach: function attach(context) {
-      if (context !== document) {
+      if (context !== document || document.readyState !== "interactive") {
         return;
       }
 
