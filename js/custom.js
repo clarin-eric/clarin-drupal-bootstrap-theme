@@ -25,7 +25,9 @@
 
       // Header scroll down arrow function
       $(".paragraph--type--header-large .arrow-down", document).click(() => {
-        $("html", context).stop().animate({ scrollTop: "+=660px" }, 800);
+        $("html", context)
+          .stop()
+          .animate({ scrollTop: "+=660px" }, 800);
       });
 
       // Hide tags if there are more than 2
