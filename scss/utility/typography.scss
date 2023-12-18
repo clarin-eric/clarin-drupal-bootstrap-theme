@@ -5,14 +5,12 @@ $font-inter: 'Inter',
   arial,
   verdana,
   sans-serif;
-
 $font-sans-pro: 'Sanspro',
   sans-serif,
   arial,
   verdana;
 
-// Fonts
-//
+// Fonts:
 // Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif: // Cross-platform generic font family (default user interface font)
   system-ui,
@@ -33,7 +31,6 @@ $font-family-sans-serif: // Cross-platform generic font family (default user int
   sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
 $font-family-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
 $font-family-serif: serif, georgia,
   'Times New Roman',
