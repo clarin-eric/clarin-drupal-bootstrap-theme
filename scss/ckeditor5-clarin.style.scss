@@ -1,0 +1,82 @@
+@import 'utility/variables';
+@import 'utility/typography';
+@import 'utility/fonts';
+
+.ck-content {
+    background: $white;
+    color: $body-color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: $h1-font-size-h1;
+
+      @media (max-width: #{$screen-sm-max}) {
+        font-size: $h2-font-size-h2;
+      }
+
+      @media (max-width: #{$screen-phone}) {
+        font-size: $h3-font-size-h3;
+      }
+    }
+
+    h2 {
+      font-size: $h2-font-size-h2;
+
+      @media (max-width: #{$screen-sm-max}) {
+        font-size: $h3-font-size-h3;
+      }
+
+      @media (max-width: #{$screen-phone}) {
+        font-size: $h4-font-size-h4;
+      }
+    }
+
+    h3 {
+      font-size: $h3-font-size-h3;
+
+      @media (max-width: #{$screen-sm-max}) {
+        font-size: $h4-font-size-h4;
+      }
+
+      @media (max-width: #{$screen-phone}) {
+        font-size: $h5-font-size-h5;
+      }
+    }
+
+    h4 {
+      font-size: $h4-font-size-h4;
+
+      @media (max-width: #{$screen-sm-max}) {
+        font-size: $h5-font-size-h5;
+      }
+
+      @media (max-width: #{$screen-phone}) {
+        font-size: $h6-font-size-h6;
+      }
+    }
+
+    h5 {
+      font-size: $h5-font-size-h5;
+
+      @media (max-width: #{$screen-phone}) {
+        font-size: $h6-font-size-h6;
+      }
+    }
+
+    h6 {
+      font-size: $h6-font-size-h6;
+    }
+
+    .bg-inverse {
+      background: $inverse-bg !important;
+    }
+}
