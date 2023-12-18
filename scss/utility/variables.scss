@@ -14,6 +14,7 @@ $accent-dark: $blue;
 $primary-light: #fff;
 $primary-dark: $blue;
 $primary-shade: $blue;
+
 // Greys
 $cold-grey-01: #c0c9d6;
 $cold-grey-02: #c0cad2;
@@ -21,6 +22,7 @@ $cold-grey-03: #dae1e6;
 $subtle-grey-01: #e1e5ea;
 $subtle-grey-02: #f4f6f9;
 $dark-grey: #7e868d;
+
 // Brand colors
 $brand-primary: $blue;
 $brand-success: #28a745;
@@ -28,23 +30,28 @@ $brand-warning: #ffc107;
 $brand-danger: #dc3545;
 $brand-info: #17a2b8;
 $header-background-1: #9ac7c1;
+
 // Body
-//
+
 // Settings for the `<body>` element.
 $body-bg: $white;
 $body-color: #052d4d;
 $inverse-bg: $black;
 $inverse-color: $white;
+
 // Links
-//
+
+
 // Style anchor elements.
 $link-color: #153d57;
 $link-decoration: none;
 $link-hover-color: #153d57;
 $link-hover-decoration: underline;
+
 // Comments
 $comment-spacer-x: 1.25em;
 $comment-spacer-y: 1.25em;
+
 // Responsive font sizes
 $enable-responsive-font-sizes: true;
 $enable-shadows: false;
@@ -52,6 +59,7 @@ $enable-gradients: false;
 
 // Other Bootstrap configutation variables
 $input-height: 1rem;
+$enable-smooth-scroll: false; // Incompatible with jQuery.animate used in front page button
 
 // Media queries breakpoints
 // --------------------------------------------------
@@ -89,9 +97,7 @@ $screen-lg: 1200px;
 $screen-lg-min: $screen-lg;
 $screen-lg-desktop: $screen-lg-min;
 $desktop-large: 1200px;
-
 $screen-xl: 1500px;
-
 $screen-xl-custom: 1440px;
 
 // So media queries don't overlap when required, provide a maximum
