@@ -24,12 +24,15 @@
       });
 
       // Header scroll down arrow function
-      $(".paragraph--type--header-large .arrow-down", document).click(() => {
-        $("html", context)
-          .stop()
-          .animate({ scrollTop: "+=660px" }, 800);
-      });
-
+      const scrollDownBtn = $(".paragraph--type--header-large .arrow-down", document);
+      if (scrollDownBtn.length > 0) {
+        $("html", context).css('scroll-behavior', 'auto'); // JQuery incompatibility with bootstrap 5 smooth scrool
+        scrollDownBtn.click(() => {
+          $("html", context)
+            .stop()
+            .animate({ scrollTop: "+=660px" }, 800);
+        });
+      }
       // Hide tags if there are more than 2
       $(
         ".node--view-mode-teaser-list .field--name-field-tags, .node--view-mode-teaser-big .field--name-field-tags",
