@@ -29,11 +29,9 @@
         document
       );
       if (scrollDownBtn.length > 0) {
-        $("html", context).css("scroll-behavior", "auto"); // JQuery incompatibility with bootstrap 5 smooth scrool
         scrollDownBtn.click(() => {
-          $("html", context)
-            .stop()
-            .animate({ scrollTop: "+=660px" }, 800);
+          // scroll to the first paragraph after header image
+          $(".paragraph", context)[1].scrollIntoView();
         });
       }
       // Hide tags if there are more than 2
