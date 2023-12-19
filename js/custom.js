@@ -24,9 +24,12 @@
       });
 
       // Header scroll down arrow function
-      const scrollDownBtn = $(".paragraph--type--header-large .arrow-down", document);
+      const scrollDownBtn = $(
+        ".paragraph--type--header-large .arrow-down",
+        document
+      );
       if (scrollDownBtn.length > 0) {
-        $("html", context).css('scroll-behavior', 'auto'); // JQuery incompatibility with bootstrap 5 smooth scrool
+        $("html", context).css("scroll-behavior", "auto"); // JQuery incompatibility with bootstrap 5 smooth scrool
         scrollDownBtn.click(() => {
           $("html", context)
             .stop()
