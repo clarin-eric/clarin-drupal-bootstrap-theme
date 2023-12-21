@@ -82,7 +82,8 @@
     }
 
     @media (min-width: #{$screen-tablet}) {
-      flex: 1 1 25%;
+      flex: 1 1 auto;
+      max-width: 260px;
       padding-left: 25px;
     }
 
