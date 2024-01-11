@@ -18,6 +18,10 @@
 .appsicon {
   margin: 0 10px;
 
+  .dropdown-menu {
+    width: max-content;
+  }
+
   a {
     background: url('../images/applications-icon.svg');
     float: left;
