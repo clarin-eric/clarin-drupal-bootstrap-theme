@@ -15,10 +15,6 @@
   }
 }
 
-#app-menu-dropdown .dropdown-menu {
-    width: max-content;
-}
-
 .appsicon {
   margin: 0 10px;
 
@@ -147,6 +143,10 @@
   }
 }
 
+#app-menu-dropdown .dropdown-menu {
+    width: max-content;
+}
+
 .dropdown-header {
   font-weight: 700;
 }
@@ -162,10 +162,8 @@
       vertical-align: middle;
       width: 14px;
     }
-  }
 
-  &.show {
-    .dropdown-toggle::after {
+    &.show::after {
       transform: rotate(180deg);
     }
   }
