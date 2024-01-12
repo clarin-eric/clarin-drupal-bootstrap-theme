@@ -14,7 +14,7 @@ rules:
   max-nesting-depth:
     - 4
     - ignore: ['blockless-at-rules', 'pseudo-classes']
-  media-query-no-invalid: false
+  media-query-no-invalid: null
   # Selector names (override stylelint-config-sass-guidelines to allow `_`)
   selector-class-pattern:
     - ^[a-z0-9_\\-]+$
