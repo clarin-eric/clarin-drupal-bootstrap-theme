@@ -3,3 +3,25 @@
     float: unset;
   }
 }
+
+.field {
+  padding-bottom: 1rem;
+}
+
+.field__label {
+  display: contents;
+  float: left;
+  font-weight: bold;
+}
+
+
+.field--label-inline {
+  .field__label {
+    display: inline;
+    padding-right: 0.5rem;
+
+    &::after {
+      content: ":";
+    }
+  }
+}
