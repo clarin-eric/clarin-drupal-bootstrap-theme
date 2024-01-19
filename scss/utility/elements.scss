@@ -73,6 +73,12 @@ h6 {
   font-size: $h6-font-size-h6;
 }
 
+.container, .container-sm,
+.container-md, .container-lg,
+.container-xl, .container-xxl {
+  padding: 0 5rem;
+}
+
 .row {
   margin: 0 !important;
 }
