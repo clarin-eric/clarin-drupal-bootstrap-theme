@@ -75,8 +75,12 @@ h6 {
 
 .container, .container-sm,
 .container-md, .container-lg,
-.container-xl, .container-xxl {
+.container-xl, {
   padding: 0 5rem;
+
+    @media (max-width: #{$screen-md-max}) {
+      padding: 0;
+  }
 }
 
 .row {
