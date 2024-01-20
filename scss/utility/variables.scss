@@ -63,44 +63,40 @@ $input-height: 1rem;
 // Media queries breakpoints
 // --------------------------------------------------
 
-// Extra small screen / phone
-// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+// Smaller screen / phablet
 $screen-xs: 480px;
 $screen-xs-min: $screen-xs;
 $screen-phone: $screen-xs-min;
-$phone: 480px;
-
-// Smaller screen / phablet
-$screen-sr: 576px;
-$screen-sr-min: $screen-sr;
-$screen-phablet: $screen-sr-min;
-$phone: 576px;
+$screen-phablet: $screen-xs;
+$phone: $screen-xs;
 
 // Small screen / tablet
 // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
-$screen-sm: 768px;
+$screen-sm: 576px;
 $screen-sm-min: $screen-sm;
 $screen-tablet: $screen-sm-min;
-$tablet: 768px;
+$tablet: $screen-sm;
 
 // Medium screen / desktop
 // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md: 992px;
+$screen-md: 768px;
 $screen-md-min: $screen-md;
 $screen-desktop: $screen-md-min;
-$desktop: 992px;
+$desktop: $screen-md;
 
-// Large screen / wide desktop
+// Large screens / wide desktop
 // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg: 1200px;
+$screen-lg: 992px;
 $screen-lg-min: $screen-lg;
-$screen-lg-desktop: $screen-lg-min;
-$desktop-large: 1200px;
-$screen-xl: 1500px;
-$screen-xl-custom: 1440px;
+$screen-xl: 1200px;
+$screen-xl-min: $screen-xl;
+$screen-xxl: 1400px;
+$screen-xxl-min: $screen-xxl;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max: ($screen-sr-min - 1);
-$screen-sr-max: ($screen-sm-min - 1);
+$screen-xxs-max: ($screen-xs-min - 1);
+$screen-xs-max: ($screen-sm-min - 1);
 $screen-sm-max: ($screen-md-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
+$screen-lg-max: ($screen-xl-min - 1);
+$screen-xl-max: ($screen-xxl-min - 1);

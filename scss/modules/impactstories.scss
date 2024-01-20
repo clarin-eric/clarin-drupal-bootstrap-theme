@@ -20,7 +20,7 @@
     }
   }
 
-  @media (max-width: #{$screen-sr-max}) {
+  @media (max-width: #{$screen-sm-max}) {
     .content {
       margin-left: 50px;
     }

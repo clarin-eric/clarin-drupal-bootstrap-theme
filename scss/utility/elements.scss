@@ -75,12 +75,16 @@ h6 {
 
 .container, .container-sm,
 .container-md, .container-lg,
-.container-xl, {
+.container-xl, .container-xxl {
   padding: 0 calc(var(--bs-gutter-x) * 5);
 
     @media (max-width: #{$screen-md-max}) {
       padding: 0 calc(var(--bs-gutter-x) * .5);
-  }
+    }
+
+    @media (max-width: #{$screen-xl-max}) {
+      padding: 0 calc(var(--bs-gutter-x) * 2);
+    }
 }
 
 .row {

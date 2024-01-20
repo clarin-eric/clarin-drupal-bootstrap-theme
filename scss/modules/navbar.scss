@@ -232,7 +232,7 @@
       }
     }
 
-    @media (min-width: #{$screen-lg-desktop}) {
+    @media (min-width: #{$screen-lg}) {
       li {
         padding: 0 8px;
 
@@ -280,7 +280,7 @@
       max-width: 135px;
     }
 
-    @media (min-width: #{$screen-lg-desktop}) {
+    @media (min-width: #{$screen-lg}) {
       max-width: 153px;
     }
   }

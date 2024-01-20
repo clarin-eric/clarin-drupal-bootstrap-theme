@@ -261,13 +261,13 @@
   padding-top: 45px;
   position: relative;
 
-  @media (max-width: #{$screen-sr-max}) {
+  @media (max-width: #{$screen-sm-max}) {
     .contextual-region {
       position: unset;
     }
   }
 
-  @media (min-width: #{$screen-sr-min}) {
+  @media (min-width: #{$screen-sm}) {
     align-items: center;
     display: flex;
     font-size: 23px;
@@ -284,7 +284,7 @@
     line-height: 1.12;
     margin-bottom: 20px;
 
-    @media (min-width: #{$screen-sr-min}) {
+    @media (min-width: #{$screen-sm}) {
       font-size: 68px;
       margin-bottom: 35px;
     }

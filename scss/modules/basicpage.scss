@@ -140,7 +140,7 @@
       max-width: 320px;
     }
 
-    @media (min-width: #{$screen-lg-desktop}) {
+    @media (min-width: #{$screen-lg}) {
       max-width: 390px;
     }
   }
@@ -180,7 +180,7 @@
       max-width: 320px;
     }
 
-    @media (min-width: #{$screen-lg-desktop}) {
+    @media (min-width: #{$screen-lg}) {
       max-width: 390px;
     }
   }
