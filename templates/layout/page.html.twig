@@ -50,7 +50,7 @@
  * @see html.html.twig
  */
 #}
-{% set container = theme.settings.fluid_container ? 'container-fluid gx-md-4' : 'container gx-md-4' %}
+{% set container = theme.settings.fluid_container ? 'container-fluid gx-4' : 'container gx-4' %}
 {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
 {# Navbar #}
 {% if page.navigation_left or page.navigation_collapsible or page.navigation_right %}
