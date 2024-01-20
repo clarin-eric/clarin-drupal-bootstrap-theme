@@ -76,14 +76,10 @@ h6 {
 .container, .container-sm,
 .container-md, .container-lg,
 .container-xl, .container-xxl {
-  padding: 0 calc(var(--bs-gutter-x) * 5);
+  padding: 0 calc(var(--bs-gutter-x) * .5);
 
-    @media (max-width: #{$screen-md-max}) {
-      padding: 0 calc(var(--bs-gutter-x) * .5);
-    }
-
-    @media (max-width: #{$screen-xl-max}) {
-      padding: 0 calc(var(--bs-gutter-x) * 2);
+    @media (min-width: #{$screen-xxl-min}) {
+      padding: 0 calc(var(--bs-gutter-x) * 5);
     }
 }
 
