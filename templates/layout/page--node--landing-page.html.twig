@@ -50,7 +50,7 @@
  * @see html.html.twig
  */
 #}
-{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set container = theme.settings.fluid_container ? 'container-fluid gx-4' : 'container gx-4' %}
 
 {# Navbar #}
 {% if page.navigation_left or page.navigation_collapsible or page.navigation_right %}
@@ -65,7 +65,7 @@
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       <nav{{ navbar_attributes }}>
         {% if container_navbar %}
-        <div class="container-md">
+        <div class="container-md gx-md-4">
         {% endif %}
           {% if page.navigation_left %}
           {{ page.navigation_left }}

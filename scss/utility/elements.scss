@@ -73,16 +73,6 @@ h6 {
   font-size: $h6-font-size-h6;
 }
 
-.container, .container-sm,
-.container-md, .container-lg,
-.container-xl, {
-  padding: 0 calc(var(--bs-gutter-x) * 5);
-
-    @media (max-width: #{$screen-md-max}) {
-      padding: 0 calc(var(--bs-gutter-x) * .5);
-  }
-}
-
 .row {
   margin: 0 !important;
 }
