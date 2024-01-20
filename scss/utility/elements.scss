@@ -76,7 +76,7 @@ h6 {
 .container, .container-sm,
 .container-md, .container-lg,
 .container-xl, .container-xxl {
-  padding: 0 calc(var(--bs-gutter-x) * .5);
+  padding: 0 calc(var(--bs-gutter-x) * .4);
 
     @media (min-width: #{$screen-xl-min}) {
       padding: 0 calc(var(--bs-gutter-x) * 3);
