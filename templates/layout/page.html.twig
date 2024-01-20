@@ -50,7 +50,7 @@
  * @see html.html.twig
  */
 #}
-{% set container = theme.settings.fluid_container ? 'container-fluid col-8 px-5' : 'container col-8 px-5' %}
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
 {# Navbar #}
 {% if page.navigation_left or page.navigation_collapsible or page.navigation_right %}
@@ -65,7 +65,7 @@
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       <nav{{ navbar_attributes }}>
         {% if container_navbar %}
-        <div class="container-md col-md-8 px-md-5">
+        <div class="container-md">
         {% endif %}
           {% if page.navigation_left %}
           {{ page.navigation_left }}
