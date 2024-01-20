@@ -303,7 +303,7 @@
         text-indent: -9999px;
         width: 74px;
 
-        @media (max-width: #{$screen-sm-max}) {
+        @media (max-width: #{$screen-md-max}) {
           background-position: 18px center;
         }
       }
