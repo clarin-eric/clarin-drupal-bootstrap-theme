@@ -28,12 +28,12 @@
   font-size: 16px;
   padding: 20px 0;
 
-  @media (min-width: #{$screen-tablet}) {
+  @media (min-width: #{$screen-lg}) {
     font-size: 20px;
     padding: 25px 0;
   }
 
-  @media (min-width: #{$screen-tablet}) {
+  @media (min-width: #{$screen-lg}) {
     &.image-left {
       .content {
         order: 2;
@@ -75,7 +75,7 @@
     .field--name-field-link {
       margin-top: 25px;
 
-      @media (min-width: #{$screen-tablet}) {
+      @media (min-width: #{$screen-lg}) {
         margin-top: 40px;
       }
 
@@ -90,7 +90,7 @@
         line-height: 25px;
         padding: 15px 60px 15px 30px;
 
-        @media (min-width: #{$screen-tablet}) {
+        @media (min-width: #{$screen-lg}) {
           background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 25px center;
           background-size: 20px;
           font-size: 18px;
@@ -104,7 +104,7 @@
           color: $white;
           text-decoration: none;
 
-          @media (min-width: #{$screen-tablet}) {
+          @media (min-width: #{$screen-lg}) {
             background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 25px center;
             background-size: 20px;
           }
@@ -117,7 +117,7 @@
     .field--name-field-link {
       margin-top: 15px;
 
-      @media (min-width: #{$screen-tablet}) {
+      @media (min-width: #{$screen-lg}) {
         margin-top: 30px;
       }
 
@@ -160,10 +160,10 @@
     padding: 0;
   }
 
-  .col-md-6 {
+  .col-lg-6 {
     padding: 0;
 
-    @media (min-width: #{$screen-tablet}) {
+    @media (min-width: #{$screen-lg}) {
       padding: 0 15px;
     }
   }
@@ -172,7 +172,7 @@
     font-size: 23px;
     margin-bottom: 20px;
 
-    @media (min-width: #{$screen-tablet}) {
+    @media (min-width: #{$screen-md}) {
       font-size: 32px;
       margin-bottom: 40px;
     }
@@ -206,7 +206,7 @@
 
   .field__item {
     .paragraph--type--image-text {
-      @media (max-width: #{$screen-xs-max}) {
+      @media (max-width: #{$screen-md-max}) {
         border-bottom: 1px solid $cold-grey-03;
       }
     }
