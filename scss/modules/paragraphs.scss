@@ -115,7 +115,8 @@
 
   &.btn-arrow-circle {
     .field--name-field-link {
-      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-top: 10px;
 
       @media (min-width: #{$screen-lg}) {
         margin-top: 30px;
