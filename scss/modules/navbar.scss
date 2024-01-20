@@ -57,7 +57,7 @@
     width: 30px;
   }
 
-  @media (min-width: #{$screen-desktop}) {
+  @media (min-width: #{$screen-xl}) {
     margin-left: 8px !important;
   }
 }
