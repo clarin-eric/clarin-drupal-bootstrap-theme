@@ -4,19 +4,21 @@
   }
 }
 
-.field__label {
-  display: contents;
-  float: left;
-  font-weight: bold;
-}
-
-.field--label-inline {
+.node--type-k-centre {
   .field__label {
-    display: inline;
-    padding-right: 0.5rem;
+    display: contents;
+    float: left;
+    font-weight: bold;
+  }
 
-    &::after {
-      content: ":";
+  .field--label-inline {
+    .field__label {
+      display: inline;
+      padding-right: 0.5rem;
+
+      &::after {
+        content: ":";
+      }
     }
   }
 }

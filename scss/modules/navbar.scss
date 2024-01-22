@@ -1,6 +1,4 @@
 .searchicon {
-  margin: 0 10px;
-
   a,
   span {
     background: url('../images/search_icon.svg') no-repeat center center/22px;
@@ -32,8 +30,6 @@
 }
 
 .menu-fa-icon {
-  margin: 0 5px;
-
   .fa {
     text-decoration: none;
   }
@@ -247,6 +243,7 @@
   .menu-fa-icon {
     @media (max-width: #{$screen-md-max}) {
       font-size: 19px;
+      padding-bottom: 5px;
     }
   }
 
