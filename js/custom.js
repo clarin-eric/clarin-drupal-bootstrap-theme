@@ -58,7 +58,7 @@
 
       // Auto select input search box
       $("#search-menu-dropdown", document).on("shown.bs.dropdown", () => {
-        $("#edit-keys-dropdown", $(this))
+        $("#edit-keys-dropdown", document)
           .focus()
           .select();
       });
