@@ -30,6 +30,8 @@
 }
 
 .menu-fa-icon {
+  margin-left: 5px;
+
   .fa {
     text-decoration: none;
   }
@@ -241,10 +243,10 @@
   }
 
   .menu-fa-icon {
-    @media (max-width: #{$screen-md-max}) {
-      font-size: 19px;
-      padding-bottom: 5px;
-    }
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   // External links in menu
@@ -294,9 +296,7 @@
 }
 
 #collapsing-navbar {
-  @media (min-width: #{$screen-desktop}) {
-    margin-top: 3px;
-  }
+  margin-right: 1.5rem;
 
   @media (max-width: #{$screen-md-max}) {
     &.navbar-collapse .block-menu:not(:last-of-type) .nav-item:last-of-type {
@@ -330,7 +330,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: 11px;
-    padding: 0;
+    padding: 3px 0 0 0;
     width: 28px;
 
     .icon-bar {
