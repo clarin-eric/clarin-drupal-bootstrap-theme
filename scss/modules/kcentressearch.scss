@@ -36,6 +36,12 @@
 
     label {
       font-size: 0.938rem;
+      vertical-align: bottom;
+      padding-right: 5px;
+
+      &:after {
+        content: ":";
+      }
     }
 
     select {
@@ -64,7 +70,7 @@
   }
   
   .d-flex {
-    align-items: baseline;
+    align-items: end;
   }
 }
 
