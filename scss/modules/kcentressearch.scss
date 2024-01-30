@@ -1,0 +1,91 @@
+// K Centres search form
+.views-exposed-form {
+  margin-top: 30px;
+  margin-bottom: 1rem;
+
+  label {
+    color: $soft-blue-02;
+  }
+
+  .form-item-search-api-fulltext {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .form-control {
+    border: 1px solid $cold-grey-01;
+    border-radius: 28px 0 0 28px;
+    border-right: 0;
+    box-shadow: none;
+    color: $dark-blue-01;
+    font-size: 16px;
+    height: 50px;
+    line-height: 30px;
+    order: 1;
+    padding: 10px 25px;
+    width: 100%;
+
+    @media (min-width: #{$screen-tablet}) {
+      font-size: 18px;
+    }
+  }
+
+  .form-item-items-per-page {
+    margin-left: auto;
+    order: 4;
+
+    label {
+      font-size: 0.938rem;
+    }
+
+    select {
+      display: inline;
+      width: auto;
+    }
+  }
+
+  .form-submit {
+    background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat 24px center;
+    background-size: 20px;
+    border: 1px solid $dark-blue-01;
+    border-radius: 0 28px 28px 0;
+    box-shadow: none;
+    height: 58px;
+    order: 2;
+    padding: 0;
+    text-indent: -9999px;
+    width: 74px;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-blue-02;
+      outline: none;
+    }
+  }
+  
+  .d-flex {
+    align-items: baseline;
+  }
+}
+
+// Facets
+.sidebar {
+  .block-facets {
+    h2 {
+      font-size: 1rem;
+    }
+  
+    .facets-soft-limit-link {
+      font-size: 0.938rem;
+      text-decoration: underline;
+    }
+
+    li.facet-item {
+      list-style: "+ ";
+
+      &:has(label.is-active) {
+        list-style: "- ";
+      }
+    } 
+  }
+}
