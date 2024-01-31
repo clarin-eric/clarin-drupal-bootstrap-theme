@@ -5,7 +5,7 @@
 
 // Sidebar
 .sidebar {
-  .block {
+  .block:not(.hidden) {
     border: 1px solid rgb(5 45 77 / 13%);
     display: flex;
     flex-flow: column;
