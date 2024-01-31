@@ -77,13 +77,30 @@
 // Facets
 .sidebar {
   .block-facets {
+    border: 0;
+    color: $dark-blue-02;
+    margin-bottom: 0;
+
+    ul {
+      padding-left: 12px;
+    }
+
+    a, .facet-item span.facet-item__value {
+      color: $soft-blue-02;
+      text-decoration: underline;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+
     h2 {
       font-size: 1rem;
     }
   
     .facets-soft-limit-link {
+      color: $soft-blue-01;
       font-size: 0.938rem;
-      text-decoration: underline;
     }
 
     li.facet-item {
@@ -93,5 +110,17 @@
         list-style: "- ";
       }
     } 
+  }
+}
+
+// Page body:
+.view-k-centres-search .view-content {
+  a {
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $soft-blue-01;
+    }
   }
 }
