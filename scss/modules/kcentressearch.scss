@@ -120,6 +120,11 @@
 
 .sidebar_first:has(.block-facets) {
   width: 23%;
+  display: none;
+
+  &:has(.block-facets:not(.hidden)) {
+    display: block;
+  }
 }
 
 // Page body:
