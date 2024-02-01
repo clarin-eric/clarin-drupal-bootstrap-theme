@@ -18,7 +18,7 @@
     }
   }
 
-  &:not(.sidebar_second) a:not(.nav-link):not(.btn) {
+  &:not(.sidebar_second) a:not(.nav-link, .btn) {
     color: $blue;
   }
 }
@@ -56,7 +56,7 @@
 
 .node {
   .field--name-body {
-    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
+    a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
   }
@@ -64,7 +64,7 @@
 
 .paragraph {
   .field--name-field-body {
-    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
+    a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
   }
