@@ -124,7 +124,11 @@
         &:has(label.is-active) {
           list-style: "- ";
         }
-      } 
+
+        label::first-letter {
+          text-transform: uppercase;
+        }
+      }
     }
 
     h2 {
