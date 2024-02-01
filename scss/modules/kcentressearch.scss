@@ -112,6 +112,14 @@
       font-size: 1rem;
     }
   }
+
+  &:has(.block-facets) {
+    padding-top: 95px;
+  }
+}
+
+.sidebar_first:has(.block-facets) {
+  width: 20%;
 }
 
 // Page body:
