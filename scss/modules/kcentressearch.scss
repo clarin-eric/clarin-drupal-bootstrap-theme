@@ -10,7 +10,11 @@
   .form-item-search-api-fulltext,
   .form-item-keys {
     max-width: 450px;
-    width: 80%;
+    width: 70%;
+
+    @media (min-width: #{$screen-md-min}) {
+      width: 100%;
+    }
   }
 
   .form-control {
@@ -26,7 +30,7 @@
     padding: 10px 25px;
     width: 100%;
 
-    @media (min-width: #{$screen-tablet}) {
+    @media (min-width: #{$screen-sm-min}) {
       font-size: 18px;
     }
   }
