@@ -317,6 +317,57 @@
   padding: 0;
 }
 
+// Secondary menu with collapsible sub items
+.sidebar_second #block-clarin-bootstrap-mainmenu.navbar {
+  align-items: baseline;
+
+  h2 {
+    border: 0;
+  }
+
+  .dropdown-menu {
+    display: block;
+    position: relative;
+    border-left: 1px solid rgb(0 0 0 / 15%);
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 0.5rem 0;
+    transition: padding 350ms;
+  }
+
+  // Make submenu items only hidden so that their width is taken into account
+  //   when calculating the total menu width
+  .dropdown .dropdown-menu {    
+    .dropdown-item {
+      height: 32px;
+      transition: padding, height 350ms ease-out;
+    }
+
+    &:not(.show) {
+      padding: 0;
+      visibility: hidden;
+
+      .dropdown-item {
+        height: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.row:has(.sidebar_second):has(.block-menu) .main-content {
+  padding-right: 25px;
+}
+
+.sidebar.sidebar_second:has(.block-menu) {
+  border-left: 1px solid rgb(5 45 77 / 13%);
+
+  .block.block-menu {
+    border: 0;
+  }
+}
+
 // Navbar toggle with X transition
 @media (max-width: #{$screen-md-max}) {
   .navbar-toggler {
