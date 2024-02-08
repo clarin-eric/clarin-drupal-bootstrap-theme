@@ -16,6 +16,12 @@
 .appsicon {
   margin: 0 10px;
 
+  @media (min-width: #{$screen-lg}) {
+    @media (max-width: #{$screen-xl}) {
+      margin: 0 5px 0 3px;
+    }
+  }
+
   a {
     background: url('../images/applications-icon.svg');
     float: left;
@@ -65,7 +71,7 @@
 }
 
 .dropdown-menu {
-  padding: 20px 15px;
+  padding: 15px;
   z-index: 500;
 
   .dropdown-item:hover,
@@ -154,7 +160,7 @@
       background: url('../images/arrow-down-blue.svg') no-repeat center center;
       border: 0;
       height: 14px;
-      margin-left: 3px;
+      margin-left: -1px;
       vertical-align: middle;
       width: 14px;
     }
@@ -198,6 +204,10 @@
       &.show::after  {
         transform: rotate(-90deg);
       }
+    }
+
+    .dropdown-toggle::after {
+      margin-left: 5px;
     }
 
     .dropdown-menu {    
@@ -321,11 +331,22 @@
 
     @media (min-width: #{$screen-lg}) {
       li {
-        padding: 0 8px;
+        padding: 0 4px;
 
         a,
         span {
-          font-size: 1.125rem;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    @media (min-width: #{$screen-xl}) {
+      li {
+        padding: 0 5px;
+
+        a,
+        span {
+          font-size: 1rem;
         }
       }
     }
@@ -379,8 +400,6 @@
 }
 
 #collapsing-navbar {
-  margin-right: 1.5rem;
-
   @media (max-width: #{$screen-md-max}) {
     &.navbar-collapse .block-menu:not(:last-of-type) .nav-item:last-of-type {
       border-bottom: 1px solid $cold-grey-01;
