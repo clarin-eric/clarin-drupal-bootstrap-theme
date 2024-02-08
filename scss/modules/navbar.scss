@@ -325,6 +325,22 @@
     border: 0;
   }
 
+  ul {
+    width: 100%;
+  }
+
+  .nav-item.active {
+    background-color: $dark-blue-01;
+    border-radius: 15px;
+    margin-left: -10px;
+
+    &> a {
+      color: $body-bg;
+      font-weight: 600;
+      margin: 0 10px 0 10px;
+    }
+  }
+
   .dropdown-menu {
     display: block;
     position: relative;
@@ -335,21 +351,34 @@
     overflow: hidden;
   }
 
-  // Make submenu items only hidden so that their width is taken into account
-  //   when calculating the total menu width
-  .dropdown .dropdown-menu {    
-    .dropdown-item {
-      height: 32px;
-      transition: margin 350ms;
+
+  .dropdown {
+    &> a {
+      &::after {
+        background: url(../images/short-arrow-right-white.svg) no-repeat center center;
+        transform: rotate(90deg);
+        transition: transform 350ms;
+      }
+
+      &.show::after  {
+        transform: rotate(-90deg);
+      }
     }
 
-    &:not(.show) {
-      padding: 0;
-
+    .dropdown-menu {    
       .dropdown-item {
-        margin-top: -32px;
-        padding-bottom: 0;
-        padding-top: 0;
+        height: 32px;
+        transition: margin 350ms;
+      }
+
+      &:not(.show) {
+        padding: 0;
+
+        .dropdown-item {
+          margin-top: -32px;
+          padding-bottom: 0;
+          padding-top: 0;
+        }
       }
     }
   }
