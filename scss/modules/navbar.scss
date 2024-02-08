@@ -329,18 +329,6 @@
     width: 100%;
   }
 
-  .nav-item.active {
-    background-color: $dark-blue-01;
-    border-radius: 15px;
-    margin-left: -10px;
-
-    &> a {
-      color: $body-bg;
-      font-weight: 600;
-      margin: 0 10px;
-    }
-  }
-
   .dropdown-menu {
     display: block;
     position: relative;
@@ -353,7 +341,7 @@
 
 
   .dropdown {
-    &> a {
+    > a {
       &::after {
         background: url("../images/short-arrow-right-white.svg") no-repeat center center;
         transform: rotate(90deg);
@@ -380,6 +368,18 @@
           padding-top: 0;
         }
       }
+    }
+  }
+
+  .nav-item.active {
+    background-color: $dark-blue-01;
+    border-radius: 15px;
+    margin-left: -10px;
+
+    > a {
+      color: $body-bg;
+      font-weight: 600;
+      margin: 0 10px;
     }
   }
 }
