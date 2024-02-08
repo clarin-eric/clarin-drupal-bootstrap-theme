@@ -41,7 +41,7 @@ jobs:
     if: github.event_name == 'release' || needs.prepare.outputs.create_release == 'true' || !contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: '2'
@@ -53,7 +53,7 @@ jobs:
           npm ci
       - name: 'Tar workspace'
         run: tar -cvf workspace.tar .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: workspace
           path: workspace.tar
@@ -62,7 +62,7 @@ jobs:
     needs: [provision-environment]
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: workspace
       - name: 'Untar workspace'
@@ -74,7 +74,7 @@ jobs:
     needs: [provision-environment]
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: workspace
           path: .
@@ -87,7 +87,7 @@ jobs:
     needs: [prepare, lintJS, lintSCSS]
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: workspace
       - name: 'Untar workspace'
@@ -97,7 +97,7 @@ jobs:
         env:
           THEME_VERSION: ${{ needs.prepare.outputs.version }}
       - name: Upload build package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: drupal-theme-build-package
           path: dist/clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
@@ -107,11 +107,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Get latest commit sha and message
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: '1'
       - name: Get build package from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: drupal-theme-build-package
       - name: 'Untar build package'
@@ -132,7 +132,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: Download build package from build job
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: drupal-theme-build-package
     # For github releases -> upload release package to existing release
