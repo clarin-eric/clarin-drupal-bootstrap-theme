@@ -141,23 +141,10 @@
   }
 }
 
-#app-menu-dropdown .dropdown-menu {
-    box-shadow: 0 2px 20px rgb(0 0 0 / 25%) !important;
-    max-height: calc(100vh + 5px);
-    overflow-y: auto;
-    width: max-content;
-
-    @media (max-width: #{$screen-xs-max}) {
-      left: -16rem;
-    }
-
-    @media (max-width: #{$screen-md-max}) {
-      z-index: -1;
-    }
-}
-
-.dropdown-header {
-  font-weight: 700;
+.main-content {
+  @media (max-width: #{$screen-md-max}) {
+    border-top: 1px solid rgb(5 45 77 / 13%);
+  }
 }
 
 // Dropdown toggle
@@ -176,6 +163,108 @@
       transform: rotate(180deg);
     }
   }
+}
+
+// Secondary menu with collapsible sub items
+.sidebar_second .menu--main-menu-v3.navbar {
+  align-items: baseline;
+
+  h2 {
+    border: 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    display: block;
+    position: relative;
+    border-left: 1px solid rgb(0 0 0 / 15%);
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 0 0 0.5rem;
+    overflow: hidden;
+  }
+
+  .dropdown {
+    > a {
+      &::after {
+        background: url("../images/short-arrow-right-white.svg") no-repeat center center;
+        transform: rotate(90deg);
+        transition: transform 350ms;
+      }
+
+      &.show::after  {
+        transform: rotate(-90deg);
+      }
+    }
+
+    .dropdown-menu {    
+      .dropdown-item {
+        height: 32px;
+        transition: margin 350ms;
+      }
+
+      &:not(.show) {
+        padding: 0;
+
+        .dropdown-item {
+          margin-top: -32px;
+          padding-bottom: 0;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  .nav-item.active {
+    background-color: $dark-blue-01;
+    border-radius: 15px;
+    margin-left: -10px;
+
+    > a {
+      color: $body-bg;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+  }
+}
+
+// Adjust content region when righ-hand menus are present
+.row:has(.sidebar_second):has(.block-menu) .main-content {
+  padding-right: 25px;
+}
+
+// Adjust secondary region when righ-hand menus are present
+.sidebar.sidebar_second:has(.block-menu) {
+  border-left: 1px solid rgb(5 45 77 / 13%);
+  margin-left: 5px;
+  padding: 0;
+  width: 20%;
+
+  .block.block-menu {
+    border: 0;
+  }
+}
+
+#app-menu-dropdown .dropdown-menu {
+    box-shadow: 0 2px 20px rgb(0 0 0 / 25%) !important;
+    max-height: calc(100vh + 5px);
+    overflow-y: auto;
+    width: max-content;
+
+    @media (max-width: #{$screen-xs-max}) {
+      left: -16rem;
+    }
+
+    @media (max-width: #{$screen-md-max}) {
+      z-index: -1;
+    }
+}
+
+.dropdown-header {
+  font-weight: 700;
 }
 
 // Navbar
@@ -289,12 +378,6 @@
   padding: 0.35rem 0;
 }
 
-.main-content {
-  @media (max-width: #{$screen-md-max}) {
-    border-top: 1px solid rgb(5 45 77 / 13%);
-  }
-}
-
 #collapsing-navbar {
   margin-right: 1.5rem;
 
@@ -315,88 +398,6 @@
   --bs-navbar-color: $body-color;
 
   padding: 0;
-}
-
-// Secondary menu with collapsible sub items
-.sidebar_second .menu--main-menu-v3.navbar {
-  align-items: baseline;
-
-  h2 {
-    border: 0;
-  }
-
-  ul {
-    width: 100%;
-  }
-
-  .dropdown-menu {
-    display: block;
-    position: relative;
-    border-left: 1px solid rgb(0 0 0 / 15%);
-    border-radius: 0;
-    box-shadow: none !important;
-    padding: 0 0 0.5rem;
-    overflow: hidden;
-  }
-
-
-  .dropdown {
-    > a {
-      &::after {
-        background: url("../images/short-arrow-right-white.svg") no-repeat center center;
-        transform: rotate(90deg);
-        transition: transform 350ms;
-      }
-
-      &.show::after  {
-        transform: rotate(-90deg);
-      }
-    }
-
-    .dropdown-menu {    
-      .dropdown-item {
-        height: 32px;
-        transition: margin 350ms;
-      }
-
-      &:not(.show) {
-        padding: 0;
-
-        .dropdown-item {
-          margin-top: -32px;
-          padding-bottom: 0;
-          padding-top: 0;
-        }
-      }
-    }
-  }
-
-  .nav-item.active {
-    background-color: $dark-blue-01;
-    border-radius: 15px;
-    margin-left: -10px;
-
-    > a {
-      color: $body-bg;
-      font-weight: 600;
-      margin: 0 10px;
-    }
-  }
-}
-
-.row:has(.sidebar_second):has(.block-menu) .main-content {
-  padding-right: 25px;
-}
-
-.sidebar.sidebar_second:has(.block-menu) {
-  border-left: 1px solid rgb(5 45 77 / 13%);
-  margin-left: 5px;
-  padding: 0;
-  width: 20%;
-
-  .block.block-menu {
-    border: 0;
-  }
 }
 
 // Navbar toggle with X transition
