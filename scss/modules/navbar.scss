@@ -249,7 +249,6 @@
 // Adjust secondary region when righ-hand menus are present
 .sidebar.sidebar_second:has(.block-menu) {
   border-left: 1px solid rgb(5 45 77 / 13%);
-  margin-left: 5px;
   padding: 0;
 
   .block.block-menu {
