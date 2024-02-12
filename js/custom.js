@@ -62,6 +62,14 @@
           .focus()
           .select();
       });
+
+      // Auto expand secondary menu active item
+      const activeDropdownTgg = $(
+        ".sidebar_second .navbar .menu-item--expanded .dropdown-toggle.is-active",
+        document
+      );
+      bootstrap.Dropdown.getOrCreateInstance(activeDropdownTgg).show();
+      activeDropdownTgg.blur();
     }
   };
 })(jQuery, Drupal);
