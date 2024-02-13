@@ -23,14 +23,13 @@
   }
 }
 
-.sidebar_second {
+.sidebar_second :not(.block-menu){
   @media (max-width: #{$screen-xs-max}) {
     padding-left: 0;
     padding-right: 0;
 
     .section nav ul {
-      flex-flow: wrap;
-      justify-content: space-between;
+
       list-style: square;
       padding: 10px;
 
