@@ -423,12 +423,12 @@
     border-radius: 0;
     display: flex;
     flex-flow: wrap;
-    height: 28px;
+    height: 30px;
     justify-content: center;
     margin-left: auto;
     margin-right: 11px;
     padding: 3px 0 0;
-    width: 28px;
+    width: 30px;
 
     .icon-bar {
       background-color: $dark-blue-01;
@@ -453,7 +453,7 @@
         }
 
         &:nth-child(3) {
-          transform: rotate(-45deg) translate3d(6.5px, -6.5px, 0);
+          transform: rotate(-45deg) translate3d(7px, -7px, 0);
         }
       }
     }
