@@ -6,6 +6,7 @@ extends:
     - stylelint-config-sass-guidelines
 plugins:
     - stylelint-scss
+    - stylelint-order
 rules:
   import-notation: 'string'
   # Disallows
@@ -25,3 +26,4 @@ rules:
   # Style Guide
   selector-max-compound-selectors: 6
   scss/dollar-variable-pattern: "[a-z][a-zA-Z_-]+"
+  order/properties-alphabetical-order: true
