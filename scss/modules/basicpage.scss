@@ -23,7 +23,7 @@
   }
 }
 
-.sidebar_second :not(.block-menu){
+.sidebar_second .nav:not(.block-menu){
   @media (max-width: #{$screen-xs-max}) {
     padding-left: 0;
     padding-right: 0;
