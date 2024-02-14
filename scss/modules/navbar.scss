@@ -215,9 +215,13 @@
       .dropdown-item {
         height: fit-content;
         padding-bottom: 3px;
-        padding-top: 3px;
+        padding-top: 6px;
         transition: margin 350ms;
         white-space: normal;
+
+        a {
+          line-height: 1.125rem;
+        }
       }
 
       &:not(.show) {
