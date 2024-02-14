@@ -1,7 +1,7 @@
 // K Centres search form
 .views-exposed-form {
-  margin-top: 30px;
   margin-bottom: 1rem;
+  margin-top: 30px;
 
   label {
     color: $soft-blue-02;
@@ -41,8 +41,8 @@
 
     label {
       font-size: 0.938rem;
-      vertical-align: bottom;
       padding-right: 5px;
+      vertical-align: bottom;
 
       &::after {
         content: ":";
@@ -166,6 +166,6 @@
 
 // For highlighting search match words
 .search-highlight {
-  font-weight: normal;
   background-color: $search-highlight;
+  font-weight: normal;
 }
