@@ -71,7 +71,7 @@
 }
 
 .dropdown-menu {
-  padding: 15px;
+  padding: 20px 15px;
   z-index: 499;
 
   .dropdown-item:hover,
@@ -160,7 +160,7 @@
       background: url('../images/arrow-down-blue.svg') no-repeat center center;
       border: 0;
       height: 14px;
-      margin-left: -1px;
+      margin-left: 2px;
       vertical-align: middle;
       width: 14px;
     }
@@ -191,6 +191,7 @@
     box-shadow: none !important;
     padding: 0 0 0.5rem;
     overflow: hidden;
+    z-index: 498;
   }
 
   .dropdown {
@@ -320,7 +321,7 @@
 
     @media (min-width: #{$screen-desktop}) {
       li {
-        padding: 0 4px;
+        padding: 0 8px;
       }
 
       a,
@@ -331,23 +332,13 @@
 
     @media (min-width: #{$screen-lg}) {
       li {
-        padding: 0 4px;
-
-        a,
-        span {
-          font-size: 1rem;
-        }
+        padding: 0 8px;
       }
     }
 
     @media (min-width: #{$screen-xl}) {
       li {
         padding: 0 5px;
-
-        a,
-        span {
-          font-size: 1rem;
-        }
       }
     }
   }
