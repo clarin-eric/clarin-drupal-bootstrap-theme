@@ -70,10 +70,12 @@
       );
       const body = $("body", document);
 
-      body.addClass("position-fixed");
-      bootstrap.Dropdown.getOrCreateInstance(activeDropdownTgg).show();
-      activeDropdownTgg.blur();
-      body.removeClass("position-fixed");
+      if (activeDropdownTgg.length) {
+        body.addClass("position-fixed");
+        bootstrap.Dropdown.getOrCreateInstance(activeDropdownTgg).show();
+        activeDropdownTgg.blur();
+        body.removeClass("position-fixed");
+      }
     }
   };
 })(jQuery, Drupal);
