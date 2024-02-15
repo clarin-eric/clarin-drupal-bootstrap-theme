@@ -6,7 +6,11 @@
 
 .node--type-k-centre {
   .field {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.625rem;
+
+    p {
+      margin: 0;
+    }
   }
 
   .field__label {
@@ -47,5 +51,23 @@
       content: "(" counter(list) ") ";
       counter-increment: list;
     }
+  }
+
+  .field.field--name-field-full-name {
+    font-size: $h2-font-size-h2;
+
+    @media (max-width: #{$screen-md-max}) {
+      font-size: $h3-font-size-h3;
+    }
+
+    @media (max-width: #{$screen-phone}) {
+      font-size: $h4-font-size-h4;
+    }
+  }
+
+  .field.field--name-field-url {
+    font-size: $h3-font-size-h3;
+    padding-bottom: 1.625rem;
+    padding-left: 0.625rem;
   }
 }
