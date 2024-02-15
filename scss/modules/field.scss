@@ -20,5 +20,15 @@
         content: ":";
       }
     }
+
+    .field__item {
+      &::after {
+        content: ",";
+      }
+
+      &:last-child::after {
+        content: ".";
+      }
+    }
   }
 }
