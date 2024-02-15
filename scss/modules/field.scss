@@ -5,6 +5,10 @@
 }
 
 .node--type-k-centre {
+  .field {
+    padding-bottom: 0.5rem;
+  }
+
   .field__label {
     display: contents;
     float: left;
@@ -21,14 +25,27 @@
       }
     }
 
-    .field__item {
-      &::after {
-        content: ",";
-      }
+    .field__items {
+      display: inline;
 
-      &:last-child::after {
-        content: ".";
+      .field__item {
+        &::after {
+          content: ",";
+        }
+
+        &:last-child::after {
+          content: ".";
+        }
       }
+    }
+  }
+
+  .field.field--name-field-hosted-by-list {
+    counter-reset: list;
+
+    .field__item::before {
+      content: "(" counter(list) ") ";
+      counter-increment: list;
     }
   }
 }
