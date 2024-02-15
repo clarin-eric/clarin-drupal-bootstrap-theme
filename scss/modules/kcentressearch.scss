@@ -92,9 +92,10 @@
 }
 
 .page-view-k-centres-search .page-title::after {
-  color: red;
+  color: $brand-danger;
   content: " BETA";
   font-size: 16px;
+  vertical-align: super;
 }
 
 // Facets
