@@ -91,6 +91,12 @@
   }
 }
 
+.page-view-k-centres-search .page-title::after {
+  color: red;
+  content: " BETA";
+  font-size: 16px;
+}
+
 // Facets
 // Any sidebar
 .sidebar {
