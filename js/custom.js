@@ -62,6 +62,20 @@
           .focus()
           .select();
       });
+
+      // Auto expand secondary menu active item
+      const activeDropdownTgg = $(
+        ".sidebar_second .navbar .menu-item--expanded .dropdown-toggle.is-active",
+        document
+      );
+      const body = $("body", document);
+
+      if (activeDropdownTgg.length) {
+        body.addClass("position-fixed");
+        bootstrap.Dropdown.getOrCreateInstance(activeDropdownTgg).show();
+        activeDropdownTgg.blur();
+        body.removeClass("position-fixed");
+      }
     }
   };
 })(jQuery, Drupal);

@@ -5,6 +5,14 @@
 }
 
 .node--type-k-centre {
+  .field {
+    padding-bottom: 0.625rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
   .field__label {
     display: contents;
     float: left;
@@ -20,5 +28,46 @@
         content: ":";
       }
     }
+
+    .field__items {
+      display: inline;
+
+      .field__item {
+        &::after {
+          content: ",";
+        }
+
+        &:last-child::after {
+          content: ".";
+        }
+      }
+    }
+  }
+
+  .field.field--name-field-hosted-by-list {
+    counter-reset: list;
+
+    .field__item::before {
+      content: "(" counter(list) ") ";
+      counter-increment: list;
+    }
+  }
+
+  .field.field--name-field-full-name {
+    font-size: $h2-font-size-h2;
+
+    @media (max-width: #{$screen-md-max}) {
+      font-size: $h3-font-size-h3;
+    }
+
+    @media (max-width: #{$screen-phone}) {
+      font-size: $h4-font-size-h4;
+    }
+  }
+
+  .field.field--name-field-url {
+    font-size: $h3-font-size-h3;
+    padding-bottom: 1.625rem;
+    padding-left: 0.625rem;
   }
 }

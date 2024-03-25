@@ -5,7 +5,7 @@
 
 // Sidebar
 .sidebar {
-  .block {
+  .block:not(.hidden) {
     border: 1px solid rgb(5 45 77 / 13%);
     display: flex;
     flex-flow: column;
@@ -18,19 +18,17 @@
     }
   }
 
-  &:not(.sidebar_second) a:not(.nav-link):not(.btn) {
+  &:not(.sidebar_second) a:not(.nav-link, .btn) {
     color: $blue;
   }
 }
 
-.sidebar_second {
+.sidebar_second .nav:not(.block-menu){
   @media (max-width: #{$screen-xs-max}) {
     padding-left: 0;
     padding-right: 0;
 
     .section nav ul {
-      flex-flow: wrap;
-      justify-content: space-between;
       list-style: square;
       padding: 10px;
 
@@ -56,7 +54,7 @@
 
 .node {
   .field--name-body {
-    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
+    a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
   }
@@ -64,7 +62,7 @@
 
 .paragraph {
   .field--name-field-body {
-    a:not(.btn):not(.btn-default):not(.btn-link-blue-s) {
+    a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
   }

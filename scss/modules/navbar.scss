@@ -16,6 +16,12 @@
 .appsicon {
   margin: 0 10px;
 
+  @media (min-width: #{$screen-lg}) {
+    @media (max-width: #{$screen-xl}) {
+      margin: 0 5px 0 3px;
+    }
+  }
+
   a {
     background: url('../images/applications-icon.svg');
     float: left;
@@ -66,7 +72,7 @@
 
 .dropdown-menu {
   padding: 20px 15px;
-  z-index: 500;
+  z-index: 499;
 
   .dropdown-item:hover,
   .dropdown-item:focus,
@@ -141,6 +147,122 @@
   }
 }
 
+.main-content {
+  @media (max-width: #{$screen-md-max}) {
+    border-top: 1px solid rgb(5 45 77 / 13%);
+  }
+}
+
+// Dropdown toggle
+.dropdown {
+  .dropdown-toggle {
+    &::after {
+      background: url('../images/arrow-down-blue.svg') no-repeat center center;
+      border: 0;
+      height: 14px;
+      margin-left: 2px;
+      vertical-align: middle;
+      width: 14px;
+    }
+
+    &.show::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Secondary menu with collapsible sub items
+.sidebar_second .menu--main-menu-v3.navbar {
+  align-items: baseline;
+
+  h2 {
+    border: 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    border-left: 1px solid rgb(0 0 0 / 15%);
+    border-radius: 0;
+    box-shadow: none !important;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0.5rem;
+    position: relative;
+    z-index: 498;
+  }
+
+  .dropdown {
+    > a {
+      &::after {
+        background: url("../images/short-arrow-right-white.svg") no-repeat center center;
+        transform: rotate(90deg);
+        transition: transform 350ms;
+      }
+
+      &.show::after  {
+        transform: rotate(-90deg);
+      }
+    }
+
+    .dropdown-toggle::after {
+      margin-left: 5px;
+    }
+
+    .dropdown-menu {    
+      .dropdown-item {
+        height: fit-content;
+        padding-bottom: 3px;
+        padding-top: 6px;
+        transition: margin 350ms;
+        white-space: normal;
+
+        a {
+          line-height: 1.125rem;
+        }
+      }
+
+      &:not(.show) {
+        padding: 0;
+
+        .dropdown-item {
+          margin-top: -45px;
+
+        }
+      }
+    }
+  }
+
+  .nav .nav-item.active {
+    background-color: $dark-blue-01;
+    border-radius: 15px;
+    margin-left: -10px;
+
+    > a {
+      color: $body-bg;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+  }
+}
+
+// Adjust content region when righ-hand menus are present
+.row:has(.sidebar_second):has(.block-menu) .main-content {
+  padding-right: 25px;
+}
+
+// Adjust secondary region when righ-hand menus are present
+.sidebar.sidebar_second:has(.block-menu) {
+  border-left: 1px solid rgb(5 45 77 / 13%);
+  padding: 0;
+
+  .block.block-menu {
+    border: 0;
+  }
+}
+
 #app-menu-dropdown .dropdown-menu {
     box-shadow: 0 2px 20px rgb(0 0 0 / 25%) !important;
     max-height: calc(100vh + 5px);
@@ -158,24 +280,6 @@
 
 .dropdown-header {
   font-weight: 700;
-}
-
-// Dropdown toggle
-.dropdown {
-  .dropdown-toggle {
-    &::after {
-      background: url('../images/arrow-down-blue.svg') no-repeat center center;
-      border: 0;
-      height: 14px;
-      margin-left: 3px;
-      vertical-align: middle;
-      width: 14px;
-    }
-
-    &.show::after {
-      transform: rotate(180deg);
-    }
-  }
 }
 
 // Navbar
@@ -221,7 +325,7 @@
 
     @media (min-width: #{$screen-desktop}) {
       li {
-        padding: 0 4px;
+        padding: 0 8px;
       }
 
       a,
@@ -233,11 +337,12 @@
     @media (min-width: #{$screen-lg}) {
       li {
         padding: 0 8px;
+      }
+    }
 
-        a,
-        span {
-          font-size: 1.125rem;
-        }
+    @media (min-width: #{$screen-xl}) {
+      li {
+        padding: 0 5px;
       }
     }
   }
@@ -289,15 +394,7 @@
   padding: 0.35rem 0;
 }
 
-.main-content {
-  @media (max-width: #{$screen-md-max}) {
-    border-top: 1px solid rgb(5 45 77 / 13%);
-  }
-}
-
 #collapsing-navbar {
-  margin-right: 1.5rem;
-
   @media (max-width: #{$screen-md-max}) {
     &.navbar-collapse .block-menu:not(:last-of-type) .nav-item:last-of-type {
       border-bottom: 1px solid $cold-grey-01;
@@ -326,12 +423,12 @@
     border-radius: 0;
     display: flex;
     flex-flow: wrap;
-    height: 28px;
+    height: 30px;
     justify-content: center;
     margin-left: auto;
     margin-right: 11px;
-    padding: 3px 0 0 0;
-    width: 28px;
+    padding: 3px 0 0;
+    width: 30px;
 
     .icon-bar {
       background-color: $dark-blue-01;
@@ -356,7 +453,7 @@
         }
 
         &:nth-child(3) {
-          transform: rotate(-45deg) translate3d(6.5px, -6.5px, 0);
+          transform: rotate(-45deg) translate3d(7px, -7px, 0);
         }
       }
     }
