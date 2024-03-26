@@ -78,9 +78,10 @@
       }
 
       let handlerAttached = false;
+      let listParent = activeDropdownTgg[0].closest("div");
 
       function handleSecondaryMenuClick(event) {
-        if (!activeDropdownTgg[0].contains(event.target)) {
+        if (!listParent.contains(event.target)) {
           // do not close menu
           event.preventDefault();
           event.stopImmediatePropagation();
