@@ -80,7 +80,7 @@
       let handlerAttached = false;
 
       function handleSecondaryMenuClick(event) {
-        if (!activeDropdownTgg.contains(event.target)) {
+        if (!activeDropdownTgg[0].contains(event.target)) {
           // do not close menu
           event.preventDefault();
           event.stopImmediatePropagation();
