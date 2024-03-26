@@ -77,8 +77,8 @@
         body.removeClass("position-fixed");
       }
 
+      const listParent = activeDropdownTgg[0].closest("div");
       let handlerAttached = false;
-      let listParent = activeDropdownTgg[0].closest("div");
 
       function handleSecondaryMenuClick(event) {
         if (!listParent.contains(event.target)) {
