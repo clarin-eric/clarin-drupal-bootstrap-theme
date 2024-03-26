@@ -77,6 +77,8 @@
         body.removeClass("position-fixed");
       }
 
+      var handlerAttached = false;
+
       function handleSecondaryMenuClick(event) {
         if (!activeDropdownTgg.contains(event.target)) {
           // do not close menu
@@ -85,7 +87,9 @@
         }
       }
 
-      body.addEventListener("click", handleSecondaryMenuClick, true);
+      if ( && !handlerAttached) {
+        body.addEventListener("click", handleSecondaryMenuClick, true);
+      }
     }
   };
 })(jQuery, Drupal);
