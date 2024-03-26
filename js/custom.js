@@ -77,6 +77,7 @@
         body.removeClass("position-fixed");
       }
 
+      // Only collapse right-hand menu when clicking on it
       const listParent = activeDropdownTgg[0].closest("div");
       let handlerAttached = false;
 
