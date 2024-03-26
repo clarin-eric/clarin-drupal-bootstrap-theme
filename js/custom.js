@@ -87,8 +87,9 @@
         }
       }
 
-      if ( && !handlerAttached) {
-        body.on("click", handleSecondaryMenuClick);
+      if (!handlerAttached) {
+        body.on("click.outsecondarymenu", handleSecondaryMenuClick);
+        handlerAttached = true;
       }
     }
   };
