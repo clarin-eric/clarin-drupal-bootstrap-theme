@@ -76,23 +76,6 @@
         activeDropdownTgg.blur();
         body.removeClass("position-fixed");
       }
-
-      // Only collapse right-hand menu when clicking on it
-      const listParent = activeDropdownTgg[0].closest("div");
-      let handlerAttached = false;
-
-      function handleSecondaryMenuClick(event) {
-        if (!listParent.contains(event.target)) {
-          // do not close menu
-          event.preventDefault();
-          event.stopImmediatePropagation();
-        }
-      }
-
-      if (!handlerAttached) {
-        // listParent.on("click.outsecondarymenu", handleSecondaryMenuClick);
-        handlerAttached = true;
-      }
     }
   };
 })(jQuery, Drupal);
