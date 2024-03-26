@@ -77,7 +77,7 @@
         body.removeClass("position-fixed");
       }
 
-      var handlerAttached = false;
+      let handlerAttached = false;
 
       function handleSecondaryMenuClick(event) {
         if (!activeDropdownTgg.contains(event.target)) {
