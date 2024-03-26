@@ -90,7 +90,7 @@
       }
 
       if (!handlerAttached) {
-        listParent.on("click.outsecondarymenu", handleSecondaryMenuClick);
+        //listParent.on("click.outsecondarymenu", handleSecondaryMenuClick);
         handlerAttached = true;
       }
     }
