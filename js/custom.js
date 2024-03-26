@@ -76,6 +76,16 @@
         activeDropdownTgg.blur();
         body.removeClass("position-fixed");
       }
+
+      function handleSecondaryMenuClick(event) {
+        if (!activeDropdownTgg.contains(event.target)) {
+          // do not close menu
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }
+
+      body.addEventListener("click", handleSecondaryMenuClick, true);
     }
   };
 })(jQuery, Drupal);
