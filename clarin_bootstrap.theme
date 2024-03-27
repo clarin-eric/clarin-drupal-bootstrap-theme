@@ -68,7 +68,7 @@ function clarin_bootstrap_preprocess_page(&$variables)
  */
 function clarin_bootstrap_preprocess_node(&$variables)
 {
-  $node = $variables['node'];
+  $node = \Drupal::routeMatch()->getParameter('node');
   if ($node->hasField('field_show_toc') && $node->hasField('body')) {
     if ($node->get('field_show_toc')->value == 1) {
       $variables['show_toc'] = $node->get('field_show_toc')->value;
