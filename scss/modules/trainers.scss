@@ -1,0 +1,33 @@
+// Styles for Trainers Network pages
+
+.node.node--type-trainer {
+    display: flex;
+    flex-flow: column;
+
+    .field--name-field-media,
+    .field--name-field-expertise,
+    .field--name-field-clarin-centre-s,
+    .field--name-field-email {
+        align-self: center;
+    }
+
+    .field--name-field-expertise .field__label {
+        font-weight: 400;
+
+        &::after {
+            content: ' in: ';
+        }
+    }
+
+    .field--name-field-clarin-centre-s .field__item {
+        display: inline;
+
+        &::after {
+          content: " &";
+        }
+
+        &:last-child::after {
+          content: ".";
+        }
+    }
+}
