@@ -1,33 +1,72 @@
 // Styles for Trainers Network pages
 
 .node.node--type-trainer {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
 
-    .field--name-field-media,
-    .field--name-field-expertise,
-    .field--name-field-clarin-centre-s,
-    .field--name-field-email {
-        align-self: center;
+  .field {
+    padding-bottom: 0.625rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .field--name-field-clarin-centre-s .field__item {
+    display: inline;
+
+    &::after {
+      content: " &";
     }
 
-    .field--name-field-expertise .field__label {
-        font-weight: 400;
+    &:last-child::after {
+      content: "";
+    }
+  }
 
-        &::after {
-            content: ' in: ';
-        }
+  .field__label {
+    display: contents;
+    float: left;
+    font-weight: bold;
+  }
+
+  .field--label-inline {
+    .field__label {
+      display: inline;
+      padding-right: 0.5rem;
+
+      &::after {
+        content: ":";
+      }
     }
 
-    .field--name-field-clarin-centre-s .field__item {
-        display: inline;
+    .field__items {
+      display: inline;
 
+      .field__item {
         &::after {
-          content: " &";
+          content: ",";
         }
 
         &:last-child::after {
           content: "";
         }
+      }
     }
+  }
+
+  .field--name-field-media,
+  .field--name-field-expertise,
+  .field--name-field-clarin-centre-s,
+  .field--name-field-email {
+      align-self: center;
+  }
+
+  .field--name-field-expertise .field__label {
+    font-weight: 400;
+
+    &::after {
+      content: ' in: ';
+    }
+  }
 }
