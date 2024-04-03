@@ -12,6 +12,12 @@
     }
   }
 
+  .field__label {
+    display: contents;
+    float: left;
+    font-weight: bold;
+  }
+
   .field--name-field-clarin-centre-s .field__item {
     display: inline;
 
@@ -24,10 +30,20 @@
     }
   }
 
-  .field__label {
-    display: contents;
-    float: left;
-    font-weight: bold;
+  .field--name-field-expertise .field__label {
+    font-weight: 400;
+
+    &::after {
+      content: ' in: ';
+    }
+  }
+
+
+  .field--name-field-media,
+  .field--name-field-expertise,
+  .field--name-field-clarin-centre-s,
+  .field--name-field-email {
+      align-self: center;
   }
 
   .field--label-inline {
@@ -52,21 +68,6 @@
           content: "";
         }
       }
-    }
-  }
-
-  .field--name-field-media,
-  .field--name-field-expertise,
-  .field--name-field-clarin-centre-s,
-  .field--name-field-email {
-      align-self: center;
-  }
-
-  .field--name-field-expertise .field__label {
-    font-weight: 400;
-
-    &::after {
-      content: ' in: ';
     }
   }
 }
