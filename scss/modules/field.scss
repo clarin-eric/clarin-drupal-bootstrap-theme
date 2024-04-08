@@ -72,16 +72,18 @@
   }
 }
 
-.field--name-field-location-coordinates .field__label {
-  display: block;
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-
-  &::after {
-    content: "Hosted by:";
-    text-indent: 0;
+.node--type-clarin-centre {
+  .field--name-field-location-coordinates .field__label {
     display: block;
-    line-height: initial;
+    line-height: 0; /* Collapse the original line */
+    text-indent: -9999px;
+
+    &::after {
+      content: "Hosted by:";
+      display: block;
+      line-height: $line-height-base x 2;
+      text-indent: 0;
+    }
   }
 }
 
