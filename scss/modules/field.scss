@@ -81,7 +81,7 @@
     &::after {
       content: "Hosted by:";
       display: block;
-      line-height: calc($line-height-base x 2);
+      line-height: 3.126;
       text-indent: 0;
     }
   }
