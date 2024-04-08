@@ -71,3 +71,36 @@
     padding-left: 0.625rem;
   }
 }
+
+.field--name-field-location-coordinates .field__label {
+  display: block;
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+
+  &::after {
+    content: "Hosted by:";
+    text-indent: 0;
+    display: block;
+    line-height: initial;
+  }
+}
+
+@media (min-width: #{$screen-sm-min}) {
+  .node--type-clarin-centre {
+    .field--name-field-administrative-contact, .field--name-field-technical-contact,
+    .field--name-field-monitoring-contacts {
+      display: inline-block;
+      max-width: 30%;
+      padding-right: 2rem;
+      vertical-align: top;
+    }
+
+    .field--name-field-working-unit {
+      margin-top: 4rem;
+    }
+
+    .field--name-field-address {
+      margin-bottom: 5rem;
+    }
+  }
+}
