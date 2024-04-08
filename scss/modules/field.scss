@@ -104,5 +104,9 @@
     .field--name-field-address {
       margin-bottom: 5rem;
     }
+
+    .field--name-field-description::after {
+      content: unset;
+    }
   }
 }
