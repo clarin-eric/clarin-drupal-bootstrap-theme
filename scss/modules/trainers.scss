@@ -73,9 +73,14 @@
 }
 
 // Trainers network view
+.page-view-trainers-network {
+  .title-wrapper h1 {
+    display: none;
+  }
 
-.view-trainers-network .view-header img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  .view-trainers-network .view-header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
