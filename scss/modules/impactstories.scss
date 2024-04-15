@@ -120,6 +120,12 @@
       line-height: 28px;
     }
 
+    .container, .container-sm,
+    .container-md, .container-lg,
+    .container-xl, .container-xxl {
+      padding: 0 calc(var(--bs-gutter-x) * .4);
+    }
+
     ul,
     ol {
       padding: 0;
