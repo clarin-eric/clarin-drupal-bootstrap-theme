@@ -73,20 +73,18 @@ h6 {
   font-size: $h6-font-size-h6;
 }
 
-:not(.node--type-impact-story) :not(.paragraph) > {
-  .container, .container-sm,
-  .container-md, .container-lg,
-  .container-xl, .container-xxl {
-    padding: 0 calc(var(--bs-gutter-x) * .4);
+.container, .container-sm,
+.container-md, .container-lg,
+.container-xl, .container-xxl {
+  padding: 0 calc(var(--bs-gutter-x) * .4);
 
-      @media (min-width: #{$screen-xl-min}) {
-        padding: 0 calc(var(--bs-gutter-x) * 3);
-      }
+    @media (min-width: #{$screen-xl-min}) {
+      padding: 0 calc(var(--bs-gutter-x) * 3);
+    }
 
-      @media (min-width: #{$screen-xxl-min}) {
-        padding: 0 calc(var(--bs-gutter-x) * 5);
-      }
-  }
+    @media (min-width: #{$screen-xxl-min}) {
+      padding: 0 calc(var(--bs-gutter-x) * 5);
+    }
 }
 
 .row {
