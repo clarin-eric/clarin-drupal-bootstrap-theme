@@ -30,14 +30,18 @@
     }
   }
 
-  .field--name-field-expertise.field--label-inline .field__label {
-    font-weight: 400;
+  .field--name-field-public-profile-link {
+    margin-left: auto;
+    margin-right: auto;
 
-    &::after {
-      content: ' in';
+    .paragraph--type--link-list {
+      padding-top: 0;
+
+      .field--name-field-links {
+        margin-top: 0;
+      }
     }
   }
-
 
   .field--name-field-media,
   .field--name-field-expertise,
@@ -68,6 +72,14 @@
           content: "";
         }
       }
+    }
+  }
+
+  .field--name-field-expertise.field--label-inline .field__label {
+    font-weight: 400;
+
+    &::after {
+      content: ' in';
     }
   }
 }
