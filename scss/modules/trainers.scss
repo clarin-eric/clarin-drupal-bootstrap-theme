@@ -1,0 +1,104 @@
+// Styles for Trainers Network pages
+
+.node.node--type-trainer {
+  display: flex;
+  flex-flow: column;
+
+  .field {
+    padding-bottom: 0.625rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .field__label {
+    display: contents;
+    float: left;
+    font-weight: bold;
+  }
+
+  .field--name-field-clarin-centre-s .field__item {
+    display: inline;
+
+    &::after {
+      content: " &";
+    }
+
+    &:last-child::after {
+      content: "";
+    }
+  }
+
+  .field--name-field-public-profile-link {
+    margin-left: auto;
+    margin-right: auto;
+
+    .paragraph--type--link-list {
+      padding-top: 0;
+
+      .field--name-field-links {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .field--name-field-media,
+  .field--name-field-expertise,
+  .field--name-field-clarin-centre-s,
+  .field--name-field-email {
+      align-self: center;
+  }
+
+  .field--label-inline {
+    .field__label {
+      display: inline;
+      padding-right: 0.2rem;
+
+      &::after {
+        content: ":";
+      }
+    }
+
+    .field__items {
+      display: inline;
+
+      .field__item {
+        &::after {
+          content: ",";
+        }
+
+        &:last-child::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  .field--name-field-expertise.field--label-inline .field__label {
+    font-weight: 400;
+
+    &::after {
+      content: ' in';
+    }
+  }
+}
+
+// Trainers network view
+.page-view-trainers-network {
+  .title-wrapper h1 {
+    display: none;
+  }
+
+  .view-trainers-network {
+    .views-view-responsive-grid__item-inner {
+      position: relative;
+    }
+
+    .view-header img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

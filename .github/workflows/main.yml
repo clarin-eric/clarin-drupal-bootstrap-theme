@@ -117,7 +117,7 @@ jobs:
       - name: 'Untar build package'
         run: tar -xf clarin_bootstrap-${{ needs.prepare.outputs.version }}.tar.gz
       - name: Publish to distribution repository
-        uses: s0/git-publish-subdir-action@v2.6.0
+        uses: s0/git-publish-subdir-action@master
         env:
           REPO: git@github.com:clarin-eric/clarin-drupal-bootstrap-theme-dist.git
           BRANCH: ${{ needs.prepare.outputs.version }}.x
