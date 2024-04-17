@@ -1,0 +1,67 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{%
+  set node_classes = [
+  'node__content',
+  more_links ? 'col-sm-8',
+  'clearfix',
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        {% block submitted %}
+          <em{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </em>
+        {% endblock %}
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+  <div{{ attributes.addClass(node_classes) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
+    <div class="d-none d-sm-block float-sm-end col-sm-3"> 
+    {% for key, child in content.field_type|filter((child, key) => key|first != '#') %}
+    {% if 'B' in child  %}
+      <img class="pb-4" src="../themes/contrib/clarin_bootstrap/images/CLARIN-Logo-B-centre-2023-RGB-600ppi-transp.png">
+    {% endif %}
+    {% if 'K' in child  %}
+      <img class="pb-4" src="../themes/contrib/clarin_bootstrap/images/CLARIN-Logo-K-centre-2023-RGB-600ppi-transp.png">
+    {% endif %}
+    {% endfor %}
+    </div>
+    {% if more_links %}
+    {{ content|without('field_see_also_links') }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+  {% if more_links %}
+    <div class="sidebar more-link col-sm-4">
+      <div class="more-links">
+        <h2>See also</h2>
+        {{ content.field_see_also_links }}
+      </div>
+    </div>
+  {% endif %}
+</article>
