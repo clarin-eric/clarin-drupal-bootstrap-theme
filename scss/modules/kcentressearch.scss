@@ -80,18 +80,20 @@
 }
 
 // Page body:
-.view-k-centres-search, .view-search-content .view-content {
-  a {
-    color: $link-color;
-    text-decoration: underline;
+.view-k-centres-search, .view-search-content {
+  .view-content {
+    a {
+      color: $link-color;
+      text-decoration: underline;
 
-    &:hover {
-      color: $soft-blue-01;
+      &:hover {
+        color: $soft-blue-01;
+      }
     }
   }
 }
 
-.page-view-k-centres-search, .page-title::after {
+.page-view-k-centres-search .page-title::after {
   color: $brand-danger;
   content: " BETA";
   font-size: 16px;
