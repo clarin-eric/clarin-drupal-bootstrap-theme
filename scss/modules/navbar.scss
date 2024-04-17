@@ -172,7 +172,7 @@
 }
 
 // Secondary menu with collapsible sub items
-.sidebar_second .menu--main-menu-v3.navbar {
+.sidebar_second .menu--main.navbar {
   align-items: baseline;
 
   h2 {
@@ -184,7 +184,7 @@
   }
 
   .dropdown-menu {
-    border-left: 1px solid rgb(0 0 0 / 15%);
+    border-left: 1px solid $dark-blue-01;
     border-radius: 0;
     box-shadow: none !important;
     display: block;

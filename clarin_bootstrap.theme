@@ -54,29 +54,27 @@ function clarin_bootstrap_page_attachments_alter(&$attachments) {
 /**
  * Implements hook_preprocess_page().
  */
-function clarin_bootstrap_preprocess_page(&$variables)
-{
+function clarin_bootstrap_preprocess_page(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if ($node instanceof \Drupal\node\NodeInterface && $node->hasField('field_show_toc')) {
-        $variables['show_toc'] = $node->get('field_show_toc')->value;
-      }
+      $variables['show_toc'] = $node->get('field_show_toc')->value;
+    }
   }
 }
 
 /**
  * Implements hook_preprocess_node().
  */
-function clarin_bootstrap_preprocess_node(&$variables)
-{
+function clarin_bootstrap_preprocess_node(&$variables) {
   $node = $variables['node'];
-  if ($node->hasField('field_show_toc') && $node->hasField('body')) {
+  if ($variables['page'] && $node && $node->hasField('field_show_toc') && $node->hasField('body')) {
     if ($node->get('field_show_toc')->value == 1) {
       $variables['show_toc'] = $node->get('field_show_toc')->value;
       $variables['#attached']['library'][] = 'clarin_bootstrap/clarin_toc';
     }
   }
 
-  if ($node->hasField('field_see_also_links')) {
+  if ($node && $node->hasField('field_see_also_links')) {
     if (count($node->get('field_see_also_links')->getValue()) > 0) {
       $variables['more_links'] = 1;
     }
