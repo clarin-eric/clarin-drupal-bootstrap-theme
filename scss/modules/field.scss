@@ -4,7 +4,7 @@
   }
 }
 
-.node--type-k-centre {
+.node--type-k-centre, .node--type-clarin-centre {
   .field {
     padding-bottom: 0.625rem;
 
@@ -17,16 +17,16 @@
     display: contents;
     float: left;
     font-weight: bold;
+
+    &::after {
+        content: ":";
+      }
   }
 
   .field--label-inline {
     .field__label {
       display: inline;
-      padding-right: 0.5rem;
-
-      &::after {
-        content: ":";
-      }
+      padding-right: 0.2rem;
     }
 
     .field__items {
@@ -38,7 +38,7 @@
         }
 
         &:last-child::after {
-          content: ".";
+          content: "";
         }
       }
     }
@@ -69,6 +69,45 @@
     font-size: $h3-font-size-h3;
     padding-bottom: 1.625rem;
     padding-left: 0.625rem;
+  }
+}
+
+.node--type-clarin-centre {
+  .field--name-field-location-coordinates .field__label {
+    display: block;
+    line-height: 0; /* Collapse the original line */
+    text-indent: -9999px;
+
+    &::after {
+      content: "Hosted by:";
+      display: block;
+      line-height: 3.126;
+      text-indent: 0;
+    }
+  }
+}
+
+@media (min-width: #{$screen-sm-min}) {
+  .node--type-clarin-centre {
+    .field--name-field-administrative-contact, .field--name-field-technical-contact,
+    .field--name-field-monitoring-contacts {
+      display: inline-block;
+      width: 30%;
+      padding-right: 2rem;
+      vertical-align: top;
+    }
+
+    .field--name-field-working-unit {
+      margin-top: 3rem;
+    }
+
+    .field--name-field-address {
+      margin-bottom: 5rem;
+    }
+
+    .field--name-field-description::after {
+      content: unset;
+    }
   }
 }
 

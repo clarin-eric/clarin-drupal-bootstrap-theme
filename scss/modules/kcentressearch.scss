@@ -80,13 +80,15 @@
 }
 
 // Page body:
-.view-k-centres-search .view-content {
-  a {
-    color: $link-color;
-    text-decoration: underline;
+.view-k-centres-search, .view-search-content {
+  .view-content {
+    a {
+      color: $link-color;
+      text-decoration: underline;
 
-    &:hover {
-      color: $soft-blue-01;
+      &:hover {
+        color: $soft-blue-01;
+      }
     }
   }
 }
