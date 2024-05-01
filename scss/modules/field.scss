@@ -86,9 +86,11 @@
     }
   }
 
-  .field--name-field-link-to-centre-registry a {
-    color: $blue;
-    text-decoration: underline;
+  .field--name-field-link-to-centre-registry, .field--name-field-location-coordinates {
+    a {
+      color: $blue;
+      text-decoration: underline;
+    }
   }
 }
 
