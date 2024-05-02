@@ -70,6 +70,14 @@
     padding-bottom: 1.625rem;
     padding-left: 0.625rem;
   }
+
+  .field.field--name-field-consortium,
+  .field.field--name-field-consortium-url {
+    display: inline-block;
+  }
+
+  .field.field--name-field-consortium::after {
+    content: "\2794";
 }
 
 .node--type-clarin-centre {
