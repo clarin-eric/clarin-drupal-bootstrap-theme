@@ -38,6 +38,7 @@
  * @ingroup themeable
  */
 #}
+{% set text_placement = paragraph.field_text_placement.value %}
 
 {%
   set classes = [
@@ -45,6 +46,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
+    text_placement
   ]
 %}
 
