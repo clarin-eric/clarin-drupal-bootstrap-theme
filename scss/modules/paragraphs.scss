@@ -341,16 +341,6 @@
 }
 
 // CTA
-.paragraph--type--cta.place-right {
-  .container {
-    padding-right: 1rem;
-  }
-
-  .content {
-    margin-left: auto;
-  }
-}
-
 .paragraph--type--cta {
   color: $white;
   margin: 3rem 0;
@@ -475,6 +465,16 @@
       object-fit: cover;
       position: absolute;
     }
+  }
+}
+
+.paragraph--type--cta.place-right {
+  .container {
+    padding-right: 1rem;
+  }
+
+  .content {
+    margin-left: auto;
   }
 }
 
