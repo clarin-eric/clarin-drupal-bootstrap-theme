@@ -272,7 +272,7 @@
     align-items: center;
     display: flex;
     font-size: 23px;
-    height: 660px;
+    height: 580px;
     margin-bottom: 30px;
     min-height: none;
     padding-bottom: 60px;
@@ -356,7 +356,7 @@
   }
 
   @media (min-width: #{$screen-tablet}) {
-    height: 525px;
+    height: 465px;
     min-height: unset;
     padding: 0 0 60px;
   }
