@@ -341,6 +341,16 @@
 }
 
 // CTA
+.paragraph--type--cta.place-right {
+  .container {
+    padding-right: 1rem;
+  }
+
+  .content {
+    margin-left: auto;
+  }
+}
+
 .paragraph--type--cta {
   color: $white;
   margin: 3rem 0;
@@ -370,10 +380,6 @@
   .content {
     position: relative;
     z-index: 1;
-  }
-
-  .place-right {
-    margin-left: auto;
   }
 
   .field--name-field-title {
