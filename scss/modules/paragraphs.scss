@@ -400,7 +400,7 @@
     }
   }
 
-  .field--name-field-link {
+  .field.field--name-field-link.field--type-link {
     margin-top: 30px;
 
     @media (min-width: #{$screen-tablet}) {
@@ -479,7 +479,15 @@
 }
 
 .paragraph--type--cta.color-dark {
-  color: $dark-blue-01;
+  .content,
+  .field--name-field-title h2 {
+    color: $dark-blue-01;
+  }
+
+  .field.field--name-field-link a {
+    background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30px center;
+    color: $white;
+  }
 }
 
 // Guide selection
