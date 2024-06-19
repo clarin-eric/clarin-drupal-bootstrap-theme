@@ -257,7 +257,7 @@
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 25px;
-  min-height: 500px;
+  min-height: 400px;
   overflow: hidden;
   padding-top: 45px;
   position: relative;
@@ -272,7 +272,7 @@
     align-items: center;
     display: flex;
     font-size: 23px;
-    height: 580px;
+    height: 480px;
     margin-bottom: 30px;
     min-height: none;
     padding-bottom: 60px;
@@ -356,7 +356,7 @@
   }
 
   @media (min-width: #{$screen-tablet}) {
-    height: 465px;
+    height: 400px;
     min-height: unset;
     padding: 0 0 60px;
   }
