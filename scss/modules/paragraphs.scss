@@ -468,6 +468,10 @@
   .container,
   .container-sm {
     padding-right: 1rem;
+
+    .arrow-down {
+      right: 20%;
+    }
   }
 
   .content {
