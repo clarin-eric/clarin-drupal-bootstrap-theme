@@ -462,7 +462,8 @@
   }
 }
 
-.paragraph--type--cta.place-right {
+.paragraph--type--cta.place-right
+.paragraph--type--header-large.place-right {
   .container {
     padding-right: 1rem;
   }
@@ -472,7 +473,8 @@
   }
 }
 
-.paragraph--type--cta.color-dark {
+.paragraph--type--cta.color-dark
+.paragraph--type--header-large.color-dark {
   .content,
   .field--name-field-title h2 {
     color: $dark-blue-01;
