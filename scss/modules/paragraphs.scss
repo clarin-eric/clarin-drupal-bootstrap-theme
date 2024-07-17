@@ -394,7 +394,7 @@
     }
   }
 
-  .field--name-field-link {
+  .field.field--name-field-link.field--type-link {
     margin-top: 30px;
 
     @media (min-width: #{$screen-tablet}) {
@@ -459,6 +459,35 @@
       object-fit: cover;
       position: absolute;
     }
+  }
+}
+
+.paragraph--type--cta.place-right {
+  .container {
+    padding-right: 1rem;
+  }
+
+  .content {
+    margin-left: auto;
+  }
+}
+
+.paragraph--type--cta.color-dark {
+  .content,
+  .field--name-field-title h2 {
+    color: $dark-blue-01;
+  }
+
+  .field.field--name-field-link a {
+    background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30px center;
+    color: $white;
+
+    &:hover,
+      &:focus {
+        background-color: $dark-blue-02;
+
+        color: $white;
+      }
   }
 }
 
