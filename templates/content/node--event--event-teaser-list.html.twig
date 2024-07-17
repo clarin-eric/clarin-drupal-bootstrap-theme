@@ -72,13 +72,17 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
   ]
+
+  set new_home_class = [
+    node.id == '6415' ? 'fs-4'
+  ]
 %}
 <article{{ attributes.addClass(classes) }}>
   <div class="event-date">
     {{ content.field_date_range }}
   </div>
   <div class="event-details">
-    <h2{{ title_attributes.addClass('node__title') }}>
+    <h2{{ title_attributes.addClass('node__title', new_home_class) }}>
       <a class="stretched-link" href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
     <div class="locality">{{ content.field_address.locality.name }}</div>
