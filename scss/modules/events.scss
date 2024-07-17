@@ -1,3 +1,14 @@
+// New front page overrides
+.page-node-6415 {
+  .view-upcoming-events {
+    .datetime {
+      @media (min-width: #{$screen-desktop}) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
 // Events
 .view-upcoming-events {
   .node {
