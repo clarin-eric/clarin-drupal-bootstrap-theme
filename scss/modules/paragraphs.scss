@@ -462,7 +462,7 @@
   }
 }
 
-.paragraph--type--cta.place-right
+.paragraph--type--cta.place-right,
 .paragraph--type--header-large.place-right {
   .container {
     padding-right: 1rem;
@@ -473,21 +473,20 @@
   }
 }
 
-.paragraph--type--cta.color-dark
+.paragraph--type--cta.color-dark,
 .paragraph--type--header-large.color-dark {
   .content,
   .field--name-field-title h2 {
     color: $dark-blue-01;
   }
 
-  .field.field--name-field-link a {
+  .content .field.field--name-field-link a {
     background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30px center;
     color: $white;
 
     &:hover,
       &:focus {
         background-color: $dark-blue-02;
-
         color: $white;
       }
   }
