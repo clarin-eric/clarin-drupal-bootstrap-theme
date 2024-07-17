@@ -1,3 +1,19 @@
+// New front page overrides
+.page-node-6415 {
+  .paragraph--type--header-large {
+    min-height: 400px;
+  }
+
+  @media (min-width: #{$screen-sm}) {
+    height: 480px;
+
+
+  h1 {
+    @media (min-width: #{$screen-sm}) {
+      font-size: 3.5rem;
+  }
+}
+
 // Header default
 .paragraph--type--header-default {
   color: $dark-blue-01;
