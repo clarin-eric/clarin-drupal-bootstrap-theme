@@ -2,15 +2,15 @@
 .page-node-6415 {
   .paragraph--type--header-large {
     min-height: 400px;
-  }
 
-  @media (min-width: #{$screen-sm}) {
-    height: 480px;
-  }
-
-  h1 {
     @media (min-width: #{$screen-sm}) {
-      font-size: 3.5rem;
+      height: 480px;
+    }
+
+    h1 {
+      @media (min-width: #{$screen-sm}) {
+        font-size: 3.5rem;
+      }
     }
   }
 }
