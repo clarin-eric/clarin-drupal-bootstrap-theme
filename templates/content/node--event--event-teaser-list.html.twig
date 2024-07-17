@@ -73,7 +73,8 @@
     'clearfix',
   ]
 
-  set new_home_class = [
+  set title_classes = [
+    'node__title',
     node.id == '6415' ? 'fs-4'
   ]
 %}
@@ -82,7 +83,7 @@
     {{ content.field_date_range }}
   </div>
   <div class="event-details">
-    <h2{{ title_attributes.addClass('node__title', new_home_class) }}>
+    <h2{{ title_attributes.addClass(title_classes) }}>
       <a class="stretched-link" href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
     <div class="locality">{{ content.field_address.locality.name }}</div>
