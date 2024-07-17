@@ -13,6 +13,12 @@
       }
     }
   }
+
+  .paragraph--type--cta {
+    @media (min-width: #{$screen-tablet}) {
+      height: 400px;
+    }
+  }
 }
 
 // Header default
