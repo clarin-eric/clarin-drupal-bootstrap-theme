@@ -6,11 +6,12 @@
 
   @media (min-width: #{$screen-sm}) {
     height: 480px;
-
+  }
 
   h1 {
     @media (min-width: #{$screen-sm}) {
       font-size: 3.5rem;
+    }
   }
 }
 
