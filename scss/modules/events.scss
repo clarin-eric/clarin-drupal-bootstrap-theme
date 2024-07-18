@@ -116,7 +116,18 @@
 }
 
 .newsletter-block-image {
-  margin-bottom: -40px;
+  margin-bottom: -3rem;
+
+  .overlay-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    position: relative;
+    top: -300px;
+
+    a {
+      color: $white;
+    }
+  }
 }
 
 .pager__item__year {
