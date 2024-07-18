@@ -124,7 +124,7 @@
     position: relative;
     top: -320px;
 
-    @media (min-width: #{$screen-md}) {
+    @media (min-width: #{$screen-sm}) {
       font-size: 2rem;
       top: -460px;
     }
