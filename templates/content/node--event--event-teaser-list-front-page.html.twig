@@ -70,7 +70,6 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'fs-4',
     'clearfix'
   ]
 %}
@@ -81,11 +80,11 @@
   </div>
   <div class="event-details">
     <h2{{ title_attributes.addClass(title_classes) }}>
-      <a class="stretched-link" href="{{ url }}" rel="bookmark">{{ label }}</a>
+      <a class="stretched-link fs-5" href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
-    <div class="locality">{{ content.field_address.locality.name }}</div>
+    <div class="locality fs-5">{{ content.field_address.locality.name }}</div>
   </div>
-  {% if content.field_media %}
+  {% if content.field_media|render|trim is not empty %}
     <div class="event-image">
       {{ content.field_media }}
     </div>

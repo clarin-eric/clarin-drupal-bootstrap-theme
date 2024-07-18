@@ -55,14 +55,31 @@
     {% block content %}
       <div class="container">
 
-        {% if title is not empty %}
-          <div class="header">{{ content.field_title }}<div class="d-none d-sm-block">{{ content.field_link_header }}</div></div>
+        {% if '1' in paragraph.field_show_newsletter.value %}
+        <div class="row">
+          <div class="col-lg-8">
         {% endif %}
 
-        {{ content.field_block }}
+            {% if title is not empty %}
+              <div class="header">{{ content.field_title }}<div class="d-none d-sm-block">{{ content.field_link_header }}</div></div>
+            {% endif %}
 
-        {% if link is not empty %}
-          <div class="link d-block d-sm-none">{{ content.field_link_header }}</div>
+            {{ content.field_block }}
+
+            {% if link is not empty %}
+            <div class="link d-block d-sm-none">{{ content.field_link_header }}</div>
+          {% endif %}
+
+          {% if '1' in paragraph.field_show_newsletter.value %}
+          </div>
+          <div class="col-lg-4 mt-lg-auto newsletter-block-image">
+            <picture>
+                  <source srcset="/sites/default/files/styles/max_650x650/public/Newsflash-2023.png?itok=i3k7hPIg 650w, /sites/default/files/styles/max_1300x1300/public/Newsflash-2023.png?itok=dVC8B_8- 1300w" media="all and (min-width: 1200px)" type="image/png" sizes="637px" width="650" height="650">
+                  <img src="/sites/default/files/styles/max_1300x1300/public/Newsflash-2023.png?itok=dVC8B_8-" width="1300" height="1300" alt="" loading="eager">
+
+            </picture>
+          </div>
+        </div>
         {% endif %}
 
       </div>

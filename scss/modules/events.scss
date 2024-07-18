@@ -9,8 +9,10 @@
     }
 
     .datetime {
+      font-size: 1rem;
+
       @media (min-width: #{$screen-desktop}) {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
       }
     }
   }
@@ -111,6 +113,10 @@
       width: 275px;
     }
   }
+}
+
+.newsletter-block-image {
+  margin-bottom: -40px;
 }
 
 .pager__item__year {
