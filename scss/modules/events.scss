@@ -119,10 +119,33 @@
   margin-bottom: -5.5rem;
 
   .overlay-text {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: bold;
     position: relative;
-    top: -300px;
+    top: -460px;
+
+    @media (min-width: #{$screen-md}) {
+      font-size: 2rem;
+      top: -460px;
+    }
+
+    @media (min-width: #{$screen-md}) {
+      font-size: 2.5rem;
+      top: -620px;
+    }
+
+    @media (min-width: #{$screen-lg}) {
+      font-size: 1.75rem;
+      top: -260px;
+    }
+
+    @media (min-width: #{$screen-xl}) {
+      top: -280px;
+    }
+
+    @media (min-width: #{$screen-xxl}) {
+      top: -300px;
+    }
 
     a {
       color: $white;
