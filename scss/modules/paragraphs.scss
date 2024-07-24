@@ -367,7 +367,7 @@
   padding: 30px 10px;
   position: relative;
 
-  @media (max-width: #{$screen-xs-max}) {
+  @media (max-width: #{$screen-md-max}) {
     .contextual-region {
       position: unset;
     }
