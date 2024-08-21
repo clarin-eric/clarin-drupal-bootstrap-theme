@@ -2,9 +2,9 @@ ul {
   list-style: outside disc;
 
   li {
-    position: relative;
     left: 1em;
     padding-right: 1em;
+    position: relative;
   }
 }
 
@@ -169,9 +169,9 @@ ul {
       }
 
       .content_link {
-        inset: 0;
         float: left;
         height: 100%;
+        inset: 0;
         margin: auto;
         position: absolute;
         text-indent: -9999px;
@@ -830,9 +830,9 @@ div.node--type-news {
       }
 
       .content_link {
-        inset: 0;
         float: left;
         height: 100%;
+        inset: 0;
         margin: auto;
         position: absolute;
         text-indent: -9999px;
