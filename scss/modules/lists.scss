@@ -292,6 +292,21 @@ ul {
   }
 }
 
+// New front page overrides
+.page-node-6415 {
+  .paragraph--type--block {
+    padding-bottom: 0;
+  }
+
+  .grid-container-view {
+    margin-bottom: 0;
+
+    .views-row .node.node--view-mode-teaser-list-no-read-more .field--name-body {
+      padding-bottom: 0;
+    }
+  }
+}
+
 // News detailpage
 body.node--type-news {
   .main-content {
