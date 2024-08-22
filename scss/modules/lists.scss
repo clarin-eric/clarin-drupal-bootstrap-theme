@@ -1,5 +1,5 @@
-.content {
-  ul {
+.main-content {
+  ul:not(.nav) {
     list-style: outside disc;
 
     li {
