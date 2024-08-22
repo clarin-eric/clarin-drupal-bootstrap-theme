@@ -28,3 +28,11 @@ div.align-center img {
   top: 0;
   width: 100%;
 }
+
+.align-right .field--type-image {
+  margin: 0 0 0 1rem;
+}
+
+.align-left .field--type-image {
+  margin: 0 1rem 0 0;
+}
