@@ -201,6 +201,26 @@ a.news-more-link {
   }
 }
 
+.btn.btn-outline-primary {
+  background: transparent url("../images/arrow-right-blue2.svg") no-repeat right 18px center/15px;
+  border-color: $dark-blue-02;
+  color: $dark-blue-02;
+  float: right;
+  margin-right: 20px;
+  padding-left: 12px;
+  text-align: start;
+  transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
+  width: inherit;
+
+  &:hover,
+  &:focus {
+    background: $dark-blue-02 url("../images/arrow-right-white.svg") no-repeat right 13px center/15px;
+    color: $white;
+    opacity: 0.75;
+    transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
+  }
+}
+
 // Navigation pages paragraph button. React on hover over the whole paragraph
 .paragraph--type--navigation-entry,
 .paragraph--type--navigation-entry-alternative {
@@ -241,30 +261,10 @@ a.news-more-link {
     }
 
     .btn.btn-outline-primary {
-      background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 13px center/15px;
+      background: $dark-blue-02 url("../images/arrow-right-white.svg") no-repeat right 13px center/15px;
       color: $white;
       opacity: 0.75;
       transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
     }
-  }
-}
-
-.btn.btn-outline-primary {
-  margin-right: 20px;
-  padding-left: 12px;
-  text-align: start;
-  float: right;
-  width: inherit;
-  border-color: $dark-blue-02;
-  transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
-  background: transparent url(../images/arrow-right-blue2.svg) no-repeat right 18px center/15px;
-  color: $dark-blue-02;
-
-  &:hover,
-  &:focus {
-    background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 13px center/15px;
-    color: $white;
-    opacity: 0.75;
-    transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
   }
 }
