@@ -38,8 +38,6 @@
  * @ingroup themeable
  */
 #}
-{% set button_type = paragraph.field_button_type.value %}
-
 {%
   set classes = [
     'text-decoration-none',
@@ -56,9 +54,9 @@
 {%
   set btn_classes = [
     'btn',
+    paragraph.field_button_type.value == 'minimal' ? 'btn-outline-primary' : 'btn-default'
     'btn-sm',
-    'mt-4',
-    button_type = 'minimal' ? 'btn-outline-primary' : 'btn-default'
+    'mt-4'
   ]
 %}
 
