@@ -228,7 +228,7 @@ a.news-more-link {
       }
     }
 
-    .btn {
+    .btn:not(.btn-outline-primary) {
       background-color: $dark-blue-02;
       background-position: center right 25px;
       background-size: 17px;
@@ -239,5 +239,32 @@ a.news-more-link {
         background-size: 20px;
       }
     }
+
+    .btn.btn-outline-primary {
+      background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 13px center/15px;
+      color: $white;
+      opacity: 0.75;
+      transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
+    }
+  }
+}
+
+.btn.btn-outline-primary {
+  margin-right: 20px;
+  padding-left: 12px;
+  text-align: start;
+  float: right;
+  width: inherit;
+  border-color: $dark-blue-02;
+  transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
+  background: transparent url(../images/arrow-right-blue2.svg) no-repeat right 18px center/15px;
+  color: $dark-blue-02;
+
+  &:hover,
+  &:focus {
+    background: $dark-blue-02 url(../images/arrow-right-white.svg) no-repeat right 13px center/15px;
+    color: $white;
+    opacity: 0.75;
+    transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
   }
 }

@@ -54,9 +54,9 @@
 {%
   set btn_classes = [
     'btn',
-    paragraph.field_button_type.value == 'minimal' ? 'btn-outline-primary' : 'btn-default'
+    paragraph.field_button_type.value == 'minimal' ? 'btn-outline-primary' : 'btn-default',
     'btn-sm',
-    'mt-4'
+    paragraph.field_button_type.value == 'minimal' ? 'mt-1' : 'mt-4'
   ]
 %}
 
@@ -68,7 +68,7 @@
       </div>
       <h4 class="py-2">{{ content.field_title.0 }}</h4>
       <div>{{ content.field_entry_page_description }}</div>
-      <div{{ attributes.addClass(btn_classes) }}>{{ content.field_link[0]['#title'] }}</div>
+      <div{{ create_attribute().addClass(btn_classes) }}>{{ content.field_link[0]['#title'] }}</div>
     {% endblock %}
   </a>
 {% endblock paragraph %}
