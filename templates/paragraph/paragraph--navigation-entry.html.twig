@@ -38,6 +38,8 @@
  * @ingroup themeable
  */
 #}
+{% set button_type = paragraph.field_button_type.value %}
+
 {%
   set classes = [
     'text-decoration-none',
@@ -50,6 +52,16 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+
+{%
+  set btn_classes = [
+    'btn',
+    'btn-sm',
+    'mt-4',
+    'btn-' ~ button_type
+  ]
+%}
+
 {% block paragraph %}
   <a{{ attributes.addClass(classes) }} href="{{ content.field_link[0]['#url'] }}">
     {% block content %}
@@ -58,7 +70,7 @@
       </div>
       <h4 class="py-2">{{ content.field_title.0 }}</h4>
       <div>{{ content.field_entry_page_description }}</div>
-      <div class="btn btn-default btn-sm mt-4">{{ content.field_link[0]['#title'] }}</div>
+      <div{{ attributes.addClass(btn_classes) }}>{{ content.field_link[0]['#title'] }}</div>
     {% endblock %}
   </a>
 {% endblock paragraph %}
