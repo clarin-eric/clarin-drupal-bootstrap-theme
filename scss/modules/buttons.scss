@@ -202,13 +202,14 @@ a.news-more-link {
 }
 
 .btn.btn-outline-primary {
-  background: transparent url("../images/arrow-right-blue2.svg") no-repeat right 18px center/15px;
+  background: transparent url("../images/arrow-right-blue2.svg") no-repeat right 16px center/15px;
   border-color: $dark-blue-02;
+  border-radius: 27.5px;
   color: $dark-blue-02;
   float: right;
   font-size: 1rem;
   margin-right: 20px;
-  padding-left: 12px;
+  padding-left: 16px;
   padding-right: 40px;
   text-align: start;
   transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
