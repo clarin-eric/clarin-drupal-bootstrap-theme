@@ -172,7 +172,8 @@
 }
 
 // Secondary menu with collapsible sub items
-.sidebar_second .menu--main.navbar {
+.sidebar_second .menu--main.navbar,
+.sidebar_second .menu--main-menu-v3.navbar {
   align-items: baseline;
 
   h2 {
