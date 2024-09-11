@@ -367,6 +367,9 @@
 
 .nav-link:hover,
 .nav-link:focus {
+  --bs-nav-link-hover-color: $body-color;
+  --bs-nav-link-color: $body-color;
+
   cursor: pointer;
   text-decoration: underline;
 }
