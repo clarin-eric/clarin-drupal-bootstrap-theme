@@ -24,16 +24,20 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.menu_links(items, attributes, 0, menu_name) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, current_item) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('nav navbar-nav')|without('id') }}>
     {% else %}
       <ul class="dropdown-menu">
+      {% if menu_level == 1 %}
+        <li class="menu-title" >{{ link(current_item.title, current_item.url, {'class': link_classes}) }}</li>
+      {% endif %}
     {% endif %}
+
     {% for item in items %}
       {%
         set classes = [
@@ -44,9 +48,6 @@
           item.below ? 'dropdown',
         ]
       %}
-      {% if menu_level == 1 %}
-        <li class="menu-title" >item.title</li>
-      {% else %}
         <li{{ item.attributes.addClass(classes) }}>
           {%
             set link_classes = [
@@ -59,12 +60,11 @@
           %}
           {% if item.below %}
             {{ link(item.title, item.url, {'class': link_classes, 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true' }) }}
-            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, item) }}
           {% else %}
             {{ link(item.title, item.url, {'class': link_classes}) }}
           {% endif %}
         </li>
-      {% endif %}
     {% endfor %}
     </ul>
   {% endif %}
