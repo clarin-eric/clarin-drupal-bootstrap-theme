@@ -463,10 +463,11 @@
 }
 
 .menu-title {
+  border-bottom: $subtle-grey-01 solid 1px;
   font-size: 1.125rem;
   font-weight: 600;
+  margin-bottom: 0.2rem;
   margin-left: -5px;
   margin-top: -0.25rem;
-  margin-bottom: 0.2rem;
-  border-bottom: $subtle-grey-01 solid 1px;
+  opacity: 0.7;
 }
