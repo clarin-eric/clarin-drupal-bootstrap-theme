@@ -36,12 +36,11 @@
       {% if menu_level == 1 %}
           {%
             set section_link_classes = [
-              'dropdown-item',
               current_item.url.getOption('attributes').class ? current_item.url.getOption('attributes').class | join(' '),
               'nav-link-' ~ current_item.url.toString() | clean_class,
             ]
           %}
-        <li class="menu-title" >{{ link(current_item.title, current_item.url, {'class': section_link_classes}) }}</li>
+        <li class="menu-title dropdown-item" >{{ link(current_item.title, current_item.url, {'class': section_link_classes}) }}</li>
       {% endif %}
     {% endif %}
 
