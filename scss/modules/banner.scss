@@ -55,3 +55,13 @@
     }
   }
 }
+
+#block-clarin-bootstrap-annualconference {
+  @media (min-width: #{$screen-xxl-min}) {
+    margin-top: -15px;
+  }
+
+  @media (max-width: #{$screen-md-max}) {
+    margin-top: 15px;
+  }
+}
