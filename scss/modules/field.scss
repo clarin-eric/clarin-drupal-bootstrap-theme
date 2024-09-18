@@ -44,7 +44,7 @@
     }
   }
 
-  .field.field--name-field-hosted-by-list {
+  .field.field--name-field-k-centre-hosted-by {
     counter-reset: list;
 
     .field__item::before {
@@ -53,7 +53,8 @@
     }
   }
 
-  .field.field--name-field-full-name {
+  .field.field--name-field-full-name,
+  .field.field--name-field-k-centre-full-name {
     font-size: $h2-font-size-h2;
 
     @media (max-width: #{$screen-md-max}) {
@@ -65,7 +66,8 @@
     }
   }
 
-  .field.field--name-field-url {
+  .field.field--name-field-url,
+  .field.field--name-field-website-url {
     font-size: $h3-font-size-h3;
     padding-bottom: 1.625rem;
     padding-left: 0.625rem;
