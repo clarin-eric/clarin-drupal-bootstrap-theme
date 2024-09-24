@@ -129,3 +129,15 @@
 figure.align-left {
     margin: 0 1rem 0 0;;
 }
+
+
+.field.field--name-field-address.field--type-address {
+  margin: 1rem 0 0 0;
+  padding: .5rem;
+  background: $subtle-grey-01;
+  
+	.field__label {
+	  font-weight: bold;
+	}  
+}
+
