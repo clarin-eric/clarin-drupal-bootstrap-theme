@@ -115,9 +115,9 @@
 }
 
 @media (min-width: #{$screen-sm-min}) {
-  .node--type-clarin-centre .node--type-k-centre-profile {
+  .node--type-clarin-centre {
     .field--name-field-administrative-contact, .field--name-field-technical-contact,
-    .field--name-field-monitoring-contacts, .field--name-field-contacts {
+    .field--name-field-monitoring-contacts {
       display: inline-block;
       padding-right: 2rem;
       padding-top: 2rem;
