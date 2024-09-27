@@ -202,7 +202,7 @@ a.news-more-link {
 }
 
 
-.btn.btn-outline-primary:not(:has(.btn.btn-outline-primary)):not(.form-submit) {
+.btn.btn-outline-primary:not(:has(.btn.btn-outline-primary), .form-submit) {
   background: transparent url("../images/arrow-right-blue2.svg") no-repeat right 16px center/15px;
   border-color: $dark-blue-02;
   border-radius: 27.5px;
