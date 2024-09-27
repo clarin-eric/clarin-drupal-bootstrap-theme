@@ -1,5 +1,5 @@
 .main-content {
-  ul:not(.nav) {
+  ul:not(.nav, .pagination) {
     list-style: outside disc;
 
     li {
