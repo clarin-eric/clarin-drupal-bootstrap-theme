@@ -117,6 +117,23 @@
   .k-centre-full-name {
     font-size: 20px;
   }
+
+  div.more-link {
+    &::after {
+      margin-top: 3px;
+      content: " >";
+    }
+
+    &:hover {
+      color: $soft-blue-02;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      padding-right: 5px;
+      transition: padding 0.2s;
+    }
+  }
 }
 
 // Facets
