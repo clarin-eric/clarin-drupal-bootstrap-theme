@@ -122,12 +122,6 @@
 // Facets
 // Any sidebar
 .sidebar {
-  .section {
-    border-color: $subtle-grey-01;
-    border-style: solid;
-    border-width: 1px;
-  }
-
   .block.block-facets {
     border: 0;
     color: $dark-blue-02;
@@ -196,6 +190,12 @@
 .sidebar_first:has(.block-facets) {
   // Only render the region when there are facets to display
   display: none;
+
+  .section {
+    border-color: $subtle-grey-01;
+    border-style: solid;
+    border-width: 1px;
+  }
 
   &:has(.block-facets:not(.hidden)) {
     display: block;
