@@ -93,11 +93,20 @@
   }
 }
 
-.page-view-k-centres-search .page-title::after {
-  color: $brand-danger;
-  content: " BETA";
-  font-size: 16px;
-  vertical-align: super;
+.page-view-k-centres-search .page-title {
+  background: url("../images/CLARIN-Logo-K-centre-2023-RGB-600ppi-transp.png") no-repeat  left 0px bottom/300px;
+  height: 80px;
+  color: $dark-blue-02;
+  font-size: 42px;
+  padding-left: 260px;
+  padding-top: 2rem;
+
+  &::after {
+    color: $brand-danger;
+    content: " BETA";
+    font-size: 16px;
+    vertical-align: super;
+  }
 }
 
 // Facets
