@@ -5,7 +5,7 @@
 }
 
 .node--type-k-centre-profile, .node--type-clarin-centre {
-  .field {
+  .field:not(.field--name-field-k-centre-website-url) {
     padding-bottom: 0.625rem;
 
     p {

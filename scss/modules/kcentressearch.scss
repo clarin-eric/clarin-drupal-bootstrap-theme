@@ -82,7 +82,7 @@
 // Page body:
 .view-k-centres-search, .view-search-content {
   .view-content {
-    a {
+    a:not(.btn) {
       color: $link-color;
       text-decoration: underline;
 
