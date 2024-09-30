@@ -63,6 +63,12 @@
           .select();
       });
 
+      // Auto reload search on number of results change
+      $("#edit-items-per-page", document).on("change", () => {
+        $("[id^=edit-submit-k-centres-search]").trigger("click");
+      });
+
+
       // Auto expand secondary menu active item
       const activeDropdownTgg = $(
         ".sidebar_second .navbar .menu-item--expanded .dropdown-toggle.is-active",
