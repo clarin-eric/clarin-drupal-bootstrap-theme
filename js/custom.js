@@ -63,11 +63,18 @@
           .select();
       });
 
-      // Auto reload search on number of results change
-      //  $("[id^=edit-items-per-page]", document).on("change", () => {
-      // $("[id^=edit-submit-k-centres-search]", document).trigger("click");
-      //    $("[id^=edit-submit-k-centres-search]", document).trigger('facets_filtering');
-      //  });
+      // Auto reload search on number of results change with AJAX
+      function registerItemsPerPageHandler() {
+        $("[id^=edit-items-per-page]", document).on("change", () => {
+          $("[id^=edit-submit-k-centres-search]", document).trigger("click");
+        });
+      }
+
+      registerItemsPerPageHandler();
+
+      $(document).on("ajaxComplete", () => {
+        registerItemsPerPageHandler()
+      });
 
       // Auto expand secondary menu active item
       const activeDropdownTgg = $(
