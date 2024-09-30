@@ -113,6 +113,10 @@
       vertical-align: super;
     }
   }
+
+  .k-centre-full-name {
+    color: soft-blue-01;
+  }
 }
 
 // Facets
@@ -168,9 +172,9 @@
 
   .block.block-block-content {
     border: 0;
-    padding-bottom: 0;
-    margin-left: -1rem;
     margin-bottom: 0;
+    margin-left: -1rem;
+    padding-bottom: 0;
 
     h3 {
       color: $dark-blue-02;
