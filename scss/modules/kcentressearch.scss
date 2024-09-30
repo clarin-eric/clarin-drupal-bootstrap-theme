@@ -165,6 +165,18 @@
       padding-top: 95px;
     }
   }
+
+  .block.block-block-content {
+    border: 0;
+    padding-bottom: 0;
+    margin-left: -1rem;
+    margin-bottom: 0;
+
+    h3 {
+      color: $dark-blue-02;
+      font-size: $h2-font-size-h2;
+    }
+  }
 }
 
 // Primary (left) sidebar facet overrides
