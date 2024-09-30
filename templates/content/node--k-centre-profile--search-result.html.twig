@@ -102,7 +102,7 @@
   </header>
   <div{{ attributes.addClass(node_classes) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
     {% if snippet %}
-      <p{{ content_attributes }}>{{ snippet }}</p>
+      <p{{ content_attributes.addClass('fst-italic') }}>{{ snippet }}</p>
     {% endif %}
     {% if info %}
       <p><em>{{ info }}</em></p>
