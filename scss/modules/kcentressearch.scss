@@ -195,6 +195,7 @@
     border-color: $subtle-grey-01;
     border-style: solid;
     border-width: 1px;
+    padding-left: 0.5rem;
   }
 
   &:has(.block-facets:not(.hidden)) {
