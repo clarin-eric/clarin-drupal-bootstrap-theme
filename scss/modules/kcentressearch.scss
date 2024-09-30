@@ -120,8 +120,8 @@
 
   div.more-link {
     &::after {
-      margin-top: 3px;
       content: " >";
+      margin-top: 3px;
     }
 
     &:hover {
@@ -129,7 +129,7 @@
       transition: color 0.2s;
     }
     
-    a:hover {
+    a.more-link:hover {
       padding-right: 5px;
       transition: padding 0.2s;
     }
