@@ -73,7 +73,7 @@
       registerItemsPerPageHandler();
 
       $(document).on("ajaxComplete", () => {
-        registerItemsPerPageHandler()
+        registerItemsPerPageHandler();
       });
 
       // Auto expand secondary menu active item
