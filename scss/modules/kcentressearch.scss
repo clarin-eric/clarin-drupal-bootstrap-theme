@@ -107,8 +107,8 @@
     padding-top: 2rem;
 
     &::after {
-      color: $brand-danger;
-      content: " BETA";
+      color: #A2C037;
+      content: " (PREVIEW version)";
       font-size: 16px;
       vertical-align: super;
     }
