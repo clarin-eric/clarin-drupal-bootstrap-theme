@@ -123,19 +123,22 @@
   }
 
   div.more-link {
-    &::after {
-      content: " >";
-      margin-top: 3px;
-    }
+    margin-bottom: 0.6rem;
+    margin-top: 0.225rem;
 
-    &:hover {
-      color: $soft-blue-02;
-      transition: color 0.2s;
-    }
-    
-    a.more-link:hover {
-      padding-right: 5px;
-      transition: padding 0.2s;
+    a.more-link {
+      &::after {
+        content: " >";
+        display: inline-block;
+        overflow: hidden;
+        padding-left: 3px;
+        vertical-align: bottom;
+      }
+
+      &:hover::after {
+        padding-left: 8px;
+        transition: padding 0.2s;
+      }
     }
   }
 
