@@ -112,15 +112,17 @@
     {% else %}
       {{ content|without('field_k_centre_full_name', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview') }}
     {% endif %}
-    <div class="tour_de_clarin_fields row">
-      <div class="col-3 p-0 m-auto">
-          <img src="sites/default/files/media/news/TourdeClarin-v1.png">
+    {% if content.field_tour_de_clarin_intro or content.field_tour_de_clarin_interview %}
+      <div class="tour_de_clarin_fields row">
+        <div class="col-3 p-0 m-auto">
+            <img src="sites/default/files/media/news/TourdeClarin-v1.png">
+        </div>
+        <div class="col-9 pt-3">
+          <div class="field--label-inline"><div class="field__label">Introduction</div>{{ content.field_tour_de_clarin_intro.0 }}</div>
+          <div class="field--label-inline"><div class="field__label">Interview</div>{{ content.field_tour_de_clarin_interview.0 }}</div>
+        </div>
       </div>
-      <div class="col-9 pt-3">
-        <div class="field--label-inline"><div class="field__label">Introduction</div>{{ content.field_tour_de_clarin_intro.0 }}</div>
-        <div class="field--label-inline"><div class="field__label">Interview</div>{{ content.field_tour_de_clarin_interview.0 }}</div>
-      </div>
-    </div>
+    {% endif %}
   </div>
   {% if more_links %}
     <div class="sidebar more-link col-sm-4">
