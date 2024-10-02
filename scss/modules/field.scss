@@ -84,6 +84,16 @@
   .field.field--name-field-consortium-url {
     display: inline-block;
   }
+
+  .resource_families_fields .field.field--name-field-resource-families {
+    .field__item {
+      display: inline list-item;
+
+      &::after {
+        content: unset;
+      }
+    }
+  }
 }
 
 .node--type-clarin-centre {
