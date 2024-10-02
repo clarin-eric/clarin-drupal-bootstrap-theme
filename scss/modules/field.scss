@@ -33,6 +33,8 @@
       display: inline;
 
       .field__item {
+        display: inline;
+
         &::after {
           content: ",";
         }
