@@ -23,24 +23,24 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
       <table class='field__items table mx-sm-4 mt-sm-2'>
-    <thead>
-        <tr>
-        <th>
-        {{ items[0].content['#paragraph'].field_assessment_cert_type.fieldDefinition.label }}
-        </th>
-                <th>
-                {{ items[0].content['#paragraph'].field_issue_date.fieldDefinition.label }}
-                </th>
-                <th>
-                {{ items[0].content['#paragraph'].field_due_date.fieldDefinition.label }}
-                </th>
-        </tr>
+        <thead>
+          <tr>
+            <th>
+              {{ items[0].content['#paragraph'].field_assessment_cert_type.fieldDefinition.label }}
+            </th>
+            <th>
+              {{ items[0].content['#paragraph'].field_issue_date.fieldDefinition.label }}
+            </th>
+            <th>
+              {{ items[0].content['#paragraph'].field_due_date.fieldDefinition.label }}
+            </th>
+          </tr>
         </thead>
     <tbody>
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
     </tbody>
-      </table>
-      </div>
+    </table>
+  </div>
 {% endif %}
