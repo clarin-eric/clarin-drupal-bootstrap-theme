@@ -1177,15 +1177,10 @@
 }
 
 // Centre contact
-.paragraph--type--clarin-centre-contact {
+.paragraph--type--clarin-centre-contact,
+.paragraph--type--k-centre-contact {
   .container {
     padding: unset;
   }
 }
 
-// K-Centre profile contact
-.paragraph--type--k-centre-contact {
-  .container {
-    padding: 1rem;
-  }
-}
