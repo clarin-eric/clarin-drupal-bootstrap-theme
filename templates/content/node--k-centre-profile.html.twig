@@ -126,10 +126,11 @@
           </tr>
         </tbody>
       </table>
+      {{ content.field_keywords }}
     {% if more_links %}
-      {{ content|without('field_see_also_links', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_k_centre_full_name', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families', 'field_current_certification_expi', 'field_current_certification_date', 'field_initial_application_date', 'field_first_approval_date') }}
+      {{ content|without('field_see_also_links', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_k_centre_full_name', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families', 'field_current_certification_expi', 'field_current_certification_date', 'field_initial_application_date', 'field_first_approval_date', 'field_keywords', 'links') }}
     {% else %}
-      {{ content|without('field_k_centre_full_name', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families', 'field_current_certification_expi', 'field_current_certification_date', 'field_initial_application_date', 'field_first_approval_date') }}
+      {{ content|without('field_k_centre_full_name', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families', 'field_current_certification_expi', 'field_current_certification_date', 'field_initial_application_date', 'field_first_approval_date', 'field_keywords', 'links') }}
     {% endif %}
   </div>
   {% if more_links %}
