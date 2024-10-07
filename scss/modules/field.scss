@@ -46,6 +46,12 @@
     }
   }
 
+  .tour_de_clarin_fields, .resource_families_fields {
+    img {
+      margin-left: -20px;
+    }
+  }
+
   .field.field--name-field-hosted-by {
     counter-reset: list;
 
