@@ -1,0 +1,100 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{%
+  set node_classes = [
+  'node__content',
+  more_links ? 'col-sm-8',
+  'clearfix',
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ content.field_k_centre_website_url.0['#url'].toString }}" rel="bookmark"><span class="k-centre-full-name">{{ content.field_k_centre_full_name.0 }}</span></a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        {% block submitted %}
+          <em{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </em>
+        {% endblock %}
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+  <div{{ attributes.addClass(node_classes) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
+    {% if snippet %}
+      {{ snippet }}
+    {% endif %}
+    {% if info %}
+      <em>{{ info }}</em>
+    {% endif %}
+    {{ content.field_k_centre_website_url }}
+    {{ content.field_competence_area }}
+    {{ content.field_audiences }}
+    {{ content.field_service_types }}
+    {{ content.field_languages }}
+    {{ content.field_modalities }}
+    {{ content.field_linguistic_topics }}
+    {{ content.field_language_processing }}
+    {{ content.field_data_types }}
+    {{ content.field_portal_languages }}
+    {{ content.field_generic_topics }}
+    {% if content.field_resource_families.0 %}
+      <div class="resource_families_fields row">
+        <div class="col-3 p-3 m-auto">
+          <a href="/node/4738">
+            <img src="/themes/contrib/clarin_bootstrap/images/resource-families-logo.jpg" alt="CLARIN Resource Familes logo, linking to the 'Resource Familes' section of this website">
+          </a>
+        </div>
+        <div class="col-9 pt-3 m-auto">
+          <div class="field--label-inline">{{ content.field_resource_families }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if content.field_tour_de_clarin_intro.0 or content.field_tour_de_clarin_interview.0 %}
+      <div class="tour_de_clarin_fields row">
+        <div class="col-3 p-0 m-auto">
+          <a href="/node/4526">
+            <img src="/themes/contrib/clarin_bootstrap/images/tour-de-clarin-logo.png" alt="Tour de CLARIN logo, linking to the 'Tour de CLARIN' section of this website" >
+          </a>
+        </div>
+        <div class="col-9 pt-3 m-auto">
+          <div class="field--label-inline"><div class="field__label">Introduction</div>{{ content.field_tour_de_clarin_intro.0 }}</div>
+          <div class="field--label-inline"><div class="field__label">Interview</div>{{ content.field_tour_de_clarin_interview.0 }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if more_links %}
+      {{ content|without('field_see_also_links', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_k_centre_full_name', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families') }}
+    {% else %}
+      {{ content|without('field_k_centre_full_name', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families') }}
+    {% endif %}
+  </div>
+  {% if more_links %}
+    <div class="sidebar more-link col-sm-4">
+      <div class="more-links">
+        <h2>See also</h2>
+        {{ content.field_see_also_links }}
+      </div>
+    </div>
+  {% endif %}
+  {{ content.links }}
+</article>
