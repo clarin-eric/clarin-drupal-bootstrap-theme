@@ -84,13 +84,43 @@
   }
 
   .tour_de_clarin_fields, .resource_families_fields {
+    list-style-type: "\1F310";
+
+    .field__item, .field--label-inline a {
+      margin-left: 3px;
+      margin-right: 10px;
+      text-decoration: underline;
+
+      &:hover {
+        color: $soft-blue-01;
+      }
+    }
+
     img {
       margin-left: -20px;
     }
   }
 
-  .field--name-field-internal-contact > .field__label {
-    color: $soft-blue-02;
+  .field--name-field-internal-contact {
+    & > .field__label {
+      color: $soft-blue-02;
+    }
+
+    a {      
+      text-decoration: underline;
+
+      &:hover {
+        color: $soft-blue-01;
+      }
+    }
+  }
+
+  .field--name-field-centre-registration-page a {
+    text-decoration: underline;
+
+    &:hover {
+      color: $soft-blue-01;
+    }
   }
 
   .field.field--name-field-hosted-by {
