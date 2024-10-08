@@ -64,6 +64,10 @@
     }
   }
 
+  .field--name-field-internal-contact > .field__label {
+    color: $soft-blue-02;
+  }
+
   .field.field--name-field-hosted-by {
     counter-reset: list;
 
