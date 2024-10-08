@@ -83,12 +83,17 @@
     margin-right: 4px;
   }
 
-  .field--name-field-internal-contact {
-    > .field__label {
-      color: $soft-blue-02;
-    }
+  .tour_de_clarin_fields .field--label-inline a::before {
+    content: "\f84a";
+    font-family: 'Font Awesome\ 6 Free',  sans-serif;;
+    font-size: 14px;
+    font-weight: 900;
+    margin-right: 4px;
+  }
 
-    a {      
+  .field--name-field-centre-registration-page,
+  .resource_families_fields, .tour_de_clarin_fields, .field--name-field-internal-contact {
+    a {
       text-decoration: underline;
 
       &:hover {
@@ -97,11 +102,9 @@
     }
   }
 
-  .field--name-field-centre-registration-page a {
-    text-decoration: underline;
-
-    &:hover {
-      color: $soft-blue-01;
+  .field--name-field-internal-contact {
+    > .field__label {
+      color: $soft-blue-02;
     }
   }
 
@@ -109,11 +112,6 @@
     .field--label-inline a {
       margin-left: 3px;
       margin-right: 10px;
-      text-decoration: underline;
-
-      &:hover {
-        color: $soft-blue-01;
-      }
     }
 
     img {
@@ -127,11 +125,6 @@
     .field__items .field__item > a {
       margin-left: 3px;
       margin-right: 10px;
-      text-decoration: underline;
-
-      &:hover {
-        color: $soft-blue-01;
-      }
     }
 
     img {
@@ -198,7 +191,20 @@
   }
 }
 
-.node--type-clarin-centre {
+
+.node--type-event {
+  .field.field--name-field-address.field--type-address {
+    background: $subtle-grey-01;
+    margin: 1rem 0 0;
+    padding: .5rem;
+
+    .field__label {
+      font-weight: bold;
+    }  
+  }
+}
+
+.content article.node--type-clarin-centre .node--type-clarin-centre {
   .field--name-field-location-coordinates .field__label {
     display: block;
     line-height: 0; /* Collapse the original line */
@@ -217,18 +223,6 @@
       color: $blue;
       text-decoration: underline;
     }
-  }
-}
-
-.node--type-event {
-  .field.field--name-field-address.field--type-address {
-    background: $subtle-grey-01;
-    margin: 1rem 0 0;
-    padding: .5rem;
-
-    .field__label {
-      font-weight: bold;
-    }  
   }
 }
 
