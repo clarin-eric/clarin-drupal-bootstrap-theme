@@ -1,4 +1,6 @@
 body {
+  --bs-body-color: #{$body-color};
+
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -89,6 +91,10 @@ h6 {
 
 .row {
   margin: 0 !important;
+}
+
+.table {
+  --bs-table-color: #{$body-color};
 }
 
 img {
