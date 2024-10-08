@@ -83,26 +83,8 @@
     margin-right: 4px;
   }
 
-  .tour_de_clarin_fields, .resource_families_fields {
-    list-style-type: "\1F310";
-
-    .field__item, .field--label-inline a {
-      margin-left: 3px;
-      margin-right: 10px;
-      text-decoration: underline;
-
-      &:hover {
-        color: $soft-blue-01;
-      }
-    }
-
-    img {
-      margin-left: -20px;
-    }
-  }
-
   .field--name-field-internal-contact {
-    & > .field__label {
+    > .field__label {
       color: $soft-blue-02;
     }
 
@@ -121,6 +103,49 @@
     &:hover {
       color: $soft-blue-01;
     }
+  }
+
+  .tour_de_clarin_fields {
+    .field--label-inline a {
+      margin-left: 3px;
+      margin-right: 10px;
+      text-decoration: underline;
+
+      &:hover {
+        color: $soft-blue-01;
+      }
+    }
+
+    img {
+      margin-left: -20px;
+    }
+  }
+
+  .resource_families_fields {
+    list-style-type: "\1F310";
+
+    .field__items .field__item > a {
+      margin-left: 3px;
+      margin-right: 10px;
+      text-decoration: underline;
+
+      &:hover {
+        color: $soft-blue-01;
+      }
+    }
+
+    img {
+      margin-left: -20px;
+    }
+  }
+
+  .field--name-field-centre-registration-page, .field--name-field-k-centre-pid {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .field--name-field-centre-registration-page {
+    width: 40%;
   }
 
   .field.field--name-field-hosted-by {
