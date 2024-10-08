@@ -83,50 +83,55 @@
       </div>
     {% endif %}
       {{ content.field_keywords }}
-      <table class='field__items table table-sm mx-sm-4 mt-sm-2 text-center'>
-        <thead>
-          <tr>
-            <th class="col-6">
-              {{ content.field_current_certification_date['#title'] }}
-            </th>
-            <th class="col-6">
-              {{ content.field_current_certification_expi['#title'] }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="col-6">
-              {{ content.field_current_certification_date.0 }}
-            </td>
-            <td class="col-6">
-              {{ content.field_current_certification_expi.0 }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class='field__items table table-sm mx-sm-4 mt-sm-2 text-center'>
-        <thead>
-          <tr>
-            <th class="col-6">
-              {{ content.field_initial_application_date['#title'] }}
-            </th>
-            <th class="col-6">
-              {{ content.field_first_approval_date['#title'] }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="col-6">
-              {{ content.field_initial_application_date.0 }}
-            </td>
-            <td class="col-6">
-              {{ content.field_first_approval_date.0 }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="assessment-dates pb-4">
+        <a class="collapse-toggle collapsed" href="#collapsible-dates" data-bs-toggle="collapse">Assessment dates&nbsp;</a>
+        <div class="collapse" id="collapsible-dates">
+          <table class='field__items table table-sm mx-sm-4 mt-sm-2 text-center'>
+            <thead>
+              <tr>
+                <th class="col-6">
+                  {{ content.field_current_certification_date['#title'] }}
+                </th>
+                <th class="col-6">
+                  {{ content.field_current_certification_expi['#title'] }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-6">
+                  {{ content.field_current_certification_date.0 }}
+                </td>
+                <td class="col-6">
+                  {{ content.field_current_certification_expi.0 }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class='field__items table table-sm mx-sm-4 mt-sm-2 text-center'>
+            <thead>
+              <tr>
+                <th class="col-6">
+                  {{ content.field_initial_application_date['#title'] }}
+                </th>
+                <th class="col-6">
+                  {{ content.field_first_approval_date['#title'] }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-6">
+                  {{ content.field_initial_application_date.0 }}
+                </td>
+                <td class="col-6">
+                  {{ content.field_first_approval_date.0 }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     {% if more_links %}
       {{ content|without('field_see_also_links', 'field_generic_topics', 'field_portal_languages', 'field_data_types', 'field_language_processing', 'field_linguistic_topics', 'field_modalities', 'field_languages', 'field_service_types', 'field_competence_area', 'field_k_centre_website_url', 'field_audiences', 'field_k_centre_full_name', 'field_tour_de_clarin_intro', 'field_tour_de_clarin_interview', 'field_resource_families', 'field_current_certification_expi', 'field_current_certification_date', 'field_initial_application_date', 'field_first_approval_date', 'field_keywords', 'links') }}
     {% else %}
