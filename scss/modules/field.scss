@@ -5,7 +5,8 @@
 }
 
 .node--type-k-centre-profile, .node--type-clarin-centre {
-  .field:not(.field--name-field-k-centre-website-url, .field--name-field-centre-contact-email, .field--name-field-centre-contact-name) {
+  .field:not(.field--name-field-k-centre-website-url, .field--name-field-centre-contact-email, .field--name-field-centre-contact-name,
+    .field--name-field-centre-contact-telephone, .field--name-field-centre-contact-website-url, .field--name-field-centre-contact-eppn) {
     padding-bottom: 0.625rem;
 
     p {
@@ -55,6 +56,23 @@
     content: "\f0e0";
     font-family: 'Font Awesome 6 Free';
     font-size: 14px;
+    font-weight: 900;
+    margin-right: 4px;
+  }
+
+  .field--name-field-centre-contact-telephone::before {
+    content: "\f095";
+    font-family: 'Font Awesome 6 Free';
+    font-size: 14px;
+    font-weight: 900;
+    margin-right: 4px;
+  }
+
+  .field--name-field-centre-contact-website-url::before {
+    content: "\f0ac";
+    font-family: 'Font Awesome 6 Free';
+    font-size: 14px;
+    font-weight: 900;
     margin-right: 4px;
   }
 
@@ -160,7 +178,7 @@
       padding-right: 2rem;
       padding-top: 2rem;
       vertical-align: top;
-      width: 30%;
+      width: 33%;
     }
 
     .field--name-field-working-unit {
