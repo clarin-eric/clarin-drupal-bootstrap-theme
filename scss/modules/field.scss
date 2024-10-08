@@ -85,7 +85,7 @@
 
   .tour_de_clarin_fields .field--label-inline a::before {
     content: "\f84a";
-    font-family: 'Font Awesome\ 6 Free',  sans-serif;;
+    font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
     margin-right: 4px;
@@ -120,11 +120,18 @@
   }
 
   .resource_families_fields {
-    list-style-type: "\1F310";
+    .field__items .field__item {
+      > a {
+        margin-left: 3px;
+        margin-right: 10px;
+      }
 
-    .field__items .field__item > a {
-      margin-left: 3px;
-      margin-right: 10px;
+      &::before {
+        content: "\f02d"; /* FontAwesome Unicode */
+        font-family: 'Font Awesome\ 6 Free',  sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
     }
 
     img {
@@ -182,7 +189,7 @@
 
   .resource_families_fields .field.field--name-field-resource-families {
     .field__item {
-      display: inline list-item;
+      display: inline;
 
       &::after {
         content: unset;
