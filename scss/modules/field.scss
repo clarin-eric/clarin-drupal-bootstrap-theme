@@ -5,7 +5,7 @@
 }
 
 .node--type-k-centre-profile, .node--type-clarin-centre {
-  .field:not(.field--name-field-k-centre-website-url) {
+  .field:not(.field--name-field-k-centre-website-url, .field--name-field-centre-contact-email, .field--name-field-centre-contact-name) {
     padding-bottom: 0.625rem;
 
     p {
@@ -49,6 +49,13 @@
   .assessment-dates > a {
     font-size: 1.1rem;
     font-weight: 700;
+  }
+
+  .field--name-field-centre-contact-email::before {
+    content: "\f0e0";
+    font-family: 'Font Awesome 6 Free';
+    font-size: 14px;
+    margin-right: 4px;
   }
 
   .tour_de_clarin_fields, .resource_families_fields {
