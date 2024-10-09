@@ -70,7 +70,6 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
-    'p-4',
   ]
 %}
 {%
@@ -80,7 +79,7 @@
   'clearfix',
 ]
 %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes, 'p-4') }}>
   <header>
     {{ title_prefix }}
     {% if label and not page %}
