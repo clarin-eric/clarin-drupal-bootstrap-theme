@@ -100,7 +100,7 @@
       </div>
     {% endif %}
   </header>
-  <div{{ attributes.addClass(nodeclasses) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
+  <div{{ content_attributes.addClass(nodeclasses) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
     {% if snippet %}
       {{ snippet }}
     {% endif %}
