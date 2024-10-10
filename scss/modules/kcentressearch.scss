@@ -100,18 +100,24 @@
   }
 
   .page-header {
-    background: url("../images/CLARIN-Logo-K-centre-2023-RGB-600ppi-transp.png") no-repeat  left 0 bottom/300px;
+    background: url("../images/CLARIN-Logo-K-centre-2023-RGB-600ppi-transp.png") no-repeat  left 0 top/300px;
     color: $dark-blue-02;
     font-size: 42px;
-    height: 80px;
-    padding-left: 260px;
-    padding-top: 2rem;
+    padding-left: 0.9rem;
+    padding-top: 5.5rem;
 
     &::after {
       color: #A2C037;
       content: " (PREVIEW version)";
       font-size: 16px;
       vertical-align: super;
+    }
+
+    @media (min-width: #{$screen-sm-min}) {
+      background: url("../images/CLARIN-Logo-K-centre-2023-RGB-600ppi-transp.png") no-repeat  left 0 bottom/300px;
+      height: 80px;
+      padding-left: 260px;
+      padding-top: 2rem;
     }
   }
 
