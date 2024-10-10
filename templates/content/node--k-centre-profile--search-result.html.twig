@@ -73,7 +73,7 @@
   ]
 %}
 {%
-  set node_classes = [
+  set nodeclasses = [
   'node__content',
   more_links ? 'col-sm-8',
   'clearfix',
@@ -100,7 +100,7 @@
       </div>
     {% endif %}
   </header>
-  <div{{ attributes.addClass(node_classes) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
+  <div{{ attributes.addClass(nodeclasses) }} {{ show_toc ? 'id="tocscope" data-bs-spy="scroll" data-bs-target="#toc" tabindex="0"' }}>
     {% if snippet %}
       {{ snippet }}
     {% endif %}
@@ -126,7 +126,7 @@
     {% endif %}
     {% if content.field_tour_de_clarin_intro.0 or content.field_tour_de_clarin_interview.0 %}
       <div class="tour_de_clarin_fields row">
-        <div class="col-sm-3 p-0 my-auto">
+        <div class="col-sm-3 p-0 pb-3 my-auto">
           <a href="/Tour-de-CLARIN">
             <img src="/themes/contrib/clarin_bootstrap/images/tour-de-clarin-logo.png" alt="Tour de CLARIN logo, linking to the 'Tour de CLARIN' section of this website" >
           </a>
