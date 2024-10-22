@@ -29,10 +29,14 @@ div.align-center img {
   width: 100%;
 }
 
-.align-right .field--type-image {
-  margin: 0 0 0 1rem;
+.align-right {
+  .field--type-image, figcaption {
+    margin: 0 0 0 1rem;
+  }
 }
 
-.align-left .field--type-image {
-  margin: 0 1rem 0 0;
+.align-left {
+  .field--type-image, figcaption {
+    margin: 0 1rem 0 0;
+  }
 }
