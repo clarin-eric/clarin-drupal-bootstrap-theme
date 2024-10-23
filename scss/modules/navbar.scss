@@ -338,13 +338,13 @@
 
     @media (min-width: #{$screen-lg}) {
       li {
-        padding: 0 8px;
+        padding: 0 0.2rem;
       }
     }
 
     @media (min-width: #{$screen-xl}) {
       li {
-        padding: 0 5px;
+        padding: 0 0.3rem;
       }
     }
   }
