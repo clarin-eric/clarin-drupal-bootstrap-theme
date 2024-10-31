@@ -42,6 +42,7 @@ const paths = {
   scss: {
     src: "scss/style.scss",
     ckeditor5: "scss/ckeditor5-clarin.style.scss",
+    edit_form: "scss/edit-form-styles.style.scss",
     slidenav: "scss/modules/slidenav.scss",
     dest: distPath.concat("/css"),
     watch: "scss/**/*.scss"
@@ -91,6 +92,7 @@ function styles() {
     .src([
       paths.lib.css.bootstraptoc,
       paths.scss.ckeditor5,
+      paths.scss.edit_form,
       paths.scss.slidenav,
       paths.scss.src
     ])
