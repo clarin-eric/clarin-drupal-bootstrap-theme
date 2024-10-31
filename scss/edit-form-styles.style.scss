@@ -1,0 +1,18 @@
+.field--widget-options-buttons legend > span {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.form-checkboxes {
+  display: flex;
+  flex-flow: row wrap;
+
+  > div.form-item {
+    display: block;
+    flex-grow: 1;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-right: 1rem;
+    width: 45%;
+  }
+}

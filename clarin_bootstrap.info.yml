@@ -14,6 +14,7 @@ libraries-override:
   bootstrap_barrio/slide_nav: false
 ckeditor5-stylesheets:
   - css/ckeditor5-clarin.style.min.css
+  - css/edit-form-styles.style.min.css
 regions:
   navigation_left: 'Navigation - left'
   navigation_collapsible: 'Navigation (Collapsible)'
