@@ -67,6 +67,7 @@
       function registerItemsPerPageHandler() {
         $("[id^=edit-items-per-page]", document).on("change", () => {
           $("[id^=edit-submit-k-centres-search]", document).trigger("click");
+          $("[id^=edit-submit-search]", document).trigger("click");
         });
       }
 
