@@ -542,7 +542,7 @@ article.node--type-blog-post {
   }
 }
 
-div.node--type-news {
+div.node--type-news:not(.node--view-mode-search-result) {
   margin-top: 30px;
   padding-left: 0;
   padding-right: 0;
