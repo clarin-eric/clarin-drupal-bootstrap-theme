@@ -97,6 +97,22 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre {
     margin-right: 4px;
   }
 
+  .field--name-field-link-to-k-centre-profile {
+    padding-top: 1rem;
+
+    &::before {
+      content: "\f061";
+      font-family: 'Font Awesome\ 6 Free',  sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      margin-right: 4px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
   .tour_de_clarin_fields .field--label-inline a::before {
     content: "\f84a";
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
