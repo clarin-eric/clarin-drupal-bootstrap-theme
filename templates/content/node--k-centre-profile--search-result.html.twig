@@ -100,7 +100,7 @@
       </div>
     {% endif %}
   </header>
-  {{ content }}
+  {{ content|without('field_k_centre_full_name') }}
   </div>
   {% if more_links %}
     <div class="sidebar more-link col-sm-4">
