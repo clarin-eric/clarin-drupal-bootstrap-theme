@@ -186,11 +186,16 @@
       li.facet-item {
         list-style: "+ ";
 
-        &:has(label.is-active) {
+        &:has(a.is-active) {
+          font-weight: 700;
           list-style: "- ";
+
+          a span.facet-item__status {
+            display: none;
+          }
         }
 
-        label::first-letter {
+        a span::first-letter {
           text-transform: uppercase;
         }
       }
