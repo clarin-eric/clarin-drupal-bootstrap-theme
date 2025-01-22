@@ -188,7 +188,7 @@
 
         &:has(a.is-active) {
           font-weight: 700;
-          list-style: "- ";
+          list-style: "(-) ";
 
           a span.facet-item__status {
             display: none;
