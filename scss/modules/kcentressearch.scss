@@ -184,6 +184,7 @@
       }
 
       li.facet-item {
+        font-weight: initial;
         list-style: "+ ";
 
         &:has(a.is-active) {
