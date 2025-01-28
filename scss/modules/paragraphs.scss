@@ -629,7 +629,7 @@
 }
 
 // Text
-.paragraph--type--text {
+.paragraph--type--text:not(.paragraph--view-mode--preview) {
   font-size: 16px;
   line-height: 25px;
   margin-bottom: 4rem;
