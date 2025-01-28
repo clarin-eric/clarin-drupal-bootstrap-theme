@@ -117,6 +117,11 @@
     }
   }
 
+  .node--view-mode-search-result .field--name-field-tags {
+    margin: 0;
+    padding: 0;
+  }
+
   // Text
   .paragraph:not(.paragraph--view-mode--preview) {
     font-size: 16px;
