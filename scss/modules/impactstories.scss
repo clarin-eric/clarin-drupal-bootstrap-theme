@@ -109,6 +109,14 @@
     padding-left: 15px;
   }
 
+  .paragraph--view-mode--preview {
+    .container, .container-sm,
+    .container-md, .container-lg,
+    .container-xl, .container-xxl {
+      padding: 0 calc(var(--bs-gutter-x) * .4);
+    }
+  }
+
   // Text
   .paragraph:not(.paragraph--view-mode--preview) {
     font-size: 16px;
