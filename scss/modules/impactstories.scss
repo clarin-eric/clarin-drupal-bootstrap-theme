@@ -110,7 +110,7 @@
   }
 
   // Text
-  .paragraph {
+  .paragraph:not(.paragraph--view-mode--preview) {
     font-size: 16px;
     line-height: 25px;
     padding: 25px 0 0;
