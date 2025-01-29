@@ -315,26 +315,6 @@
   }
 }
 
-// New searcb page
-.view-search {
-  .node__meta {
-    padding-bottom: 0.8rem;
-  }
-
-  .inline__links .nav-link {
-    color: $soft-blue-01;
-    font-size: 14px;
-  }
-
-  .views-row {
-    margin-bottom: 2rem;
-
-    p {
-      margin-bottom: 0.1rem;
-    }
-  }
-}
-
 // Dropdown toggle
 .collapse-toggle {
   &::after {
