@@ -177,7 +177,9 @@ function js() {
 
 // Move the static files into our distribution
 function resourcesSrc() {
-  return gulp.src(paths.static.src);
+  return gulp.src(paths.static.src, {
+    encoding: false
+  });
 }
 
 function resources() {
