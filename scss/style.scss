@@ -40,4 +40,8 @@ a {
 // fix "add to calllendar" modal
 .add-to-calendar[open] {
   display: inline-block;
+  height: 110px;
+  margin: auto;
+  position: absolute;
+  width: 300px;
 }
