@@ -40,8 +40,13 @@ a {
 // fix "add to calllendar" modal
 .add-to-calendar[open] {
   display: inline-block;
-  height: 110px;
+  height: 65px;
   margin: auto;
   position: absolute;
-  width: 300px;
+  width: 350px;
+}
+
+.field--type-daterange button.button {
+  position: absolute;
+  right: 0;
 }
