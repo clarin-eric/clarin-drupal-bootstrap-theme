@@ -36,3 +36,8 @@ a {
 .bg-inverse {
   background: $inverse-bg !important;
 }
+
+// fix "add to calllendar" modal
+.add-to-calendar[open] {
+  display: inline-block;
+}
