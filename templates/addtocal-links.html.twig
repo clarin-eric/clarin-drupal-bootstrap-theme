@@ -6,11 +6,11 @@ set classes = [
 {% if icons %}{{ attach_library('addtocal_augment/icons') }}{% endif %}
 <span{{attributes.addClass(classes)}}>
     {% if label %}
-        <label title="Add this event to your callendar. Click the icon on the right corresponding to your callendar platform." class="addtocal__label">{{ label }}:</label>
+        <label title="Add this event to your calendar. Click the icon on the right corresponding to your calendar platform." class="addtocal__label">{{ label }}:</label>
     {% endif %}
-    <div class="callendar_linkbox">
-        <a href="{{ google }}" alt="Add this event to Google callendar" title="Add this event to Google callendar" target="_blank" class="addtocal__link addtocal__google">Google</a>
-        <a href="{{ outlook }}" alt="Add this event to Outlook callendar" title="Add this event to Outlook callendar" download="event.ics" class="addtocal__link addtocal__outlook">Outlook</a>
+    <div class="calendar_linkbox">
+        <a href="{{ google }}" alt="Add this event to Google calendar" title="Add this event to Google calendar" target="_blank" class="addtocal__link addtocal__google">Google</a>
+        <a href="{{ outlook }}" alt="Add this event to Outlook calendar" title="Add this event to Outlook calendar" download="event.ics" class="addtocal__link addtocal__outlook">Outlook</a>
         <a href="{{ ical }}" alt="Add this event to Apple iCal" title="Add this event to Apple iCal" download="event.ics" class="addtocal__link addtocal__ical">iCal</a>
     </div>
 </span>

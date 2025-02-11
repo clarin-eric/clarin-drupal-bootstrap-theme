@@ -7,12 +7,12 @@ set classes = [
 %}
 {{ attach_library('addtocal_augment/icons') }}
 <div{{attributes.addClass(classes)}}>
-    <button type="button" class="button btn btn-outline-secondary btn-sm dropdown-toggle" title="Add this event to your callendar. Select the corresponding callendar platform." data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="button btn btn-outline-secondary btn-sm dropdown-toggle" title="Add this event to your calendar. Select the corresponding calendar platform." data-bs-toggle="dropdown" aria-expanded="false">
       {{ label }}
     </button>
     <ul class="dropdown-menu links">
-      <li><a href="{{ google }}" alt="Add this event to Google callendar" title="Add this event to Google callendar" target="_blank"><span class="addtocal__link addtocal__google"></span>Google</a></li>
-      <li><a href="{{ outlook }}" alt="Add this event to Outlook callendar" title="Add this event to Outlook callendar" download="event.ics"><span class="addtocal__link addtocal__outlook"></span>Outlook</a></li>
+      <li><a href="{{ google }}" alt="Add this event to Google calendar" title="Add this event to Google calendar" target="_blank"><span class="addtocal__link addtocal__google"></span>Google</a></li>
+      <li><a href="{{ outlook }}" alt="Add this event to Outlook calendar" title="Add this event to Outlook calendar" download="event.ics"><span class="addtocal__link addtocal__outlook"></span>Outlook</a></li>
       <li><a href="{{ ical }}" alt="Add this event to Apple iCal" title="Add this event to Apple iCal" download="event.ics"><span class="addtocal__link addtocal__ical"></span>iCal</a></li>
     </ul>
 </div>

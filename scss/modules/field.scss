@@ -42,7 +42,8 @@
   margin-bottom: 1.2rem;
 
   .dropdown-menu {
-    padding-left: 5px;
+    line-height: 1.8;
+    padding: 0.6rem
   }
 }
 
@@ -62,7 +63,7 @@ ul {
   }
 }
 
-.add-to-calendar:has(.callendar_linkbox:hover) label.addtocal__label {
+.add-to-calendar:has(.calendar_linkbox:hover) label.addtocal__label {
   opacity: 0.8;
 }
 
