@@ -4,6 +4,7 @@ set classes = [
   'dropend'
 ]
 %}
+{% if icons %}{{ attach_library('addtocal_augment/icons') }}{% endif %}
 <div{{attributes.addClass(classes)}}>
     <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" title="Add this event to your callendar. Select the corresponding callendar platform." data-bs-toggle="dropdown" aria-expanded="false">
       {{ label }}
