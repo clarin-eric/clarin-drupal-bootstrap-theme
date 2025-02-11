@@ -50,7 +50,7 @@
   }
 }
 
-.add-to-calendar:has(.callendar_linkbox:hover) {
+.add-to-calendar:has(.callendar_linkbox:hover) label.addtocal__label {
   opacity: 0.8;
 }
 
