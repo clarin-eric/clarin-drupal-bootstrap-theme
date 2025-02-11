@@ -50,6 +50,11 @@
   }
 }
 
+.addtocal__google, .addtocal__ical, .addtocal__outlook {
+  margin-bottom: -5px;
+  margin-right: 5px;
+}
+
 .add-to-calendar:has(.callendar_linkbox:hover) label.addtocal__label {
   opacity: 0.8;
 }
