@@ -42,11 +42,10 @@ a {
   display: inline-block;
   height: 65px;
   margin: auto;
-  position: absolute;
+  position: fixed;
   width: 350px;
 }
 
 .field--type-daterange button.button {
-  position: absolute;
-  right: 0;
+  float: right;
 }
