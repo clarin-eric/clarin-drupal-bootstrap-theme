@@ -52,8 +52,8 @@
   }
 }
 
-.node {
-  .field--name-body {
+.node, .path-glossary {
+  .field--name-body, .table {
     a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
