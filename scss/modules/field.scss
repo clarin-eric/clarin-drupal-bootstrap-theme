@@ -67,7 +67,11 @@ ul {
   opacity: 0.8;
 }
 
-.field--type-daterange .btn-group.dropend {
+.node--view-mode-date-only .field--type-daterange .btn-group.dropend {
+  display: block;
+}
+
+article:not(.node--view-mode-date-only) .field--type-daterange .btn-group.dropend {
   float: right;
 }
 
