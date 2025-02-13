@@ -53,7 +53,7 @@
 }
 
 .node, .path-glossary {
-  .field--name-body, .table {
+  .field--name-body, .table td {
     a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
