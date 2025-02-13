@@ -5,7 +5,7 @@ set classes = [
   'dropend'
 ]
 %}
-{% if icons %}{{ attach_library('addtocal_augment/icons') }}{% endif %}
+{{ attach_library('addtocal_augment/icons') }}
 <div{{attributes.addClass(classes)}}>
     <button type="button" class="button btn btn-outline-secondary btn-sm dropdown-toggle" title="Add this event to your calendar. Select the corresponding calendar platform." data-bs-toggle="dropdown" aria-expanded="false">
       {{ label }}
