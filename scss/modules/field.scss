@@ -4,6 +4,14 @@
   }
 }
 
+.node.node--type-trainer.node--view-mode-search-result {
+  display: inline;
+
+    .field--name-field-media {
+      float: left;
+    }
+}
+
 // New search page
 .view-search {
   .field--type-daterange {
