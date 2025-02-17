@@ -1,5 +1,5 @@
 @media all and (width >= 560px) {
-  .node:not(.node--type-showcase) .field--type-image {
+  .node:not(.node--type-showcase.node--view-mode-search-result) .field--type-image {
     float: unset;
   }
 }
