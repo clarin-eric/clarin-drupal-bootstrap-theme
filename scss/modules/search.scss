@@ -1,4 +1,4 @@
-// K Centres search form
+// search forms
 .views-exposed-form {
   margin-bottom: 1rem;
   margin-top: 30px;
@@ -9,6 +9,7 @@
   }
 
   .form-item-search-api-fulltext,
+  .form-item-search-api-fulltext-1,
   .form-item-keys {
     max-width: 445px;
     width: 70%;
@@ -81,7 +82,7 @@
 }
 
 // Page body:
-.view-k-centres-search, .view-search-content {
+.view-k-centres-search, .view-search-content, .view-search {
   .view-content {
     a:not(.btn) {
       color: $link-color;
