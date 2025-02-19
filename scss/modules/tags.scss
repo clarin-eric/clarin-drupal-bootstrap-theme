@@ -85,6 +85,11 @@
     margin-top: auto;
     position: absolute;
 
+    @media (max-width: #{$screen-xs-max}) {
+        position: relative;
+        margin-top: 8px;
+    }
+
     ul {
       .show-tags {
         border: 1px solid $blue;
