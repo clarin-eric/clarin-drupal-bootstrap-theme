@@ -82,9 +82,9 @@
 }
 
 // Page body:
-.view-k-centres-search, .view-search-content {
+.view-k-centres-search, .view-search-content, .view-search {
   .view-content {
-    a:not(.btn) {
+    a:not(.btn):not(.field--name-field-tags > ul > li > a) {
       color: $link-color;
       text-decoration: underline;
 
