@@ -81,6 +81,28 @@
   }
 }
 
+div.block.block-facets-summary.block-facets-summary-blocksearch-facets-summary {
+  border: none;
+  color: $dark-blue-01;
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        color: $soft-blue-02;
+        text-decoration: underline;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
 // Page body:
 .view-k-centres-search, .view-search-content, .view-search {
   .view-content {
