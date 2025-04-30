@@ -1,16 +1,22 @@
 {
     "globals": {
-         "Toc": true,
-         "bootstrap": true
+        "Toc": true,
+        "bootstrap": true
     },
     "extends": "drupal",
     "rules": {
         // enable additional rules
-        "no-var": ["warn"]
+        "no-var": ["warn"],
+        "import/no-unresolved": [
+            "error",
+            {
+              "ignore": ["^@ronilaukkarinen/.+"]
+            }
+        ]
     },
     "settings": {
         "react": {
-          "version": "detect"
+            "version": "detect"
         }
     }
 }

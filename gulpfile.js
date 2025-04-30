@@ -1,21 +1,23 @@
-const gulp = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps");
-const gulpStylelint = require("@ronilaukkarinen/gulp-stylelint");
-const cleanCss = require("gulp-clean-css");
-const rename = require("gulp-rename");
-const gulpIf = require("gulp-if");
-const count = require("gulp-count");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const uglify = require("gulp-uglify-es").default;
-const eslint = require("gulp-eslint");
-const replace = require("gulp-replace");
-const postcssInlineSvg = require("postcss-inline-svg");
-const pxtorem = require("postcss-pxtorem");
-const browserSync = require("browser-sync").create();
-const lazypipe = require("lazypipe");
-const $ = require("gulp-load-plugins")();
+import gulp from "gulp";
+import gulpsass from "gulp-sass";
+import * as sass from "sass";
+import sourcemaps from "gulp-sourcemaps";
+import gulpStylelint from "@ronilaukkarinen/gulp-stylelint";
+import cleanCss from "gulp-clean-css";
+import rename from "gulp-rename";
+import gulpIf from "gulp-if";
+import count from "gulp-count";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import uglify from "gulp-uglify-es";
+import eslint from "gulp-eslint";
+import replace from "gulp-replace";
+import postcssInlineSvg from "postcss-inline-svg";
+import pxtorem from "postcss-pxtorem";
+import browserSync from "browser-sync";
+import lazypipe from "lazypipe";
+
+const _sass = gulpsass(sass);
 
 const postcssProcessors = [
   postcssInlineSvg({
@@ -97,14 +99,14 @@ function styles() {
       paths.scss.src
     ])
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(_sass().on("error", _sass.logError))
     .pipe(
       replace(
         /(url\()[./]+(..\/images\/\w+(?:\.svg|\.gif|\.png|\.jpg)\))/gi,
         "$1$2"
       )
     )
-    .pipe($.postcss(postcssProcessors))
+    .pipe(postcss(postcssProcessors))
     .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
@@ -121,7 +123,7 @@ function isJsFixed(file) {
   return file.eslint != null && file.eslint.fixed;
 }
 
-function lintscss() {
+function _lintscss() {
   return gulp
     .src([paths.scss.watch], { base: "." })
     .pipe(
@@ -142,7 +144,7 @@ function lintscss() {
     );
 }
 
-function lintjs() {
+function _lintjs() {
   const fixAndReport = lazypipe()
     .pipe(gulp.dest, ".")
     .pipe(
@@ -169,7 +171,7 @@ function js() {
     .src([paths.lib.js.bootstraptoc, paths.js.src])
     .pipe(sourcemaps.init())
     .pipe(gulp.dest(paths.js.dest))
-    .pipe(uglify())
+    .pipe(uglify.default())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write("maps"))
     .pipe(gulp.dest(paths.js.dest));
@@ -229,25 +231,25 @@ function serve() {
 }
 
 // Tasks
-const lintSCSS = lintscss;
-const lintES = lintjs;
-const dist = gulp.parallel(
+const lintSCSSint = _lintscss;
+const lintESint = _lintjs;
+const distint = gulp.parallel(
   resources,
-  gulp.series(lintscss, styles),
-  gulp.series(lintjs, js)
+  gulp.series(_lintscss, styles),
+  gulp.series(_lintjs, js)
 );
-const dev = gulp.parallel(
+const devInt = gulp.parallel(
   resourcesDev,
-  gulp.series(lintscss, stylesDev),
-  gulp.series(lintjs, jsDev),
+  gulp.series(_lintscss, stylesDev),
+  gulp.series(_lintjs, jsDev),
   serve
 );
-const ci = gulp.parallel(resources, styles, js);
+const _ci = gulp.parallel(resources, styles, js);
 
-exports.dist = dist;
-exports.dev = dev;
-exports.lintscss = lintSCSS;
-exports.lintjs = lintES;
-exports.ci = ci;
+gulp.task("dist", distint);
+gulp.task("dev", devInt);
+gulp.task("lintscss", lintSCSSint);
+gulp.task("lintjs", lintESint);
+gulp.task("ci", _ci);
 
-exports.default = dev;
+gulp.task("default", devInt);
