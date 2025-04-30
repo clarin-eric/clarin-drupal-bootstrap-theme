@@ -87,6 +87,10 @@
 .node--type-impact-story {
   padding: 0;
 
+  div.node--type-impact-story {
+    padding-top: 1rem;
+  }
+
   .title-wrapper {
     background-color: $header-background-1;
     margin: 15px;
@@ -276,7 +280,8 @@
   .paragraph:not(.paragraph--view-mode--preview) {
     font-size: 16px;
     line-height: 25px;
-    padding: 25px 0 0;
+    margin-bottom: 1.75rem;
+    padding: 1rem 0 0;
 
     @media (min-width: #{$screen-tablet}) {
       font-size: 18px;
