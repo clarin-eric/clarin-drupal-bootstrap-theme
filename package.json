@@ -2,6 +2,7 @@
   "name": "clarin_barrio",
   "version": "1.0.0",
   "description": "Bootstrap Barrio sub-theme",
+  "type": "module",
   "scripts": {
     "lintstyle": "npx stylelint -f 'verbose' scss/**/*.scss"
   },
