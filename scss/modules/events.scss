@@ -1,4 +1,31 @@
 // Events
+.page-view-events-per-year {
+  nav.tabs {
+    border-bottom: 1px solid $subtle-grey-01;
+
+    ul {
+      background: unset;
+      border: 0;
+      display: inline-flex;
+
+      .nav-item a {
+        border: 0;
+        font-size: $h4-font-size-h4;
+
+        &.active {
+          border-bottom: 3px solid $quote-blue;
+          font-weight: 700;
+        }
+
+        &:not(.active):hover {
+          color: $soft-blue-02;
+          text-decoration: none;
+          transition: none;
+        }
+      }
+    }
+  }
+}
 .view-upcoming-events {
   .node {
     @media (min-width: #{$screen-tablet}) {
