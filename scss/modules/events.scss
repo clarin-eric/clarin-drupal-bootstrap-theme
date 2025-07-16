@@ -21,6 +21,7 @@
         &:not(.active):hover {
           color: $soft-blue-02;
           transition: none;
+          text-decoration: underline;
         }
       }
     }
