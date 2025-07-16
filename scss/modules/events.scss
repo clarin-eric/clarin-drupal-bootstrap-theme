@@ -11,6 +11,7 @@
       .nav-item a {
         border: 0;
         font-size: $h4-font-size-h4;
+        text-decoration: none;
 
         &.active {
           border-bottom: 3px solid $quote-blue;
@@ -19,7 +20,6 @@
 
         &:not(.active):hover {
           color: $soft-blue-02;
-          text-decoration: none;
           transition: none;
         }
       }
