@@ -17,7 +17,7 @@
         return timeNow;
       }
 
-      // Live clock (events)
+      // Live clock after date range (events)
       $(
         ".node--type-event.node--view-mode-full .field--name-field-date-range",
         document
