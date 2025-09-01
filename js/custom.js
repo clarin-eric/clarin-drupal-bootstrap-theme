@@ -24,8 +24,8 @@
       )
         .after()
         .html(
-          `<p class="mt-2">\
-          <small>Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CEST</strong>. Current time in CEST is: <strong id="clock">${getTime()}</strong></small>\
+          `<p class="mt-2 text-black-50">\
+          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CEST</strong>. Current time in CEST is: <strong id="clock">${getTime()}</strong></small>\
         </p>`
         );
 
