@@ -10,6 +10,30 @@
         return;
       }
 
+      function getTime() {
+        const timeNow = new Date().toLocaleTimeString("en-GB", {
+          timeZone: "Europe/Amsterdam"
+        });
+        return timeNow;
+      }
+
+      // Live clock (events)
+      $(
+        ".node--type-event.node--view-mode-full .field--name-field-date-range",
+        document
+      )
+        .after()
+        .html(
+          `<p class="mt-2">\
+          <small>Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CEST</strong>. Current time in CEST is: <strong id="clock">${getTime()}</strong></small>\
+        </p>`
+        );
+
+      function updateTime() {
+        document.getElementById("clock").textContent = getTime();
+      }
+      setInterval(updateTime, 1000);
+
       // Form field label as placeholder
       $(
         ".mailchimp-signup-subscribe-form .form-type-email, .path-search .search-form .form-type-search",
