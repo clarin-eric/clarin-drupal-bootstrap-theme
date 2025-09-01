@@ -278,15 +278,10 @@
 
   // Text
   .paragraph:not(.paragraph--view-mode--preview) {
-    font-size: 16px;
-    line-height: 25px;
+    font-size: unset;
+    line-height: unset;
     margin-bottom: 1.75rem;
     padding: 1rem 0 0;
-
-    @media (min-width: #{$screen-tablet}) {
-      font-size: 18px;
-      line-height: 28px;
-    }
 
     .container, .container-sm,
     .container-md, .container-lg,
