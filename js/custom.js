@@ -21,13 +21,9 @@
       $(
         ".node--type-event.node--view-mode-full .field--name-field-date-range",
         document
-      )
-        .after()
-        .html(
-          `<p class="mt-2 text-black-50">\
+      ).after(`<p class="mt-2 text-black-50">\
           <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CEST</strong>. Current time in CEST is: <strong id="clock">${getTime()}</strong></small>\
-        </p>`
-        );
+        </p>`);
 
       function updateTime() {
         document.getElementById("clock").textContent = getTime();
