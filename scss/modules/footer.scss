@@ -71,6 +71,10 @@
     }
   }
 
+  p {
+    color: $soft-blue-02;
+  }
+
   .col {
     font-size: 16px;
     padding-left: 0;
@@ -86,7 +90,7 @@
     }
 
     h2 {
-      color: $blue;
+      color: $soft-blue-02;
       font-size: 14px;
       margin-bottom: 20px;
       text-transform: uppercase;
