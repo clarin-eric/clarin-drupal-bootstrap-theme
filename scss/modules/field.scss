@@ -208,7 +208,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     }
   }
 
-  .tour_de_clarin_fields .field--label-inline a::before {
+  .tour_de_clarin_fields .field--label-inline::before {
     content: "\f84a";
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;

@@ -29,8 +29,14 @@ a {
   color: $link-color;
 }
 
+article.node div.node:not(.node--type-navigation-page) a,
 .linkblue {
   color: $blue;
+  text-decoration: underline;
+
+  &:hover {
+    color: $blue-hover;
+  }
 }
 
 .bg-inverse {
