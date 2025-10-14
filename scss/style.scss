@@ -29,8 +29,8 @@ a {
   color: $link-color;
 }
 
-article.node div.node:not(.node--type-navigation-page, .node--type-landing-page) a,
-.site-footer a,
+article.node div.node:not(.node--type-navigation-page, .node--type-landing-page) a:not(.btn),
+.site-footer a:not(.btn),
 .linkblue {
   color: $blue;
   text-decoration: underline;
