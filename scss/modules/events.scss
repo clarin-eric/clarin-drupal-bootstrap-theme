@@ -45,6 +45,10 @@
       padding: 10px 0;
     }
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     &:first-child {
       @media (min-width: #{$screen-tablet}) {
         margin-top: 15px;
@@ -76,7 +80,6 @@
   }
 
   .datetime {
-    color: $blue;
     font-size: 1.15rem;
     line-height: 22px;
 
