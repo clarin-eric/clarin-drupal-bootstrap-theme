@@ -1,15 +1,15 @@
 .node--type-webform {
-  .captcha__element {
-    .input-group-prepend {
-      flex-grow: 0.07;
+    .captcha__element {
+        .input-group-prepend {
+            flex-grow: 0.07;
 
-      .field-prefix {
-        padding-top: 1.3rem;
-      }
-    }
+            .field-prefix {
+                padding-top: 1.3rem;
+            }
+        }
 
-    label {
-      padding-top: 3px;
+        label {
+            padding-top: 3px;
+        }
     }
-  }
 }

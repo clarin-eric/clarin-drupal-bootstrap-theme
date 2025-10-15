@@ -209,7 +209,7 @@
         transition: transform 350ms;
       }
 
-      &.show::after {
+      &.show::after  {
         transform: rotate(-90deg);
       }
     }
