@@ -86,8 +86,8 @@
     position: absolute;
 
     @media (max-width: #{$screen-xs-max}) {
-        position: relative;
         margin-top: 8px;
+        position: relative;
     }
 
     ul {
