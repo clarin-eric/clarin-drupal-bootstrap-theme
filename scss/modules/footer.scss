@@ -138,5 +138,9 @@
   a {
     color: $soft-blue-02;
     font-size: 14px;
+
+    &:hover {
+      color: $soft-blue-01;
+    }
   }
 }
