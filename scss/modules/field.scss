@@ -7,9 +7,9 @@
 .node.node--type-trainer.node--view-mode-search-result {
   display: inline;
 
-    .field--name-field-media {
-      float: left;
-    }
+  .field--name-field-media {
+    float: left;
+  }
 }
 
 // New search page
@@ -64,7 +64,9 @@
 }
 
 ul {
-  .addtocal__google, .addtocal__ical, .addtocal__outlook {
+  .addtocal__google,
+  .addtocal__ical,
+  .addtocal__outlook {
     margin-bottom: -5px;
     margin-right: 5px;
     opacity: 1;
@@ -83,9 +85,12 @@ article:not(.node--view-mode-date-only) .field--type-daterange .btn-group.dropen
   float: right;
 }
 
-body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--type-crf-item, body .node--type-learning-resource {
+body .node--type-k-centre-profile,
+body .node--type-clarin-centre,
+body .node--type-crf-item,
+body .node--type-learning-resource {
   .field:not(.field--name-field-k-centre-website-url, .field--name-field-centre-contact-email, .field--name-field-centre-contact-name,
-    .field--name-field-centre-contact-telephone, .field--name-field-centre-contact-website-url, .field--name-field-centre-contact-eppn) {
+.field--name-field-centre-contact-telephone, .field--name-field-centre-contact-website-url, .field--name-field-centre-contact-eppn) {
     padding-bottom: 0.625rem;
     padding-left: 0;
     padding-right: 0;
@@ -101,8 +106,8 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     font-weight: bold;
 
     &::after {
-        content: ":";
-      }
+      content: ':';
+    }
   }
 
   .field--label-inline {
@@ -118,11 +123,11 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
         display: inline;
 
         &::after {
-          content: ",";
+          content: ',';
         }
 
         &:last-child::after {
-          content: "";
+          content: '';
         }
       }
     }
@@ -153,7 +158,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   }
 
   .field--name-field-centre-contact-email::before {
-    content: "\f0e0";
+    content: '\f0e0';
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -161,7 +166,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   }
 
   .field--name-field-centre-contact-telephone::before {
-    content: "\f095";
+    content: '\f095';
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -169,7 +174,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   }
 
   .field--name-field-centre-contact-website-url::before {
-    content: "\f0ac";
+    content: '\f0ac';
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -180,7 +185,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     padding-top: 1rem;
 
     &::after {
-      content: " \f061";
+      content: ' \f061';
       font-family: 'Font Awesome\ 6 Free',  sans-serif;
       font-size: 14px;
       font-weight: 900;
@@ -196,7 +201,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     padding-top: 1rem;
 
     &::after {
-      content: " \f08e";
+      content: ' \f08e';
       font-family: 'Font Awesome\ 6 Free',  sans-serif;
       font-size: 14px;
       font-weight: 900;
@@ -209,7 +214,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   }
 
   .tour_de_clarin_fields .field--label-inline::before {
-    content: "\f84a";
+    content: '\f84a';
     font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -217,7 +222,9 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   }
 
   .field--name-field-centre-registration-page,
-  .resource_families_fields, .tour_de_clarin_fields, .field--name-field-internal-contact {
+  .resource_families_fields,
+  .tour_de_clarin_fields,
+  .field--name-field-internal-contact {
     a {
       text-decoration: underline;
 
@@ -252,7 +259,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
       }
 
       &::before {
-        content: "\f02d"; /* FontAwesome Unicode */
+        content: '\f02d'; /* FontAwesome Unicode */
         font-family: 'Font Awesome\ 6 Free',  sans-serif;
         font-size: 14px;
         font-weight: 900;
@@ -264,7 +271,8 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     }
   }
 
-  .field--name-field-centre-registration-page, .field--name-field-k-centre-pid {
+  .field--name-field-centre-registration-page,
+  .field--name-field-k-centre-pid {
     display: inline-block;
     vertical-align: top;
   }
@@ -277,7 +285,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     counter-reset: list;
 
     .field__item::before {
-      content: "(" counter(list) ") ";
+      content: '(' counter(list) ') ';
       counter-increment: list;
     }
   }
@@ -345,7 +353,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
     text-indent: -9999px;
 
     &::after {
-      content: "Hosted by:";
+      content: 'Hosted by:';
       display: block;
       line-height: 3.126;
       text-indent: 0;
@@ -362,7 +370,8 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
 
 @media (min-width: #{$screen-sm-min}) {
   .node--type-clarin-centre {
-    .field--name-field-administrative-contact, .field--name-field-technical-contact,
+    .field--name-field-administrative-contact,
+    .field--name-field-technical-contact,
     .field--name-field-monitoring-contacts {
       display: inline-block;
       padding-right: 2rem;
@@ -386,5 +395,5 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
 }
 
 figure.align-left {
-    margin: 0 1rem 0 0;;
+  margin: 0 1rem 0 0;;
 }

@@ -18,7 +18,7 @@
   }
 
   a {
-    border: 1px solid $blue;
+    border: 1px solid #{$blue};
     border-radius: 50px;
     color: $blue;
     display: block;
@@ -86,13 +86,13 @@
     position: absolute;
 
     @media (max-width: #{$screen-xs-max}) {
-        margin-top: 8px;
-        position: relative;
+      margin-top: 8px;
+      position: relative;
     }
 
     ul {
       .show-tags {
-        border: 1px solid $blue;
+        border: 1px solid #{$blue};
         border-radius: 50px;
         color: $blue;
         cursor: pointer;
@@ -131,7 +131,7 @@
 
 .page-view-taxonomy-term {
   .page-title {
-    border: 1px solid $blue;
+    border: 1px solid #{$blue};
     border-radius: 50px;
     color: $blue;
     display: block;

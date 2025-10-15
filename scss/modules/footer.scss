@@ -63,12 +63,12 @@
   }
 
   .site-footer__top {
-    border-top: 1px solid $cold-grey-03;
-    padding: 50px 0 0;
+    border-top: 1px solid #{$cold-grey-03];
+      padding: 50px 0 0;
 
-    @media (min-width: #{$screen-tablet}) {
+      @media (min-width: #{$screen-tablet}) {
       padding: 60px 0 0;
-    }
+      };
   }
 
   p {
