@@ -1,7 +1,43 @@
 // Events
+.newsletter-block-image {
+  .overlay-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    position: relative;
+    top: -320px;
+
+    @media (min-width: #{$screen-sm}) {
+      font-size: 2rem;
+      top: -460px;
+    }
+
+    @media (min-width: #{$screen-md}) {
+      font-size: 2.5rem;
+      top: -620px;
+    }
+
+    @media (min-width: #{$screen-lg}) {
+      font-size: 1.75rem;
+      top: -260px;
+    }
+
+    @media (min-width: #{$screen-xl}) {
+      top: -280px;
+    }
+
+    @media (min-width: #{$screen-xxl}) {
+      top: -300px;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+}
+
 .page-view-events-per-year {
   nav.tabs {
-    border-bottom: 1px solid $subtle-grey-01;
+    border-bottom: 1px solid #{$subtle-grey-01};
 
     ul {
       background: unset;
@@ -14,19 +50,20 @@
         text-decoration: none;
 
         &.active {
-          border-bottom: 3px solid $quote-blue;
+          border-bottom: 3px solid #{$quote-blue};
           font-weight: 700;
         }
 
         &:not(.active):hover {
           color: $soft-blue-02;
-          transition: none;
           text-decoration: underline;
+          transition: none;
         }
       }
     }
   }
 }
+
 .view-upcoming-events {
   .node {
     @media (min-width: #{$screen-tablet}) {
@@ -35,9 +72,42 @@
     }
   }
 
+  .event-details {
+    @media (min-width: #{$screen-tablet}) {
+      flex: 1 1 50%;
+      padding: 10px 15px;
+    }
+  }
+
   .views-row {
-    border-top: 1px solid $cold-grey-03;
+    border-top: 1px solid #{$cold-grey-03};
     padding: 15px 0;
+
+    .event-details {
+      background: url('../images/short-arrow-right-blue.svg') no-repeat right center;
+      background-size: 8px;
+      color: $dark-blue-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      margin-right: 15px;
+      transition: margin 0.3s;
+
+      @media (min-width: #{$screen-tablet}) {
+        background-size: 9px;
+        font-size: 18px;
+      }
+
+      &:hover,
+      &:focus {
+        margin-right: 15px;
+        text-decoration: none;
+
+        @media (min-width: #{$screen-tablet}) {
+          margin-right: 10px;
+        }
+      }
+    }
 
     @media (min-width: #{$screen-tablet}) {
       margin-bottom: 5px;
@@ -89,13 +159,6 @@
     }
   }
 
-  .event-details {
-    @media (min-width: #{$screen-tablet}) {
-      flex: 1 1 50%;
-      padding: 10px 15px;
-    }
-  }
-
   .node__title {
     font-size: 18px;
     line-height: 24px;
@@ -122,42 +185,6 @@
       margin: 0;
       overflow: hidden;
       width: 275px;
-    }
-  }
-}
-
-.newsletter-block-image {
-  .overlay-text {
-    font-size: 1.75rem;
-    font-weight: bold;
-    position: relative;
-    top: -320px;
-
-    @media (min-width: #{$screen-sm}) {
-      font-size: 2rem;
-      top: -460px;
-    }
-
-    @media (min-width: #{$screen-md}) {
-      font-size: 2.5rem;
-      top: -620px;
-    }
-
-    @media (min-width: #{$screen-lg}) {
-      font-size: 1.75rem;
-      top: -260px;
-    }
-
-    @media (min-width: #{$screen-xl}) {
-      top: -280px;
-    }
-
-    @media (min-width: #{$screen-xxl}) {
-      top: -300px;
-    }
-
-    a {
-      color: $white;
     }
   }
 }
