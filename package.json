@@ -4,7 +4,7 @@
   "description": "Bootstrap Barrio sub-theme",
   "type": "module",
   "scripts": {
-    "lintstyle": "npx stylelint -f 'verbose' scss/**/*.scss"
+    "lintstyle": "npx stylelint -f 'verbose' scss/*.scss scss/**/*.scss"
   },
   "keywords": [
     "SASS",
