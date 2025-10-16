@@ -26,7 +26,10 @@
         </p>`);
 
       function updateTime() {
-        document.getElementById("clock").textContent = getTime();
+        const clock = document.getElementById("clock");
+        if (clock) {
+          clock.textContent = getTime();
+        }
       }
       setInterval(updateTime, 1000);
 
