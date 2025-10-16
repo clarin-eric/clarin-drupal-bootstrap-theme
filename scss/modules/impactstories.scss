@@ -117,7 +117,7 @@
     .container, .container-sm,
     .container-md, .container-lg,
     .container-xl, .container-xxl {
-      padding: 0 calc(var(--bs-gutter-x) * .4);
+      padding: 0 calc(var(--bs-gutter-x) * 0.4);
     }
   }
 
@@ -286,7 +286,7 @@
     .container, .container-sm,
     .container-md, .container-lg,
     .container-xl, .container-xxl {
-      padding: 0 calc(var(--bs-gutter-x) * .4);
+      padding: 0 calc(var(--bs-gutter-x) * 0.4);
     }
 
     ul,

@@ -108,7 +108,7 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
 // Page body:
 .view-k-centres-search, .view-search-content, .view-search {
   .view-content {
-    a:not(.btn):not(.field--name-field-tags > ul > li > a) {
+    a:not(.btn, .field--name-field-tags > ul > li > a) {
       color: $link-color;
       text-decoration: underline;
 
@@ -131,7 +131,7 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
     padding-top: 5.5rem;
 
     &::after {
-      color: #A2C037;
+      color: #a2c037;
       content: " (BETA)";
       font-size: 16px;
       vertical-align: super;

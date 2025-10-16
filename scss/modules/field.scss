@@ -1,5 +1,5 @@
 @media all and (width >= 560px) {
-  .node:not(.node--type-showcase.node--view-mode-search-result):not(.node--type-lrt-showcase.node--view-mode-search-result) .field--type-image {
+  .node:not(.node--type-showcase.node--view-mode-search-result, .node--type-lrt-showcase.node--view-mode-search-result) .field--type-image {
     float: unset;
   }
 }
@@ -51,7 +51,7 @@
 
   .dropdown-menu {
     line-height: 1.8;
-    padding: 0.6rem
+    padding: 0.6rem;
   }
 }
 
@@ -154,7 +154,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
 
   .field--name-field-centre-contact-email::before {
     content: "\f0e0";
-    font-family: 'Font Awesome\ 6 Free',  sans-serif;;
+    font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
     margin-right: 4px;
@@ -162,7 +162,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
 
   .field--name-field-centre-contact-telephone::before {
     content: "\f095";
-    font-family: 'Font Awesome\ 6 Free',  sans-serif;;
+    font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
     margin-right: 4px;
@@ -170,7 +170,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
 
   .field--name-field-centre-contact-website-url::before {
     content: "\f0ac";
-    font-family: 'Font Awesome\ 6 Free',  sans-serif;;
+    font-family: 'Font Awesome\ 6 Free',  sans-serif;
     font-size: 14px;
     font-weight: 900;
     margin-right: 4px;
@@ -330,7 +330,7 @@ body .node--type-k-centre-profile, body .node--type-clarin-centre, body .node--t
   .field.field--name-field-address.field--type-address {
     background: $subtle-grey-01;
     margin: 1rem 0 0;
-    padding: .5rem;
+    padding: 0.5rem;
 
     .field__label {
       font-weight: bold;
