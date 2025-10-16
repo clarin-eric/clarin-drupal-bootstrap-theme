@@ -130,7 +130,7 @@ function _lintscss() {
       gulpStylelint({
         failAfterError: true,
         fix: hasFixFlag(),
-        reporters: [{ formatter: "string", console: true }]
+        reporters: [{ formatter: "unix", console: true }]
       })
     )
     .pipe(
