@@ -54,11 +54,11 @@
     &.active {
       .page-link {
         background-color: transparent;
-        border-bottom: 2px solid $blue;
+        border-bottom: 2px solid #{$blue};
         color: $dark-blue-01;
 
         @media (min-width: #{$screen-tablet}) {
-          border-bottom: 3px solid $blue;
+          border-bottom: 3px solid #{$blue};
         }
       }
     }
@@ -130,13 +130,13 @@
       &:hover,
       &:focus {
         background-color: transparent;
-        border-bottom: 2px solid $dark-blue-01;
+        border-bottom: 2px solid #{$dark-blue-01};
         box-shadow: none;
         color: $dark-blue-01;
         outline: none;
 
         @media (min-width: #{$screen-tablet}) {
-          border-bottom: 3px solid $dark-blue-01;
+          border-bottom: 3px solid #{$dark-blue-01};
         }
       }
     }

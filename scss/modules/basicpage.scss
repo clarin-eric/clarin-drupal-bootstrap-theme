@@ -52,18 +52,18 @@
   }
 }
 
-.node,
-.path-glossary {
-  .field--name-body,
-  .table td {
+.paragraph {
+  .field--name-field-body {
     a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
   }
 }
 
-.paragraph {
-  .field--name-field-body {
+.node,
+.path-glossary {
+  .field--name-body,
+  .table td {
     a:not(.btn, .btn-default, .btn-link-blue-s) {
       color: $blue;
     }
@@ -82,7 +82,7 @@
 // Mailchimp
 .block-mailchimp-signup {
   background-color: $subtle-grey-02;
-  border-top: 3px solid $blue;
+  border-top: 3px solid #{$blue};
   margin-bottom: 50px;
   margin-top: 40px;
   padding: 35px 15px 20px;
@@ -157,7 +157,7 @@
 
   .form-control {
     background-color: transparent;
-    border: 1px solid $cold-grey-01;
+    border: 1px solid #{$cold-grey-01};
     border-radius: 28px;
     box-shadow: none;
     color: $dark-blue-01;
@@ -188,7 +188,7 @@
   .form-submit {
     background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30% center;
     background-size: 20px;
-    border: 1px solid $dark-blue-01;
+    border: 1px solid #{$dark-blue-01};
     border-radius: 28px;
     box-shadow: none;
     color: #fff;
@@ -199,7 +199,7 @@
 
     @media (min-width: #{$screen-tablet}) {
       background: transparent url('../images/arrow-right-blue.svg') no-repeat 24px center;
-      border: 1px solid $cold-grey-01;
+      border: 1px solid #{$cold-grey-01};
       border-bottom-left-radius: 0;
       border-left: 0;
       border-top-left-radius: 0;
@@ -255,7 +255,7 @@
     }
 
     .form-control, {
-      border: 1px solid $cold-grey-01;
+      border: 1px solid #{$cold-grey-01};
       border-radius: 28px;
       box-shadow: none;
       color: $dark-blue-01;
@@ -273,7 +273,7 @@
     .form-submit {
       background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat right 24px center;
       background-size: 20px;
-      border: 1px solid $dark-blue-01;
+      border: 1px solid #{$dark-blue-01};
       border-radius: 28px;
       height: 56px;
       padding: 0 55px 0 25px;

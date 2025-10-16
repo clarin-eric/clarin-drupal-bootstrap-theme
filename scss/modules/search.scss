@@ -20,7 +20,7 @@
   }
 
   .form-control {
-    border: 1px solid $cold-grey-01;
+    border: 1px solid #{$cold-grey-01};
     border-radius: 28px 0 0 28px;
     border-right: 0;
     box-shadow: none;
@@ -47,7 +47,7 @@
       vertical-align: bottom;
 
       &::after {
-        content: ":";
+        content: ':';
       }
     }
 
@@ -60,7 +60,7 @@
   .form-submit {
     background: $dark-blue-01 url('../images/search_icon_white.svg') no-repeat 24px center;
     background-size: 20px;
-    border: 1px solid $dark-blue-01;
+    border: 1px solid #{$dark-blue-01};
     border-radius: 0 28px 28px 0;
     box-shadow: none;
     height: 58px;
@@ -84,7 +84,7 @@
 div.block.block-facets-summary.block-facets-summary-blocksearch-facets-summary,
 div.block.block-facets-summary.block-facets-summary-blockk-centre-catalogue-facets-summary,
 div.block.block-facets-summary.block-facets-summary-blocklearning-resources-catalogue-facets-summary {
-  border: none;
+  border: 0;
   color: $dark-blue-01;
 
   ul {
@@ -106,7 +106,9 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
 }
 
 // Page body:
-.view-k-centres-search, .view-search-content, .view-search {
+.view-k-centres-search,
+.view-search-content,
+.view-search {
   .view-content {
     a:not(.btn, .field--name-field-tags > ul > li > a) {
       color: $link-color;
@@ -132,7 +134,7 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
 
     &::after {
       color: #a2c037;
-      content: " (BETA)";
+      content: ' (BETA)';
       font-size: 16px;
       vertical-align: super;
     }
@@ -158,7 +160,7 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
 
     a.more-link {
       &::after {
-        content: " >";
+        content: ' >';
         display: inline-block;
         overflow: hidden;
         padding-left: 3px;
@@ -194,7 +196,8 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
         padding-left: 12px;
       }
 
-      a, .facet-item a {
+      a,
+      .facet-item a {
         color: $soft-blue-02;
         text-decoration: underline;
 
@@ -210,11 +213,11 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
 
       li.facet-item {
         font-weight: initial;
-        list-style: "+ ";
+        list-style: '+ ';
 
         &:has(a.is-active) {
           font-weight: 700;
-          list-style: "- ";
+          list-style: '- ';
 
           a span.facet-item__status {
             display: none;

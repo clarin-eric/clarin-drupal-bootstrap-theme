@@ -95,7 +95,7 @@
 
   &:hover,
   &:focus {
-    border-top: 5px solid $blue;
+    border-top: 5px solid #{$blue};
 
     h2.node__title {
       text-decoration: underline;
@@ -120,7 +120,7 @@
   }
 
   .views-row {
-    border: 1px solid $cold-grey-03;
+    border: 1px solid #{$cold-grey-03};
     border-radius: 2px;
     margin: 20px 0 0;
     overflow: hidden;
@@ -226,7 +226,7 @@
 
     &:hover,
     &:focus {
-      border-top: 5px solid $blue;
+      border-top: 5px solid #{$blue};
 
       h2.node__title {
         text-decoration: underline;
@@ -278,7 +278,7 @@
   }
 
   .resource-item {
-    border: 1px solid $cold-grey-03;
+    border: 1px solid #{$cold-grey-03};
     border-radius: 2px;
     margin: 20px 0 0;
     overflow: hidden;
