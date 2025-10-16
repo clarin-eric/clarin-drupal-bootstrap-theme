@@ -230,7 +230,7 @@ a.news-more-link {
 
 
 .btn.btn-outline-primary:not(:has(.btn.btn-outline-primary), .form-submit) {
-  background: transparent url("../images/arrow-right-blue2.svg") no-repeat right 16px center/15px;
+  background: transparent url('../images/arrow-right-blue2.svg') no-repeat right 16px center/15px;
   border-color: $dark-blue-02;
   border-radius: 27.5px;
   color: $dark-blue-02;
@@ -244,7 +244,7 @@ a.news-more-link {
 
   &:hover,
   &:focus {
-    background: $dark-blue-02 url("../images/arrow-right-white.svg") no-repeat right 13px center/15px;
+    background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 13px center/15px;
     color: $white;
     opacity: 0.75;
     transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
@@ -300,7 +300,7 @@ div.btn.btn-outline-primary:has(.btn.btn-outline-primary) {
     }
 
     .btn.btn-outline-primary:not(:has(.btn.btn-outline-primary)) {
-      background: $dark-blue-02 url("../images/arrow-right-white.svg") no-repeat right 13px center/15px;
+      background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 13px center/15px;
       color: $white;
       opacity: 0.75;
       transition: background-position 0.2s, background-color 0.2s, opacity 0.2s;
