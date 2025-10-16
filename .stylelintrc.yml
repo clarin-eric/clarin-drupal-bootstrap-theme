@@ -13,7 +13,7 @@ rules:
   selector-max-id: 1
   # Nesting
   max-nesting-depth:
-    - 4
+    - 5
     - ignore: ['blockless-at-rules', 'pseudo-classes']
   media-query-no-invalid: null
   # Selector names (override stylelint-config-sass-guidelines to allow `_`)
