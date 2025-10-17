@@ -132,13 +132,6 @@ div.block.block-facets-summary.block-facets-summary-blocklearning-resources-cata
     padding-left: 0.01rem;
     padding-top: 5.5rem;
 
-    &::after {
-      color: #a2c037;
-      content: ' (BETA)';
-      font-size: 16px;
-      vertical-align: super;
-    }
-
     @media (min-width: #{$screen-sm-min}) {
       height: 80px;
       padding-left: 1rem;
