@@ -62,6 +62,34 @@
       }
     }
   }
+
+  td.views-field-field-date-range {
+    min-width: 150px;
+    width: 150px;
+
+    .smart-date--date {
+      font-size: 17px;
+    }
+
+    .smart-date--time {
+      color: #{$soft-blue-01};
+      font-size: 15px;
+    }
+
+    :first-child.smart-date--date:not(:has(~ .smart-date--date)) {
+      display: block;
+    }
+
+    //   this one was made with the help of copilot, I am not that smart
+    // &:has(.smart-date--time):not(:has(.smart-date--time ~ .smart-date--time)) .smart-date--time:has(.datetime):not(:has(.datetime ~ .datetime)) .datetime {
+    //   padding-left: 5px;
+    // }
+
+    .smart-date--date:not(:has(~ .smart-date--date))::before {
+      content: '';
+      display: block;
+    }
+  }
 }
 
 .view-upcoming-events {
