@@ -86,8 +86,13 @@
     position: absolute;
 
     @media (max-width: #{$screen-xs-max}) {
-      margin-top: 8px;
+      order: 3;
       position: relative;
+
+      .links a {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+      }
     }
 
     ul {
