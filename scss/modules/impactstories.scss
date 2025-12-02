@@ -319,10 +319,11 @@
 
     ul li::before {
       background: $blue;
-      content: '';
+      content: '\00a0 ';
       display: inline-block;
       height: 9px;
       margin-right: 20px;
+      text-indent: 1em;
       width: 9px;
     }
 
