@@ -39,7 +39,7 @@
         ".node--type-event.node--view-mode-full .field--name-field-date-range",
         document
       ).after(`<p class="mt-2 text-black-50">\
-          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>${getTimeZone()}</strong>. Current time in ${getTimeZone()} is: <strong id="clock">${getTime()}</strong></small>\
+          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CE(S)T</strong>. Current time in ${getTimeZone()} is: <strong id="clock">${getTime()}</strong></small>\
         </p>`);
 
       function updateTime() {
