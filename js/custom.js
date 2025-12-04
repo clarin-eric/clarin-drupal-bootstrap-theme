@@ -17,12 +17,29 @@
         return timeNow;
       }
 
+      function getTimeZone() {
+        const now = new Date();
+
+        // Format with short timezone name
+        const formatter = new Intl.DateTimeFormat("en-GB", {
+          timeZone: "Europe/Amsterdam",
+          timeZoneName: "short"
+        });
+
+        // Break into parts
+        const parts = formatter.formatToParts(now);
+
+        // Extract just the timezone abbreviation
+        const tz = parts.find(p => p.type === "timeZoneName").value;
+        return tz;
+      }
+
       // Live clock after date range (events)
       $(
         ".node--type-event.node--view-mode-full .field--name-field-date-range",
         document
       ).after(`<p class="mt-2 text-black-50">\
-          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>CEST</strong>. Current time in CEST is: <strong id="clock">${getTime()}</strong></small>\
+          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that all times are displayed in the timezone of the event. Virtual events are displayed in <strong>${getTimeZone()}</strong>. Current time in ${getTimeZone()} is: <strong id="clock">${getTime()}</strong></small>\
         </p>`);
 
       function updateTime() {
