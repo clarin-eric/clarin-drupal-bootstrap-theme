@@ -1050,7 +1050,7 @@
   }
 
   &.btn-bg-blue {
-    .field--name-field-links {
+    .field--name-field-links.field--type-link {
       margin-top: 10px;
 
       @media (min-width: #{$screen-tablet}) {
@@ -1061,7 +1061,7 @@
         margin: 10px 0;
       }
 
-      a {
+      .field__item a:not(.btn) {
         background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 30px center;
         background-size: 17px;
         border-radius: 27.5px;
@@ -1071,6 +1071,8 @@
         font-weight: 600;
         line-height: 25px;
         padding: 15px 60px 15px 30px;
+        text-decoration: none;
+        transition: background-position, color, 0.3s;
 
         @media (min-width: #{$screen-tablet}) {
           background: $dark-blue-01 url('../images/arrow-right-white.svg') no-repeat right 25px center;
@@ -1081,13 +1083,12 @@
 
         &:hover,
         &:focus {
-          background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 30px center;
+          background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 25px center;
           background-size: 17px;
           color: $white;
-          text-decoration: none;
 
           @media (min-width: #{$screen-tablet}) {
-            background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 25px center;
+            background: $dark-blue-02 url('../images/arrow-right-white.svg') no-repeat right 20px center;
             background-size: 20px;
           }
         }
