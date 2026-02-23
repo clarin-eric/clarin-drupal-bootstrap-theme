@@ -33,6 +33,12 @@
       }
     }
   }
+
+  &.no-arrow {
+    background-image: none !important;
+    padding-right: 1rem !important;
+    float: none !important;
+  }
 }
 
 // btn blue
