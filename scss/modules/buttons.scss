@@ -40,6 +40,10 @@
     float: none !important;
   }
 
+  &.button.btn.btn-sm.add-all-to-cal {
+    background-color: rgba(16, 67, 107, 0.05);
+  }
+
   &.btn-sm {
     color: #{$soft-blue-01} !important;
     font-size: 15px !important;
