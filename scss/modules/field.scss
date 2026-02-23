@@ -47,11 +47,15 @@
 }
 
 .add-to-calendar {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2rem !important;
 
   .dropdown-menu {
-    line-height: 1.8;
-    padding: 0.6rem;
+    line-height: 1.8 !important;
+    padding: 0.6rem !important;
+
+    a {
+      color: #{$soft-blue-01} !important;
+    }
   }
 }
 
