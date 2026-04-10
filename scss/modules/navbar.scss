@@ -380,24 +380,20 @@
 }
 
 // Logo
-.navbar-brand {
+a.navbar-brand {
+  margin: 0;
+  padding: 4px;
+  width: 130px;
   height: auto;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-
-  img {
-    height: auto;
-    max-width: 110px;
 
     @media (min-width: #{$screen-lg}) {
-      max-width: 135px;
+      width: 150px;
     }
 
     @media (min-width: #{$screen-xl}) {
-      max-width: 153px;
+      width: 192px;
     }
-  }
+
 }
 
 .sidebar_second .nav-link {
