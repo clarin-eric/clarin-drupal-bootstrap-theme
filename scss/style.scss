@@ -29,9 +29,25 @@ a {
   color: $link-color;
 }
 
-.linkblue,
+.linkblue {
+  color: $blue;
+  text-decoration: underline;
+
+  &:hover {
+    color: $blue-hover;
+  }
+}
+
 .site-footer a:not(.btn),
-.site-bottom a:not(.btn),
+.site-bottom a:not(.btn) {
+  color: $blue;
+  text-decoration: underline;
+
+  &:hover {
+    color: $blue-hover;
+  }
+}
+
 article.node div.node:not(.node--type-navigation-page, .node--type-landing-page) div:not(.field--name-field-tags) a:not(.btn) {
   color: $blue;
   text-decoration: underline;
