@@ -381,18 +381,18 @@
 
 // Logo
 a.navbar-brand {
+  height: auto;
   margin: 0;
   padding: 4px;
   width: 130px;
-  height: auto;
 
-    @media (min-width: #{$screen-lg}) {
-      width: 150px;
-    }
+  @media (min-width: #{$screen-xl-min}) {
+    width: 150px;
+  }
 
-    @media (min-width: #{$screen-xl}) {
-      width: 192px;
-    }
+  @media (min-width: #{$screen-xxl-min}) {
+    width: 192px;
+  }
 
 }
 
