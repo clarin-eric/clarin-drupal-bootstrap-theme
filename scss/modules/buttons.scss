@@ -45,14 +45,8 @@
   }
 
   &.btn-sm {
-    color: #{$soft-blue-01} !important;
     font-size: 15px !important;
     font-weight: 400 !important;
-
-    &:hover,
-    &:focus {
-      color: $white !important;;
-    }
   }
 }
 
@@ -254,7 +248,7 @@ a.news-more-link {
   background: transparent url('../images/arrow-right-blue2.svg') no-repeat right 16px center/15px;
   border-color: $dark-blue-02;
   border-radius: 27.5px;
-  color: $dark-blue-02;
+  color: $soft-blue-01;
   float: right;
   font-size: 1rem;
   margin-right: 20px;
