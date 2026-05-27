@@ -71,6 +71,17 @@
   white-space: normal;
 }
 
+.view-view-organisation-reponsibility .office-hours__item-comments {
+  display: none;
+}
+
+table.office-hours__table .office-hours__item:nth-of-type(6),
+table.office-hours__table .office-hours__item:nth-of-type(7),
+div.office-hours .office-hours__item:nth-of-type(6),
+div.office-hours .office-hours__item:nth-of-type(7) {
+  display: none;
+}
+
 ul {
   .addtocal__google,
   .addtocal__ical,
