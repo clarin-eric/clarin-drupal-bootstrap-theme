@@ -69,17 +69,32 @@
 
 .view-view-organisation-reponsibility,
 .path-view-organisation-responsibility {
-  .office-hours__item-comments {
+  .office-hours__item-label {
+    display: inline-flex;
+    font-weight: normal;
+    position: relative;
+    white-space: nowrap;
+
+    &::after {
+      background: $white;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0.5ch;
+    }
+  }
+
+  tr:hover .office-hours__item-label::after {
+    background: #ECECEC;
+  }
+
+  .office-hours__item-comments,
+  .office-hours__item-slots {
     display: none;
     white-space: normal;
   }
-}
-
-table.office-hours__table .office-hours__item:nth-of-type(6),
-table.office-hours__table .office-hours__item:nth-of-type(7),
-div.office-hours .office-hours__item:nth-of-type(6),
-div.office-hours .office-hours__item:nth-of-type(7) {
-  display: none;
 }
 
 ul {
