@@ -36,7 +36,7 @@
         ".node--type-event.node--view-mode-full .field--name-field-date-range",
         document
       ).after(`<p class="mt-2 text-black-50">\
-          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that times above ar displayed in your local timezone: ${getTimeZone()}. Current time in ${getTimeZone()} is: <strong id="clock">${getTime()}</strong></small>\
+          <small><i class="fa-regular fa-clock">&nbsp;</i>  Please note that times above are displayed in your local timezone: ${getTimeZone()}. Current time in ${getTimeZone()} is: <strong id="clock">${getTime()}</strong></small>\
         </p>`);
 
       function updateTime() {
